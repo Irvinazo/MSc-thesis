@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  29 DEC 2023 01:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.22)  13 FEB 2024 23:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maest.tex"
-(c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maest.tex
+**"c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex"
+(c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-08>
 (C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
@@ -145,7 +145,18 @@ Package babel Info: Making " an active character on input line 570.
 Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
-)) (C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel-spanish.tex
+) (C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language73). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language73). Reported on input line 108.
+)) (C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+) (C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel-spanish.tex
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 11.
 ) (C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
@@ -474,11 +485,8 @@ Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
 \l__pdf_internal_box=\box111
-) (c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maest.aux
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
-)
-\openout1 = `Tesis_maest.aux'.
+) (c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.aux)
+\openout1 = `Tesis_maestria.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
@@ -529,8 +537,6 @@ LaTeX Font Info:    ... okay on input line 54.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 54.
-LaTeX Info: Redefining \% on input line 54.
 (C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count319
@@ -568,27 +574,26 @@ File: ubbold.fd 1996/01/01 Blackboard Bold Font Definition File (jk)
 ) [1
 
 
-{C:/Users/irvin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maest.aux
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
-)
+{C:/Users/irvin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.bbl [2]) [3
+
+] (c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-08>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 16647 strings out of 474491
- 339734 string characters out of 5743833
- 1926473 words of memory out of 5000000
- 38630 multiletter control sequences out of 15000+600000
- 564365 words of font info for 62 fonts, out of 8000000 for 9000
+ 16685 strings out of 474491
+ 341320 string characters out of 5743833
+ 1928473 words of memory out of 5000000
+ 38653 multiletter control sequences out of 15000+600000
+ 565978 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,7n,121p,539b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on "c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maest.pdf" (1 page, 14292 bytes).
+ 116i,7n,121p,542b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.pdf" (3 pages, 75231 bytes).
 PDF statistics:
- 14 PDF objects out of 1000 (max. 8388607)
+ 40 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

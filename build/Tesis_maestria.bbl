@@ -1,0 +1,38 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{Caballero1998-hz}
+Mar{\'\i}a~Emilia Caballero, Bego{\~n}a Fern{\'a}ndez, and David Nualart,
+  \emph{Estimation of densities and applications}, Journal of Theoretical
+  Probability \textbf{11} (1998), no.~3, 831--851.
+
+\bibitem{huang2018central}
+Jingyu Huang, David Nualart, and Lauri Viitasaari, \emph{A central limit
+  theorem for the stochastic heat equation}, 2018.
+
+\bibitem{Khoshnevisan2009}
+Davar Khoshnevisan, \emph{A primer on stochastic partial differential
+  equations}, pp.~1--38, Springer Berlin Heidelberg, Berlin, Heidelberg, 2009.
+
+\bibitem{kuzgun2021convergence}
+Sefika Kuzgun and David Nualart, \emph{Convergence of densities of spatial
+  averages of stochastic heat equation}, 2021.
+
+\bibitem{Nourdin_Peccati_2012}
+Ivan Nourdin and Giovanni Peccati, \emph{Normal approximations with malliavin
+  calculus: From stein’s method to universality}, Cambridge Tracts in
+  Mathematics, Cambridge University Press, 2012.
+
+\bibitem{Walsh_J.B_Introduction_to_SPDEs}
+John~B. Walsh, \emph{An introduction to stochastic partial differential
+  equations}, {\'E}cole d'{\'E}t{\'e} de Probabilit{\'e}s de Saint Flour XIV -
+  1984 (Berlin, Heidelberg) (P.~L. Hennequin, ed.), Springer Berlin Heidelberg,
+  1986, pp.~265--439.
+
+\end{thebibliography}
