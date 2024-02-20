@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex build/Tesis_maestria"] 1707888208 "build/Tesis_maestria.aux" "build/Tesis_maestria.bbl" "build/Tesis_maestria" 1707888920 0
+["bibtex build/Tesis_maestria"] 1707914880 "build/Tesis_maestria.aux" "build/Tesis_maestria.bbl" "build/Tesis_maestria" 1707914881 0
+  "./build/Referencias_tesis.bib" 1707914879 4902 b4916b95d48f5451e5f353b508cc765c ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/bibtex/bst/amscls/amsplain.bst" 1591023610 25798 9b3546f2f237ee0ce4724eed95f954f4 ""
-  "build/Tesis_maestria.aux" 1707888919 638 451df7bc23d23dd11d702e06dfb1973d "pdflatex"
-  "c:/Users/irvin/Documents/MaestrÃ­a/Semestre 4/Proyecto Tesis/build/Referencias_tesis.bib" 0 -1 0 ""
+  "build/Tesis_maestria.aux" 1707913912 620 119975865323682faf43ca933dff07d6 "pdflatex"
   (generated)
   "build/Tesis_maestria.bbl"
   "build/Tesis_maestria.blg"
   (rewritten before read)
-["pdflatex"] 1707888917 "c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex" "build/Tesis_maestria.pdf" "Tesis_maestria" 1707888920 0
+["pdflatex"] 1707913911 "c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex" "build/Tesis_maestria.pdf" "Tesis_maestria" 1707914881 0
   "C:/Users/irvin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1704076497 82098 40055d76d5b0f456422e640d98a85a6e ""
   "C:/Users/irvin/AppData/Local/MiKTeX/fonts/tfm/public/bbold/bbold12.tfm" 1703296944 768 568afddd613f4818fa95373954d5df42 ""
   "C:/Users/irvin/AppData/Local/MiKTeX/fonts/tfm/public/bbold/bbold6.tfm" 1703296946 764 bc340104b2499eb440977e2d302aad8b ""
@@ -154,10 +154,10 @@
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/tikz-cd/tikzlibrarycd.code.tex" 1620478817 23059 b4b98da760150611227e2533f15fe352 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1700599895 32515 51caec75eda9c8890135f12f1a4eddc3 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "Tesis_maestria.tex" 1707888917 1790 f04a73a4f2ee3cb8c120817b9c11763b ""
-  "build/Tesis_maestria.aux" 1707888919 638 451df7bc23d23dd11d702e06dfb1973d "pdflatex"
-  "build/Tesis_maestria.bbl" 1707888208 1636 b34649d889e35bb8ef935495964d9721 "bibtex build/Tesis_maestria"
-  "c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex" 1707888917 1790 f04a73a4f2ee3cb8c120817b9c11763b ""
+  "Tesis_maestria.tex" 1707913905 1784 71da09fbc4c51839dea44e0361620fb1 ""
+  "build/Tesis_maestria.aux" 1707913912 620 119975865323682faf43ca933dff07d6 "pdflatex"
+  "build/Tesis_maestria.bbl" 1707914880 1777 186b194218c0494d94209c7a8076fbba "bibtex build/Tesis_maestria"
+  "c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex" 1707913905 1784 71da09fbc4c51839dea44e0361620fb1 ""
   (generated)
   "build/Tesis_maestria.aux"
   "build/Tesis_maestria.log"
