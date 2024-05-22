@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex build/Tesis_maestria"] 1716361652.88933 "build/Tesis_maestria.aux" "build/Tesis_maestria.bbl" "build/Tesis_maestria" 1716361667.88024 0
+["bibtex build/Tesis_maestria"] 1716361652.88933 "build/Tesis_maestria.aux" "build/Tesis_maestria.bbl" "build/Tesis_maestria" 1716365575.27367 0
   "./build/Referencias_tesis.bib" 1716148735 6434 765c811bd541b6e4fe33cd60fe7ebdb7 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/bibtex/bst/amscls/amsplain.bst" 1591023610 25798 9b3546f2f237ee0ce4724eed95f954f4 ""
-  "build/Tesis_maestria.aux" 1716361663 3682 95c356df5739d67b1060bfe26eb42e3f "pdflatex"
+  "build/Tesis_maestria.aux" 1716365570 3682 95c356df5739d67b1060bfe26eb42e3f "pdflatex"
   (generated)
   "build/Tesis_maestria.bbl"
   "build/Tesis_maestria.blg"
   (rewritten before read)
-["pdflatex"] 1716361654.50442 "c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex" "build/Tesis_maestria.pdf" "Tesis_maestria" 1716361667.88337 0
+["pdflatex"] 1716365553.36643 "c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex" "build/Tesis_maestria.pdf" "Tesis_maestria" 1716365575.27647 0
   "C:/Users/irvin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1716239303 82098 40055d76d5b0f456422e640d98a85a6e ""
   "C:/Users/irvin/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx0900.pk" 1708464658 22504 98fc4a5380ffa9052299d2d9c538f8aa ""
   "C:/Users/irvin/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1708464661 25420 4d6f5f1abe2b2d0ebc57c5f9375826d1 ""
@@ -203,12 +203,12 @@
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1700599895 32515 51caec75eda9c8890135f12f1a4eddc3 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/svgnam.def" 1700127522 4705 ec4d2f4b7125d5a5145cc9aabae1d54b ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "Tesis_maestria.tex" 1716361620 69053 c6797428a3a0930b501c931b60949c19 ""
+  "Tesis_maestria.tex" 1716365546 69268 2ef228012a04fa833fb9f7eaf28f5b44 ""
   "build/CIMATpreamble.sty" 1708464810 5058 6ce70a54343279d1c0311847e431b756 ""
-  "build/Tesis_maestria.aux" 1716361663 3682 95c356df5739d67b1060bfe26eb42e3f "pdflatex"
+  "build/Tesis_maestria.aux" 1716365570 3682 95c356df5739d67b1060bfe26eb42e3f "pdflatex"
   "build/Tesis_maestria.bbl" 1716361654 1706 711198b6b04b5d043611fcd0588722b8 "bibtex build/Tesis_maestria"
-  "build/Tesis_maestria.toc" 1716361663 1678 5193d22424dcd670eddd27084c07dfa3 "pdflatex"
-  "c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex" 1716361620 69053 c6797428a3a0930b501c931b60949c19 ""
+  "build/Tesis_maestria.toc" 1716365570 1678 5193d22424dcd670eddd27084c07dfa3 "pdflatex"
+  "c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex" 1716365546 69268 2ef228012a04fa833fb9f7eaf28f5b44 ""
   "img/LOGOTIPO_SIN_FONDO-02.png" 1708464290 25768 d73a6371ab4ab3dbe3fe64d252b776ef ""
   "img/banner_cimat_20200126_05.png" 1708464289 12792 678af8c1bdd3d866552d42b7db180ad1 ""
   (generated)
