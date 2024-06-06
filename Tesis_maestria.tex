@@ -1,4 +1,4 @@
-\documentclass[letterpaper,twoside]{book} 
+\documentclass[letterpaper,twoside,12pt]{book} 
 %\usepackage[left = 0.5in, right = 0.5in, top = 0.9in, bottom = 0.9in]{geometry}
 \usepackage{enumitem}
 \usepackage{multicol}
@@ -9,6 +9,7 @@
 
 
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
 \usepackage{tikz-cd}
 \usepackage{mathrsfs}
 \usepackage[bbgreekl]{mathbbol}
@@ -205,7 +206,7 @@ donde $W(x,t)$ representa nuestra fuente de aleatoriedad (aunque bien puede pens
  
 Resta entonces estudiar en qué sentido podemos integrar la ecuación \eqref{wave_spde} o \eqref{heat_spde} para sortear las dificultades que la aleatoriedad añade al problema.
 
-\section{Integral de Walsh}
+\section{Integral de Itô-Walsh}
 En esta sección presentamos la construcción de la integral de Itô-Walsh. Dicha integral nos permite construir procesos estocásticas que más adelante y en cierto sentido pueden verse como la solución de una ecuación diferencial parcial estocástica. Para lograr dicho objetivo, presentamos primeramente la teoría necesaria para construir la integral.
 \subsection{Variables Gaussianas y Procesos Gaussianos}
 Recordamos aquí las propiedades fundamentales de los procesos gaussianos. Salvo algunos casos especiales, la mayoría de las propiedades se enuncian sin demostración, por lo que nos referiremos a \cite{LeGall2016} para revisar las pruebas de las mismas. Comenzamos definiendo la distribución Gaussiana.
@@ -410,7 +411,7 @@ Consideramos así al espacio $L^{2}(\R^{d})$, y a la colección de variables ale
 \] 
 El proceso isonormal se puede también obtener vía su función de medias y su función de covarianzas. En efecto, tomando $T=L^{2}(\R^{d})$, haciendo nuevamente $\mu(f)=0$ para cualquier $f\in L^2(\R)$, y definiendo la función de covarianzas $\Gamma$ como
 \[
-\Gamma(f,g)=\int_{\R^d}fg \lambda^d(dx)=\langle f,g\rangle_{L^{2}(\R^{d})}, \qquad f,g\in \L^2(\R^{d}),
+\Gamma(f,g)=\int_{\R^d}fg \lambda^d(dx)=\langle f,g\rangle_{L^{2}(\R^{d})}, \qquad f,g\in L^2(\R^{d}),
 \]
 entonces el proceso Gaussiano resultante, que denotamos por $(\W(f))_{f\in L^{2}(\R^{d})}$ es el proceso isonormal que construimos antes vía un ruido blanco. 
  \end{ejem}
@@ -467,7 +468,7 @@ Este es un proceso estocástico que 'evoluciona en el tiempo', pero a su vez, es
 \]
 Claramente la familia $(\F_t)_{t\geq0}$ forma una filtración, y además el proceso $(W_t)_{t\geq0}$ es adaptado a dicha filtración.
 
-Una propiedad muy interesante que posee el proceso $(W_t)_{t\geq0}$, visto como un proceso que evoluciona en el tiempo, es que es a su vez una medida aleatoria (en el sentido visto antes), pero también una martingala. 
+Una propiedad muy interesante que posee el proceso $(W_t)_{t\geq0}$, visto como un proceso que evoluciona en el tiempo, es que es una medida aleatoria (en el sentido visto antes), y también una martingala. 
 
 \begin{prop} 
 Sea $(W_t(A))_{t\geq0, A\in \B(\R)}$ un ruido blanco en $[0,\infty)\times \R^{d}$. Entonces dicho proceso forma una 'medida martingala' en el siguiente sentido:
@@ -495,36 +496,280 @@ Sea $(W_t(A))_{t\geq0, A\in \B(\R)}$ un ruido blanco en $[0,\infty)\times \R^{d}
   \E\left[W_{s+t}(A)\lvert \F_t\right]=W_t(A), \qquad s,t\geq0  
   \]
   Para ello haremos uso de la proposición \ref{Gaussi_indep}. Consideramos a la familia de variables aleatorias $C_1=\left\{W_u(A):u\leq t\right\}$ y
-  $C_2=\left\{W_{t+s}-W_t(A):s>0 \right\}$. Nótese que 
+  $C_2=\left\{W_{t+s}-W_t(A):s>0 \right\}$, para $t\geq0$. Notemos que para $0\le u\le t$,
   \begin{align*}
-    \E\left[(W_{t+s}(A)-W(t)(A))W_u(A)\right]&=\Gamma([0,t+s]\times A, [0,u]\times A)-\Gamma([0,t]\times A,[0,u]\times A)\\
+    \E\left[(W_{t+s}(A)-W_t(A))W_u(A)\right]&=\Gamma([0,t+s]\times A, [0,u]\times A)-\Gamma([0,t]\times A,[0,u]\times A)\\
     &=\lambda([0,t+s]\cap[0,u])\cdot\lambda^{d}(A)-\lambda([0,t]\cap[0,u])\cdot\lambda^{d}(A)\\
     &=\lambda([0,u])\cdot\lambda^{d}(A)-\lambda([0,u])\cdot\lambda^{d}(A)\\
     &=0.
   \end{align*}
-   \end{proof}
-Por lo tanto, para cualesquiera dos variables $\xi_1$ y $\xi_2$ en $C_1$ y $C_2$ respectivamente, se tiene que $\langle \xi_1,\xi_2\rangle_{L^2(\P)}= \E\left[\xi_1\xi_2\right]=0$, esto es, son ortogonales. Por lo tanto, denotando por $H_1$ y $H_2$ a la cerradura del subespacio lineal generado por las familias $C_1$ y $C_2$ respectivamente, son ortogonales.
+  Por lo tanto, para cualesquiera dos variables $\xi_1$ y $\xi_2$ en $C_1$ y $C_2$ respectivamente, se tiene que $\langle \xi_1,\xi_2\rangle_{L^2(\P)}= \E\left[\xi_1\xi_2\right]=0$, esto es, son ortogonales. Por lo tanto, si $H_1$ y $H_2$ representan la cerradura del subespacio lineal generado por las familias $C_1$ y $C_2$ respectivamente, dichos subespacios son ortogonales.
+  
+  Por lo tanto, por la proposición mencionada antes, las $\sigma$-álgebras generadas por las familias $C_1$ y $C_2$ son independientes. En particular, para $s,t\geq0$, $\F_t\subseteq \sigma(C_1)$, por lo que al ser $W_{t+s}-W(t)$ una variable $\sigma(C_2)$ medible, se sigue que 
+  \[
+      \E\left[W_{t+s}(A)|\F_t\right]=\E\left[W_{t+s}(A)-W_{t}(A)+W_t(A)|\F_t\right]=\E\left[W_{t+s}(A)-W_t(A)\right]+W_t(A)=W_t(A),
+      \]
+      por lo que la propiedad de martingala se satisface.  
+\end{proof}
 
-Por lo tanto, por la proposición mencionada antes, las $\sigma$-álgebras generadas por las familias $C_1$ y $C_2$ son independientes. En particular, para $s,t\geq0$, $\F_t\subseteq \sigma(C_1)$, por lo que 
+El proceso de ruido blanco es entonces un ejemplo de medida martingala, no obstante, este concepto se puede definir de manera mucho más general, como vemos a continuación.
+
+\begin{dfn} 
+ Sea $(\F_t)_{t\geq0}$ una sucesión de $\sigma$-álgebras continuas por derecha. Un proceso $(M_t(A))_{t\geq0, A\in \B(\R^{d})}$ es una medida martingala con respecto a dicha filtración si 
+ \begin{itemize}
+    \item $M_0(A)=0$ $\P$- casi seguramente.
+    \item Si $t>0$, entonces $M_t$ es una medida signada, $\sigma$-finita, $L^{2}(\P)$-valuada.
+    \item Para cualquier $A\in \B(\R^{d})$, se tiene que $(M_t(A))_{t\geq0}$ es una martingala con respecto a la filtración $(\F_t)_{t\geq0}$ de media 0.
+ \end{itemize}
+ \end{dfn}
+ Por construcción, el proceso del ruido blanco es un primer ejemplo de medida martingala. La razón de introducir este concepto, es que este conjunto de procesos forman una clase adecuada de integradores. A continuación, definimos un concepto relacionado íntimamente con las medidas martingala, y que es en cierto sentido una generalización del proceso de covariación para dos martingalas en el caso unidimensional.
+
+ \begin{dfn} 
+  Sea $M$ una medida martingala. El funcional de covarianza de $M$ se define como
+  \[
+  \overline{Q}_t(A,B):= \langle M_\cdot(A),M_\cdot (B)\rangle_t, \qquad t\geq 0, A, B \in \B(\R^{d}). 
+  \]
+  \end{dfn}
+  Dado que para $M$ una medida martingala, si $A$ y $B \in \B(\R^{d})$ se tiene que $(M_t(A))_{t\geq0}$ y $(M_t(B))_{t\geq0}$ son martingalas, entonces el proceso de covariación de ambas martingalas evaluado en $t\geq0$ coincide con el funcional de covarianza evaluado en los borelianos $A$ y $B$, y en $t\geq0$.
+
+  Gracias a lo anterior, se deducen directamente de las propiedades de la covariación entre dos martingalas las siguientes propiedades del funcional de covarianza de una medida martingala.
+
+  \begin{prop} 
+   Sea $M$ una medida martingala y denotemos por $\overline{Q}$ a su funcional de covarianza. Entonces $\overline{Q}$ cumple que
+   \begin{itemize}
+    \item $\overline{Q}_t(A,B)=\overline{Q}_t(B,A)$, \ $\P$- casi seguramente.
+    \item Si $B\cap C=\varnothing$, entonces $\overline{Q}_t(A,B\cup C)=\overline{Q}_t(A,B)+\overline{Q}_t(A,C)$, \ $\P$- casi seguramente.
+    \item $\abs{\overline{Q}_t(A,B)}^2\leq \overline{Q}_t(A,A)\overline{Q}_t(B,B)$ \ $\P$-casi seguramente, y 
+    \item $t\mapsto\overline{Q}_t(A,A)$ es $\P$- casi seguramente no decreciente.
+   \end{itemize}
+   \end{prop}
+
+Con el concepto de funcional de covarianza, podemos definir una función aleatoria de conjuntos en $\B(\R^{d})\times \B(\R^{d})\times \B([0,\infty))$, que denotaremos $Q$, como sigue:
 \[
-\E\left[\right]
+    Q(A\times B\times(s,t]):=\overline{Q}_t(A,B)-\overline{Q}_s(A,B), \qquad A,B\in \B(\R^{d}), \ t\geq s\geq 0
+    \]
+Y extendemos dicha función a uniones disjuntas de elementos (rectángulos)
+$(A_i\times B_i\times(s_i,t_i])$ para $1\leq i \leq m$ y $A_i,B_i\in \B(\R^{d})$, $(s_i,t_i]\in \B(\R^{d})$ como 
+\[
+Q \left(\bigcup_{i=1}^{n}(A_i\times B_i\times(s_i,t_i])\right):=\sum_{i=1}^{n}Q(A_i\times B_i\times (s_i,t_i]).
+\]
+   
+Nuestro objetivo es extender la función aleatoria de conjuntos $Q$ a conjuntos más generales. El problema es que en general no es posible hacerlo. No obstante, con estas dos herramientas teóricas, podemos definir el concepto de \textit{worthiness} de una medida martingala, introducido por Walsh en $\cite{Walsh_J.B_Introduction_to_SPDEs}$.
+ Dicho concepto es de carácter técnico, pero será fundamental en la construcción de la integral de Itô-Walsh al permitirnos extender la definición de $Q$ a conjuntos más generales.
+
+
+\begin{dfn} 
+ Sea $M$ una medida martingala. Decimos que $M$ es \textit{worthy} (digna) si existe una medida $\sigma$-finita $K:\B(\R^{d})\times \B(\R^{d})\times \B([0,\infty))\times \Omega \to [0,1]$ tal que para cualesquiera $A,B\in \B(\R^{d})$, $C\in \B([0,\infty))$ y $\omega \in \Omega$, 
+ \begin{itemize}
+    \item $A\times B\mapsto K(A\times B \times C,\omega)$ es no negativa definida y simétrica,
+    \item $\{K(A\times B \times (0,t])\}_{t\geq0}$ es un proceso predecible para cualesquiera $A, B \in \B(\R^{d})$,
+    \item Para cualesquiera dos conjuntos compactos $A,B \in \B(R^{d})$, y $t>0$, 
+    \[
+    \E\left[K(A\times B \times (0,t])\right]<\infty,    
+    \]
+    \item Para cualesquiera $A,B\in \B(\R^{d})$ y $t>0$,
+    \[
+    \abs{Q(A\times B \times (0,t])}\leq K(A\times B \times (0,t]) \qquad \P-\text{ casi seguramente.}   
+    \]
+ \end{itemize}
+Como es usual en probabilidad, la dependencia en $\omega$ es omitida en la notación. Cuando dicha medida $K$ existe, decimos que es una \textit{medida dominante} para $M$.
+\end{dfn}
+\subsection{Definición de la Integral}
+En este punto tenemos suficiente teoría para definir la integral de Itô-Walsh con respecto a medidas martingala. Conforme vayamos desarrollando la construcción, vamos a ir notando cierta familiaridad con la construcción de la integral de Lebesgue y la integral de Itô.
+
+\begin{dfn} 
+ Una función $f:\R^{d}\times [0,\infty)\times \Omega\to \R$ se dice que es \textit{elemental} si es de la forma 
+ \[
+    f(x,t,\omega)=X(\omega)\1_{(a,b]}(t)\1_A(x) 
+ \]
+ donde $X$ es una variable aleatoria acotada y $\F_a$-medible, y además $A\in \B(\R^{d})$. 
+ 
+ Definimos la integral de Itô-Walsh para una función elemental de la forma anterior como 
+
+ \[
+ (f\cdot M)_t(B)(\omega):= X(\omega)\left[M_{t\wedge b}(A\cap B)-M_{t\wedge a}(A\cap B)\right](\omega)  
+ \]
+\end{dfn}
+
+Como una primera propiedad, tenemos la siguiente proposición
+\begin{prop} 
+ Sea $f$ una función elemental y $M$ una medida martingala. Entonces $(f\cdot M)$ es nuevamente una medida martingala. En particular, la integral de funciones elementales con respecto a martingalas se vuelve una forma de construir nuevas medidas martingala.
+ \end{prop}
+\begin{proof} 
+  Pendiente 
+ \end{proof}
+\begin{ejem} 
+ Sea $\W$ un ruido blanco en $\R^{d}\times[0,\infty)$ y consideremos a $(W_t(A))_{t\geq0,A\in \B(\R^d)}$ el proceso de ruido blanco. Ya vimos que dicho proceso forma una medida martingala. Sea $f$ una función elemental. Entonces $(f\cdot W)$ es una medida martingala.
+ \end{ejem}
+ 
+ El siguiente paso en la construcción de la integral es extender la definición a funciones simples. 
+
+ \begin{dfn} 
+    Decimos que una función $f$ es una función simple si existen $c_1,...,c_n$ constantes reales, y $f_1,...,f_n$ funciones elementales, tales que 
+    \[
+      f=\sum_{k=1}^{n}c_kf_k.  
+    \] Denotaremos por $\mathscr{S}$ el conjunto de las funciones simples. Definimos la integral de Itô-Walsh para funciones simples como 
+    \[
+    (f\cdot M)_t(B):=\sum_{j=1}^{k}c_j(f_j\cdot M)_t(B)    
+    \]
+  \end{dfn}
+  \begin{prop} 
+   La definición anterior es consistente, esto es, no depende de la representación de $f$ en términos de funciones simples.
+   \end{prop}
+Resulta ser que una clase adecuada de funciones integradoras son las funciones $f$ que son predecibles. Esto es, aquella $\sigma$-álgebra que es generada por todas las funciones simples. Dicha $\sigma$-álgebra la denotamos por $\mathscr{P}$
+
+En este punto, deseamos extender la definición de la integral para funciones más generales, definidas sobre conjuntos no necesariamente rectangulares. Es en este punto en donde entra en juego la función $Q$.  Dicha función es crucial, según se ve en el siguiente 
+
+\begin{prop} 
+ Sea $f\in \mathscr{S}$ y supongamos que $M$ es una medida martingala digna. Entonces 
+ \[
+ \E\left[((f\cdot M)_t(B))^2\right]=\E\left[\int_{B\times B\times (0,t]}f(x,t)f(y,t)Q(dx,dy,dt)\right].   
+ \]
+ \end{prop}
+
+ \begin{proof} 
+    Primero debemos de hacer la demostración para funciones elementales, y posteriormente para funciones simples.
+  \end{proof}
+Nótese en la proposición anterior que estamos integrando sobre un rectángulo del estilo $B\times B\times (0,t]$, y la idea es extender la integral a regiones más generales. Para ello, necesitamos extender la definición de $Q$ a dichas regiones, tarea que como anticipamos antes, es posible gracias al concepto de martingala digna.
+
+De hecho, si $M$ es una martingala digna, $Q_M$ puede ser extendida a una medida en todo $\B(\R^{d})\times \B^{\R^{d}}\times [0,\infty)$. 
+
+\begin{ejem} 
+ Sea $\W$ un ruido blanco en $\R^{d}\times[0,\infty)$ y consideremos al proceso de ruido blanco asociado al mismo. Entonces dicho proceso forma una medida martingala digna con medida dominante $K(A\times B \times C):=\lambda^{d}(A\cap B)\lambda(C)$.
+ \end{ejem}
+
+Tenemos a continuación una proposición con respecto a las medidas martingala dignas y la integral de Itô-Walsh de funciones simples.
+
+\begin{prop} 
+ Sea $M$ una medida martingala digna y $f$ una función simple. Entonces $(f\cdot M)$ es una medida martingala digna. 
+Mas aún, si $Q_N$ y $K_N$ representan al funcional de covarianza y a la medida dominante de una medida martingala digna $N$, entonces 
+\begin{align*}
+    &Q_{f\cdot M}(dx \ dy \ dz)=f(x,t)f(y,t)Q_M(dx \ dy \ dt)\\
+    &K_{f\cdot M}(dx \ dy \ dt)=\abs{f(x,t)f(y,t)}K_M(dx \ dy \ dt). 
+\end{align*}
+ \end{prop}
+ \begin{proof} 
+   La prueba nuevamente va primero por funciones elementales y luego por funciones simples. 
+  \end{proof}
+
+A partir de ahora, solo estaremos interesados en el caso cuando la variable temporal está en algún intervalo finito $(0,T]$. Siguiendo la maquinaria estándar para definir nuevos objetos a partir de aproximaciones, definimos ahora una norma apropiada para dicho propósito.
+
+\begin{dfn} 
+ Sea $M$ una medida martingala digna. Supongamos que $K_M$ es su medida dominante. Sea $f\in \mathscr{P}$ una función en el conjunto de las funciones que son predecibles (es decir, que son medibles con respecto a la $\sigma$-álgebra $\mathscr{P}$ generada por las funciones simples). Definimos la norma $\norm{\cdot}_M$ como sigue 
+ 
+ \end{dfn}
+\[
+    \norm{f}_M^2:=\E\left[\int_{\R^{d}\times\R^{d}\times (0,T]} \abs{f(x,t)f(y,t)}K_M(dx \ dy \ dt)\right]
 \]
 
+Observamos que dicha norma está bien definida. Denotamos por $\mathscr{P}_M$ al conjunto de todas las funciones $f$ predecibles tales que $\E\left[\norm{f}_M\right]<\infty$.
 
+\begin{prop} 
+ La norma anteriormente definida en efecto es una norma, y el conjunto $\mathscr{P}_M$ es completo con esta norma.
+ \end{prop}
+ \begin{proof} 
+   pendiente 
+  \end{proof}
+ A continuación un resultado esencial de aproximación, el cual se remite directamente a \cite{Walsh_J.B_Introduction_to_SPDEs} para su demostración.
 
-% \begin{itemize}
-%     \item Se estudia con más detenimiento el ruido blanco, así como la definición de una medida martingala. La idea de su estudio consiste en que son una buena clase de integradores para definir integrales estocásticas.
-%     \item Se define la integral de Walsh para funciones elementales
-%     \item Se estudia brevemente el concepto de martingalas 'dignas': aquellas que permiten definir de manera adecuada la integral estocástica.
-%     \item Desigualdades de Burkholder para la integral estocástica
-% \end{itemize}
+\begin{teo} 
+ El conjunto $\mathscr{S}$ es denso en $\mathscr{P}_M$.
+ \end{teo}
+ Lo anterior junto con la proposición 5.18 (referenciar) nos dice que 
+ \[
+ \E\left[(f\cdot M)_t^{2}(B)\right]\leq \norm{f}_M^2,\qquad \text{ para } t\in (0,T], f\in \mathscr{S}, B\in \B(\R^d).
+ \]
+ Luego, gracias a la cota anterior, si $(f_m)_{m\geq1}$ es una sucesión de Cauchy en $(\mathscr{S},\norm{\cdot}_M)$, entonces la sucesión $\left((f_m\cdot M)_t(B)\right)_{m\geq1}$ es una sucesión de Cauchy en $L^{2}(\P)$. Dado que ambos espacios son completos, se sigue la existencia de objetos en $\mathscr{P}$ y $L^{2}(\P)$, que denotamos por $f$ y $(f\cdot M)_t(B)$ respectivamente, de tal forma que 
+ \[
+ f_m\xrightarrow[m\to\infty]{\norm{\cdot}_M}f \quad \ent \quad (f_m\cdot M)_t(B) \xrightarrow[m\to\infty]{L^{2}(\P)} (f\dot M)(B).   
+ \]
 
+ De lo anterior, concluimos con el siguiente teorema.
+
+ \begin{teo} 
+  Sea $M$ una medida martingala digna. Entonces para cualquier $f\in \mathscr{P}_M$, la integral $(f\cdot M)$ es una medida martingala digna qe satisface la proposición 5.23 (referenciar). Más aún, para cualquier $t\in (0,T]$ y $A,B\in \B(\R^{d})$, 
+  \[
+  \left\langle (f\cdot M)(A),(f\cdot M)(B)\right\rangle _t= \int_{A\times B\times (0,t]}f(x,s)f(y,s)Q_M(dx \ dy \ ds),
+  \]
+  y además se tiene la siguiente cota en $L^{2}(\P)$.
+  \[
+  \E\left[(f\cdot M)^{2}_t(B)\right] \leq \norm{f}_M^{2}.
+  \]
+  \end{teo}
+  De hecho, es posible extender la cota en $L^2(\P)$ a una cota en $L^{p}(\P)$, creando así una desigualdad del tipo Burkholder.
+  \begin{teo}[\textbf{Desiguadades de Burkholder}]
+   Sea $M$ una medida martingala digna. Entonces para cualquier $p\geq2$ existe una constante $c_p\in (0,\infty)$ tal que para cualquier $f$ predecible y cualquier $t>0$, 
+   \[
+   \E\left[\abs{(f\cdot M)_t(B)}^p\right]\leq c_p \E\left[\left(\int_{\R^{d}\times \R^{d}\times (0,T]}\abs{f(x,t)f(y,t)}K_M(dx \ dy \ dt)\right)^{p/2}\right] 
+   \]
+   \end{teo}
+   Con esto terminamos la construcción de la integral de Itô-Walsh. Ya nos es posible hablar de integrales con respecto a un ruido blanco $\W$, pues sabemos que este proceso en $\R^{d}\times [0,\infty)$ induce una medida martingala digna, y por lo tanto la noción de integral está bien definida para funciones aleatorias adecuadas. 
 
 \section{Formulación Mild de una SPDE. Existencia y unicidad de las soluciones}
-\begin{itemize}
-    \item Planteamiento de la ecuación integral como una versión débil del problema planteado. Definición de la solución Mild utilizando funciones de Green.
-    \item Existencia de una única solución bajo condiciones Lipschitz. Argumento usando Lema de Gronwall para unicidad. Argumento usando iteraciones de Piccard para la existencia.
-\end{itemize}
+Una vez que tenemos construida la teoría de la integral de Itô-Walsh, podemos pasar darle un significado riguroso a una ecuación diferencial parcial estocástica, así como definir con claridad qué significa resolverla. Como vimos en la introducción del capítulo, la heurística para llegar a un problema en cierto sentido equivalente a aquél que involucra derivadas sigue de cerca las ideas de las soluciones débiles en ecuaciones diferenciales parciales clásicas. Concretamente, el uso de integración por partes para lograr el objetivo es clave. 
+
+Consideremos la ecuación diferencial estocástica formal dada por 
+\[
+\begin{cases}
+    \partial_tu(x,t)=\partial_{xx}u(x,t)+f(u(x,t))\W, & \text{ si } t>0, x\in [0,L]\\
+    \partial_xu(0,t)=\partial_xu(L,t)=0, & \text{ si } t>0,\\
+    u(x,0)=u_0(x), & \text{ si } x\in [0,L].\\
+\end{cases}
+\]
+donde $\W$ es un ruido blanco con respecto a alguna friltración $(\F_t)_{t\geq0}$, y $u_0:[0,L]\to\R$ es una función determinista, medible y acotada, mientras que $f:\R\to\R$ es una función globalmente Lipschitz y acotada.
+
+Si formalmente multiplicamos el problema por una función $\phi \in C^{\infty}(\R)$ tal que $\phi(0)=\phi(L)=0$ e integramos con respecto al tiempo y posteriormente con respecto al espacio, obtendremos que el problema anterior se puede reformular como 
+
+\begin{align*}
+    \int_{0}^{L}u(x,t)\phi(x)dx-\int_{0}^{L}u_0(x)\phi(x)dx&=\int_0^{t}\int_0^{L}\partial_{xx}u(x,s)\phi(x)dxds\\
+    &+\int_{0}^{t}\int_{0}^{L}f(u(x,s))\phi(x)W(dx \ ds).    
+    \end{align*}
+Es destacable que ahora tenemos una ecuación integral estocástica en donde la integral con respecto al ruido blanco cobra total sentido. No obstante, lo anterior aún no puede ser tratado de manera rigurosa, ya que $u$ al ser aleatorio no necesariamente será una función derivable. Por lo tanto, si de manera formal utilizamos integración por partes, al ser $\phi$ una función que se anula en la frontera, la integral de la parcial de $u$ multiplicado por $\phi$ se transforma en
+\[
+    \int_{0}^{t}\int_{0}^{L}\partial_{xx}u(x,s)\phi(x)dx ds=\int_{0}^{t}\int_{0}^{L}u(x,s)\phi''(x)dx ds,
+\]
+por lo que sustituyendo la expresión anterior en la reormulación de nuestro problema, obtenemos una ecuación integral estocástica. Tal ecuación integral tiene completo sentido, y dado que es una reformulación de nuestro problema inicial pero que puede tratarse de manera rigurosa, podemos considerar que una manera de resolver nuestro problema inicial, es resolver la reformulación integral anterior. Esta es conocida como la solución mild de nuestro problema anterior.
+
+\begin{dfn} 
+ Decimos que $u$ es una solución \textit{mild} del problema inicial anterior, si existe un proceso estocástico $u(x,t)$ tal que para cualquier función $\phi\in C^{\infty}([0,L])$, donde $\phi'(0)=\phi'(L)=0$, se tiene la igualdad 
+
+\begin{align*}
+    \int_{0}^{L}u(x,t)\phi(x)dx-\int_{0}^{L}u_0(x)\phi(x)dx=\int_{0}^{t}\int_{0}^{L}u(x,s)\phi''(x)dx ds+\int_{0}^{t}\int_{0}^{L}f(u(x,s))\phi(x)W(dx \ ds).  
+\end{align*}
+\end{dfn}
+
+Es conocida teoría que resuelve la ecuación diferencial estocástica del calor. En particular, se tiene el siguiente resultado.
+
+\begin{teo} 
+ La ecuación estocástica del calor, con función $f$ Lipschitz y acotada, tiene una única solución $\P$- casi seguramente, que satisface lo siguiente para cualquier $T>0$.
+ \[
+ \sup_{0\leq x\leq L}\sup_{0\leq t \leq T}\E\left[\abs{u(x,t)}^2\right]<\infty.   
+ \]
+ \end{teo}
+Este es el resultado principal del capítulo. Y para su prueba, se requiere el siguiente lema bastante conocido en el ámbito de las ecuaciones diferenciales.
+
+\begin{teo}[\textbf{Lema de Gronwall}] 
+ Supongamos $\phi_1,\phi_2,...:[0,T]\to[0,+\infty)$ son medibles y no decrecientes. Supongamos también que existe una constante $A\in \R$ tal que para cualquier entero $n\geq1$ y para cualquier $t\in[0,T]$,
+ \[
+ \phi_{n+1}(t)\leq A\int_{0}^{t}\phi_n(s)ds.   
+ \]
+ Entonces 
+ \[
+ \phi_n(t)\leq \phi_1(T)\frac{(At)^{n-1}}{(n-1)!}, \qquad \text{ para cualquier }n\geq1, \text{ y } t\in[0,T].   
+ \]
+ \end{teo}
+Finalmente, el siguiente teorema nos muestra que no solamente hay existencia y unicidad de las solución a la ecuación estocástica del calor, sino que también existe una modificación continua de la misma.
+
+\begin{teo} 
+ Sea $\Tilde{u}(x,t)$ la solución única $\P$- casi seguramente de la ecuación estocástica del calor. Entonces existe una modificación $u(x,t)$ de dicha solución cuyas trayectorias son continuas.
+ \end{teo}
+
+Retomaremos la teoría desarrollada hasta aquí sobre ecuaciones diferenciales parciales estocásticas cuando lleguemos al capítulo 4, en donde estudiamos convergencia de las densidades de los promedios espaciales de la solución a la ecuación estocástica del calor. 
+
+ % \begin{itemize}
+%     \item Planteamiento de la ecuación integral como una versión débil del problema planteado. Definición de la solución Mild utilizando funciones de Green.
+%     \item Existencia de una única solución bajo condiciones Lipschitz. Argumento usando Lema de Gronwall para unicidad. Argumento usando iteraciones de Piccard para la existencia.
+% \end{itemize}
 
 \chapter{Elementos de Cálculo de Malliavin}% y Método de Stein}
 \section{El operador Derivada}
