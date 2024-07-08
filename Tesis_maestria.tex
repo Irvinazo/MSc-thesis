@@ -6,6 +6,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[svgnames,table]{xcolor}  
 \usepackage{CIMATpreamble}  
+\usepackage[dvipsnames]{xcolor}
 
 
 \usepackage{amsmath,amssymb,amsthm}
@@ -205,6 +206,7 @@ donde $W(x,t)$ representa nuestra fuente de aleatoriedad (aunque bien puede pens
 \]
  
 Resta entonces estudiar en qué sentido podemos integrar la ecuación \eqref{wave_spde} o \eqref{heat_spde} para sortear las dificultades que la aleatoriedad añade al problema.
+
 
 \section{Integral de Itô-Walsh}
 En esta sección presentamos la construcción de la integral de Itô-Walsh. Dicha integral nos permite construir procesos estocásticas que más adelante y en cierto sentido pueden verse como la solución de una ecuación diferencial parcial estocástica. Para lograr dicho objetivo, presentamos primeramente la teoría necesaria para construir la integral.
@@ -574,6 +576,8 @@ Nuestro objetivo es extender la función aleatoria de conjuntos $Q$ a conjuntos 
  \end{itemize}
 Como es usual en probabilidad, la dependencia en $\omega$ es omitida en la notación. Cuando dicha medida $K$ existe, decimos que es una \textit{medida dominante} para $M$.
 \end{dfn}
+
+
 \subsection{Definición de la Integral}
 En este punto tenemos suficiente teoría para definir la integral de Itô-Walsh con respecto a medidas martingala. Conforme vayamos desarrollando la construcción, vamos a ir notando cierta familiaridad con la construcción de la integral de Lebesgue y la integral de Itô.
 
@@ -766,90 +770,209 @@ Finalmente, el siguiente teorema nos muestra que no solamente hay existencia y u
 
 Retomaremos la teoría desarrollada hasta aquí sobre ecuaciones diferenciales parciales estocásticas cuando lleguemos al capítulo 4, en donde estudiamos convergencia de las densidades de los promedios espaciales de la solución a la ecuación estocástica del calor. 
 
+
  % \begin{itemize}
 %     \item Planteamiento de la ecuación integral como una versión débil del problema planteado. Definición de la solución Mild utilizando funciones de Green.
 %     \item Existencia de una única solución bajo condiciones Lipschitz. Argumento usando Lema de Gronwall para unicidad. Argumento usando iteraciones de Piccard para la existencia.
 % \end{itemize}
 
 \chapter{Elementos de Cálculo de Malliavin}% y Método de Stein}
-\section{El operador Derivada}
-Esta sección consiste en estudiar el principal y primer operador de la disciplina, el operador derivada. En el contexto unidimensional, este operador se define utilizando
-ideas similares a aquellas que nos llevan a los espacios de Sobolev. Es decir, buscamos definir la derivada en una clase de funciones con propiedades nobles pero 
-que a su vez sea suficientemente rica como para extender posteriormente, vía aproximación, la definición de la derivada en un conjunto más grande.
+En este capítulo se revisa material esencial de cálculo de Malliavin. Esta disciplina nació a finales de la década de 1970 a partir de los trabajos de Paul Malliavin. La intención de Malliavin era hallar una prueba probabilista del teorema de Hörmander sobre el efecto regularizante de las soluciones de cierta ecuación diferencial estocástica, puesto que Lars Hörmander en 1967 encontró una prueba que utilizaba herramientas puramente analíticas. Con dicha motivación inicial, en las últimas décadas el cálculo de Malliavin se ha convertido en una poderosa herramienta matemática para estudiar problemas diversos en probabilidad. 
 
-Dicho lo anterior, sea $\gamma:\B(\R)\to [0,1]$ la medida gaussiana estándar, a saber, 
+En palabras de Nourdin y Peccati (ver prefacio de \cite{Nourdin_Peccati_2012}), el cálculo de Malliavin se puede entender como un cálculo diferencial en infinitas dimensiones, cuyos operadores actúan sobre funcionales de procesos Gaussianos generales, y que en conjunto con el método de Stein, se obtiene una amalgama poderosa para deducir teoremas tipo límite central, así como tasas de convergencia explícitas para los mismos. 
+
+Tres operadores son esenciales en esta área: la derivada de Malliavin $D$, la divergencia (o integral de Skorokhod) $\delta$ y el generador infinitesimal. El propósito de este capítulo es estudiar el material nuclear correspondiente a estos operadores, iniciando por el caso unidimensional en el que es más sencillo observar propiedades de estos objetos.
+
+\section{La derivada de Malliavin}
+
+El operador con el que comenzamos nuestro estudio es la derivada de Malliavin. La idea es definir la derivada de variables aleatorias del tipo $f(N)$, donde $f$ es una función determinista, y $N$ es una variable aleatoria con distribución Normal estándar.
+
+En el contexto unidimensional, la definición de este operador se realiza utilizando ideas similares a aquellas que nos llevan a la definición de derivada débil en los espacios de Sobolev. Dichas ideas consisten, a grandes rasgos, en generalizar la noción de derivada a objetos más generales que las funciones diferenciables en el sentido usual. Para ello primero buscamos una clase de funciones diferenciables con propiedades nobles pero que a su vez sea suficientemente rica, y posteriormente extendemos el operador en algún sentido.
+
+Dado que buscamos definir la derivada de funciones de variables normales estándar, es natural definir el operador derivada en un subconjunto de los espacios $L^q(\R,\B(\R))$ con $q\in [1,\infty)$, pero dotados de la medida gaussiana estándar. 
+
+Dicho lo anterior, denotemos por $\gamma:\B(\R)\to [0,1]$ a la medida mencionada, a saber, 
 \[
 \gamma(A)=\int_A\frac{1}{2\pi}e^{-\frac{x^2}{2}}dx.    
 \]
-Consideremos el espacio $L^{q}(\R,\B(\R),\gamma)$, y definamos a la clase de Schwarz $\mathcal{S}$ como el conjunto de funciones $C^{\infty}(\R,\R)$ de crecimiento a lo más polinomial, 
-a saber, 
-\[
-\mathcal{S}:=\left\{f\in C^{\infty}(\R) : \exists n\geq1 \text{ tal que }\lim_{|x|\to\infty}\frac{f(x)}{x^{n}}<\infty \right\}    
-\]
-Se tiene la siguiente proposición con respecto al espacio de Schwarz:
-\begin{teo}
-    El espacio $\mathcal{S}$ es denso en el espacio $L^{q}(\gamma)$ para cualquier $q\in [1,\infty)$.
-\end{teo}
-La demostración del hecho anterior se sigue de que el conjunto de potencias $\left\{x^{n}:n\geq1\right\}\subseteq \mathcal{S}$ es directamente un subconjunto denso de $L^{q}(\gamma)$. Una vez que tenemos esta clase densa de $L^{q}(\gamma)$, estudiamos ahora una manera de generalizar la derivada de las funciones $f\in \mathcal{S}$ a todo el espacio $L^{q}(\gamma)$. Sea $f\in \mathcal{S}$ y denotemos por $D^{p}f$ a la $p-$ésima derivada de $f$. Buscando extender la derivada, obtenemos el siguiente resultado
-\begin{teo} 
- Sea $D^{p}:\mathcal{S}\subseteq L^{q}(\gamma)\longrightarrow L^{q}(\gamma)$ el operador derivada. Entonces $D^{p}$ es cerrable para todo $q\in [1,\infty)$ y todo entero $p\geq1$
- \end{teo}
-Una vez que tenemos este resultado, podemos extender la definición de la derivada a todo el espacio $L^{q}(\gamma)$ vía aproximación. El último elemento que necesitamos es una noción de distancia adecuada para lograrlo. Para ello, definimos la siguiente norma en $\mathcal{S}$:
-\begin{dfn}
-    Definimos $\|.\|_{\mathbb{D}^{p,q}}:\mathcal{S}\longrightarrow[0,\infty)$, dada por 
-    \[
-        \|f\|_{\mathbb{D}^{p,q}}:=\left(\sum_{k=0}^{p}\int_\R|f^{(k)}|^qd\gamma(x)\right)^{\frac{1}{q}}=\left(\sum_{k=0}^{p}\|f^{(k)}\|^q_{L^{q}(\gamma)}\right)^{\frac{1}{q}},
-    \]
-\end{dfn}
-es decir, creamos una norma a partir de una combinación razonable de las normas en $L^{q}(\gamma)$ de $f$ y de sus derivadas hasta el orden $p$.
+Consideremos el espacio $L^{q}(\R,\B(\R),\gamma(dx))$, con $q\in [1,\infty)$, que de ahora en adelante denotaremos simplemente como $L^{q}(\gamma)$. En este espacio, se valen algunas propiedades resultan de gran utilidad. Tal es el caso del siguiente lema.
 
-Con esto, el paso siguiente es definir el conjunto de funciones que sean aproximables gracias a esta norma vía funciones de $\mathcal{S}$. Definimos entonces al espacio $\mathbb{D}^{p,q}$ como la cerradura de $\S$ en $L^{q}(\gamma)$ con respecto a la norma $\|.\|_{\mathbb{D}^{p,q}}$.
-
-De esta manera, un elemento en $\mathbb{D}^{p,q}$ es tal que existe una sucesión $(f_n)_{n\geq1}\subseteq \mathcal{S}$ tal que $f_n$ converge a $f$ en el sentido $L^{q}(\gamma)$ y además, para cualquier orden de derivada $j=1,...,p$, se tiene que $(f_n^{(j)})_{n\geq1}$ es una sucesión de Cauchy en $L^{q}(\gamma)$. Precisamente utilizando el que para cualquier orden, se tiene una sucesión de Cauchy, se define para cualquier $f\in \mathbb{D}^{p,q}$ y cualquier $j=1,...,p$, 
-\[
-f^{(j)}=D^jf=\lim_{n\to\infty}D^{j}f_n=f_n^{(j)},
-\]
-la $j-$ésima derivada de $f$. Directamente aquí hemos extendido el concepto de derivada a funciones que no necesariamente tienen derivada en el sentido usual (tal y como sí sucedía con las funciones en la clase $\mathcal{S}$). Concluimos entonces con la definición del operador derivada en el caso unidimensional:
-\begin{dfn}
-    Sea $p\geq1$ un entero positivo. Definimos al operador derivada de la siguiente forma: 
-    \[
-    D^p:\mathbb{D}^{p,q}\longrightarrow L^{2}(\gamma), \ f\longmapsto D^{p}f,    
-    \]
-    donde $D^{p}f$ se define como antes. 
-\end{dfn}
-Este operador es de suma importancia. En la siguiente sección veremos que justamente su adjunto, visto como operador entre espacios vectoriales, tiene especial relevancia.
-
-
-
-\section{El operador delta}
-
-Tanto en el caso general como en el caso unidimensional, el operador $\delta$ es por definición el operador adjunto del operador $D^{p}$, cuyo dominio es el espacio de Watanabe-Sobolev $\mathbb{D}^{p,2}$. Más específicamente. El operador $D^{p}:\mathbb{D}^{p,2}\subseteq L^2(\gamma)\longrightarrow L^2(\gamma)$ por definición es un operador cerrado, que extiende al operador derivada convencional $D^{p}$ definido en $\mathcal{S}\subseteq L^2(\gamma)$. La extensión a denotamos igualmente por $D^{p}.$
-
-Siendo $L^{2}(\gamma)$ un espacio de Hilbert, si consideramos a $Dom(\delta^{p})$ como el conjunto de funciones $g\in \mathbb{D}^{p,2}$ tales que
-
-\[
-\abs{\langle D^{p}f,g\rangle_{L^2(\gamma)}}\leq c\|f\|_{L^2(\gamma)}, \qquad \forall f\in \mathcal{S},
-\]
-entonces para cada $g\in Dom(\delta^{p})$ el operador lineal dado por $f\longmapsto \langle D^{p}f,g\rangle$ es acotado por la condición anterior. De esta forma, podemos extender dicho operador a todo $f\in L^2(\gamma)$. Y finalmente, gracias al teorema de representación de Riesz, al ser dicho operador continuo de $L^{2}(\gamma) $ a $\R$, existe un único elemento en $L^2(\gamma)$, que denotaremos por $\delta^{p}g$ tal que 
-\[
-\langle D^pf,g\rangle_{L^2(\gamma)}=\langle f,\delta^p g\rangle_{L^2/\gamma}, \qquad \forall f\in L^2(\gamma).
-\]
- Lo anterior en términos de integrales nos dice que, para cualquier $g\in Dom(\delta^p)$, existe un único elemento $\delta^p g\in L^2(\gamma)$ tal que 
+\begin{lema}\label{lema1}
+ Sea $f:\R\to\R$ una función absolutamente continua con respecto a la medida de Lebesgue y tal que $f'\in L^{1}(\gamma)$. Entonces la función $h:\R\to\R$ dada por $h(x)=xf(x)$ está en $L^1(\gamma)$ y se cumple que 
  \[
-  \int_\R D^{p}fd\gamma=\int_\R f\delta^{p}gd\gamma, \qquad \forall f\in L^2(\gamma)  
+ \int_\R xf(x)d\gamma(x)=\int_\R f'(x)d\gamma(x).
  \]
- Definimos entonces el operador de divergencia como sigue
+ \end{lema}
+\begin{proof} 
+   Supongamos primero que $f(0)=0$. Probamos que $h\in L^{1}(\gamma)$. En efecto,  
+   \begin{align*}
+    \int_{-\infty}^{\infty}|x||f(x)|d\gamma(x)&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty\abs{\int_0^{x}f'(y)dy}|x|e^{-\frac{x^2}{2}}dx\\
+    &\leq \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left(\int_0^{x}\abs{f'(y)}dy\right) \ |x|e^{-\frac{x^2}{2}}dx\\
+    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^0 \left(\int_x^{0}\abs{f'(y)}dy\right) \ (-x)e^{-\frac{x^2}{2}}dx\\
+    & \ \ \  +\frac{1}{\sqrt{2\pi}}\int_{0}^\infty \left(\int_0^{x}\abs{f'(y)}dy\right) \ xe^{-\frac{x^2}{2}}dx\\
+    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^0 \int_{-\infty}^{y}\abs{f'(y)}(-x)e^{-\frac{x^2}{2}}dx \ dy+\frac{1}{\sqrt{2\pi}} \int_{0}^{\infty}\int_{y}^\infty \abs{f'(y)}xe^{-\frac{x^2}{2}}dx \ dy\\
+    &=\int_{-\infty}^0 \abs{f'(y)}\frac{1}{\sqrt{2\pi}}\left(e^{-\frac{x^2}{2}}\Big|_{-\infty}^{y}\right) dy + \int_{0}^{\infty}\abs{f'(y)}\frac{1}{\sqrt{2\pi}}\left(-e^{-\frac{x^2}{2}}\Big|_{y}^{\infty}\right)dy\\
+    &=\int_{-\infty}^{\infty}|f'(y)|d\gamma(y)<\infty,
+   \end{align*}
+   en donde hemos hecho uso del teorema de Fubini en la tercera igualdad. Por lo tanto, la función $h(x)=xf(x)$ en efecto está en $L^1(\gamma)$. Realizando cuentas similares, obtenemos que 
+   \begin{align*}
+    \int_{-\infty}^{\infty}xf(x)d\gamma(x)&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left(\int_0^{x}f'(y)dy\right) xe^{-\frac{x^2}{2}}dx\\
+    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^0 \left(\int_x^{0}f'(y)dy\right) \ (-x)e^{-\frac{x^2}{2}}dx\\
+    & \ \ \  +\frac{1}{\sqrt{2\pi}}\int_{0}^\infty \left(\int_0^{x}f'(y) dy\right) \ xe^{-\frac{x^2}{2}}dx\\
+    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^0 \int_{-\infty}^{y}f'(y)(-x)e^{-\frac{x^2}{2}}dx\ dy+\frac{1}{\sqrt{2\pi}} \int_{0}^{\infty}\int_{y}^\infty f'(y)xe^{-\frac{x^2}{2}}dx\ dy\\
+    &=\int_{-\infty}^0 f'(y)\frac{1}{\sqrt{2\pi}}\left(e^{-\frac{x^2}{2}}\Big|_{-\infty}^{y}\right) dy + \int_{0}^{\infty}f'(y)\frac{1}{\sqrt{2\pi}}\left(-e^{-\frac{x^2}{2}}\Big|_{y}^{\infty}\right)dy\\
+    &=\int_{-\infty}^{\infty}f(y)d\gamma(y),
+   \end{align*}
+   como queríamos. Para el caso en el que $f(0)\neq 0$, notamos que 
+ \end{proof}
+ En la búsqueda de la generalización de la derivada a funciones más generales, definimos a la clase de Schwarz $\mathcal{S}$ como el conjunto de funciones en $C^{\infty}(\R,\R)$ tales que ella y sus derivadas tienen crecimiento a lo más polinomial, es decir,
+\[
+\mathcal{S}:=\left\{f\in C^{\infty}(\R) : \forall p\in \{0,1,2,...\} \ \exists n\geq1 \text{ tal que }\lim_{x\to\pm\infty}\frac{|f^{(p)}(x)|}{1+|x|^{n}}<\infty \right\}.    
+\]
+Observamos que este conjunto dotado de la restricción correspondiente de la norma $L^q(\gamma)$ forma subespacio lineal de $L^{q}(\gamma)$, puesto que las combinaciones lineales de elementos infinitamente derivables vuelven a ser infinitamente derivables, y las combinaciones lineales también son compatibles con los límites. Es de destacar que este espacio es suficientemente amplio como para poseer a los polinomios. Más aún, este último conjunto es denso en $L^{q}(\gamma)$ para cualquier $q\in [1,\infty)$. Esto es consecuencia del siguiente lema.
+
+\begin{lema} 
+ Para cualquier $q\in [1,\infty)$, el conjunto de los monomios de la forma $\{x^n: n\geq0\}$ genera un subespacio denso del espacio $L^{q}(\gamma)$. En particular, la clase de Schwarz $\S$ forma un subconjunto denso de $L^q(\gamma)$.
+ \end{lema}
+ \begin{proof} 
+    Un corolario del teorema de Hann-Banach caracteriza la propiedad de ser un subespacio lineal denso de un espacio $L^{q}$. En nuestro caso basta con probar que para cualquier elemento $g \in L^{p}(\gamma)$, 
+    \[
+    \int_\R g(x)x^{n} \ d\gamma(x)=0, \ \ \forall n\geq0  \quad \ent \quad g=0 \ \ \gamma- \text{casi en todas partes},
+    \]
+    donde $p\in (1,\infty]$ es el exponente conjugado de $q$. Sea pues $g\in L^{p}(\gamma)$ y supongamos que para cualquier $n\geq0$, el antecedente de la implicación anterior es válido. Usaremos un argumento que involucra la transformada de Fourier. Notamos primero que la transformada de $g(x)e^{-\frac{x^2}{2}}$ existe. En efecto, por la desigualdad de Hölder, para $t\in \R$ arbitrario,
+    \[
+    \int_{\R}|g(x)e^{-\frac{x^2}{2}}e^{itx}|dx\leq \int_{\R}|g(x)|e^{-\frac{x^2}{2}}dx=\int_{\R}|g(x)|d\gamma(x)\leq\norm{g}_{L^{p}(\gamma)}\left(\int_{\R}d\gamma(x)\right)^{\frac{1}{q}}= \norm{g}_{L^{p}(\gamma)}<\infty.
+    \]
+    Por otro lado, para cualquier $x\in \R$,  
+    \[
+    \abs{g(x)\sum_{k=0}^{n}\frac{(itx)^k}{k!}}\leq |g(x)|\sum_{k=0}^{n}\frac{|tx|^{k}}{k!}\leq |g(x)|\sum_{k=0}^{\infty}\frac{|tx|^{k}}{k!}=|g(x)|e^{|tx|},
+    \]
+    y la cota anterior vale para cualquier $n\geq1$. Nuevamente usando la desigualdad de Hölder,
+    \[
+    \int_\R\abs{g(x)\sum_{k=0}^{n}\frac{(itx)^{k}}{k!}}d\gamma(x)\leq \int_\R |g(x)|e^{|tx|}d\gamma(x)\leq \norm{g}_{L^{p}(\gamma)}\left(\int_\R (e^{|tx|})^qd\gamma(x)\right)^{\frac{1}{q}}. 
+    \]
+    Observamos que se tiene la igualdad 
+    \[
+    \int_\R (e^{|tx|})^{q}d\gamma(x)=\frac{1}{\sqrt{2\pi}}\int_\R e^{q|tx|}e^{-\frac{x^2}{2}}dx,
+    \]
+    y notamos que esta última integral es finita para cualquier $q\in [1,\infty)$, ya que el término correspondiente a la medida gaussiana domina al otro término exponencial. Por lo tanto, $|g(x)|e^{|tx|}$ es una función en $L^{1}(\gamma)$ que domina a las sumas parciales anteriores. Así, usando el teorema de convergencia dominada, 
+    \[
+    \int_\R g(x)e^{-\frac{x^2}{2}}e^{itx}dx=\int_\R \lim_{n\to \infty} g(x)\sum_{k=0}^{n}\frac{(itx)^k}{k!}d\gamma(x)=\lim_{n\to \infty}\sum_{k=0}^{n}\frac{(it)^k}{k!}\int_\R g(x)x^k d\gamma(x)=0, 
+    \]
+    donde hemos hecho uso de la hipótesis del enunciado en la última igualdad. Hemos hallado que la transformada de Fourier de $g(x)e^{-\frac{x^2}{2}}$ es idénticamente la función 0. Al ser la transformada de Fourier inyectiva en $L^{1}(\R,\B(\R),dx)$, se sigue que $g(x)e^{-\frac{x^2}{2}}$ es la función idénticamente 0 salvo conjuntos de medida de Lebesgue 0. En particular, $g$ es la función idénticamente 0, $\gamma \ -$ casi en todas partes.  
+
+    Concluimos la prueba notando que los monomios son un subconjunto de la clase de Schwarz $\S$.
+  \end{proof}
+Sabiendo que $\mathcal{S}$ es un subespacio lineal denso de $L^{q}(\gamma)$, podemos generalizar la derivada de las funciones en el espacio de Schwarz a funciones más generales que pertenecen a $L^{q}(\gamma)$. Para ello denotemos por ahora como $\frac{d^p}{dx^p}f$ a la derivada de orden $p$ de una función $f\in \S$, para $p\in \{0,1,2,...\}$. Dicha derivada siempre está definida para tales funciones. Si pensamos en la derivación de orden $p$ como aplicar un operador a un elemento del espacio de Schwarz, resulta que dicho operador es lineal. Dado que buscamos extender la derivada a funciones más generales, es natural pensar en la posibilidad de extender el operador $\frac{d^p}{dx^{p}}:\S\to L^{q}(\gamma)$ a un operador que sea cerrado en un dominio más grande que $\S$. Este es el contenido del siguiente teorema.
+\begin{teo} 
+ Sea $\frac{d^{p}}{dx^p}:\mathcal{S}\longrightarrow L^{q}(\gamma)$ el operador derivada de orden $p$. Dicho operador es cerrable para todo $q\in [1,\infty)$ y todo entero $p\geq1$
+ \end{teo}
+ \begin{proof} 
+   Usamos la siguiente caracterización de ser un operador cerrable. Supongamos que $(f_n)_{n\geq1}$ es una sucesión en $\S$ y que $g\in L^{q}(\gamma)$ son tales que 
+   \[
+   f_n\xrightarrow[n\to \infty]{}0 \qquad \text{ y } \qquad \frac{d^{p}}{dx^{p}}f_n\xrightarrow[n\to \infty]{}g.
+   \] 
+    Buscamos probar que $g=0$, $\gamma \ - $ casi en todas partes.
+    
+    Supongamos primero el caso $q>1$. Sea $h\in \S$. Definimos $\delta h(x):=xh(x)-h'(x)$ y para $n\geq1$, $\delta^{n+1}h(x):=\delta^{n} h(x)$, donde $\delta^{1}:=\delta$. Observemos primero que para cualquier $n\in \{1,2,...,p\}$, $\delta^{n}h\in \S$. Esto se sigue de que $xh(x)-h'(x)$ sigue siendo una función infinitamente diferenciable con crecimiento a lo más polinomial, y un argumento inductivo.
+    
+    Ahora bien, usando la igualdad
+    \[
+    \int_\R \left(\frac{d^{p-1}}{dx^{p-1}}f_n(x)h(x)\right)'d\gamma(x)=\int_\R \frac{d^{p}}{dx^{p}}f_n(x)h(x)d\gamma(x) +\int _\R \frac{d^{p-1}}{dx^{p-1}}f_n(x)h'(x)d\gamma(x),
+    \] 
+    la cual se obtiene con la derivada del producto, se tiene que 
+    \begin{align*}
+        \int_{\R}h(x)g(x)d\gamma(x)&=\lim_{n\to\infty}\int_\R \frac{d^{p}}{dx^{p}}f_n(x) h(x) d\gamma(x)\\
+        &=\lim_{n\to\infty}\left(\int_\R \left(\frac{d^{p-1}}{dx^{p-1}}f_n(x)h(x)\right)'d\gamma(x)-\int _\R \frac{d^{p-1}}{dx^{p-1}}f_n(x)h'(x)d\gamma(x)\right)\\
+        &=\lim_{n\to\infty}\left(\int_\R x\frac{d^{p-1}}{dx^{p-1}}f_n(x)h(x)d\gamma(x)-\int _\R \frac{d^{p-1}}{dx^{p-1}}f_n(x)h'(x)d\gamma(x)\right)\\
+        &=\lim_{n\to\infty}\int_\R \frac{d^{p-1}}{dx^{p-1}}f_n(x) \left(xh(x)-h'(x)\right) d\gamma(x)\\
+        &=\lim_{n\to\infty}\int_\R \frac{d^{p-1}}{dx^{p-1}}f_n(x) \delta h(x) d\gamma(x),
+    \end{align*}
+    donde en la primera igualdad hemos hecho uso del teorema de convergencia dominada, y en la tercera igualdad hemos hecho uso del lema \ref{lema1}. Utilizando un argumento inductivo y la continuidad del valor absoluto, obtenemos que 
+    \[
+        \abs{\int_{\R}h(x)g(x)d\gamma(x)}\leq\int_{\R}\abs{h(x)g(x)} d\gamma(x)=\lim_{n\to\infty}\int_\R \abs{f_n(x) \delta^{p} h(x)} d\gamma(x).
+    \]
+    Por hipótesis, dado que la sucesión $f_n$ converge a 0 en $L^{q}(\gamma)$ y $\delta^{p}h \in \S\subseteq L^{\frac{q}{q-1}}$ según el Lema 2, usando la desigualdad de Hölder, 
+     \[
+        \abs{\int_{\R}h(x)g(x)d\gamma(x)}\leq\lim_{n\to\infty}\int_\R |f_n(x) \delta^{p} h(x)| d\gamma(x)\leq \lim_{n\to \infty}\norm{f_n}_{L^{q}(\gamma)}\norm{\delta^{p}h}_{L^{\frac{q}{q-1}}(\gamma)}=0,
+     \]
+  \end{proof}
+  de donde deducimos que para cualquier $h\in \S$, 
+  \[
+  \int_{\R}h(x)g(x)d\gamma(x)=0.
+  \]
+  Dado que $\S$ es denso en $L^{q}(\gamma)$, se sigue que $g=0$, $\gamma \ - $ casi en todas partes.
+
+Hemos demostrado que el operador derivada de orden $p$ es cerrable en $\S$. Por lo tanto, por definición existe un operador cerrado, que vamos a denotar por $D^{p}$, con dominio $Dom(D^{p})$ un subespacio lineal de $L^{q}(\gamma)$ tal que $\S\subseteq Dom(D^{p})$ y $D^{p}f=\frac{d^{p}}{dx^{p}}f$ para cualquier $f\in \S$. Estos elementos nos permiten definir la derivada de Malliavin.
+
+\begin{dfn}
+    Sea $p\geq1$ un entero positivo. Definimos la derivada de Malliavin como el operador $D^{p}$ que extiende a la derivada $\frac{d^{p}}{dx^{p}}$ vista como operador de $\S$ a $L^{q}(\gamma)$, para $q\in [1,\infty)$.
+\end{dfn}
+
+Denotaremos al dominio de $D^{p}$ como $\D^{p,q}:=Dom(D^{p})$. A dichos espacios también se les conoce como espacios de Watanabe-Sobolev. Es conocido que al ser $D^{p}$ un operador cerrado, podemos definir la \textit{norma de la gráfica} de dicho operador en su dominio como la función $\|.\|_{G}:\D^{p,q}\longrightarrow[0,\infty)$ dada por,
+\[
+        \|f\|_{G}:=\norm{f}_{L^q(\gamma)}+\norm{D^{p}f}_{L^{q}(\gamma)}.
+    \]
+Dicha norma vuelve a la derivada de Malliavin $D^{p}$ un operador continuo. Más aún, es un resultado conocido de análisis funcional que, al ser $D^{p}$ un operador cerrado, su dominio $\D^{p,q}$ es un espacio de Banach con la norma $\norm{\cdot}_{G}$ definida antes.
+
+Ahora bien, es natural pensar en lo que sucede con una aplicación sucesiva de las derivadas de Malliavin. Se tiene que para cualquier $p\geq1$ entero, y $f\in \D^{p+1,q}$, 
+\[
+    D^{p+1}f=D(D^{p}f)=D^{p}(Df),
+\]
+lo que nos dice que la derivada de Malliavin en efecto respeta la composición, tal y como ocurre en la derivación usual. Se sigue de esto que, al ser consistente la derivación sucesiva en en el sentido de Malliavin, para una función $f\in \D^{p,q}$, las derivadas $D^{k}f$ existen para cualquier $k\in \{1,...,p\}$, y por lo tanto, las normas $\norm{D^kf}_{L^2(\gamma)}$ son finitas para cualquier $k\in \{1,...,p\}$. Luego, se puede demostrar que la función $\|.\|_{\mathbb{D}^{p,q}}:\D^{p,q}\longrightarrow[0,\infty)$ dada por
+\[
+    \|f\|_{\D^{p,q}}:=\left(\norm{f}_{L^{q}(\gamma)}^q+\sum_{k=1}^p\norm{D^{k}f}_{L^{q}(\gamma)}^{q}\right)^{\frac{1}{q}}
+\] 
+es una norma equivalente a la norma de la gráfica definida en $\D^{p,q}$ antes. Por lo tanto, esta norma también hace a $\D^{p,q}$ un espacio de Banach.
+
+Concluimos observando que $\D^{p,q}$ también puede ser obtenido como la cerradura del subespacio $\S$ con respecto a la norma $\norm{\cdot}_{\D^{p,q}}$ definida antes, pero restringida al espacio $\S$, en donde la derivada de Malliavin coincide con la derivada usual.
+
+Lo anterior permite hacer una caracterización del espacio $\D^{p,q}$ y una definición alternativa de la derivada de Malliavin: una función $f$ está en dicho espacio si y solo si existe una sucesión de funciones $(f_n)_{n\geq1}\subseteq \S$ tales que $f_n\xrightarrow[n\to\infty]{}f$ y $(\frac{d^{p}}{dx^{p}}f_n)_{n\geq1}$ es una sucesión de Cauchy en $L^q(\gamma)$, para cualquier $k\in \{1,...,p\}$. Para tal sucesión de funciones, definimos 
+\[
+D^{k}f:=\lim_{n\to \infty}\frac{d^k}{dx^{k}}f_n,
+\]
+en donde el límite es en sentido $L^{q}(\gamma)$, y dicha función límite coincide con la derivada de Malliavin definida antes.
+
+Este operador es de suma importancia. En la siguiente sección veremos que en el caso en que $q=2$, la derivada de Malliavin vista como operador posee propiedades interesantes.
+
+\section{El operador de divergencia}
+
+A lo largo de esta sección consideraremos el espacio $L^2(\gamma)$, el cual es un espacio de Hilbert con producto interno dado por 
+\[
+\langle f,g\rangle=\int_\R f(x)g(x)\ d\gamma(x).
+\]
+A partir de ahora, y para el resto del texto, denotaremos simplemente por $D^{p}$ a la derivada de Malliavin de orden $p$, aún cuando nos estemos refiriendo a la derivada de orden $p$ convencional de una función $f$ en el espacio de Schwarz.
+
+Hasta ahora tenemos que la derivada de Malliavin es un operador $D^{p}:\mathbb{D}^{p,2}\subseteq L^2(\gamma)\longrightarrow L^2(\gamma)$ y dicho operador, es cerrado por construcción, extiende al operador derivada convencional $D^{p}$ definido en $\mathcal{S}\subseteq L^2(\gamma)$. 
+
+Siendo $L^{2}(\gamma)$ un espacio de Hilbert, si denotamos por $Dom(\delta^{p})$ como el conjunto de funciones $g\in L^{2}(\gamma)$ tales que existe una constante $c_g>0$ y se cumple que
+
+\[
+\abs{\langle D^{p}f,g\rangle_{L^2(\gamma)}}\leq c_g\|f\|_{L^2(\gamma)}, \qquad \forall f\in \mathbb{D}^{p,2},                 xd
+\]
+entonces para cada $g\in Dom(\delta^{p})$ el funcional lineal, con dominio $\D^{2,q}$ y con regla de correspondencia $f\longmapsto \langle D^{p}f,g\rangle$, es acotado precisamente por la condición anterior. De esta forma, por el teorema de Hanh-Banach podemos extender dicho funcional a un funcional lineal acotado cuyo dominio es todo $L^2(\gamma)$.
+
+Con el funcional anterior podemos usar el teorema de representación de Riesz para obtener la existencia de un único elemento en $L^2(\gamma)$, que denotaremos por $\delta^{p}g$ tal que 
+\[
+\langle D^pf,g\rangle_{L^2(\gamma)}=\langle f,\delta^p g\rangle_{L^2(\gamma)}, \qquad \forall f\in L^2(\gamma).
+\]
+ En términos de integrales, se tiene que para cualquier $g\in Dom(\delta^p)$, existe un único elemento $\delta^p g\in L^2(\gamma)$ tal que 
+ \[
+  \int_\R D^{p}f(x) g(x) \ d\gamma(x)=\int_\R f(x)\delta^{p}g(x) \ d\gamma(x), \qquad \forall f\in L^2(\gamma).  
+ \]
+ Con los elementos anteriores, podemos definir el operador de divergencia.
 
  \begin{dfn}
-    Sea $p\geq1$ un entero positivo. Definimos $$Dom(\delta^p):=\left\{g\in L^2(\gamma): \abs{\langle D^{p}f,g\rangle_{L^2(\gamma)}}\leq c\|f\|_{L^2(\gamma)}, \qquad \forall f\in \mathcal{S}\right\}.$$ 
-    Entonces el operador de divergencia p-ésimo se define como el único elemento $\delta^{p} g\in L^2(\gamma)$ que, gracias al teorema de representación de Riesz, cumple la siguiente igualdad de dualidad
-    \[
-        \int_\R D^{p}fd\gamma=\int_\R f\delta^{p}gd\gamma, \qquad \forall f\in L^2(\gamma)  
+    Sea $p\geq1$ un entero positivo. Definimos $$Dom(\delta^p):=\left\{g\in L^2(\gamma) \ : \ \abs{\langle D^{p}f,g\rangle_{L^2(\gamma)}}\leq c\|f\|_{L^2(\gamma)}, \qquad \forall f\in \D^{2,p}\right\}.$$ 
+
+    Definimos el operador de divergencia $p$-ésimo como la aplicación $\delta^p:Dom(\delta^{p})\longrightarrow L^2(\gamma)$ tal que asigna a cada $g\in Dom(\delta^{p})$ al único elemento $\delta^{p} g\in L^2(\gamma)$ que, gracias al teorema de representación de Riesz, cumple la igualdad
+        \[
+        \int_\R D^{p}f(x)g(x) \ d\gamma(x)=\int_\R f(x)\delta^{p}g(x) \ d\gamma(x), \qquad \forall f\in L^2(\gamma).
        \]
  \end{dfn}
- En el caso en que $p=1$, directamente escribimos $\delta^1=\delta$. Observamos que el operador $\delta^p$, siendo el operador adjunto de $D^{p}$, directamente es un operador cerrado.
+ En el caso en que $p=1$, directamente escribimos $\delta^1=\delta$. Observamos que el operador $\delta^p$ es directamente el operador adjunto de $D^{p}$, y como tal, es un operador cerrado.
 
-Finalmente, existe una fórmula para calcular el operador $\delta$ de una función $g\in \mathcal{S}$. Para ello, nótese que, gracias a que 
+Es de interés encontrar una forma de calcular el operador $\delta$ aplicado a alguna función en $Dom(\delta)$. En este sentido, existe una fórmula para calcular $\delta g$ para $g\in \D^{1,2}$. Para ello, nótese que, gracias a que 
 \[
 \int_\R (f(x)g(x))'d\gamma(x)=\int_\R xf(x)g(x)d\gamma(x), 
 \]
@@ -872,37 +995,115 @@ Pero lo anterior ocurre para cualquier $f\in \mathcal{S}$. Esto nos dice que $\m
 Utilizando un argumento de aproximación, tenemos que de hecho para cualquier $g\in \mathbb{D}^{1,2}$, $\delta g(x)=xg(x)-D(x)$.
 
 \section{El semigrupo de Ornstein-Uhlenbeck}
-Comenzamos directamente definiendo el semigrupo de Ornstein-Uhlenbeck. 
+El semigrupo de Ornstein-Uhlenbeck es una generalización del operador Laplaciano a dimensión infinita. Comenzamos directamente definiendo el semigrupo de Ornstein-Uhlenbeck. 
 \begin{dfn}
-    El semigrupo de Ornstein-Uhlenbeck, denotado por $(P_t)_{t\geq0}$, se define como sigue: para $f\in \mathcal{S}$ y $t\geq0$,
+    El semigrupo de Ornstein-Uhlenbeck, denotado por $(P_t)_{t\geq0}$, se define como una familia de operadores del espacio $\S$ dotado de la norma $\norm{\cdot}_{L^q(\gamma)}$ a $L^q(\gamma)$ como sigue: para $f\in \mathcal{S}$ y $t\geq0$,
     \[
-    P_tf(x)=\int_\R f\left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)d\gamma(x), \forall x\in \R.
+    P_tf(x)=\int_\R f\left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)d\gamma(y), \qquad  \forall x\in \R.
     \]
 \end{dfn}
-De manera inmediata se puede pensar que este operador va a cumplir la propiedad de semigrupo, lo cual es en efecto cierto, y se va a probar posteriormente. Por otro lado, el nombre de semigrupo de Ornstein-Uhlenbeck está directamente relacionado con el proceso de Ornstein-Uhlenbeck, relación que también se explora más adelante. Por lo pronto, se tienen las siguientes proposiciones.
+De manera inmediata se observa que esta es una familia de operadores lineales. Tal como se puede esperar, esta familia de operadores cumple la propiedad de semigrupo, y está directamente relacionada con el proceso de Ornstein-Uhlenbeck. Ambos hechos se exploran más adelante. Comenzamos estudiando propiedades básicas de $(P_t)_{t\geq0}$.
 
 \begin{teo}
     Sea $f\in \mathcal{S}$ y $q\in [1,\infty)$. Entonces se cumplen las siguientes proposiciones:
     \begin{itemize}
-        \item $P_0f(x)=f(x)$
+        \item $P_0f(x)=f(x)$.
         \item $P_\infty f(x):=\displaystyle\lim_{t\to\infty}P_tf(x)=\int_\R f(y)d\gamma(y)$.
         \item $\displaystyle\int_\R \abs{P_tf(x)}^qd\gamma(x)\leq \int_\R\abs{f(x)}^qd\gamma(x)$.
     \end{itemize}
 \end{teo}
 \begin{proof} 
-    Prueba
+   \begin{itemize}
+    \item  Calculamos el semigrupo en $t=0$. Dado que $\gamma(\R)=1$, se tiene que 
+     \[
+     P_0f(x)=\int_\R f\left(e^{0}x+\sqrt{1-e^{0}}y\right)d\gamma(y)=\int_\R f(x)d\gamma(y)=f(x).
+     \]
+     \item Como $f\in \S$, tiene crecimiento a lo más polinomial. Por lo tanto existe un real $M>0$ y un natural $n\geq1$ tal que para cualquier $y\in \R\setminus[-M,M]$, $|f(y)|\leq C(1+|y|^n)$, para alguna constante $C>0$. Observamos que esta última cota es una función en $L^q(\gamma)$. Por otro lado, es claro que en $[-M,M]$, la función $|f|$ alcanza su máximo, por lo que $\norm{f\1_{[-M,M]}}_\infty<\infty$. 
+     
+     Finalmente, notamos que la función $g(y)=e^{-t}x+\sqrt{1-e^{-2t}}y$ es una función continua y por lo tanto medible, así que
+     
+     \begin{align*}
+        \abs{f\left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)}&\leq C(1+|y|^n)\1_{g^{-1}[-M,M]^{c}}(y)+\norm{f\1_{[-M,M]}}_\infty\1_{g^{-1}[-M,M]}(y)\\
+        &\leq C(1+|y|^n)+\norm{f\1_{[-M,M]}}_\infty,
+     \end{align*}
+     función que está en $L^1(\gamma)$, y que es independiente de $t$. Por lo tanto, por el teorema de convergencia dominada, 
+     \[
+     P_\infty f(x)=\lim_{t\to\infty}P_tf(x)=\int_\R\lim_{t\to\infty}f\left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)d\gamma(y)=\int_\R f(y)d\gamma(y).
+     \]
+     \item Para $q\in [1,\infty)$, por definición,
+     \begin{align*}
+        \int_\R |P_tf(x)|^q d\gamma(x)&=\int_\R \abs{\int_\R f\left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)d\gamma(y)}^qd\gamma(x)\\
+        &\leq \int_\R \int_\R \abs{f\left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)}^qd\gamma(y)d\gamma(x)\\
+        &=\E\left[f\left(\abs{e^{-t}X+\sqrt{1-e^{-2t}}Y}^q \right)\right],
+     \end{align*}
+     donde hemos hecho uso de la desigualdad de Jensen, y $X,Y$ son variables aleatorias normales estándar independientes. Pero notemos que, denotando $Z:= e^{-t}X+\sqrt{1-e^{-2t}}Y$, la función característica de $Z$ es
+     \[
+     \phi_Z(z)=\E\left[e^{ize^{-t}X+iz\sqrt{1-e^{-2t}}Y}\right]=\E\left[e^{ize^{-t}X}\right]\E\left[e^{iz\sqrt{1-e^{-2t}}Y}\right]=e^{-\frac{z^2e^{-2t}}{2}}e^{-\frac{z^2(1-e^{-2t})}{2}}=e^{-\frac{z^2}{2}},
+     \]  
+     por lo que $Z$ tiene un distribución normal estándar. Se sigue que 
+     \[
+        \int_\R |P_tf(x)|^q d\gamma(x)=\E\left[f\left(\abs{e^{-t}X+\sqrt{1-e^{-2t}}Y}^q\right)\right]\leq\E\left[\abs{f(Z)}^q\right]=\int_\R \abs{f(x)}^qd\gamma(x).
+     \]
+   \end{itemize}
  \end{proof}
-Hasta ahora el semigrupo de Ornstein-Uhlenbeck está definido solamente para $f\in \mathcal{S}$. Sin embargo, este se puede extender a todo $L^2(\gamma)$ como un operador lineal contractivo.
+ Del último ítem de la proposición anterior se deduce que para cualquier $f\in \S$ y cualquier $t\geq0$, $P_tf\in L^q(\gamma)$. Más aún, la familia de operadores $(P_t)_{t\geq0}$ que van del espacio $(\S,\norm{\cdot}_{L^q(\gamma)})$ a $L^q(\gamma)$ son uniformemente acotados por la constante $1$.
+ 
+ Al ser $\S$ un subconjunto denso de $L^q(\gamma)$ y ser este último un espacio completo, por el conocido teorema BLT de análisis funcional, los operadores de $(P_t)_{t\geq0}$ se pueden extender de manera única a una familia de operadores, que también denotaremos por $(P_t)_{t\geq0}$, con dominio todo el espacio $L^q(\gamma)$, y cuyas normas siguen siendo acotadas por la constante 1. Esto último hace a $(P_t)_{t\geq0}$ una familia de operadores lineales contractivos.
 
-El semigrupo de Ornstein-Uhlenbeck es, en efecto, un semigrupo de operadores:
+Probamos ahora que $(P_t)_{t\geq0}$ en efecto forma un semigrupo.
 \begin{teo} 
- Sean $s,t\geq0$. Se tiene que $P_tP_s=P_{t+s}$ en $L^1(\gamma)$.
+ Sean $s,t\geq0$. Se tiene que $P_tP_s=P_{t+s}$ en $L^q(\gamma)$, para $q\in [1,\infty)$.
  \end{teo}
+ \begin{proof} 
+   Dado que la medida del espacio es finita, basta con probar el resultado para $L^1(\gamma)$. Sea $f\in L^1(\gamma)$. Tenemos las siguientes igualdades para $x\in \R$:
+\begin{align*}
+    P_{t}(P_sf)(x)&=\int_\R P_sf\left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)d\gamma(x)\\
+    &=\int_\R \int_\R f\left(e^{-s}(e^{-t}x+\sqrt{1-e^{-2t}}y)+\sqrt{1-e^{-2s}}z\right)d\gamma(z)d\gamma(y)\\
+    &=\int_\R\int_\R f \left(e^{-(t+s)}x+e^{-s}\sqrt{1-e^{-2t}}y+\sqrt{1-e^{-2s}}z\right)d\gamma(z)d\gamma(y)\\
+    &=\E\left[f \left(e^{-(t+s)}x+e^{-s}\sqrt{1-e^{-2t}}Y+\sqrt{1-e^{-2s}}Z\right)\right],
+\end{align*}
+donde $Y$ y $Z$ denotan variables aleatorias normales estándar e independientes. Ahora bien, nótese que la función característica de la variable $W:=e^{-s}\sqrt{1-e^{-2t}}Y+\sqrt{1-e^{-2s}}Z$ está dada por 
+
+\begin{align*}
+    \phi_W(w)&=\E\left[\exp \left\{iw(e^{-s}\sqrt{1-e^{-2t}}Y+\sqrt{1-e^{-2s}}Z)\right\}\right]\\
+    &=\E\left[\exp \left\{iwe^{-s}\sqrt{1-e^{-2t}}Y\right\}\right]\E\left[\exp \left\{iw\sqrt{1-e^{-2s}}Z\right\}\right]\\
+    &=\exp \left\{\frac{-w^2e^{-2s}(1-e^{-2t})}{2}\right\}\exp \left\{\frac{-w^2(1-e^{-2s})}{2}\right\}\\
+    &=\exp \left\{\frac{-w^2(e^{-2s}-e^{-2(t+s)}+1-e^{-2s})}{2}\right\}\\
+    &=\exp \left\{\frac{-w^2(1-e^{-2(t+s)})}{2}\right\},
+\end{align*}
+la cual corresponde con la función característica de una variable $V:=\sqrt{1-e^{-2(t+s)}}N$, donde $N$ es gaussiana estándar. Se sigue que 
+\begin{align*}
+    P_{t}(P_sf)(x)&=\E\left[f \left(e^{-(t+s)}x+e^{-s}\sqrt{1-e^{-2t}}Y+\sqrt{1-e^{-2s}}Z\right)\right]\\
+    &=\E\left[f \left(e^{-(t+s)}+\sqrt{1-e^{-2(t+s)}}V\right)\right]\\
+    &=\int_\R f \left(e^{-(t+s)}+\sqrt{1-e^{-2(t+s)}}v\right)d\gamma(v)\\
+    &=P_{t+s}f(x).
+\end{align*}
+  \end{proof}
  Finalmente, la siguiente proposición nos dice que tanto $P_t$ como $D$, vistos como operadores, pueden ser intercambiados en el espacio $\mathbb{D}^{1,2}$.
  \begin{teo} 
-  Sea $f\in \D^{1,2}$ y $t\geq0$. Entonces $P_tf\in \D^{1,2}$ y $DP_tf=e^{-tP_tDf}$.
+  Sea $f\in \D^{1,2}$ y $t\geq0$. Entonces $P_tf\in \D^{1,2}$ y $DP_tf=e^{-t}P_tDf$.
   \end{teo}
-
+  \begin{proof} 
+    Sea $f\in \S$. La derivada de Malliavin coincide con la derivada usual en dicho espacio y por lo tanto, dado que la función $e^{-t}f' \left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)$ está dominada por una función similar a la del ítem 3 del teorema 8, podemos derivar bajo el signo de la integral, hallando que
+    \begin{align*}
+        DP_tf(x)&=\frac{d}{dx}\int_\R f \left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)d\gamma(y)\\
+        &=\int_\R e^{-t}\frac{d}{dx}f\left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)d\gamma(y)\\
+        &=e^{-t}P_t Df(x),
+    \end{align*}
+    para cualquier $x\in \R$. Esto prueba la propiedad en $\S\subseteq \D^{1,2}$. Para $f$ en dicho espacio general, usamos que $\S$ es denso en $\D^{1,2}$.
+   \end{proof}
+   Antes de continuar con la siguiente sección, mostramos la conexión de esta familia de operadores con el semigrupo de Ornstein-Uhlenbeck:
+   \begin{teo} 
+    Sea $B$ un movimiento browniano estándar. Consideramos la ecuación diferencial estocástica dada por 
+    \[
+    dX_t^{x}=\sqrt{2}dB_t-X^{x}_tdt, \qquad t\geq0,
+    \]
+    donde $X^{x}_0=x\in \R$. Se tiene que la solución de la ecuación diferencial anterior está dada por 
+    \[
+    X_t^x=e^{-t}x+\sqrt{2}\int_0^te^{-(t-s)}dB_s, \qquad t\geq0,
+    \]
+    el cual es un proceso de Markov. Más aún, el semigrupo asociado a dicho proceso es justamente $(P_t)_{t\geq0}$. Tal proceso es justamente el proceso de Ornstein-Uhlenbeck.
+    \end{teo}
 \section{El generador infinitesimal}
   Consideremos al conjunto siguiente:
   \[
@@ -956,6 +1157,9 @@ Nótese que esta desigualdad en términos de la norma $L^2(\gamma)$ se escribe c
 \]
 de tal forma que, si resulta ser que $\E\left[f(N)\right]=0$, directamente recuperamos la desigualdad de Poincaré clásica, aunque en distinto contexto. Y como tal, esta desigualdad nos permite controlar el crecimiento de las funciones $f\in \D^{1,2}$ utilizando la norma de su derivada de Malliavin.
 
+
+
+
 \chapter{Aplicaciones a Teoremas Límite y estudio de densidades}
 En este capítulo se visita la aplicación de los conceptos del cálculo de Malliavin al estudio de Teoremas límite y al estudio de densidades. 
 Una herramienta clave en esta tarea es el conocido como Método de Stein. 
@@ -979,6 +1183,9 @@ Supongamos que ahora $X$ es una variable aleatoria. Supongamos también que para
 Dado lo anterior, y el lema de Stein, ¿es posible decir que la función de distribución de $X$ está cerca (en algún sentido) a una distribución normal estándar?
 
 Para contestar a la pregunta anterior, debemos precisar a qué nos referimos con ciertos conceptos. ¿En qué sentido una distribución puede estar cerca de otra? ¿Qué clase de funciones es la adecuada para evaluar la distribución de $X$? 
+
+
+
 
 \chapter{Propiedades espaciales de la Ecuación estocástica del calor}
 En este capítulo presentaremos la parte central de la aplicación de las técnicas de Malliavin-Stein y SPDE's al estudio de la convergencia de las densidades de los promedios espaciales de la solución de la ecuación estocástica del calor, a la densidad de una variable aleatoria gaussiana estándar.
@@ -1153,6 +1360,8 @@ Por otro lado, se tiene el siguiente resultado sobre la estimación de momentos 
 La prueba de este resultado se omite en este texto, por lo que se refiere a $\cite{KUZGUN202268}$ para su consulta.
 
 
+
+
  \section{Formulación Mild en el caso sin deriva}
 \section{Una ecuación estocástica para $Du$ y $D^2u$}
 \section{Densidad explícita de los promedios espaciales}
@@ -1161,6 +1370,7 @@ La prueba de este resultado se omite en este texto, por lo que se refiere a $\ci
 \textit{Contribución de las derivadas de orden superior}
 
 \section{Aproximación uniforme de las densidades} %La sección integradora de los conceptos
+
 
 \backmatter
 \bibliographystyle{amsplain}

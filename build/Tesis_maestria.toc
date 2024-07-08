@@ -8,14 +8,14 @@
 \contentsline {subsection}{\numberline {1.2.3}Definición de la Integral}{16}{}%
 \contentsline {section}{\numberline {1.3}Formulación Mild de una SPDE. Existencia y unicidad de las soluciones}{20}{}%
 \contentsline {chapter}{\numberline {2}Elementos de Cálculo de Malliavin}{23}{}%
-\contentsline {section}{\numberline {2.1}El operador Derivada}{23}{}%
-\contentsline {section}{\numberline {2.2}El operador delta}{24}{}%
-\contentsline {section}{\numberline {2.3}El semigrupo de Ornstein-Uhlenbeck}{26}{}%
-\contentsline {section}{\numberline {2.4}El generador infinitesimal}{27}{}%
-\contentsline {chapter}{\numberline {3}Aplicaciones a Teoremas Límite y estudio de densidades}{29}{}%
-\contentsline {section}{\numberline {3.1}Malliavin-Stein}{29}{}%
-\contentsline {chapter}{\numberline {4}Propiedades espaciales de la Ecuación estocástica del calor}{31}{}%
-\contentsline {section}{\numberline {4.1}Formulación Mild en el caso sin deriva}{36}{}%
-\contentsline {section}{\numberline {4.2}Una ecuación estocástica para $Du$ y $D^2u$}{36}{}%
-\contentsline {section}{\numberline {4.3}Densidad explícita de los promedios espaciales}{36}{}%
-\contentsline {section}{\numberline {4.4}Aproximación uniforme de las densidades}{36}{}%
+\contentsline {section}{\numberline {2.1}La derivada de Malliavin}{23}{}%
+\contentsline {section}{\numberline {2.2}El operador de divergencia}{29}{}%
+\contentsline {section}{\numberline {2.3}El semigrupo de Ornstein-Uhlenbeck}{31}{}%
+\contentsline {section}{\numberline {2.4}El generador infinitesimal}{34}{}%
+\contentsline {chapter}{\numberline {3}Aplicaciones a Teoremas Límite y estudio de densidades}{37}{}%
+\contentsline {section}{\numberline {3.1}Malliavin-Stein}{37}{}%
+\contentsline {chapter}{\numberline {4}Propiedades espaciales de la Ecuación estocástica del calor}{39}{}%
+\contentsline {section}{\numberline {4.1}Formulación Mild en el caso sin deriva}{44}{}%
+\contentsline {section}{\numberline {4.2}Una ecuación estocástica para $Du$ y $D^2u$}{44}{}%
+\contentsline {section}{\numberline {4.3}Densidad explícita de los promedios espaciales}{44}{}%
+\contentsline {section}{\numberline {4.4}Aproximación uniforme de las densidades}{44}{}%

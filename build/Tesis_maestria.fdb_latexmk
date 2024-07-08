@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex build/Tesis_maestria"] 1716618930.94526 "build/Tesis_maestria.aux" "build/Tesis_maestria.bbl" "build/Tesis_maestria" 1716618934.40107 0
+["bibtex build/Tesis_maestria"] 1720427980.41825 "build/Tesis_maestria.aux" "build/Tesis_maestria.bbl" "build/Tesis_maestria" 1720428179.82171 0
   "./build/Referencias_tesis.bib" 1716148735 6434 765c811bd541b6e4fe33cd60fe7ebdb7 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/bibtex/bst/amscls/amsplain.bst" 1591023610 25798 9b3546f2f237ee0ce4724eed95f954f4 ""
-  "build/Tesis_maestria.aux" 1716618933 3898 030bcf9698b3bb8fbecab01d82ca98cb "pdflatex"
+  "build/Tesis_maestria.aux" 1720428178 4009 35cae1c836d50e046f8ac7d398a7177f "pdflatex"
   (generated)
   "build/Tesis_maestria.bbl"
   "build/Tesis_maestria.blg"
   (rewritten before read)
-["pdflatex"] 1716618931.26283 "c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex" "build/Tesis_maestria.pdf" "Tesis_maestria" 1716618934.40162 0
-  "C:/Users/irvin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1716239303 82098 40055d76d5b0f456422e640d98a85a6e ""
+["pdflatex"] 1720428176.38417 "c:/Users/irvin/Documents/Maestría/Semestre 4/Tesis/Proyecto Tesis/Tesis_maestria.tex" "build/Tesis_maestria.pdf" "Tesis_maestria" 1720428179.82241 0
+  "C:/Users/irvin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1717230419 82098 40055d76d5b0f456422e640d98a85a6e ""
   "C:/Users/irvin/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1716540681 28976 06d4dca3bd5b34a2210b87642529fef9 ""
   "C:/Users/irvin/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1708464663 31952 48823ccecb0f243859c12fef449182f1 ""
   "C:/Users/irvin/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1708464667 40136 dcb48008b2c8f00396014ff55ac81148 ""
@@ -74,6 +74,7 @@
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247596667 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247596667 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb" 1335366146 21098 d4aee7c0aac232caac5688b586b9363c ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247596673 31764 459c573c03a4949a528c2cc7f557e217 ""
@@ -175,6 +176,7 @@
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/graphics.cfg" 1465894292 1224 978390e9c2234eab29404bc21b268d1e ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/graphics-def/pdftex.def" 1663918690 19448 1e988b341dda20961a6b931bcde55519 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/graphics/color.sty" 1665067579 7233 e46ce9241d2b2ca2a78155475fdd557a ""
+  "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/graphics/dvipsnam.def" 1665067579 5009 d242512eef244b70f2fc3fde14419206 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphics.sty" 1665067579 18387 8f900a490197ebaf93c02ae9476d4b09 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty" 1665067579 8010 a8d949cbdbc5c983593827c9eec252e1 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty" 1665067579 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
@@ -203,12 +205,12 @@
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/tools/multicol.sty" 1700599895 32515 51caec75eda9c8890135f12f1a4eddc3 ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/svgnam.def" 1700127522 4705 ec4d2f4b7125d5a5145cc9aabae1d54b ""
   "C:/Users/irvin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
-  "Tesis_maestria.tex" 1716618923 86872 b7c0feaf22aae8479834bea8d45172e3 ""
+  "Tesis_maestria.tex" 1720428175 106670 dd5a91b4fa44f3eb429f98370e2f865d ""
   "build/CIMATpreamble.sty" 1716540461 5060 7ec4fad103e503999764287982007605 ""
-  "build/Tesis_maestria.aux" 1716618933 3898 030bcf9698b3bb8fbecab01d82ca98cb "pdflatex"
-  "build/Tesis_maestria.bbl" 1716618931 1706 711198b6b04b5d043611fcd0588722b8 "bibtex build/Tesis_maestria"
-  "build/Tesis_maestria.toc" 1716618933 1765 37d958ff6431805feb8b7b29d2dd5c1b "pdflatex"
-  "c:/Users/irvin/Documents/Maestría/Semestre 4/Proyecto Tesis/Tesis_maestria.tex" 1716618923 86872 b7c0feaf22aae8479834bea8d45172e3 ""
+  "build/Tesis_maestria.aux" 1720428178 4009 35cae1c836d50e046f8ac7d398a7177f "pdflatex"
+  "build/Tesis_maestria.bbl" 1720427980 1942 b73da60cf810fdd6e4087de7cd7c507c "bibtex build/Tesis_maestria"
+  "build/Tesis_maestria.toc" 1720428178 1778 92c75e737aa245e71f2f2b9ef0d4862f "pdflatex"
+  "c:/Users/irvin/Documents/Maestría/Semestre 4/Tesis/Proyecto Tesis/Tesis_maestria.tex" 1720428175 106670 dd5a91b4fa44f3eb429f98370e2f865d ""
   "img/LOGOTIPO_SIN_FONDO-02.png" 1708464290 25768 d73a6371ab4ab3dbe3fe64d252b776ef ""
   "img/banner_cimat_20200126_05.png" 1708464289 12792 678af8c1bdd3d866552d42b7db180ad1 ""
   (generated)

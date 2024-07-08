@@ -1,7 +1,7 @@
-PWD c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis
+PWD c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\Tesis_maestria.tex
-OUTPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.log
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\Tesis_maestria.tex
+OUTPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.log
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\base\bk12.clo
@@ -46,8 +46,8 @@ INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\colortbl\colortbl.s
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\tools\array.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\color.sty
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\CIMATpreamble.sty
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\CIMATpreamble.sty
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\CIMATpreamble.sty
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\CIMATpreamble.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\geometry\geometry.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\keyval.sty
@@ -169,6 +169,9 @@ INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
+INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
+INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
+INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
@@ -214,10 +217,10 @@ INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.s
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.aux
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.aux
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.aux
-OUTPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.aux
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.aux
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.aux
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.aux
+OUTPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.aux
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -230,7 +233,7 @@ INPUT .\img\LOGOTIPO_SIN_FONDO-02.png
 INPUT .\img\LOGOTIPO_SIN_FONDO-02.png
 INPUT .\img\LOGOTIPO_SIN_FONDO-02.png
 INPUT .\img\LOGOTIPO_SIN_FONDO-02.png
-OUTPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.pdf
+OUTPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.pdf
 INPUT .\img\LOGOTIPO_SIN_FONDO-02.png
 INPUT .\img\LOGOTIPO_SIN_FONDO-02.png
 INPUT .\img\LOGOTIPO_SIN_FONDO-02.png
@@ -288,10 +291,10 @@ INPUT .\img\banner_cimat_20200126_05.png
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm2488.tfm
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx2488.tfm
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.toc
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.toc
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.toc
-OUTPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.toc
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
+OUTPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\eccc1200.tfm
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1200.tfm
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0800.tfm
@@ -324,10 +327,10 @@ INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold17.tfm
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\tfm\public\bbold\bbold10.tfm
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom12.tfm
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\doublestroke\dsrom10.tfm
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.bbl
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.bbl
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.bbl
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Proyecto Tesis\build\Tesis_maestria.aux
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.bbl
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.bbl
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.bbl
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.aux
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
@@ -366,6 +369,8 @@ INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
+INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\type1\public\doublestroke\dsrom12.pfb
