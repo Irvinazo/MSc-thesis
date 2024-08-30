@@ -1,4 +1,4 @@
-\documentclass[letterpaper,twoside]{book} 
+\documentclass[letterpaper,twoside,12pt]{book} 
 %\usepackage[left = 0.5in, right = 0.5in, top = 0.9in, bottom = 0.9in]{geometry}
 \usepackage{enumitem}
 \usepackage{multicol}
@@ -8,7 +8,7 @@
 \usepackage{CIMATpreamble}  
 \usepackage[dvipsnames]{xcolor}
 %\usepackage[12pt]{extsizes}
-%\linespread{1.25}
+\linespread{1.1}
 
 
 \usepackage{amsmath,amssymb,amsthm}
@@ -19,6 +19,7 @@
 \usepackage{dsfont}
 \usepackage{graphicx}
 \usepackage{parskip}
+\usepackage[colorlinks=true,linkcolor=red,citecolor=red]{hyperref}
 \graphicspath{{img/}}
 
 \newcommand{\N}{\mathbb N}
@@ -213,7 +214,7 @@ Resta entonces estudiar en qué sentido podemos integrar la ecuación \eqref{wav
 \section{Integral de Itô-Walsh}
 En esta sección presentamos la construcción de la integral de Itô-Walsh. Dicha integral nos permite construir procesos estocásticas que más adelante y en cierto sentido pueden verse como la solución de una ecuación diferencial parcial estocástica. Para lograr dicho objetivo, presentamos primeramente la teoría necesaria para construir la integral.
 \subsection{Variables Gaussianas y Procesos Gaussianos}
-Recordamos aquí las propiedades fundamentales de los procesos gaussianos. Salvo algunos casos especiales, la mayoría de las propiedades se enuncian sin demostración, por lo que nos referiremos a \cite{LeGall2016} para revisar las pruebas de las mismas. Comenzamos definiendo la distribución Gaussiana.
+Recordamos aquí las propiedades fundamentales de los procesos gaussianos. Salvo algunos casos especiales, la mayoría de las propiedades se enuncian sin demostración, por lo que nos referiremos a \cite{gall2016brownian} para revisar las pruebas de las mismas. Comenzamos definiendo la distribución Gaussiana.
 
 \begin{dfn}
 Sea $(\Omega, \F, \P)$ un espacio de probabilidad y consideremos a los reales dotados de la $\sigma-$álgebra de Borel, la cual denotamos por $\B(\R)$. Decimos que una variable aleatoria $X:(\Omega, \F)\to (\R,\B(\R))$ tiene distribución normal estándar (o bien, es una variable Gaussiana estándar), si la función de distribución de la misma está dada por: 
@@ -339,7 +340,7 @@ Lo valioso de conocer las funciones anteriores es que, al caracterizar completam
 \begin{prop} 
  Sean $\Gamma:T\times T\to \R$ y $\mu:T\to \R$, tales que $\Gamma$ es simétrica y no negativa definida. Entonces existe un proceso gaussiano $(G(t))_{t\in T}$ en un espacio de probabilidad $(\Omega, \F,\P)$ apropiado, tal que para cualesquiera $t\in T$, $G(t)\sim$ Normal$(\mu(t),\Gamma(t,t))$, con $\mu$ y $\Gamma$ las respectivas funciones de media y covarianza del proceso $G$.
  \end{prop}
- La demostración de lo anterior es una consecuencia del Teorema de Consistencia (o extensión) de Kolmogorov (ver Teorema 6.3 en \cite{LeGall2016} ). Para terminar esta sección, a continuación presentamos un par de ejemplos de procesos Gaussianos construidos de esta forma.
+ La demostración de lo anterior es una consecuencia del Teorema de Consistencia (o extensión) de Kolmogorov (ver Teorema 6.3 en \cite{gall2016brownian} ). Para terminar esta sección, a continuación presentamos un par de ejemplos de procesos Gaussianos construidos de esta forma.
 \begin{ejem}[\textbf{El movimiento Browniano}]
 Consideremos el caso en el que $T=[0,\infty)$, $\mu(t)=0$ para cualquier $t\geq0$ y $\Gamma(s,t)=s\wedge t=\min\{s,t\}$, para $s,t\geq0$. Claramente $\Gamma$ es simétrica, y además nótese que para cualesquiera $c:T\to\R$ función de soporte finito, se tiene que
 \begin{align*}
@@ -850,9 +851,13 @@ Para cualquier $q\in [1,\infty)$, el conjunto de los monomios de la forma $\{x^n
    \int_\R g(x)x^{n} \ d\gamma(x)=0, \ \ \forall n\geq0  \quad \ent \quad g=0 \ \ \gamma- \text{casi en todas partes},
    \]
    donde $p\in (1,\infty]$ es el exponente conjugado de $q$. Sea pues $g\in L^{p}(\gamma)$ y supongamos que para cualquier $n\geq0$, el antecedente de la implicación anterior es válido. Usaremos un argumento que involucra la transformada de Fourier. Notamos primero que la transformada de $g(x)e^{-\frac{x^2}{2}}$ existe. En efecto, por la desigualdad de Hölder, para $t\in \R$ arbitrario,
-   \[
-   \int_{\R}|g(x)e^{-\frac{x^2}{2}}e^{itx}|dx\leq \int_{\R}|g(x)|e^{-\frac{x^2}{2}}dx=\int_{\R}|g(x)|d\gamma(x)\leq\norm{g}_{L^{p}(\gamma)}\left(\int_{\R}d\gamma(x)\right)^{\frac{1}{q}}= \norm{g}_{L^{p}(\gamma)}<\infty.
-   \]
+      \begin{align*}
+         \int_{\R}|g(x)e^{-\frac{x^2}{2}}e^{itx}|dx&\leq \int_{\R}|g(x)|e^{-\frac{x^2}{2}}dx\\
+         &=\int_{\R}|g(x)|d\gamma(x)\\
+         &\leq\norm{g}_{L^{p}(\gamma)}\left(\int_{\R}d\gamma(x)\right)^{\frac{1}{q}}\\
+         &=\norm{g}_{L^{p}(\gamma)}<\infty.
+      \end{align*}
+   
    Por otro lado, para cualquier $x\in \R$,  
    \[
    \abs{g(x)\sum_{k=0}^{n}\frac{(itx)^k}{k!}}\leq |g(x)|\sum_{k=0}^{n}\frac{|tx|^{k}}{k!}\leq |g(x)|\sum_{k=0}^{\infty}\frac{|tx|^{k}}{k!}=|g(x)|e^{|tx|},
@@ -913,13 +918,13 @@ Sea $\frac{d^{p}}{dx^p}:\mathcal{S}\longrightarrow L^{q}(\gamma)$ el operador de
  \]
  Dado que $\S$ es denso en $L^{q}(\gamma)$, se sigue que $g=0$, $\gamma \ - $ casi en todas partes.
 
-Hemos demostrado que el operador derivada de orden $p$ es cerrable en $\S$. Por lo tanto, por definición existe un operador cerrado, que vamos a denotar por $D^{p}$, con dominio $Dom(D^{p})$ un subespacio lineal de $L^{q}(\gamma)$ tal que $\S\subseteq Dom(D^{p})$ y $D^{p}f=\frac{d^{p}}{dx^{p}}f$ para cualquier $f\in \S$. Estos elementos nos permiten definir la derivada de Malliavin.
+Hemos demostrado que el operador derivada de orden $p$ es cerrable en $\S$. Por lo tanto, por definición existe un operador cerrado, que vamos a denotar por $D^{p}$, con dominio $\text{Dom}(D^{p})$ un subespacio lineal de $L^{q}(\gamma)$ tal que $\S\subseteq \text{Dom}(D^{p})$ y $D^{p}f=\frac{d^{p}}{dx^{p}}f$ para cualquier $f\in \S$. Estos elementos nos permiten definir la derivada de Malliavin.
 
 \begin{dfn}
    Sea $p\geq1$ un entero positivo. Definimos la derivada de Malliavin como el operador $D^{p}$ que extiende a la derivada $\frac{d^{p}}{dx^{p}}$ vista como operador de $\S$ a $L^{q}(\gamma)$, para $q\in [1,\infty)$.
 \end{dfn}
 
-Denotaremos al dominio de $D^{p}$ como $\D^{p,q}:=Dom(D^{p})$. A dichos espacios también se les conoce como espacios de Watanabe-Sobolev. Es conocido que al ser $D^{p}$ un operador cerrado, podemos definir la \textit{norma de la gráfica} de dicho operador en su dominio como la función $\|.\|_{G}:\D^{p,q}\longrightarrow[0,\infty)$ dada por,
+Denotaremos al dominio de $D^{p}$ como $\D^{p,q}:=\text{Dom}(D^{p})$. A dichos espacios también se les conoce como espacios de Watanabe-Sobolev. Es conocido que al ser $D^{p}$ un operador cerrado, podemos definir la \textit{norma de la gráfica} de dicho operador en su dominio como la función $\|.\|_{G}:\D^{p,q}\longrightarrow[0,\infty)$ dada por,
 \[
        \|f\|_{G}:=\norm{f}_{L^q(\gamma)}+\norm{D^{p}f}_{L^{q}(\gamma)}.
    \]
@@ -955,37 +960,37 @@ A partir de ahora, y para el resto del texto, denotaremos simplemente por $D^{p}
 
 Hasta ahora tenemos que la derivada de Malliavin es un operador $D^{p}:\mathbb{D}^{p,2}\subseteq L^2(\gamma)\longrightarrow L^2(\gamma)$ y dicho operador, es cerrado por construcción, extiende al operador derivada convencional $D^{p}$ definido en $\mathcal{S}\subseteq L^2(\gamma)$. 
 
-Siendo $L^{2}(\gamma)$ un espacio de Hilbert, si denotamos por $Dom(\delta^{p})$ como el conjunto de funciones $g\in L^{2}(\gamma)$ tales que existe una constante $c_g>0$ y se cumple que
+Siendo $L^{2}(\gamma)$ un espacio de Hilbert, si denotamos por $\text{Dom}(\delta^{p})$ como el conjunto de funciones $g\in L^{2}(\gamma)$ tales que existe una constante $c_g>0$ y se cumple que
 
 \[
 \abs{\langle D^{p}f,g\rangle_{L^2(\gamma)}}\leq c_g\|f\|_{L^2(\gamma)}, \qquad \forall f\in \mathbb{D}^{p,2},                 xd
 \]
-entonces para cada $g\in Dom(\delta^{p})$ el funcional lineal, con dominio $\D^{2,q}$ y con regla de correspondencia $f\longmapsto \langle D^{p}f,g\rangle$, es acotado precisamente por la condición anterior. De esta forma, por el teorema de Hanh-Banach podemos extender dicho funcional a un funcional lineal acotado cuyo dominio es todo $L^2(\gamma)$.
+entonces para cada $g\in \text{Dom}(\delta^{p})$ el funcional lineal, con dominio $\D^{2,q}$ y con regla de correspondencia $f\longmapsto \langle D^{p}f,g\rangle$, es acotado precisamente por la condición anterior. De esta forma, por el teorema de Hanh-Banach podemos extender dicho funcional a un funcional lineal acotado cuyo dominio es todo $L^2(\gamma)$.
 
 Con el funcional anterior podemos usar el teorema de representación de Riesz para obtener la existencia de un único elemento en $L^2(\gamma)$, que denotaremos por $\delta^{p}g$ tal que 
 \[
 \langle D^pf,g\rangle_{L^2(\gamma)}=\langle f,\delta^p g\rangle_{L^2(\gamma)}, \qquad \forall f\in L^2(\gamma).
 \]
-En términos de integrales, se tiene que para cualquier $g\in Dom(\delta^p)$, existe un único elemento $\delta^p g\in L^2(\gamma)$ tal que 
+En términos de integrales, se tiene que para cualquier $g\in \text{Dom}(\delta^p)$, existe un único elemento $\delta^p g\in L^2(\gamma)$ tal que 
 \[
  \int_\R D^{p}f(x) g(x) \ d\gamma(x)=\int_\R f(x)\delta^{p}g(x) \ d\gamma(x), \qquad \forall f\in L^2(\gamma).  
 \]
 Con los elementos anteriores, podemos definir el operador de divergencia.
 
 \begin{dfn}
-   Sea $p\geq1$ un entero positivo. Denotamos $$Dom(\delta^p):=\left\{g\in L^2(\gamma) \ : \ \abs{\langle D^{p}f,g\rangle_{L^2(\gamma)}}\leq c\|f\|_{L^2(\gamma)}, \qquad \forall f\in \D^{2,p}\right\},$$ 
+   Sea $p\geq1$ un entero positivo. Denotamos $$\text{Dom}(\delta^p):=\left\{g\in L^2(\gamma) \ : \ \abs{\langle D^{p}f,g\rangle_{L^2(\gamma)}}\leq c\|f\|_{L^2(\gamma)}, \qquad \forall f\in \D^{2,p}\right\},$$ 
 
-   y definimos el operador de divergencia $p$-ésimo como la aplicación $\delta^p:Dom(\delta^{p})\longrightarrow L^2(\gamma)$ tal que asigna a cada $g\in Dom(\delta^{p})$ al único elemento $\delta^{p} g\in L^2(\gamma)$ que, gracias al teorema de representación de Riesz, cumple la igualdad
+   y definimos el operador de divergencia $p$-ésimo como la aplicación $\delta^p:\text{Dom}(\delta^{p})\longrightarrow L^2(\gamma)$ tal que asigna a cada $g\in \text{Dom}(\delta^{p})$ al único elemento $\delta^{p} g\in L^2(\gamma)$ que, gracias al teorema de representación de Riesz, cumple la igualdad
        \[
        \int_\R D^{p}f(x)g(x) \ d\gamma(x)=\int_\R f(x)\delta^{p}g(x) \ d\gamma(x), \qquad \forall f\in L^2(\gamma).
       \]
 \end{dfn}
 En el caso en que $p=1$, directamente escribimos $\delta^1=\delta$. Observamos que el operador $\delta^p$ es directamente el operador adjunto de $D^{p}$, y como tal, es un operador cerrado.
 
-Es de interés encontrar una forma de calcular el operador $\delta$ aplicado a alguna función en $Dom(\delta)$. En este sentido, existe una fórmula para calcular $\delta g$ para $g\in \D^{1,2}$. Este es el contenido del siguiente lema.
+Es de interés encontrar una forma de calcular el operador $\delta$ aplicado a alguna función en $\text{Dom}(\delta)$. En este sentido, existe una fórmula para calcular $\delta g$ para $g\in \D^{1,2}$. Este es el contenido del siguiente lema.
 
 \begin{lema}\label{formuladelta}
-   Se cumple que $\S\subseteq Dom(\delta)$ y para cualquier $g\in \D^{1,2}$, 
+   Se cumple que $\S\subseteq \text{Dom}(\delta)$ y para cualquier $g\in \D^{1,2}$, 
    \[
       \delta g(x)=xg(x)-Dg(x)=xg(x)-g'(x).
    \]
@@ -1009,7 +1014,7 @@ Es de interés encontrar una forma de calcular el operador $\delta$ aplicado a a
    \[
    \int_\R f(x)\delta g(x)d\gamma(x)=\int_\R xf(x)g(x)d\gamma(x)-\int_\R f(x)Dg(x)d\gamma(x).   
    \]
-   Pero lo anterior ocurre para cualquier $f\in \mathcal{S}$. Esto nos dice que $\mathcal{S}\subseteq Dom(\delta)$ y que para cualquier $g\in \mathcal{S}$, la fórmula anterior es válida. 
+   Pero lo anterior ocurre para cualquier $f\in \mathcal{S}$. Esto nos dice que $\mathcal{S}\subseteq \text{Dom}(\delta)$ y que para cualquier $g\in \mathcal{S}$, la fórmula anterior es válida. 
 
 Utilizando un argumento de aproximación, tenemos que para cualquier $g\in \mathbb{D}^{1,2}$, $\delta g(x)=xg(x)-Dg(x)$.
 
@@ -1177,18 +1182,21 @@ Finalmente, la siguiente proposición nos dice que tanto $P_t$ como $D$, vistos 
         X_t^{x}=e^{-t}x-e^{-t}B_{e^{2t}-1}, \qquad t\geq0.
      \]
      De lo anterior, es muy sencillo ver que para $f$ medible y acotada, 
-     \[
-     P_tf(x)=\E\left[f(X_{t+s}^{x})|\F_s\right]=\E_x\left[f(e^{-(t+s)}x-e^{-(t+s)}B_{e^{2(t+s)}-1})|\F_s\right]=\int_\R f \left(e^{-t}x-\sqrt{1-e^{-2t}}y\right)d\gamma(y),
-     \]
+     \begin{align*}
+      P_tf(x)&=\E\left[f(X_{t+s}^{x})|\F_s\right]\\
+      &=\E_x\left[f(e^{-(t+s)}x-e^{-(t+s)}B_{e^{2(t+s)}-1})|\F_s\right]\\
+      &=\int_\R f \left(e^{-t}x-\sqrt{1-e^{-2t}}y\right)d\gamma(y),
+     \end{align*}
+     
      el cual es justamente el semigrupo que hemos estado trabajando.
    \end{proof}
 
 \subsection{El generador infinitesimal}
  Como es clásico en el contexto de procesos de Markov, asociado a un semigrupo tenemos la noción de generador infinitesimal. En nuestro caso consideremos al conjunto siguiente:
  \[
- Dom(L):=\left\{f\in L^2(\gamma): \lim_{h\to 0} \frac{P_{h}f-f}{h} \text{ existe en } L^{2}(\gamma)\right\}.
+ \text{Dom}(L):=\left\{f\in L^2(\gamma): \lim_{h\to 0} \frac{P_{h}f-f}{h} \text{ existe en } L^{2}(\gamma)\right\}.
  \]  
-Dicho es directamente el dominio del generador infinitesimal $L$. Así, dada $f\in Dom(L)$, se tiene que 
+Dicho es directamente el dominio del generador infinitesimal $L$. Así, dada $f\in \text{Dom}(L)$, se tiene que 
 \[
 Lf:=\lim_{h\to 0}\frac{P_hf-f}{h}.    
 \]
@@ -1280,7 +1288,6 @@ Recordemos que $W^{k,p}(U)=\left\{f\in L^{p}(U,\B(U),dx): D^jf\in L^p(U,\B(U),dx
         \end{align*} 
      \end{proof}
 Nótese que esta desigualdad en términos de la norma $L^2(\gamma)$ se escribe como sigue:
-
 \[
 \|f\|^2_{L^2(\gamma)}\leq \E^2\left[f(N)\right]+\|Df\|^2_{L^2(\gamma)}, \qquad \forall f\in \D^{1,2},
 \]
@@ -1311,16 +1318,91 @@ en donde en la segunda y cuarta igualdad hemos usado la fórmula del lema \ref{f
  \end{proof}
 \section{Cálculo de Malliavin en el caso general.}
 
-En esta sección se presentan los operadores de Malliavin generales, que serán utilizados en lo subsecuente. 
+En esta sección se presentan los operadores de Malliavin generales, que serán utilizados en lo subsecuente. Seguimos de cerca los requerimientos de \cite[sección 2.1]{KUZGUN202268}
 
+Denotemos por $\mathfrak{H}:=L^2(\R_+\times\R)$. Ahora denotaremos por $\S$ al siguiente conjunto:
+\[
+\S:=\left\{F=f(W(h_1),...,W(h_n))) \ : \ f\in C^{\infty}_b, \ h_1,...,h_n\in \mathfrak{H} \right\},
+\]
+donde $W=\left\{W(h):h\in \mathfrak{H}\right\}$ es el proceso Gaussiano isonormal sobre el cual estamos trabajando. Definimos ahora la derivada de Malliavin.
+\begin{dfn} 
+ Sea $F\in \S$, y sea $p\geq1$ un entero. La derivada de Malliavin de orden $p$ de $F$ es el elemento de $L^2(\Omega;\mathfrak{H}^{\odot})$ definido por 
+ \[
+ D^pF:=\sum_{i_1,...,i_p=1}^{n}\frac{\partial^pf}{\partial x_{i_1}...\partial x_{i_p}}(W(h_1),...,W(h_n))h_{i_1}\otimes...\otimes h_{i_p}.
+ \] 
+ En el caso en que $p=1$ hablaremos simplemente de la <<derivada de Malliavin>>.
+ \end{dfn}
+ Esta derivada cumple con una condición similar a la del caso unidimensional.
 
+ \begin{prop} 
+  Sea $q\in [1,\infty)$, y sea $p\geq 1$ un entero. Entonces el operador 
+  \[
+  D^{p}:\S\subseteq L^q(\Omega)\to L^q(\Omega;\mathfrak{H}^{\odot p})
+  \]
+  es cerrable.
+  \end{prop}
+En consecuencia, para $q\in [1,\infty)$ y $p\geq1$ un entero, definimos la norma $\norm{\cdot}_{\D^{p,q}}:\S\to [0,\infty)$ dada por 
+\[
+\norm{F}_{D^{p,q}}:= \left(\E\left[\abs{F}^{q}\right]+\E\left[\norm{DF}^{q}_{\mathfrak{H}}\right]+...+\E\left[\norm{D^pF}_{\mathfrak{H}^{\otimes p}}^q\right]\right)^{1/q}.
+\]
+y denotamos por $\D^{p,q}$ a la cerradura del espacio $\S$ con respecto a la norma anterior.
 
-\chapter{Aplicaciones a Teoremas Límite y estudio de densidades}
+Pasamos ahora al operador de divergencia. Dado un entero $p\geq1$, definimos el poerador de divergencia de orden $p$ como el operador adjunto del operador derivada $D^{p}:\D^{p,2}\to L^{2}(\Omega,\mathfrak{H})$.
+
+\begin{dfn} 
+ Sea $p\geq1$ un entero. Denotamos por $\text{Dom}(\delta^p)$ al subconjunto de $L^2(\Omega;\mathfrak{H}^\otimes p)$ compuesto de aquellos elementos $u$ tales que existe una constante $C>0$ que satisface 
+ \[
+ \abs{\E\left[\langle D^pF,u\rangle_{\mathfrak{H}^{\otimes p}}\right]}\leq c\sqrt{\E\left[F^2\right]}, \qquad \forall F \in \S.
+ \]
+ \end{dfn}
+ Argumentando de manera similar al caso unidimensional, por el teorema de representación de Riesz, existe un único elemento en $L^2(\Omega)$, denotado por $\delta^p(u)$ tal que cumple la relación 
+ \[
+ \E\left[\langle D^pF,u\rangle_{\mathfrak{h}^{\otimes p}}\right]=\E\left[F\delta^{p}(u)\right], \qquad \forall f\in \S.
+ \]
+ Llegamos así a la siguiente definición.
+
+ \begin{dfn} 
+  Si $u\in \text{Dom}(\delta^p)$, entonces $\delta^p(u)$ es el único elemento de $L^2(\Omega)$ caracterizado por la siguiente fórmula:
+\[
+ \E\left[\langle D^pF,u\rangle_{\mathfrak{h}^{\otimes p}}\right]=\E\left[F\delta^{p}(u)\right], \qquad \forall f\in \S.
+ \]
+  \end{dfn}
+Este operador se denomina el operador de divergencia múltiple de orden $p$. Cuando $p=1$ simplemente lo llamamos el <<operador de divergencia>>,  escribiendo $\delta$ en lugar de $\delta^1$. La fórmula anterior se suele llamar <<fórmula de integración por partes>>.
+
+El siguiente resultado nos permite <<sacar>> una variable aleatoria escalar dentro del operador de divergencia $\delta$. Este resultado se puede consultar en \cite[proposición 2.5.4]{Nourdin_Peccati_2012}, sin embargo, enunciamos una versión general que se encuentra en \cite[lema 1]{Caballero1998-hz}.
+
+\begin{teo}\label{factordeltafuera}
+ Sean $p,p'>1$ tales que $\frac{1}{p}+\frac{1}{p'}=1$. Supongamos que $F\in \D^{1,p'}$, y sea $u \in \text{Dom}(\delta)$ tal que $u\in L^{p}(\Omega;\mathfrak{H})$ y $\delta(u)\in L^{p}(\Omega)$. Entonces $Fu\in \text{Dom}(\delta)$ y se cumple la igualdad 
+ \begin{equation}\label{eqfactordeltafuera}
+   \delta (Fu)=F\delta(u)-\langle DF,u\rangle_{\mathfrak{H}}.
+\end{equation}
+ 
+ \end{teo}
+
+ Tenemos también la propiedad de conmutatividad de Heisenberg en este caso. Dicha propiedad es compleamente análoga al caso unidimensional.
+
+\begin{teo} 
+Se cumple que 
+\[
+D\delta(u)-\delta(Du)=u.
+\]
+ \end{teo}
+
+Finalmente, es de destacar una propiedad muy interesante del operador de divergencia: cuando estamos en el caso en que $\mathfrak{H}=L^2(\R_+\times\R)$, el operador delta coincide con la integral de Itô-Walsh.
+
+\begin{teo} 
+ Sea $u$ un proceso adaptado y cuadrado-integrable. Entonces $u\in \text{Dom}(\delta)$ y se cumple que 
+ \[
+ \delta(v)=\int_{\R_+\times \R}^{}v(s,y)W(ds,dy).
+ \]
+ \end{teo}
+ 
+ \chapter{Aplicaciones a Teoremas Límite y estudio de densidades}
 En este capítulo se visita la aplicación de los conceptos del cálculo de Malliavin al estudio de Teoremas límite y al estudio de densidades. 
 Una herramienta clave en esta tarea es el conocido como Método de Stein. 
 Dicho método, desarrollado por Charles Stein en la década de 1970, es una herramienta bastante popular para evaluar la distancia entre las leyes de dos leyes de probabilidad. Lo anterior es posible lograrlo estudiando operadores diferenciales involucrados con las leyes de probabilidad en cuestión.
 
-\section{Malliavin-Stein}
+\section{Método de Stein}
 
 Dentro del mundo de la probabilidad, la distribución normal juega un papel importante debido a la gran cantidad de propiedades que la misma presenta. Entre ellas, dicha distribución está determinada por sus momentos. Esto hace posible caracterizar la distribución en términos de los mismos. Ésta propiedad, la cual está codificada en el conocido como `lema de Stein', forma parte importante de este texto. 
 
@@ -1382,7 +1464,9 @@ Supongamos que ahora $X$ es una variable aleatoria y que para una cierta clase s
 \]
 En virtud del lema de Stein, ¿es posible decir que la distribución de $X$ está cerca (en algún sentido) de la distribución normal estándar?
 
-La pregunta anterior se conoce como la \textit{heurística de Stein}, y la respuesta es afirmativa en algunos casos. Para llegar a una formulación explícita de dicha respuesta, debemos introducir la idea de `distancia entre dos medidas de probabilidad' y también la famosa `ecuación de Stein' asociada a alguna función $h\in L^1(\gamma)$. Comenzamos definiendo la noción de distancia entre dos variables aleatorias. Recordamos la noción de clase separante de funciones.
+La pregunta anterior se conoce como la \textit{heurística de Stein}, y la respuesta es afirmativa en algunos casos. Para llegar a una formulación explícita de dicha respuesta, debemos introducir la idea de `distancia entre dos medidas de probabilidad' y también la famosa `ecuación de Stein' asociada a alguna función $h\in L^1(\gamma)$. 
+
+La definición de distancia se otorga para variables que tomen valores en $\R^d$. Comenzamos definiendo la noción de distancia entre dos variables aleatorias. Recordamos la noción de clase separante de funciones.
 
 \begin{dfn} 
  En un espacio de probabilidad $(\Omega, \F, \P)$, sea $\mathscr{H}$ un conjunto de funciones borelianas complejas con valores en $\R^d$, para algún $d\geq1$. Decimos que $\mathscr{H}$ es una familia de funciones separantes si para cualesquiera dos variables aleatorias $F$ y $G$ con valores en $\R^{d}$ tales que $h(F)$ y $h(G)$ son elementos de $L^1(\Omega)$ y $\E\left[h(F)\right]=\E\left[h(G)\right]$, para cualquier elemento $h\in \mathscr{H}$ implica que $F$ y $G$ tienen la misma ley.
@@ -1400,18 +1484,18 @@ Definimos a continuación, y de manera rigurosa, la noción de distancia entre l
 Es sencillo demostrar que para una clase de funciones separantes $\mathscr{H}$, el mapeo $d_\mathscr{H}$ definido anteriormente en efecto define una métrica en cierto subconjunto de las medidas de probabilidad sobre $\R^{d}$. Es pertinente hacer hincapié en que la distancia inducida entre las leyes de variables depende de la clase $\mathscr{H}$. Ello resulta en una amplia variedad de opciones con las cuales considerar la distancia entre dos distribuciones de probabilidad. Algunas de las más usadas se encuentran a continuación.
 
 \begin{itemize}
-   \item \textbf{La distancia de Kolmogorov.} Esta distancia entre dos variables $F$ y $G$, denotada por $d_{\text{Kol}}(F,G)$, se obtiene utilizando a la familia \[\mathscr{H}:= \left\{h:\R^d\to \R \ :\ h(x_1,...,x_d)=\1_{(-\infty,z_1]}(x_d)\cdot ... \cdot \1_{(-\infty,z_d]}(x_d), \ \  z_1,...,z_d\in \R\right\},\]
+   \item \textbf{La distancia de Kolmogorov.} Esta distancia entre dos variables $F$ y $G$, denotada por $d_{\text{Kol}}(F,G)$, se obtiene utilizando a la familia \[\mathscr{H}= \left\{h:\R^d\to \R \ :\ h(x_1,...,x_d)=\1_{(-\infty,z_1]}(x_d)\cdot ... \cdot \1_{(-\infty,z_d]}(x_d), \ \  z_1,...,z_d\in \R\right\},\]
    de manera que dicha distancia está dada por la expresión
    \[
    d_{\text{Kol}}(F,G)=\sup_{z_1,...,z_d\in \R}\abs{\P(F\in (-\infty,z_1]\times...\times(-\infty,z_d])-\P(G\in (-\infty,z_1]\times...\times(-\infty,z_d])}.
    \]
-   \item \textbf{La distancia de variación total.} Dicha distancia entre las leyes de las variables $F$ y $G$ se define utilizando la clase \[\mathscr{H}:=\left\{h:\R^d\to \R \ :\ h(x_1,...,x_d)=\1_B(x_1,...,x_d), \ \ B\in \B(\R^{d})\right\},\] 
+   \item \textbf{La distancia de variación total.} Dicha distancia entre las leyes de las variables $F$ y $G$ se define utilizando la clase \[\mathscr{H}=\left\{h:\R^d\to \R \ :\ h(x_1,...,x_d)=\1_B(x_1,...,x_d), \ \ B\in \B(\R^{d})\right\},\] 
    y dicha distancia se denota por $d_{\text{TV}}(F,G).$ Su expresión explícita es 
    \[
       d_{\text{TV}}(F,G)= \sup_{B\in \B(\R^{d})}\abs{\P(F\in B)-\P(G\in B)}.
    \]
    Observamos directamente que $d_{\text{Kol}}(F,G)\leq d_{\text{TV}}(F,G)$.
-   \item \textbf{La distancia de Wasserstein.} Usando la clase de funciones separantes \[\mathscr{H}:=\left\{h:\R^{d}\to \R \ :\ \norm{h}_{Lip}\leq 1\right\},\] donde claramente $\norm{\cdot}_{Lip}$ denota la norma Lipschitz en $\R^{d}$. Esta distancia se denota como $d_{\text{W}}(F,G)$.
+   \item \textbf{La distancia de Wasserstein.} Usando la clase de funciones separantes \[\mathscr{H}=\left\{h:\R^{d}\to \R \ :\ \norm{h}_{\text{Lip}}\leq 1\right\},\] donde claramente $\norm{\cdot}_{Lip}$ denota la norma Lipschitz en $\R^{d}$. Esta distancia se denota como $d_{\text{W}}(F,G)$.
 \end{itemize}
 
 Armados con la noción de distancia entre dos leyes de probabilidad, pasamos ahora a estudiar brevemente las ecuaciones de Stein. Dichas ecuaciones nos permiten codificar la distancia entre la ley de una variable $F$ y una variable aleatoria normal $N$, en virtud del lema de Stein \ref{LemaStein}. De manera rigurosa, tenemos la siguiente definición.
@@ -1470,31 +1554,176 @@ Armados con la noción de distancia entre dos leyes de probabilidad, pasamos aho
    \end{proof}
 
  Contando ahora con estas herramientas, podemos evaluar de manera rigurosa la distancia que hay entre la ley de una variable $X$ y una variable normal estándar $N$. Para ello, consideremos una función $h:\R\to\R$ que cumple que $\E\left[\abs{h(X)}\right]<\infty$ y $\E\left[\abs{h(N)}\right]<\infty$. Sea $f_h$ la solución única del teorema \ref{soleqstein}. Tomando esperanza a ambos lados de la ecuación de Stein, tenemos que $f_h$ cumple que 
- \[
- \E\left[h(X)\right]-\E\left[h(N)\right]=\E\left[f'_h(X)-Xf_h(X)\right].
- \]
+\begin{equation}\label{eqmetodostein}
+   \E\left[h(X)\right]-\E\left[h(N)\right]=\E\left[f'_h(X)-Xf_h(X)\right].
+ \end{equation}
+ 
  En particular, notamos que para una clase de funciones adecuada $\mathscr{H}$, 
- \[
- d_\mathscr{H}(X,N)=\sup_{h\in \mathscr{H}}\abs{\E\left[h(X)\right]-\E\left[h(N)\right]}=\sup_{h\in \mathscr{H}}\abs{\E\left[f_h'(X)-Xf_h(X)\right]}.
- \]
- Es de destacar que en la expresión anterior, la distancia entre las leyes de las variables $X$ y $N$ están codificadas en la cantidad de la derecha, la cual no involucra la ley Gaussiana estándar de manera directa.
+  \begin{equation*}
+   d_\mathscr{H}(X,N)=\sup_{h\in \mathscr{H}}\abs{\E\left[h(X)\right]-\E\left[h(N)\right]}=\sup_{h\in \mathscr{H}}\abs{\E\left[f_h'(X)-Xf_h(X)\right]}.
+   \end{equation*}
+ Es de destacar que en la expresión anterior, la distancia entre las leyes de las variables $X$ y $N$ están codificadas en la cantidad de la derecha, la cual no involucra la ley Gaussiana estándar de manera directa. Por otro lado, es deseable desarrollar algunas cotas para la norma de las soluciones $f_h$, dependiendo del tipo de funciones $h\in\mathscr{H}$ que estemos considerando. Dependiendo de dicha clase, podremos obtener distintas cotas para las distancias en las que estemos interesados. A dichas cotas se les conoce como \textit{cotas de Stein}.
  
+ En nuestro caso, nos vamos a enfocar en dos familias de funciones distintas. La primera de ellas es la familia $\mathscr{H}$ que origina la distancia de Kolmogorov, mientras que en el segundo caso consideramos una familia específica que nos será de utilidad en el capítulo 4.
  
- 
- 
- Un resultado principal en esta sección es el siguiente teorema que nos da una cota explícita universal de las normas de las soluciones a la ecuación de Stein. 
- \begin{teo} 
-  Sea $z\in \R$. Entonces la función $f_z$ es tal que 
+En cuanto a la distancia de Kolmogorov, tenemos el siguiente teorema que nos da una cota universal explícita de las normas de las soluciones a la ecuación de Stein asociada a la familia $\mathscr{H}= \left\{h:\R\to \R \ :\ h(x)=\1_{(-\infty,z]}(x),\ \  z\in \R\right\}$.
+  
+ \begin{teo}\label{cotakolmogorovstein}
+   Sea $z\in \R$ y consideremos a la función $h=\1_{(-\infty,z]}\in \mathscr{H}$ asociada. Denotemos por $f_z$ a la única solución de la ecuación de Stein asociada a la función $h$ anterior. Se tiene la siguiente cota.
   \[
       \norm{f_z}_{\infty}\leq \frac{\sqrt{2\pi}}{4} \qquad \text{y} \qquad \norm{f'_z}_\infty\leq 1.
   \]
-En particular, para $N$ una variable aleatoria normal estándar, y para cualquier variable integrable $F$, se tiene que 
+En particular, para $N$ una variable aleatoria normal estándar, y para cualquier variable integrable $X$, se tiene que 
 \[
-   d_{\text{Kol}}(F,N)\leq \sup_{f\in \F_{Kol}}\abs{\E\left[f'(F)\right]-\E\left[Ff(F)\right]},
+   d_{\text{Kol}}(X,N)\leq \sup_{f\in \F_{Kol}}\abs{\E\left[f'(X)\right]-\E\left[Xf(X)\right]},
 \]
-donde $\F_{\text{Kol}}:=\left\{f:\norm{f}_\infty\leq \frac{\sqrt{2\pi}}{4}\right\}$
-  \end{teo}
-\section{Existencia de densidades}
+en donde 
+\[\F_{\text{Kol}}:=\left\{f:\R\to\R \text{ abs. cont.}: f \text{ derivable salvo un conjunto finito}, \norm{f}_\infty\leq \frac{\sqrt{2\pi}}{4}, \ \norm{f'}_\infty\leq 1\right\},\]
+y donde el supremo anterior se entiende como la cantidad 
+\[
+\sup \abs{\E\left[g(X)\right]-\E\left[Xf(X)\right]},
+\]
+donde el supremo se toma sobre todos los pares de funciones borelianas $(f,g)$, con $f$ derivable salvo un conjunto finito de puntos, y $g$ es una versión de $f'$ tal que $\norm{g}_\infty\leq 1$.
+\end{teo}
+
+Una guía para la demostración de este resultado se puede encontrar en la sección 3.4 de \cite{Nourdin_Peccati_2012}. Concluimos esta sección con el siguiente resultado, el cual nos da cotas explícitas para una familia de funciones específicas.
+
+\begin{teo}\label{metodosteinfamespecial}
+ Consideremos la familia de funciones $\mathscr{H}=\left\{h:\R\to\R : h(z)=\1_{\{z>x\}}z, \ x\in \R\right\}$. Entonces la solución $f_h$ a la ecuación de Stein \eqref{eqstein} satisface 
+ \[
+ |f'_h(x)|\leq C(\abs{x}+1), \qquad \forall x\in \R,
+ \]
+ en donde $C$ es una constante.
+ \end{teo}
+Nuevamente este resultado se enuncia sin demostración. Una versión general del mismo, así como su demostración, se encuentran en el apéndice A de \cite{HU2014814}.
+
+Los dos resultados anteriores se encuentran en el núcleo de las técnicas que se conocen en su conjunto como \textit{método de Stein.}, y que son amplimente usadas para deducir resultados similiares al teorema central del límite, además de deducir tasas de convergencia para los mismos. Ejemplo de lo anterior es el célebre teorema de Berry-Essen, el cual cuantifica la velocidad de convergencia de una sucesión i.i.d de variables con media cero, varianza 1 y tercer momento absoluto finito, a la distribución normal estándar. Es decir, es una versión cuantificable del clásico teorema del límite central.
+
+Es posible otorgar una demostración del mismo utilizando el método de Stein, y más específicamente el teorema \ref{cotakolmogorovstein}. Para el enunciado y demostración del mismo, nos referimos a la sección 3.7 de \cite{Nourdin_Peccati_2012}.
+
+\section{Existencia de densidades y estimación de la distancia uniforme}
+
+En preparación para el capítulo 4, en esta sección estudiamos brevemente un par de resultados. El primero de ellos nos garantiza la existencia y unicidad de una variable aleatoria unidimensional bajo ciertas hipótesis, además de proveer una fórmula para la misma. También enunciamos un resultado que consiste en una cota para la distancia uniforme entre la densidad de una variable aleatoria y la densidad de una variable normal estándar, siendo este último un resultado medular en el capítulo 4. Es de destacar que estos resultados son consecuencias del teorema \ref{factordeltafuera} y ambos, por orden de aparición, se pueden encontrar en \cite[proposición 1]{Caballero1998-hz} y en \cite[teorema 3.2]{KUZGUN202268}.
+
+Comenzamos directamente con el primer resultado. La demostración del mismo se omite en este texto.
+\begin{teo}\label{existdensidad}
+ Sean $F$ una variable aleatoria en el espacio $\D^{1,1}$ y $\mathfrak{H}$ un espacio de Hilbert. Supongamos que $u$ es una variable en $L^{1}(\Omega;\mathfrak{H})$ tal que $D_uF\neq 0$ casi seguramente. Supongamos también que $\tfrac{u}{D_uF}\in \text{Dom}(\delta)$. Entonces la ley de $F$ tiene una densidad continua y acotada dada por 
+   \begin{equation}\label{formuladensidad}
+      f_F(x)=\E\left[\1_{\{F>x\}}\delta \left(\frac{u}{D_uF}\right)\right].
+   \end{equation}
+ \end{teo}
+Es de nuestro interés saber en qué caso es cierto que $\tfrac{u}{D_uF}\in \text{Dom}(\delta)$. El siguiente lema nos da una respuesta.
+
+\begin{lema}\label{lemaexistdensidad}
+ Sean $p,p'>1$ tales que $\frac{1}{p}+\frac{1}{p'}=1$, y sea $F\in \D^{2,1}$. Supongamos que $u\in \text{Dom}(\delta)$. Si se cumplen las siguientes condiciones 
+ \begin{enumerate}
+   \item $u\in L^{p}(\Omega;\mathfrak{H})$,
+   \item $\delta(u)\in L^{p}(\Omega)$,
+   \item $(D_uF)^{-1}\in L^{p'}(\Omega)$,
+   \item $(D_uF)^{-2}\left(\norm{D^2F}_{\mathfrak{H}^{\otimes 2}}\norm{u}_{\mathfrak{H}}+\norm{Du}_{\mathfrak{H}}\norm{DF}_{\mathfrak{H}}\right)\in L^{p'}(\Omega)$,
+ \end{enumerate}
+ entonces $\tfrac{u}{D_uF}\in \text{Dom}(\delta)$ y en particular, se cumple la ecuación \eqref{eqfactordeltafuera}. 
+ \end{lema}
+ Para una prueba de este lema, se puede consultar \cite[lema 3, lema 4]{Caballero1998-hz}.
+
+Estamos interesados en aplicar tanto el lema anterior como el teorema \ref{existdensidad} en condiciones que aparecerán en el capítulo 4. Por lo tanto, y siguiendo de cerca a \cite[sección 3]{KUZGUN202268}, tenemos el siguiente resultado. 
+
+\begin{teo} 
+ Sean $u\in \D^{1,6}(\Omega;\mathcal{\mathfrak{H}})$ y definamos la variable $F:=\delta(u)$. Supongamos que $F\in \D^{2,6}$, con $\E\left[F\right]=0, \ \E\left[F^{2}\right]=1$ y $\left(D_uF\right)^{-1}\in L^4(\Omega)$. Entonces $u/D_uF \in \text{Dom}(\delta)$, la variable $F$ admite una densidad continua y acotada $f_F(x)$ y la misma cumple la siguiente desigualdad
+ \begin{equation}\label{cotafundamental}
+    \sup_{x\in \R} \abs{f_F(x)-\Phi(x)}\leq \left(\|F\|_4\|\left(D_vF\right)^{-1}\|_4+2\right)\|1-D_vF\|_2+\|\left(D_vF\right)^{-1}\|^{2}\|D_v \left(D_vF\right)\|_2,
+ \end{equation}
+donde $\Phi(x)$ es la función de densidad de una variable normal estándar.
+
+\end{teo}
+\begin{proof} 
+   Demostramos primero que $\frac{u}{D_uF}\in \text{Dom}(\delta)$. Buscamos satisfacer las hipótesis del lema \ref{lemaexistdensidad}. Para ello usamos $p=p'=2$. Claramente $p,p'>1$ y se cumple que $\frac{1}{p}+\frac{1}{p'}=1$. Por otro lado, por hipótesis $u\in \text{Dom}(\delta)$ y además, dado que en nuestro caso la variable $F$ es por definición la divergencia de $u$, de la hipótesis y de la contención entre los espacios $\D^{k,q}$ se sigue que $F\in \D^{2,6}\subseteq\D^{2,1}$. Resta mostrar que las cuatro condiciones del lema \ref{lemaexistdensidad} se satisfacen.
+   \begin{enumerate}
+      \item Dado que $u\in \D^{1,6}(\Omega;\mathfrak{H})\subseteq\D^{1,2}(\Omega;\mathfrak{H})$, y que por construcción este último espacio es un subconjunto de $L^{2}(\Omega;\mathfrak{H})$, se cumple la primera condición.
+      \item Por hipótesis $\delta(u)=F\in \D^{2,6}$, y este es subconjunto de $L^{2}(\Omega)$, por lo que la segunda condición también se cumple.
+      \item El enunciado nos indica que $(D_uF)^{-1}\in L^4(\Omega)$. Como la medida del espacio es finita, se da la contención $L^4(\Omega)\subseteq L^2(\Omega)$ y la tercera condición se satisface.
+      \item Denotemos $a:=\left(\norm{D^2F}_{\mathfrak{H}^{\otimes 2}}\norm{u}_{\mathfrak{H}}+\norm{Du}_{\mathfrak{H}}\norm{DF}_{\mathfrak{H}}\right)$. Obsérvese que dichas cantidades están bien definidas gracias a las hipótesis. Notamos que
+      \[
+      \norm{a(D_uF)^{-2}}_2^2=\int_\Omega (a(D_uF)^{-2})^2d\P=a^2\int_\Omega ((D_uF)^{-1})^4d\P=a^2\norm{(D_uF)^{-1}}_4^{4}<\infty.
+      \] 
+      Concluimos que la última condición se satisface.   
+   \end{enumerate}
+   Por lo tanto, $u/D_uF\in \text{Dom}(\delta)$. Ahora bien, el resto de hipótesis del teorema \ref{existdensidad} se satisfacen, pues se tiene que $F\in \D^{2,6}\subseteq \D^{1,1}$. Además, $u\in \D^{1,6}\subseteq \D^{1,1}$ y este último es subconjunto de $L^{1}(\Omega;\mathfrak{H})$. Finalmente si fuera el caso que $D_uF=0$ en un conjunto medible de probabilidad positiva $A\subseteq \Omega$, tendríamos que 
+   \[
+   \norm{(D_uF)^{-1}}_1=\int_\Omega \abs{(D_uF)}^{-1}d\P\geq\int_A\abs{(D_uF)}^{-1}d\P=+\infty,
+   \]
+   lo cual es una contradicción ya que $(D_uF)^{-1}\in L^{4}(\Omega)$, que es subconjunto de $L^{1}(\Omega)$.
+
+   Satisfechas las hipótesis del teorema \ref{existdensidad}, tenemos garantizada la existencia de una densidad continua y acotada para la variable $F=\delta(v)$, la cual está dada por la fórmula \eqref{formuladensidad}. Ahora buscamos una cota uniforme sobre $x\in \R$ para las siguientes cantidades
+   \begin{equation}\label{eqdiferencia1}
+   \abs{f_F(x)-\phi(x)}=\abs{\E\left[\1_{\{F>x\}}\delta\left(\frac{u}{D_uF}\right)\right]-\E\left[\1_{\{N>x\}}N\right]}, 
+   \end{equation}
+  
+  donde $N\sim$ Normal$(0,1)$.
+   En virtud de que se satisfacen las hipótesis del lema \ref{existdensidad}, en la fórmula \eqref{formuladensidad} podemos usar la ecuación \eqref{eqfactordeltafuera} y obtenemos que, para $x\in \R$ arbitrario,
+   \begin{align*}
+   f_F(x)=\E\left[\1_{\{F>x\}}\delta\left(\frac{u}{D_uF}\right)\right]&=\E\left[\1_{\{F>x\}}\left(\frac{1}{D_{u}F}\delta(u)-\Big\langle D \left(\frac{1}{D_{u}F}\right),u \Big\rangle \right)\right]\\
+   &=\E\left[\1_{\{F>x\}}\frac{F}{D_{u}F}\right]+\E\left[\1_{\{F>x\}}\left(\frac{1}{\left(D_{u}F\right)^2}\right)D_{u}D_{u}F\right],
+      \end{align*}
+      donde hemos hecho uso de que $F=\delta(u)$ y de la regla de la cadena en la segunda igualdad.
+  Incrustando esta última igualdad en la fórmula \eqref{eqdiferencia1}, y subsecuentemente sumando y restando el término $\E\left[\1_{\{F>x\}}F\right]$,
+  
+\begin{align}\label{eqdiferencia2}
+   \abs{f_F(x)-\Phi(x)}&=\abs{\E\left[\1_{\{F>x\}}\frac{F}{D_{u}F}\right]+\E\left[\1_{\{F>x\}}\frac{D_uD_uF}{\left(D_{u}F\right)^2}\right]-\E\left[\1_{\{N>x\}}N\right]}\notag\\
+   &=+\Bigg|\E\left[\1_{\{F>x\}}\frac{F}{D_{u}F}\right]-\E\left[\1_{\{F>x\}}F\right]+\E\left[\1_{\{F>x\}}\frac{D_uD_uF}{\left(D_{u}F\right)^2}\right]\notag\\
+   &\ \ \ +\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]\Bigg|\notag\\
+   &\leq \abs{\E\left[\1_{\{F>x\}}\left(\frac{F}{D_uF}-F\frac{D_uF}{D_uF}\right)\right]}+\abs{\E\left[\1_{\{F>x\}}\frac{D_uD_uF}{\left(D_{u}F\right)^2}\right]}\notag\\
+   &\ \ \ +\abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}\notag\\
+   &\leq \E\left[\abs{\frac{F(1-D_uF)}{D_uF}}\right]+\E\left[\frac{\abs{D_uD_uF}}{(D_uF)^2}\right]+\abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}.
+\end{align}
+Ahora, en la desigualdad \eqref{eqdiferencia2} usamos sucesivamente la desigualdad de Hölder en el primer y segundo términos, de manera que
+\begin{equation}\label{eqdiferencia3}
+   \E\left[\abs{\frac{F(1-D_uF)}{D_uF}}\right]\leq \norm{F(D_uF)}_2\norm{1-D_uF}_2\leq \norm{F}_4\norm{(D_vF)^{-1}}_4\norm{1-D_uF}_2,
+\end{equation}
+y también
+\begin{equation}\label{eqdiferencia4}
+   \E\left[\frac{\abs{D_uD_uF}}{(D_uF)^2}\right]\leq \norm{D_uD_uF}_2\norm{(D_uF)^{-2}}_2=\norm{D_uD_uF}_2\norm{(D_uF)^{-1}}_4^{2}.
+\end{equation}
+Finalmente, estudiamos el tercer término de la desigualdad \eqref{eqdiferencia2}. Aquí es donde utilizamos el <<método de Stein>>. Observemos que, para $x\in \R$,
+\[
+   \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}=\abs{\E\left[h(F)\right]-\E\left[h(N)\right]},
+\]
+donde $h(z)=\1_{\{z>x\}}z$ es una función perteneciente a la familia $\mathscr{H}$ correspondiente al teorema \ref{metodosteinfamespecial}. En virtud de la ecuación \eqref{eqmetodostein}, la igualdad anterior se convierte en
+\begin{equation}\label{eqdiferencia5}
+   \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}=\abs{\E\left[f'_h(F)\right]-\E\left[Ff_h(F)\right]}.
+\end{equation}
+En este punto usamos nuevamente que $F=\delta(u)$, y como tal, cumple la fórmula de integración por partes. Por lo tanto, tomando como variable a $f_h(F)$ y usando regla de la cadena se tienen las siguientes igualdades
+\begin{equation*}
+   \E\left[Ff_h(F)\right]=\E\left[\delta(u)f_h(F)\right]=\E\left[\langle D(f_h(F)),u\rangle\right]=\E\left[f'_h(F)\langle DF,u\rangle\right]=\E\left[f'_h(F)D_uF\right].
+\end{equation*}
+Insertando la igualdad anterior en \eqref{eqdiferencia5} se sigue que 
+   \begin{equation*}
+      \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}=\abs{\E\left[f'_h(F)\right]-\E\left[f'_h(F)D_uF\right]}= \abs{\E\left[f_h'(F)(1-D_vF)\right]}.
+   \end{equation*}
+Usamos nuevamente la desigualdad de Hölder en el último termino de la ecuación anterior, obtenemos
+\begin{equation}\label{eqdiferencia6}
+   \abs{\E\left[f_h'(F)(1-D_vF)\right]}\leq \norm{f_h'(F)}_2\norm{1-D_vF}_2.
+\end{equation}
+Finalmente, usamos el teorema \ref{metodosteinfamespecial}, en \ref{eqdiferencia6}, por lo que 
+\begin{equation}\label{eqdiferencia7}
+      \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}\leq C(\abs{F}+1)\norm{1-D_vF}_2
+\end{equation}
+Finalmente, tenemos que $|F|\leq 1$ y $C\leq 1$, por lo que \ref{eqdiferencia7} se convierte en 
+\begin{equation}\label{eqdiferencia8}
+   \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}\leq2\norm{1-D_vF}.
+\end{equation}
+Combinando las desigualdades \ref{eqdiferencia3}, \ref{eqdiferencia4} y \ref{eqdiferencia7}, tenemos para $x\in \R$,
+\begin{align*}
+   \abs{f_F(x)-\Phi(x)}&\leq \norm{F}_4\norm{(D_vF)^{-1}}_4\norm{1-D_uF}_2+\norm{D_uD_uF}_2\norm{(D_uF)^{-1}}_4^{2}+2\norm{1-D_vF}\\
+   &=\left(\|F\|_4\|\left(D_vF\right)^{-1}\|_4+2\right)\|1-D_vF\|_2+\|\left(D_vF\right)^{-1}\|^{2}\|D_v \left(D_vF\right)\|_2.   
+\end{align*}
+
+Tomando supremo obtenemos la desigualdad \eqref{cotafundamental}.
+\end{proof}
+
+Tal y como se comentó al inicio de la sección, el resultado anterior resulta ser la cota principal desde la cual se deducirá la tasa de convergencia de las densidades de los promedios espaciales de la solución a la SHE, a la densidad normal. 
+
+Hasta aquí llega nuestro estudio del método de Stein y dela existencia de las densidades.
 
 
 
@@ -1506,7 +1735,7 @@ Consideremos la siguiente ecuación diferencial parcial estocástica:
 \begin{equation}
 \partial u_t=\frac{1}{2}\partial_{xx}u+\sigma(u)\dot{W}, \qquad \forall x\in \R, \forall t>0.
 \end{equation}
-cuya condición inicial es $u(0,x):=u_0(x)$, y $\dot{W}$ es un ruido blanco espacio-tiempo.
+cuya condición inicial es $u(0,x):=u_0(x)$, y $\dot{W}$ es un ruido blanco en $[0,\infty)\times\R$, esto es, tanto en el espacio como en el tiempo.
 
 Del capítulo 1, tenemos garantizada la existencia y unicidad de una solución mild $u(t,x)$ a la ecuación 1, suponiendo que $\sigma$ es una función Lipschitz, y que $u_0$ es una medida signada que satisface la siguiente condición de integrabilidad:
 \[
@@ -1516,20 +1745,20 @@ para $t>0$ y $x\in \R$. Estamos entonces interesados en el comportamiento asint�
 \begin{equation}
    F_{R,t}:=\frac{1}{\sigma_{R,t}}\left(\int_{-R}^{R}u(t,x)dx -2R\right), \qquad \text{donde} \ \ \sigma^2_{R,t}=\text{Var}\left(\int_{-R}^{R}u(t,x)dx\right).
 \end{equation}
-$F_{R,t}$ son conocidos como los promedios espaciales centrados y normalizados. En \cite{HUANG20207170}, Huang, Nualart y Viitasaari estudian el comportamiento límite de $F_{R,t}$ conforme $R\to \infty$, siendo capaces de probar resultados tipo teorema central del límite para $F_{R,t}$. Más aún, en dicha publicación, utilizando técnicas de Malliavin-Stein, se obtuvieron cotas superiores para la tasa de convergencia de $F_{R,t}$ a la distribución normal estándar en distancia de variación total. Con precisión:
+Las variables $F_{R,t}$ son conocidas como los promedios espaciales centrados y normalizados. En \cite{HUANG20207170}, Huang, Nualart y Viitasaari estudian el comportamiento límite de $F_{R,t}$ conforme $R\to \infty$, siendo capaces de probar resultados tipo teorema central del límite para $F_{R,t}$. Más aún, en dicha publicación, utilizando técnicas de Malliavin-Stein, se obtuvieron cotas superiores para la tasa de convergencia de $F_{R,t}$ a la distribución normal estándar en distancia de variación total. De manera precisa, obtuvieron que
 \begin{equation}
    d_{TV}(F_{R,t},N)\leq \frac{C_t}{\sqrt{R}}, \qquad \text{para }t>0,\text{ y } R\geq1.  
 \end{equation}
 
-El propósito final del capítulo es obtener cotas superiores para la tasa de convergencia de la distancia uniforme entre las densidades de los promedios espaciales y la densidad de una variable aleatoria normal estándar. Concretamente, se busca probar el siguiente resultado.
+Con este trabajo como antecedente, el propósito final del capítulo es obtener cotas superiores para la tasa de convergencia de la distancia uniforme entre las densidades de los promedios espaciales y la densidad de una variable aleatoria normal estándar. Concretamente, se busca probar el siguiente resultado.
 \begin{teo} 
 Sea $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ la solución mild de la ecuación estocástica del calor dada antes. Supongamos que $\sigma:\R\to\R$ es una función tal que 
 \begin{itemize}
    \item $\sigma\in C^2(\R)$.
    \item $\sigma'$ es acotada.
-   \item $\abs{\sigma''(x)}\leq C(1+\abs{x}^{m})$, \qquad para alguna $m>0$.
+   \item $\abs{\sigma''(x)}\leq C(1+\abs{x}^{m})$, \qquad para cualquier $x\in \R$ real y para alguna $m>0$.
 \end{itemize}
-Supongamos también que, para algún $q>10$, se cumple qu 
+Supongamos también que, para algún $q>10$, se cumple que 
 \[
 \E\left[\abs{|\sigma(u(t,0))}^{-q}\right]<\infty.    
 \]
@@ -1537,7 +1766,7 @@ Entonces para $t>0$ fijo, se cumple que para cualquier $R>0$, la distancia entre
 \[
 \sup_{x\in \R} \abs{f_{F_{R,t}}(x)-\Phi(x)}\leq \frac{C_t}{\sqrt{R}},   
 \]
-donde $f_{F_{R,t}}$ y $\Phi$ son las densidades de $F_{R,t}$ y $N$ una variable aleatoria normal estándar, respectivamente.
+donde $f_{F_{R,t}}$ y $\Phi$ son las densidades de $F_{R,t}$ y $N$ una variable aleatoria normal estándar, respectivamente, y $C_t$ es una constante dependiente de $t$.
 \end{teo}
 
 La idea de la prueba es la siguiente. Dados los preliminares de SPDE's y cálculo de Malliavin-Stein, primero se demuestra una cota superior elemental para la distancia uniforme entre la densidad de una variable aleatoria $F$ que está dada coom un funcional de un proceso Gaussiano isonormal, y la densidad de una variable aleatoria normal estándar.
@@ -1548,7 +1777,7 @@ La idea es aplicar las técnicas de estimación anteriores a los promedios espac
 
 Tenemos el siguiente resultado, el cual se encuentra en \cite{Caballero1998-hz}, y del cual haremos uso sin ahondar en su demostración.
 \begin{teo} 
-Sea $F\in \D^{1,1}$ y  sea $v\in L^{1}(\Omega;\mathcal{H})$ tal que $D_vF\neq 0$ c.s. Supongamos que $v/D_vF\in Dom(\delta)$. Entonces la distribución de $F$ tiene una densidad continua y acotada dada por 
+Sea $F\in \D^{1,1}$ y  sea $v\in L^{1}(\Omega;\mathcal{H})$ tal que $D_vF\neq 0$ c.s. Supongamos que $v/D_vF\in \text{Dom}(\delta)$. Entonces la distribución de $F$ tiene una densidad continua y acotada dada por 
 \[
 f_F(x)=\E\left[\1_{\{F>x\}}\delta \left(\frac{v}{D_vF}\right)\right]   
 \]
@@ -1557,7 +1786,7 @@ f_F(x)=\E\left[\1_{\{F>x\}}\delta \left(\frac{v}{D_vF}\right)\right]
 El resultado anterior es válido para cualquier espacio de Hilbert $\mathfrak{H}$. Aplicando el resultado anterior al contexto de una variable aleatoria adecuada, se tiene lo siguiente:
 
 \begin{teo} 
- Sea $v\in \D^{1,6}(\Omega;\mathcal{H})$ y $F=\delta(v)\in \D^{2,6}$ con $\E\left[F\right]=0, \E\left[F^{2}\right]=1$ y $\left(D_vF\right)^{-1}\in L^4(\Omega)$. Entonces $v/D_vF \in Dom(\delta)$, $F$ admite una densidad $f_F(x)$ y se tiene la siguiente desigualdad
+ Sea $v\in \D^{1,6}(\Omega;\mathcal{H})$ y $F=\delta(v)\in \D^{2,6}$ con $\E\left[F\right]=0, \E\left[F^{2}\right]=1$ y $\left(D_vF\right)^{-1}\in L^4(\Omega)$. Entonces $v/D_vF \in \text{Dom}(\delta)$, $F$ admite una densidad $f_F(x)$ y se tiene la siguiente desigualdad
  \[
    \sup_{x\in \R} \abs{f_F(x)-\Phi(x)}\leq \left(\|F\|_4\|\left(D_vF\right)^{-1}\|_4+2\right)\|1-D_vF\|_2+\|\left(D_vF\right)^{-1}\|^{2}\|D_v \left(D_vF\right)\|_2,
    \]
@@ -1673,8 +1902,8 @@ La prueba de este resultado se omite en este texto, por lo que se refiere a $\ci
 
 
 
- \section{Formulación Mild en el caso sin deriva}
-\section{Una ecuación estocástica para $Du$ y $D^2u$}
+\section{Formulación Mild en el caso sin deriva}
+%\section{Una ecuación estocástica para $Du$ y $D^2u$}
 \section{Densidad explícita de los promedios espaciales}
 %Disclaimer: no se van a manejar los momentos inversos.
 \textit{Contribución del Kernel de Stein}

@@ -12,6 +12,11 @@ Mar{\'\i}a~Emilia Caballero, Bego{\~n}a Fern{\'a}ndez, and David Nualart,
   \emph{Estimation of densities and applications}, Journal of Theoretical
   Probability \textbf{11} (1998), no.~3, 831--851.
 
+\bibitem{HU2014814}
+Yaozhong Hu, Fei Lu, and David Nualart, \emph{Convergence of densities of some
+  functionals of gaussian processes}, Journal of Functional Analysis
+  \textbf{266} (2014), no.~2, 814--875.
+
 \bibitem{HUANG20207170}
 Jingyu Huang, David Nualart, and Lauri Viitasaari, \emph{A central limit
   theorem for the stochastic heat equation}, Stochastic Processes and their
@@ -26,9 +31,10 @@ Sefika Kuzgun and David Nualart, \emph{Convergence of densities of spatial
   averages of stochastic heat equation}, Stochastic Processes and their
   Applications \textbf{151} (2022), 68--100.
 
-\bibitem{LeGall2016}
-Jean-Fran{\c{c}}ois Le~Gall, \emph{Gaussian variables and gaussian processes},
-  pp.~1--17, Springer International Publishing, Cham, 2016.
+\bibitem{gall2016brownian}
+Jean-François Le~Gall, \emph{Brownian motion, martingales, and stochastic
+  calculus}, Graduate Texts in Mathematics, Springer International Publishing,
+  2016.
 
 \bibitem{Nourdin_Peccati_2012}
 Ivan Nourdin and Giovanni Peccati, \emph{Normal approximations with malliavin
