@@ -88,29 +88,50 @@
 \frontmatter
 
 % % Dedication
-% \chapter*{}
-% \begin{flushright}%
-%   \emph{Dedicatoria \ldots}
-%   \thispagestyle{empty}
-% \end{flushright}
+\chapter*{}
+\begin{flushright}%
+ \emph{Dedicatoria \dots}
+  \thispagestyle{empty}
+\end{flushright}
 
 % % Abstract
-% \chapter*{Resumen}
-% \addcontentsline{toc}{chapter}{Resumen}
+\chapter*{Introducción}
+\addcontentsline{toc}{chapter}{Introducción}
+
+Este trabajo está basado principalmente en el artículo de Sefika Kuzgun y David Nualart \cite{KUZGUN202268} publicado en el año 2022. El objetivo principal es estudiar la convergencia de las densidades de los promedios espaciales de la solución de la ecuación estocástica del calor (SHE, por sus siglas en inglés), en distancia uniforme, a la densidad de una distribución normal estándar. 
+
+Trabajo previo se puede hallar desde el artículo de 1998 de Maria Emilia Caballero, Begoña Fernández Fernández y David Nualart \cite{Caballero1998-hz}, en donde se demuestra la existencia y unicidad de una densidad continua y acotada para una variable aleatoria $X$ que cumpla ciertas condiciones. Con la llegada del nuevo milenio, técnicas que mezclan al cálculo de Malliavin junto con el método de Stein son propuestas por Nourdin y Peccati en su monografía \cite{Nourdin_Peccati_2012}. La fusión de ambas disciplinas conlleva a una amalgama que resulta muy útil a la hora de establecer teoremas tipo límite central, así como dar tasas de convergencia explícitas para los mismos. 
+
+Dentro de esta explosión de resultados, podemos citar el trabajo de Yaozhong Hu, Fei Lu y David Nualart \cite{HU2014814}, en donde se estudia la convergencia de las densidades de algunos procesos gaussianos. Posteriormente, en 2020, Jingyu Huang, Lauri Viitasaari y David Nualart en \cite{HUANG20207170} logran demostrar un teorema central del límite para la solución a la ecuación estocástica del calor. Más aún, ellos son capaces de demostrar cotas explícitas para la velocidad de convergencia de las distribuciones de la solución a la ecuación estocástica del calor a la distribución normal, utilizando para ello la distancia en variación total. 
+
+Sefika Kuzgun y David Nualart, \cite{KUZGUN202268} logran, a partir de estos resultados, exhibir la existencia y unicidad de las densidades de los promedios espaciales de la solución a la ecuación estocástica del calor, y mostrar la convergencia de estas densidades, en distancia uniforme, a la densidad de una variable aleatoria normal, otorgando una tasa de convergencia explícita para la misma.
+
+Para lograr este objetivo, es menester estudiar los conceptos utilizados en el trabajo de Kuzgun y Nualart. Es de destacar desde ahora que en este texto la intención no es, en lo más mínimo, dar un estudio amplio y completo de cada una de las disciplinas anteriores, sino cubrir de manera suficiente pero sucinta la herramienta técnica necesaria para abordar el problema. Así, en esta tesis se da un breve recorrido por las ideas que yacen en el núcleo de la teoría de ecuaciones diferenciales parciales estocásticas (SPDE, por sus siglas en inglés), del cálculo de Malliavin, del método de Stein, así como la amalgama que de estas últimas dos disciplinas surge con la intención de estudiar la existencia de densidades de variables aleatorias bajo ciertas hipótesis. 
+
+De lo anterior se desprende la estructura del presente texto. En el primer capítulo se estudiarán los elementos esenciales de ecuaciones diferenciales parciales estocásticas. Específicamente, se enuncia brevemente la heurística que da origen a la formulación de las mismas. Se realiza la construcción de la integral de Itô-Walsh, y con dicha integral se formula la solución mild de una ecuación diferencial parcial estocástica. Posteriormente nos enfocamos en el contexto de la ecuación estocástica del calor, así como en su solución. Finalmente se enuncian algunos resultados necesarios para abordar el problema principal.
+
+El capítulo dos está dedicado al estudio de los elementos básicos del cálculo de Malliavin. Este capítulo se divide a su vez en dos partes. En la primera se hace un estudio del caso unidimensional, siendo siendo este caso estudiado con mediano detalle, aunque siempre manteniéndose al mínimo la teoría requerida para nuestro propósito. La segunda parte del mismo se compone del caso general. En esta segunda parte sólo se estudia en mediano detalle el aparato necesario para enunciar los resultados análogos al caso unidimensional, mientras que dichos resultados en múltiples ocasiones serán solo postulados, pero no demostrados. 
+
+La composición del capítulo tres es similar a la del capítulo anterior. La primera parte del mismo consiste en un estudio breve del método de Stein, mencionando tangencialmente las aplicaciones que esta disciplina puede otorgar. La segunda parte del capítulo consiste principalmente en estudiar un resultado que garantiza la existencia y unicidad de la densidad de una variable aleatoria, así como en estudiar la existencia de una cota para la distancia uniforme entre la densidad de una variable adecuada, y la densidad de una variable normal estándar. Este último resultado resulta ser la columna vertebral sobre la que se sostiene el resultado principal, y es demostrada con detalle, y además es en esta parte en donde se hace uso de la amalgama que el cálculo de Malliavin y el método de Stein conforman. El estudio de las herramientas necesarias para abortar el problema principal culmina en esta parte.
+
+El enunciado y prueba del resultado principal se encuentran hasta el capítulo cuarto. Es aquí en donde se hace rigurosa la formulación del problema que se plantea. Se enuncian dos lemas de carácter técnico que son esenciales en la prueba, y finalmente se estudia y concluye el problema principal. Se agrega un último capítulo en el cual se hace una breve reflexión sobre lo realizado, y se echa una mirada al panorama que este problema nos abre a la vista.
+
+Los primeros tres capítulos comienzan con un muy breve resumen histórico de la disciplina a estudiar, así como de la relevancia de la misma en la actualidad. El cuarto capítulo repasa el trabajo previo que ha sido mencionado al inicio de esta introducción, pero con mayor rigurosidad. 
+
+Es importante mencionar que ninguno de los resultados enunciados, y tampoco la gran mayoría de heurísticas sobre algún tema en particular que están presentes en este trabajo pertenecen al autor del mismo, por lo que siempre que se usen proposiciones o ideas ajenas, se procurará hacer la correspondiente mención de su origen. De esta forma, el aporte del autor está en explicar de la manera más simple que le ha sido posible los resultados, así como rellenar algunos detalles (y no todos) en las pruebas, o bien unificar algunas ideas sueltas de las fuentes consultadas. 
 
 
-% \paragraph{Palabras clave:} modelación espacio-temporal, modelo jerárquico bayesiano, ciencia de datos, cómputo estadístico,, datos de áreas
-
+\textbf{Palabras clave:} \textit{Ecuación del calor estocástica, promedios espaciales, cálculo de Malliavin, método de Stein, existencia de densidades, convergencia uniforme, teoremas tipo límite, tasas de convergencia.}
 % % Acknowledgements
-% \chapter*{Agradecimientos}
-% \addcontentsline{toc}{chapter}{Agradecimientos}
+\chapter*{Agradecimientos}
+ \addcontentsline{toc}{chapter}{Agradecimientos}
 
-% A mis padres \ldots
+A mis padres \ldots
 
 % Table of contents and list of figures
 \tableofcontents
 
-% \listoffigures
+%\listoffigures
 
 % Chapters
 
@@ -1723,36 +1744,39 @@ Tomando supremo obtenemos la desigualdad \eqref{cotafundamental}.
 
 Tal y como se comentó al inicio de la sección, el resultado anterior resulta ser la cota principal desde la cual se deducirá la tasa de convergencia de las densidades de los promedios espaciales de la solución a la SHE, a la densidad normal. 
 
-Hasta aquí llega nuestro estudio del método de Stein y dela existencia de las densidades.
+Hasta aquí llega nuestro estudio del método de Stein y de la existencia de la densidad de una variable aleatoria bajo ciertas condiciones de la misma. Es de destacar que el estudio realizado es solamente una pequeñísima parte de la vanguardia de ambos temas. Por un lado las ecuaciones de Stein unidimensionales han sido ampliamente estudiadas, de acuerdo con \cite{Nourdin_Peccati_2012}. Por otro lado, el estudio de existencia de densidades también se encuentra bastante avanzado hoy en día.
+
+En lo que a este texto respecta, la herramienta necesaria para abordar el problema planteado al inicio ha sido cubierta en su totalidad, por lo que en lo que resta del texto, nos enfocaremos en el mismo.
 
 
 
 \chapter{Propiedades espaciales de la Ecuación estocástica del calor}
-En este capítulo presentaremos la parte central de la aplicación de las técnicas de Malliavin-Stein y SPDE's al estudio de la convergencia de las densidades de los promedios espaciales de la solución de la ecuación estocástica del calor, a la densidad de una variable aleatoria gaussiana estándar.
+En este capítulo presentamos en su plenitud el problema planteado al inicio de este texto, el cual consiste en estudiar la convergencia de las densidades de los promedios espaciales de la solución a la SHE, a la densidad de una variable aleatoria normal estándar $\Phi$, usando la distancia uniforme en $\R$.
 
-Consideremos la siguiente ecuación diferencial parcial estocástica:
-
-\begin{equation}
-\partial u_t=\frac{1}{2}\partial_{xx}u+\sigma(u)\dot{W}, \qquad \forall x\in \R, \forall t>0.
+Ahora que contamos con las herramientas necesarias para abordar nuestro problema, procedemos a enunciarlo de manera rigurosa. Este capítulo está completamente basado en \cite[pp. 68-71, 75-86.]{KUZGUN202268}. Consideremos la ecuación estocástica del calor 
+\begin{equation}\label{shedefinitiva}
+\partial u_t=\frac{1}{2}\partial_{xx}u+\sigma(u)\dot{W}, \qquad \forall x\in \R, \ \forall t>0.
 \end{equation}
 cuya condición inicial es $u(0,x):=u_0(x)$, y $\dot{W}$ es un ruido blanco en $[0,\infty)\times\R$, esto es, tanto en el espacio como en el tiempo.
 
-Del capítulo 1, tenemos garantizada la existencia y unicidad de una solución mild $u(t,x)$ a la ecuación 1, suponiendo que $\sigma$ es una función Lipschitz, y que $u_0$ es una medida signada que satisface la siguiente condición de integrabilidad:
-\[
-\int_\R p_t(x)\abs{u_0}(dx)=\int_\R\frac{1}{\sqrt{2\pi t}}\exp \left\{-x^2/2t\right\}\abs{u_0}(dx),    
-\]
-para $t>0$ y $x\in \R$. Estamos entonces interesados en el comportamiento asintótico de un nuevo objeto construido a partir de dicha solución: los promedios espaciales de la misma. Concretamente, en el caso en el que $u_0(x)=1$, para cualquier $x\in \R$, y $\sigma:\R\to\R$ es una función Lipschitz tal que $\sigma(1)\neq 0$, se definen los promedios espaciales de la solución $u$ como sigue: para $R>0$ fijo, 
-\begin{equation}
+% Tal y como hemos mencionado, la existencia y la unicidad de la solución mild a la ecuación estocástica del calor ha sido ya demostrada desde la década de los ochentas en el caso en que la condición inicial $u_0$ es una función acotada y la función $\sigma$ es Lipschitz continua (ver, por ejemplo, \cite{Walsh_J.B_Introduction_to_SPDEs}). 
+
+Del capítulo 1 tenemos garantizada la existencia y unicidad de la solución en el sentido mild, $u(t,x)$, a la ecuación anterior en el caso en que $\sigma$ es una función Lipschitz tal que $\sigma(1)\neq0$, y que $u_0$ es la función idénticamente 1. Con dicha solución al alcance, la cual es de naturaleza estocástica, nos interesamos ahora por en el comportamiento asintótico de un nuevo objeto construido a partir de la misma: los promedios espaciales. Estos objetos, en nuestro contexto, se definen a continuación. 
+
+\begin{dfn} 
+ Sea $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ la solución mild a la ecuación \eqref{shedefinitiva}, con condición inicial $u_0\equiv 1$ y $\sigma:\R\to \R$ una función Lipschitz tal que $\sigma(1)\neq 0$. Para $R>0$ fijo, definimos los promedios espaciales centrados y normalizados de $u$ como 
+ \begin{equation*}
    F_{R,t}:=\frac{1}{\sigma_{R,t}}\left(\int_{-R}^{R}u(t,x)dx -2R\right), \qquad \text{donde} \ \ \sigma^2_{R,t}=\text{Var}\left(\int_{-R}^{R}u(t,x)dx\right).
-\end{equation}
-Las variables $F_{R,t}$ son conocidas como los promedios espaciales centrados y normalizados. En \cite{HUANG20207170}, Huang, Nualart y Viitasaari estudian el comportamiento límite de $F_{R,t}$ conforme $R\to \infty$, siendo capaces de probar resultados tipo teorema central del límite para $F_{R,t}$. Más aún, en dicha publicación, utilizando técnicas de Malliavin-Stein, se obtuvieron cotas superiores para la tasa de convergencia de $F_{R,t}$ a la distribución normal estándar en distancia de variación total. De manera precisa, obtuvieron que
+\end{equation*}
+ \end{dfn}
+Nos referiremos a las variables $F_{R,t}$ simplemente como los promedios espaciales de la solución $u$, entendiéndolos siempre en el sentido de la definición anterior. Tal y como se mencionó al inicio, en \cite{HUANG20207170}, Huang, Nualart y Viitasaari estudian el comportamiento límite de las variables $F_{R,t}$ conforme $R$ tiende a infinito, siendo capaces de probar resultados tipo teorema central del límite para $F_{R,t}$. Más aún, en dicha publicación, utilizando método de Stein junto con cálculo de Malliavin, se obtuvieron cotas superiores para la tasa de convergencia de $F_{R,t}$ a la distribución normal estándar en distancia de variación total. De manera precisa, obtuvieron el siguiente resultado
 \begin{equation}
-   d_{TV}(F_{R,t},N)\leq \frac{C_t}{\sqrt{R}}, \qquad \text{para }t>0,\text{ y } R\geq1.  
+   d_{\text{TV}}(F_{R,t},N)\leq \frac{C_t}{\sqrt{R}}, \qquad \text{para }t>0 \ \text{ y } \ R\geq1.  
 \end{equation}
 
 Con este trabajo como antecedente, el propósito final del capítulo es obtener cotas superiores para la tasa de convergencia de la distancia uniforme entre las densidades de los promedios espaciales y la densidad de una variable aleatoria normal estándar. Concretamente, se busca probar el siguiente resultado.
-\begin{teo} 
-Sea $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ la solución mild de la ecuación estocástica del calor dada antes. Supongamos que $\sigma:\R\to\R$ es una función tal que 
+\begin{teo}\label{teoremaprincipal}
+Sea $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ la solución mild de la ecuación estocástica del calor dada antes, con condición inicial $u_0(x)\equiv 1$. Supongamos que $\sigma:\R\to\R$ es una función Lipschitz tal que $\sigma(1)\neq 0$ y además cumple que
 \begin{itemize}
    \item $\sigma\in C^2(\R)$.
    \item $\sigma'$ es acotada.
@@ -1760,159 +1784,179 @@ Sea $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ la solución mild de l
 \end{itemize}
 Supongamos también que, para algún $q>10$, se cumple que 
 \[
-\E\left[\abs{|\sigma(u(t,0))}^{-q}\right]<\infty.    
+\E\left[\abs{\sigma(u(t,0))}^{-q}\right]<\infty.    
 \]
-Entonces para $t>0$ fijo, se cumple que para cualquier $R>0$, la distancia entre las densidades de los promedios espaciales y la densidad de la distribución normal están acotadas uniformemente en $\R$ de la siguiente forma:
+Entonces para $t>0$ fijo, se cumple que para cualquier $R>0$, los promedios espaciales $F_{R,t}$ poseen una densidad continua y acotada $f_{F_{R,t}}$, y la distancia entre las densidades de los promedios espaciales y la densidad de la distribución normal cumplen que  
 \[
 \sup_{x\in \R} \abs{f_{F_{R,t}}(x)-\Phi(x)}\leq \frac{C_t}{\sqrt{R}},   
 \]
-donde $f_{F_{R,t}}$ y $\Phi$ son las densidades de $F_{R,t}$ y $N$ una variable aleatoria normal estándar, respectivamente, y $C_t$ es una constante dependiente de $t$.
+donde $\Phi$ es la densidad de una variable aleatoria normal estándar y $C_t>0$ es una constante dependiente de $t$.
 \end{teo}
 
-La idea de la prueba es la siguiente. Dados los preliminares de SPDE's y cálculo de Malliavin-Stein, primero se demuestra una cota superior elemental para la distancia uniforme entre la densidad de una variable aleatoria $F$ que está dada coom un funcional de un proceso Gaussiano isonormal, y la densidad de una variable aleatoria normal estándar.
+Siendo este capítulo dedicado a la prueba de este teorema, lo estructuramos de la siguiente forma. Dedicamos primero una sección a mostrar dos resultados clave en la misma. El primero de ellos tiene que ver con una expresión para la segunda derivada de Malliavin de la solución a la ecuación del calor $\eqref{shedefinitiva}$, mientras que el segundo tiene que ver con la existencia de los momentos negativos.
 
-Para lograr dicha estimación, es necesario ver a la función de distribución de la variable aleatoria $F$ como la integral de Skorokhod (o como divergencia en el sentido del cálculo de Malliavin). Esto es, $F=\delta(v)$ para algún $v$.
+La segunda sección consiste en el cuerpo de la prueba como tal. Justo como se mencionó en la segunda sección del capítulo tres, la cota \eqref{cotafundamental} es la columna vertebral de la prueba, y por lo tanto esta sección comienza verificando que se cumplen las hipótesis de dicho teorema. Posterior a esto, se muestra que de los dos sumandos de la cota \eqref{cotafundamental}, uno de ellos es acotado relativamente fácil por la cantidad buscada, usando para ello parte de la prueba del teorema 1.1 de \cite{HUANG20207170}, mientras que el segundo de ellos, correspondiente a la norma de la segunda derivada de la solución mild $u$, es el que abarca el grueso de la prueba.
 
-La idea es aplicar las técnicas de estimación anteriores a los promedios espaciales $F_{R,t}$ de la solución mild a la ecuación del calor. 
 
-Tenemos el siguiente resultado, el cual se encuentra en \cite{Caballero1998-hz}, y del cual haremos uso sin ahondar en su demostración.
-\begin{teo} 
-Sea $F\in \D^{1,1}$ y  sea $v\in L^{1}(\Omega;\mathcal{H})$ tal que $D_vF\neq 0$ c.s. Supongamos que $v/D_vF\in \text{Dom}(\delta)$. Entonces la distribución de $F$ tiene una densidad continua y acotada dada por 
-\[
-f_F(x)=\E\left[\1_{\{F>x\}}\delta \left(\frac{v}{D_vF}\right)\right]   
-\]
-\end{teo}
 
-El resultado anterior es válido para cualquier espacio de Hilbert $\mathfrak{H}$. Aplicando el resultado anterior al contexto de una variable aleatoria adecuada, se tiene lo siguiente:
+\section{Cotas para la primera y segunda derivada de la solución mild y existencia de momentos negativos}
 
-\begin{teo} 
- Sea $v\in \D^{1,6}(\Omega;\mathcal{H})$ y $F=\delta(v)\in \D^{2,6}$ con $\E\left[F\right]=0, \E\left[F^{2}\right]=1$ y $\left(D_vF\right)^{-1}\in L^4(\Omega)$. Entonces $v/D_vF \in \text{Dom}(\delta)$, $F$ admite una densidad $f_F(x)$ y se tiene la siguiente desigualdad
- \[
-   \sup_{x\in \R} \abs{f_F(x)-\Phi(x)}\leq \left(\|F\|_4\|\left(D_vF\right)^{-1}\|_4+2\right)\|1-D_vF\|_2+\|\left(D_vF\right)^{-1}\|^{2}\|D_v \left(D_vF\right)\|_2,
-   \]
-donde $\Phi(x)$ es la función de densidad de una variable normal estándar.
+Tal y como se mencionó, estudiamos primero el comportamiento de la segunda derivada de la solución mild $u$ a la ecuación del calor \eqref{shedefinitiva}. Cabe mencionar que para lograrlo, debemos mencionar un resultado análogo para la primera derivada de la solución. Esto debido a que precisamente es a partir de dicho resultado que se llega al que es de nuestro principal interés, además de ser necesario para la prueba del resultado principal. Dicho resultado lo enunciamos a continuación, y se puede consultar en \cite[proposición 2.4.4]{nualart2006malliavin}.
 
-\end{teo}
-\begin{proof} 
-  Vamos a denotar por $F_R$ a los promedios espaciales de la ecuación estocástica del calor, y directamente por $\sigma$ a la varianza de los promedios espaciales.
-
-  Buscamos hallar una cota uniforme para $x\in \R$ para las siguientes cantidades
-  \[
-  \abs{f_F(x)-\phi(x)}. 
-  \]
-  Gracias a que los promedios espaciales admite una densidad dada por 
-  \[
-  f_F(x)=\E\left[\1_{\{F_R>x\}}\delta(\frac{v}{D_vF_R})\right], 
-  \]
-  podemos operar con estas cantidades de la siguiente forma:
+\begin{teo}\label{cotaderivada1} 
+ S
+ \end{teo}
+De acuerdo con \cite{KUZGUN202268}, el siguiente resultado correspondiente a la cota de la segunda derivada de la solución mild resuelve un problema abierto en el cálculo de Malliavin y tiene su interés en sí. Enunciamos dicho resultado a continuación.
+ \begin{teo}\label{cotaderivada2}
+   Sea $u$ la solución a la ecuación estocástica del calor con condición inicial $u_0=1$. Supongamos que las hipótesis del resultado principal. Fijando $(t,x)\in [0,\infty)\times \R$. Entonces $u(t,x)\in \bigcap_{p\geq2}\D^{2,p}$ y para casi todo $0<r<s<t$, $y,z\in \R$, la segunda derivada de $u$, a saber, $D_{r,z}D_{s,y}
+   u(t,x)$ satisface la siguiente ecuación diferencial estocástica lineal:
+   
    \begin{align*}
-   f_F(x)=\E\left[\1_{\{F_R>x\}}\delta(\frac{v}{D_vF_R})\right]&=\E\left[\1_{\{F_R>x\}}\frac{1}{D_{v_R}}\delta(v_R)\right]-\E\left[\1_{\{F_R>x\}}\langle D \left(\frac{1}{D_{v_R}F_R}\right),v_R\rangle_{\mathcal{h}}\right]\\
-   &=\E\left[\1_{\{F_R>x\}}\frac{F_R}{D_{v_R}F_R}\right]+\E\left[\1_{\{F_R>x\}}\left(\frac{1}{\left(D_{v_R}F_R\right)^2}\right)D_{v_R}D_{v_R}F_R\right].
+      D_{r,z}D_{s,y}u(t,x)&=p_{t-s}(x-y)\sigma'(u(s,y))D_{r,z}u(s,y)\\
+      &+\int_{[s,t]\times \R}p_{t-\tau}(x-\xi)\sigma''(u(\tau,\xi))D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\\
+      &+\int_{[s,t]\times \R}p_{t-\tau}(x-\xi)\sigma'(u(\tau,\xi))D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\\
    \end{align*}
-  Ahora bien, en el término de la derecha de antes, podemos acotar la cantidad de la siguiente forma:
-  \[
-   \E\left[\1_{\{F_R>x\}}\left(\frac{1}{\left(D_{v_R}F_R\right)^2}\right)D_{v_R}D_{v_R}F_R\right]\leq \sqrt{\E\left[\abs{D_{v_R}F_R}^{-4}\right]\E\left[\abs{D_{v_R}D_{v_R}F_R}^2\right]},
-  \]
-  de tal forma que el problema simplificado consiste en analizar el término de la izquierda, es decir, analizar.
-  \[
-   \E\left[\1_{\{F_R>x\}}\frac{F_R}{D_{v_R}F_R}\right] 
-  \]
-   Pero en cuanto a este término, notamos lo siguiente:
-  \begin{align*}
-   \E\left[\1_{[x,\infty)}(F_R)\frac{F_R}{D_vF_R}\right]&=\E\left[\1_{[x,\infty)}(F_R)F_R \left(\frac{1}{D_vF_R}-\frac{1}{\sigma^2}\right)\right] + \frac{1}{\sigma^2}\E\left[\1_{[x,\infty)}(F_R)F_R\right]\\
-  \end{align*}
-  Ahora bien, nosotros tenemos la siguiente estimación 
-  \[
-  \sigma^2\approx \E\left[D_{V_R}F_R\right]\approx 1,  
-  \]
-  por lo que insertando dicha aproximación en la igualdad anterior, tenemos que 
-  \begin{align*}
-   \E\left[\1_{[x,\infty)}(F_R)F_R \left(\frac{1}{D_vF_R}-\frac{1}{\sigma^2}\right)\right] &+ \frac{1}{\sigma^2}\E\left[\1_{[x,\infty)}(F_R)F_R\right]\\
-   &=\frac{1}{(D_vF_R)\sigma^2}\E\left[\1_{[x,\infty)}(F_R)F_R\right] \left(\E\left[D_vF_R\right]-D_vF_R\right)\\
-   &+\frac{1}{\sigma^2}\E\left[\1_{[x,\infty)}(F_R)F_R\right]\\
-  \end{align*}
-  Tenemos aquí dos términos nuevamente. El primero de ellos lo podemos acotar de la siguiente forma:
-  \[
-    \|F_R\|_{L^4(\Omega)}\|\left(D_{v_R}F_R\right)^{-1}\|_{L^{4}(\Omega)}\text{Var}\abs{D_{v_R}F_R}^{1/2}\le C\|DD_{v_R}F_R\|^{1/2}_{L^{2}(\Omega,\mathcal{h})},
-  \] 
-  donde $C$ es una constante adecuada.
+   Más aún, para cualesquiera $0\leq r<s<t\leq T$  y $x,y,z\in \R$, tenemos que 
+   \[
+   \|D_{r,z}D_{s,y}u(t,x)\|_p\leq C_{T,p}\Phi_{r,z,s,y}(t,x),
+   \]
+   donde $C_{T,p}$ es una constante que depende de $T,p$ y $\sigma$, y 
+   
+      \begin{align*}
+          \Phi_{r,z,s,y}(t,x):=&p_{t-s}(x-y)\cdot \left(p_{s-r}(y-z)+\frac{p_{t-r}(z-y)+p_{t-r}(z-x)+\1_{\abs{y-x}>\abs{z-y}}}{(s-r)^{1/4}}\right).
+      \end{align*} 
+   \end{teo}
+Tornamos nuestra atención a la existencia de los momentos negativos de la derivada de la solución a la SHE. Este es el contenido del siguiente resultado.
+\begin{teo} 
+   Sea $u$ la solución mild a la ecuación estocástica del calor. Supongamos que $\sigma$ es Lipschitz. Sea $p\geq2$ fijo, $t>0$ y supongamos que existe un $q>5p$ tal que $\E\left[\abs{\sigma(u(t,0))}^{-2q}\right]<\infty$. entonces, existe una constante $R_0>0$ tal que 
+   \[
+   \sup_{R\geq R_0}\E\left[\abs{D_{v_{R,t}}F_{R,t}}^{-p}\right]<\infty.
+   \]
+   \end{teo}
+   La prueba de este resultado se omite en este texto, por lo que se refiere a $\cite{KUZGUN202268}$ para su consulta.
 
-  Resta entonces analizar qué sucede con el siguiente término:
-  \[
-   \E\left[\1_{[x,\infty)}(F_R)F_R\right].
-  \]
-  Para ello, utilizamos la herramienta de Malliavin-Stein. Concretamente notemos que, sumando y restando el término $\1_{\{N>x\}}N$, donde $N$ es una variable aleatoria normal estándar, tenemos que, denotando por $g_x(F_R):=\1_{\{F_R>x\}}F_R$ y lo correspondiente para $g_x(N)$, 
-  \[
-   \E\left[\1_{\{F_R>x\}}\right]=\E\left[g_x(F_R)-g_x(N)\right]+\E\left[g_x(N)\right].
-  \]
-  El término de la izquierda en la ecuación anterior es sencillo de controlar, por lo que resta analizar la diferencia entre las esperanzas de $g_x$ evaluada en $F_R$ y en $N$. Para ello, de acuerdo al capítulo de método de Stein, notamos que 
-  \[
-  \E\left[g_x(F_R)-g_x(N)\right]=\E\left[F_R\psi_x(F_R)-\psi_x'(F_R)\right], 
-  \]
-  donde $y\psi_x(y)-\psi_x'(y)=g_x(y)-\E\left[g_x(N)\right]$.
 
-  Ahora bien, analizando la esperanza en términos de $\psi_x$, tenemos que 
+% % % primero se demuestra una cota superior elemental para la distancia uniforme entre la densidad de una variable aleatoria $F$ que está dada coom un funcional de un proceso Gaussiano isonormal, y la densidad de una variable aleatoria normal estándar.
+
+% % % Para lograr dicha estimación, es necesario ver a la función de distribución de la variable aleatoria $F$ como la integral de Skorokhod (o como divergencia en el sentido del cálculo de Malliavin). Esto es, $F=\delta(v)$ para algún $v$.
+
+% % % La idea es aplicar las técnicas de estimación anteriores a los promedios espaciales $F_{R,t}$ de la solución mild a la ecuación del calor. 
+
+% % % Tenemos el siguiente resultado, el cual se encuentra en \cite{Caballero1998-hz}, y del cual haremos uso sin ahondar en su demostración.
+% % % \begin{teo} 
+% % % Sea $F\in \D^{1,1}$ y  sea $v\in L^{1}(\Omega;\mathcal{H})$ tal que $D_vF\neq 0$ c.s. Supongamos que $v/D_vF\in \text{Dom}(\delta)$. Entonces la distribución de $F$ tiene una densidad continua y acotada dada por 
+% % % \[
+% % % f_F(x)=\E\left[\1_{\{F>x\}}\delta \left(\frac{v}{D_vF}\right)\right]   
+% % % \]
+% % % \end{teo}
+
+% % % El resultado anterior es válido para cualquier espacio de Hilbert $\mathfrak{H}$. Aplicando el resultado anterior al contexto de una variable aleatoria adecuada, se tiene lo siguiente:
+
+% % % \begin{teo} 
+% % %  Sea $v\in \D^{1,6}(\Omega;\mathcal{H})$ y $F=\delta(v)\in \D^{2,6}$ con $\E\left[F\right]=0, \E\left[F^{2}\right]=1$ y $\left(D_vF\right)^{-1}\in L^4(\Omega)$. Entonces $v/D_vF \in \text{Dom}(\delta)$, $F$ admite una densidad $f_F(x)$ y se tiene la siguiente desigualdad
+% % %  \[
+% % %    \sup_{x\in \R} \abs{f_F(x)-\Phi(x)}\leq \left(\|F\|_4\|\left(D_vF\right)^{-1}\|_4+2\right)\|1-D_vF\|_2+\|\left(D_vF\right)^{-1}\|^{2}\|D_v \left(D_vF\right)\|_2,
+% % %    \]
+% % % donde $\Phi(x)$ es la función de densidad de una variable normal estándar.
+
+% % % \end{teo}
+% % % \begin{proof} 
+% % %   Vamos a denotar por $F_R$ a los promedios espaciales de la ecuación estocástica del calor, y directamente por $\sigma$ a la varianza de los promedios espaciales.
+
+% % %   Buscamos hallar una cota uniforme para $x\in \R$ para las siguientes cantidades
+% % %   \[
+% % %   \abs{f_F(x)-\phi(x)}. 
+% % %   \]
+% % %   Gracias a que los promedios espaciales admite una densidad dada por 
+% % %   \[
+% % %   f_F(x)=\E\left[\1_{\{F_R>x\}}\delta(\frac{v}{D_vF_R})\right], 
+% % %   \]
+% % %   podemos operar con estas cantidades de la siguiente forma:
+% % %    \begin{align*}
+% % %    f_F(x)=\E\left[\1_{\{F_R>x\}}\delta(\frac{v}{D_vF_R})\right]&=\E\left[\1_{\{F_R>x\}}\frac{1}{D_{v_R}}\delta(v_R)\right]-\E\left[\1_{\{F_R>x\}}\langle D \left(\frac{1}{D_{v_R}F_R}\right),v_R\rangle_{\mathcal{h}}\right]\\
+% % %    &=\E\left[\1_{\{F_R>x\}}\frac{F_R}{D_{v_R}F_R}\right]+\E\left[\1_{\{F_R>x\}}\left(\frac{1}{\left(D_{v_R}F_R\right)^2}\right)D_{v_R}D_{v_R}F_R\right].
+% % %    \end{align*}
+% % %   Ahora bien, en el término de la derecha de antes, podemos acotar la cantidad de la siguiente forma:
+% % %   \[
+% % %    \E\left[\1_{\{F_R>x\}}\left(\frac{1}{\left(D_{v_R}F_R\right)^2}\right)D_{v_R}D_{v_R}F_R\right]\leq \sqrt{\E\left[\abs{D_{v_R}F_R}^{-4}\right]\E\left[\abs{D_{v_R}D_{v_R}F_R}^2\right]},
+% % %   \]
+% % %   de tal forma que el problema simplificado consiste en analizar el término de la izquierda, es decir, analizar.
+% % %   \[
+% % %    \E\left[\1_{\{F_R>x\}}\frac{F_R}{D_{v_R}F_R}\right] 
+% % %   \]
+% % %    Pero en cuanto a este término, notamos lo siguiente:
+% % %   \begin{align*}
+% % %    \E\left[\1_{[x,\infty)}(F_R)\frac{F_R}{D_vF_R}\right]&=\E\left[\1_{[x,\infty)}(F_R)F_R \left(\frac{1}{D_vF_R}-\frac{1}{\sigma^2}\right)\right] + \frac{1}{\sigma^2}\E\left[\1_{[x,\infty)}(F_R)F_R\right]\\
+% % %   \end{align*}
+% % %   Ahora bien, nosotros tenemos la siguiente estimación 
+% % %   \[
+% % %   \sigma^2\approx \E\left[D_{V_R}F_R\right]\approx 1,  
+% % %   \]
+% % %   por lo que insertando dicha aproximación en la igualdad anterior, tenemos que 
+% % %   \begin{align*}
+% % %    \E\left[\1_{[x,\infty)}(F_R)F_R \left(\frac{1}{D_vF_R}-\frac{1}{\sigma^2}\right)\right] &+ \frac{1}{\sigma^2}\E\left[\1_{[x,\infty)}(F_R)F_R\right]\\
+% % %    &=\frac{1}{(D_vF_R)\sigma^2}\E\left[\1_{[x,\infty)}(F_R)F_R\right] \left(\E\left[D_vF_R\right]-D_vF_R\right)\\
+% % %    &+\frac{1}{\sigma^2}\E\left[\1_{[x,\infty)}(F_R)F_R\right]\\
+% % %   \end{align*}
+% % %   Tenemos aquí dos términos nuevamente. El primero de ellos lo podemos acotar de la siguiente forma:
+% % %   \[
+% % %     \|F_R\|_{L^4(\Omega)}\|\left(D_{v_R}F_R\right)^{-1}\|_{L^{4}(\Omega)}\text{Var}\abs{D_{v_R}F_R}^{1/2}\le C\|DD_{v_R}F_R\|^{1/2}_{L^{2}(\Omega,\mathcal{h})},
+% % %   \] 
+% % %   donde $C$ es una constante adecuada.
+
+% % %   Resta entonces analizar qué sucede con el siguiente término:
+% % %   \[
+% % %    \E\left[\1_{[x,\infty)}(F_R)F_R\right].
+% % %   \]
+% % %   Para ello, utilizamos la herramienta de Malliavin-Stein. Concretamente notemos que, sumando y restando el término $\1_{\{N>x\}}N$, donde $N$ es una variable aleatoria normal estándar, tenemos que, denotando por $g_x(F_R):=\1_{\{F_R>x\}}F_R$ y lo correspondiente para $g_x(N)$, 
+% % %   \[
+% % %    \E\left[\1_{\{F_R>x\}}\right]=\E\left[g_x(F_R)-g_x(N)\right]+\E\left[g_x(N)\right].
+% % %   \]
+% % %   El término de la izquierda en la ecuación anterior es sencillo de controlar, por lo que resta analizar la diferencia entre las esperanzas de $g_x$ evaluada en $F_R$ y en $N$. Para ello, de acuerdo al capítulo de método de Stein, notamos que 
+% % %   \[
+% % %   \E\left[g_x(F_R)-g_x(N)\right]=\E\left[F_R\psi_x(F_R)-\psi_x'(F_R)\right], 
+% % %   \]
+% % %   donde $y\psi_x(y)-\psi_x'(y)=g_x(y)-\E\left[g_x(N)\right]$.
+
+% % %   Ahora bien, analizando la esperanza en términos de $\psi_x$, tenemos que 
   
-  \begin{align*}
-   \E\left[F_R\psi_x(F_R)\right]&=\E\left[\delta(v_R)\psi_x(F_R)\right]\\
-   &=\E\left[\abs{\langle v_R,DF_R\rangle}\psi_x'(F_R)\right]\\
-   &=\E\left[D_{V_R}F_R\psi_x'(F_R)\right]\\
-   &=\sigma^2 \E\left[\psi_x(F_R)\right]+\E\left[\left(D_{v_R}F_R-\sigma^2\right)\psi_x'(F_R)\right]\\
-   &\le \|\psi_x'\|_\infty \text{Var}\abs{D_{v_R}F_R}^{-1/2}\\
-   &\leq \|\psi_x'\|_\infty \|DD_{v_R}F_R\|_{L^2(\Omega,\mathfrak{H})}.
-  \end{align*}
-  Finalmente, para la prueba de la última cota, si nosotros vemos a la variable aleatoria normal $N$ como una divergencia, esto es, $N=\delta(h)$ para algún $h$ tal que $\|h\|=1$, entonces 
-  \[
-   f_N(x)=\E\left[\1_{\{N>x\}}\delta(h)\right]=\E\left[\1_{\{N>x\}N}\right]=\E\left[g_x(N)\right],
-  \]
-  por lo que concluimos la cota.
-\end{proof}
+% % %   \begin{align*}
+% % %    \E\left[F_R\psi_x(F_R)\right]&=\E\left[\delta(v_R)\psi_x(F_R)\right]\\
+% % %    &=\E\left[\abs{\langle v_R,DF_R\rangle}\psi_x'(F_R)\right]\\
+% % %    &=\E\left[D_{V_R}F_R\psi_x'(F_R)\right]\\
+% % %    &=\sigma^2 \E\left[\psi_x(F_R)\right]+\E\left[\left(D_{v_R}F_R-\sigma^2\right)\psi_x'(F_R)\right]\\
+% % %    &\le \|\psi_x'\|_\infty \text{Var}\abs{D_{v_R}F_R}^{-1/2}\\
+% % %    &\leq \|\psi_x'\|_\infty \|DD_{v_R}F_R\|_{L^2(\Omega,\mathfrak{H})}.
+% % %   \end{align*}
+% % %   Finalmente, para la prueba de la última cota, si nosotros vemos a la variable aleatoria normal $N$ como una divergencia, esto es, $N=\delta(h)$ para algún $h$ tal que $\|h\|=1$, entonces 
+% % %   \[
+% % %    f_N(x)=\E\left[\1_{\{N>x\}}\delta(h)\right]=\E\left[\1_{\{N>x\}N}\right]=\E\left[g_x(N)\right],
+% % %   \]
+% % %   por lo que concluimos la cota.
+% % % \end{proof}
 
-Y para la prueba del resultado principal, es esencial el uso de dos resultados distintos: uno de ellos consiste en una cotas de momentos para la segunda derivada de Malliavin de la solución, y los momentos negativos de la proyección $DF_{R,t}$ en $v_{R,t}$, donde $F_{R,t}=\delta(v_{R,t})$. El primero de ellos se encuentra en el siguiente resultado:
+% % % Y para la prueba del resultado principal, es esencial el uso de dos resultados distintos: uno de ellos consiste en una cotas de momentos para la segunda derivada de Malliavin de la solución, y los momentos negativos de la proyección $DF_{R,t}$ en $v_{R,t}$, donde $F_{R,t}=\delta(v_{R,t})$. El primero de ellos se encuentra en el siguiente resultado:
 
-\begin{teo} 
-Sea $u$ la solución a la ecuación estocástica del calor con condición inicial $u_0=1$. Supongamos que las hipótesis del resultado principal. Fijando $(t,x)\in [0,\infty)\times \R$. Entonces $u(t,x)\in \bigcap_{p\geq2}\D^{2,p}$ y para casi todo $0<r<s<t$, $y,z\in \R$, la segunda derivada de $u$, a saber, $D_{r,z}D_{s,y}
-u(t,x)$ satisface la siguiente ecuación diferencial estocástica lineal:
 
-\begin{align*}
-   D_{r,z}D_{s,y}u(t,x)&=p_{t-s}(x-y)\sigma'(u(s,y))D_{r,z}u(s,y)\\
-   &+\int_{[s,t]\times \R}p_{t-\tau}(x-\xi)\sigma''(u(\tau,\xi))D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\\
-   &+\int_{[s,t]\times \R}p_{t-\tau}(x-\xi)\sigma'(u(\tau,\xi))D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\\
-\end{align*}
-Más aún, para cualesquiera $0\leq r<s<t\leq T$  y $x,y,z\in \R$, tenemos que 
-\[
-\|D_{r,z}D_{s,y}u(t,x)\|_p\leq C_{T,p}\Phi_{r,z,s,y}(t,x),
-\]
-donde $C_{T,p}$ es una constante que depende de $T,p$ y $\sigma$, y 
-
-   \begin{align*}
-       \Phi_{r,z,s,y}(t,x):=&p_{t-s}(x-y)\cdot \left(p_{s-r}(y-z)+\frac{p_{t-r}(z-y)+p_{t-r}(z-x)+\1_{\abs{y-x}>\abs{z-y}}}{(s-r)^{1/4}}\right)
-   \end{align*} 
-\end{teo}
-Por otro lado, se tiene el siguiente resultado sobre la estimación de momentos negativos.
-
-\begin{teo} 
-Sea $u$ la solución mild a la ecuación estocástica del calor. Supongamos que $\sigma$ es Lipschitz. Sea $p\geq2$ fijo, $t>0$ y supongamos que existe un $q>5p$ tal que $\E\left[\abs{\sigma(u(t,0))}^{-2q}\right]<\infty$. entonces, existe una constante $R_0>0$ tal que 
-\[
-\sup_{R\geq R_0}\E\left[\abs{D_{v_{R,t}}F_{R,t}}^{-p}\right]<\infty.
-\]
-\end{teo}
-La prueba de este resultado se omite en este texto, por lo que se refiere a $\cite{KUZGUN202268}$ para su consulta.
+\section{Prueba del resultado principal}
+\subsection{Validez de las hipótesis}
+\subsection{Cota de la segunda derivada de los promedios espaciales}
 
 
 
-
-\section{Formulación Mild en el caso sin deriva}
+%\section{Formulación Mild en el caso sin deriva}
 %\section{Una ecuación estocástica para $Du$ y $D^2u$}
-\section{Densidad explícita de los promedios espaciales}
+%\section{Densidad explícita de los promedios espaciales}
 %Disclaimer: no se van a manejar los momentos inversos.
-\textit{Contribución del Kernel de Stein}
-\textit{Contribución de las derivadas de orden superior}
+%\textit{Contribución del Kernel de Stein}
+%\textit{Contribución de las derivadas de orden superior}
 
-\section{Aproximación uniforme de las densidades} %La sección integradora de los conceptos
+%\section{Aproximación uniforme de las densidades} %La sección integradora de los conceptos
 
+\chapter{Conclusiones y trabajo futuro}
 
 \backmatter
+
 \bibliographystyle{amsplain}
 \bibliography{build/Referencias_tesis}
 \end{document}

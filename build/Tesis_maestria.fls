@@ -345,12 +345,13 @@ INPUT .\img\banner_cimat_20200126_05.png
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm2488.tfm
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx2488.tfm
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
-INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
-OUTPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
-INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\eccc1200.tfm
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1200.tfm
+INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\eccc1200.tfm
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
+INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
+INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecxc1200.tfm
+OUTPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0800.tfm
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0600.tfm
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\doublestroke\udsrom.fd
@@ -373,12 +374,14 @@ INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\T
 INPUT c:\Users\irvin\Documents\Maestría\Semestre 4\Tesis\Proyecto Tesis\build\Tesis_maestria.out
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
-INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
-INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
-INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
-INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
+INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1200.pk
+INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1200.pk
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk
+INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
+INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk
+INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
+INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk
 INPUT C:\Users\irvin\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
