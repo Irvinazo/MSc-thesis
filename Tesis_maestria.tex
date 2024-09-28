@@ -10,16 +10,16 @@
 %\usepackage[12pt]{extsizes}
 \linespread{1.1}
 
-
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathrsfs}
 \usepackage{tikz-cd}
-\usepackage{mathrsfs}
 \usepackage[bbgreekl]{mathbbol}
 \usepackage{dsfont}
 \usepackage{graphicx}
 \usepackage{parskip}
 \usepackage[colorlinks=true,linkcolor=red,citecolor=red]{hyperref}
+\usepackage{apptools}
+\AtAppendix{\counterwithin{lema}{chapter}}
 \graphicspath{{img/}}
 
 \newcommand{\N}{\mathbb N}
@@ -48,6 +48,8 @@
 \newtheorem{dfn}{Definición}
 \theoremstyle{definition}
 \newtheorem{teo}{Teorema}
+\theoremstyle{remark}
+\newtheorem{proofpart}{Parte}
 \theoremstyle{definition}
 \newtheorem{cor}{Corolario}
 \theoremstyle{definition}
@@ -106,7 +108,7 @@ Dentro de esta explosión de resultados, podemos citar el trabajo de Yaozhong Hu
 
 Sefika Kuzgun y David Nualart, \cite{KUZGUN202268} logran, a partir de estos resultados, exhibir la existencia y unicidad de las densidades de los promedios espaciales de la solución a la ecuación estocástica del calor, y mostrar la convergencia de estas densidades, en distancia uniforme, a la densidad de una variable aleatoria normal, otorgando una tasa de convergencia explícita para la misma.
 
-Para lograr este objetivo, es menester estudiar los conceptos utilizados en el trabajo de Kuzgun y Nualart. Es de destacar desde ahora que en este texto la intención no es, en lo más mínimo, dar un estudio amplio y completo de cada una de las disciplinas anteriores, sino cubrir de manera suficiente pero sucinta la herramienta técnica necesaria para abordar el problema. Así, en esta tesis se da un breve recorrido por las ideas que yacen en el núcleo de la teoría de ecuaciones diferenciales parciales estocásticas (SPDE, por sus siglas en inglés), del cálculo de Malliavin, del método de Stein, así como la amalgama que de estas últimas dos disciplinas surge con la intención de estudiar la existencia de densidades de variables aleatorias bajo ciertas hipótesis. 
+Para lograr este objetivo, es menester estudiar los conceptos utilizados en el trabajo de Kuzgun y Nualart. Es de destacar desde ahora que en este texto la intención no es, en lo más mínimo, dar un estudio amplio y completo de cada una de las disciplinas anteriores, sino cubrir de manera suficiente pero sucinta la herramienta técnica necesaria para abordar el problema. Así, en esta tesis se da un breve recorrido por las ideas que yacen en el núcleo de la teoría de ecuaciones diferenciales parciales estocásticas (SPDE, por sus siglas en inglés), del cálculo de Malliavin, del método de Stein, así como la amalgama que de estas últimas dos disciplinas surge con la intención de estudiar la existencia de densidades de variables aleatorias bajo ciertas hipótesis, y la deducción de teoremas límite. 
 
 De lo anterior se desprende la estructura del presente texto. En el primer capítulo se estudiarán los elementos esenciales de ecuaciones diferenciales parciales estocásticas. Específicamente, se enuncia brevemente la heurística que da origen a la formulación de las mismas. Se realiza la construcción de la integral de Itô-Walsh, y con dicha integral se formula la solución mild de una ecuación diferencial parcial estocástica. Posteriormente nos enfocamos en el contexto de la ecuación estocástica del calor, así como en su solución. Finalmente se enuncian algunos resultados necesarios para abordar el problema principal.
 
@@ -114,11 +116,11 @@ El capítulo dos está dedicado al estudio de los elementos básicos del cálcul
 
 La composición del capítulo tres es similar a la del capítulo anterior. La primera parte del mismo consiste en un estudio breve del método de Stein, mencionando tangencialmente las aplicaciones que esta disciplina puede otorgar. La segunda parte del capítulo consiste principalmente en estudiar un resultado que garantiza la existencia y unicidad de la densidad de una variable aleatoria, así como en estudiar la existencia de una cota para la distancia uniforme entre la densidad de una variable adecuada, y la densidad de una variable normal estándar. Este último resultado resulta ser la columna vertebral sobre la que se sostiene el resultado principal, y es demostrada con detalle, y además es en esta parte en donde se hace uso de la amalgama que el cálculo de Malliavin y el método de Stein conforman. El estudio de las herramientas necesarias para abortar el problema principal culmina en esta parte.
 
-El enunciado y prueba del resultado principal se encuentran hasta el capítulo cuarto. Es aquí en donde se hace rigurosa la formulación del problema que se plantea. Se enuncian dos lemas de carácter técnico que son esenciales en la prueba, y finalmente se estudia y concluye el problema principal. Se agrega un último capítulo en el cual se hace una breve reflexión sobre lo realizado, y se echa una mirada al panorama que este problema nos abre a la vista.
+El enunciado y prueba del resultado principal se encuentran hasta el capítulo cuarto. Es aquí en donde se hace rigurosa la formulación del problema que se plantea. Se enuncian dos lemas de carácter técnico que son esenciales en la prueba, y finalmente se estudia y concluye el problema principal. Se agrega un último capítulo en el cual se hace una breve reflexión sobre lo realizado, y se echa una mirada al panorama que este problema nos presenta.
 
 Los primeros tres capítulos comienzan con un muy breve resumen histórico de la disciplina a estudiar, así como de la relevancia de la misma en la actualidad. El cuarto capítulo repasa el trabajo previo que ha sido mencionado al inicio de esta introducción, pero con mayor rigurosidad. 
 
-Es importante mencionar que ninguno de los resultados enunciados, y tampoco la gran mayoría de heurísticas sobre algún tema en particular que están presentes en este trabajo pertenecen al autor del mismo, por lo que siempre que se usen proposiciones o ideas ajenas, se procurará hacer la correspondiente mención de su origen. De esta forma, el aporte del autor está en explicar de la manera más simple que le ha sido posible los resultados, así como rellenar algunos detalles (y no todos) en las pruebas, o bien unificar algunas ideas sueltas de las fuentes consultadas. 
+Es importante mencionar que ninguno de los resultados enunciados y tampoco la gran mayoría de heurísticas sobre algún tema en particular, que están presentes en este trabajo, pertenecen al autor del mismo, por lo que siempre que se usen proposiciones o ideas ajenas, se procurará hacer la correspondiente mención de su origen. De esta forma, el aporte del autor está en explicar de la manera más simple que le ha sido posible los resultados, así como rellenar algunos detalles (y no todos) en las pruebas, o bien unificar algunas ideas sueltas de las fuentes consultadas. 
 
 
 \textbf{Palabras clave:} \textit{Ecuación del calor estocástica, promedios espaciales, cálculo de Malliavin, método de Stein, existencia de densidades, convergencia uniforme, teoremas tipo límite, tasas de convergencia.}
@@ -772,7 +774,8 @@ Decimos que $u$ es una solución \textit{mild} del problema inicial anterior, si
 \end{align*}
 \end{dfn}
 
-Es conocida teoría que resuelve la ecuación diferencial estocástica del calor. En particular, se tiene el siguiente resultado.
+Es conocida teoría que resuelve la ecuación diferencial estocástica del calor. En particular en el caso en que la condición inicial y $\sigma$ cumplen hipótesis sencillas. Este será nuestro caso de estudio. 
+En particular, se tiene el siguiente resultado.
 
 \begin{teo} 
 La ecuación estocástica del calor, con función $f$ Lipschitz y acotada, tiene una única solución $\P$- casi seguramente, que satisface lo siguiente para cualquier $T>0$.
@@ -1649,10 +1652,10 @@ Es de nuestro interés saber en qué caso es cierto que $\tfrac{u}{D_uF}\in \tex
 
 Estamos interesados en aplicar tanto el lema anterior como el teorema \ref{existdensidad} en condiciones que aparecerán en el capítulo 4. Por lo tanto, y siguiendo de cerca a \cite[sección 3]{KUZGUN202268}, tenemos el siguiente resultado. 
 
-\begin{teo} 
+\begin{teo}\label{teocotafundamental}
  Sean $u\in \D^{1,6}(\Omega;\mathcal{\mathfrak{H}})$ y definamos la variable $F:=\delta(u)$. Supongamos que $F\in \D^{2,6}$, con $\E\left[F\right]=0, \ \E\left[F^{2}\right]=1$ y $\left(D_uF\right)^{-1}\in L^4(\Omega)$. Entonces $u/D_uF \in \text{Dom}(\delta)$, la variable $F$ admite una densidad continua y acotada $f_F(x)$ y la misma cumple la siguiente desigualdad
  \begin{equation}\label{cotafundamental}
-    \sup_{x\in \R} \abs{f_F(x)-\Phi(x)}\leq \left(\|F\|_4\|\left(D_vF\right)^{-1}\|_4+2\right)\|1-D_vF\|_2+\|\left(D_vF\right)^{-1}\|^{2}\|D_v \left(D_vF\right)\|_2,
+    \sup_{x\in \R} \abs{f_F(x)-\Phi(x)}\leq \left(\|F\|_4\|\left(D_vF\right)^{-1}\|_4+2\right)\|1-D_vF\|_2+\|\left(D_vF\right)^{-1}\|^{2}_4\|D_v \left(D_vF\right)\|_2,
  \end{equation}
 donde $\Phi(x)$ es la función de densidad de una variable normal estándar.
 
@@ -1736,7 +1739,7 @@ Finalmente, tenemos que $|F|\leq 1$ y $C\leq 1$, por lo que \ref{eqdiferencia7} 
 Combinando las desigualdades \ref{eqdiferencia3}, \ref{eqdiferencia4} y \ref{eqdiferencia7}, tenemos para $x\in \R$,
 \begin{align*}
    \abs{f_F(x)-\Phi(x)}&\leq \norm{F}_4\norm{(D_vF)^{-1}}_4\norm{1-D_uF}_2+\norm{D_uD_uF}_2\norm{(D_uF)^{-1}}_4^{2}+2\norm{1-D_vF}\\
-   &=\left(\|F\|_4\|\left(D_vF\right)^{-1}\|_4+2\right)\|1-D_vF\|_2+\|\left(D_vF\right)^{-1}\|^{2}\|D_v \left(D_vF\right)\|_2.   
+   &=\left(\|F\|_4\|\left(D_vF\right)^{-1}\|_4+2\right)\|1-D_vF\|_2+\|\left(D_vF\right)^{-1}\|_4^{2}\|D_v \left(D_vF\right)\|_2.   
 \end{align*}
 
 Tomando supremo obtenemos la desigualdad \eqref{cotafundamental}.
@@ -1753,30 +1756,60 @@ En lo que a este texto respecta, la herramienta necesaria para abordar el proble
 \chapter{Propiedades espaciales de la Ecuación estocástica del calor}
 En este capítulo presentamos en su plenitud el problema planteado al inicio de este texto, el cual consiste en estudiar la convergencia de las densidades de los promedios espaciales de la solución a la SHE, a la densidad de una variable aleatoria normal estándar $\Phi$, usando la distancia uniforme en $\R$.
 
-Ahora que contamos con las herramientas necesarias para abordar nuestro problema, procedemos a enunciarlo de manera rigurosa. Este capítulo está completamente basado en \cite[pp. 68-71, 75-86.]{KUZGUN202268}. Consideremos la ecuación estocástica del calor 
+Ahora que contamos con las herramientas necesarias para abordar nuestro problema, procedemos a enunciarlo de manera rigurosa. Este capítulo está completamente basado en \cite[pp. 68-71, 75-86.]{KUZGUN202268}. Consideremos el siguiente problema del calor.
 \begin{equation}\label{shedefinitiva}
-\partial u_t=\frac{1}{2}\partial_{xx}u+\sigma(u)\dot{W}, \qquad \forall x\in \R, \ \forall t>0.
+   \begin{cases}
+      \partial_t u=\frac{1}{2}\partial_{xx}u+\sigma(u)\dot{W} & \qquad \forall x\in \R, \ \forall t>0,\\
+      u_0(x):=u(x,0)=1 & \qquad \forall x\in \R,
+   \end{cases}
 \end{equation}
-cuya condición inicial es $u(0,x):=u_0(x)$, y $\dot{W}$ es un ruido blanco en $[0,\infty)\times\R$, esto es, tanto en el espacio como en el tiempo.
+donde $\dot{W}$ es un ruido blanco en $[0,\infty)\times\R$, esto es, tanto en el espacio como en el tiempo, y $\sigma$ es una función Lipschitz tal que $\sigma(1)\neq 0$.
 
+Nos referiremos a este como nuestro problema principal, y siempre que hagamos referencia a él, entenderemos que las hipótesis sobre $u_0$ y $\sigma$ anteriormente mencionadas se satisfacen.
+
+Como convención, a lo largo de este capítulo escribiremos a la densidad de una variable gaussiana de varianza $t>0$ como
+\[
+p_t(x):=\frac{1}{\sqrt{2\pi t}}e^{-x^2/2t}, \qquad \forall x\in \R.
+\]
 % Tal y como hemos mencionado, la existencia y la unicidad de la solución mild a la ecuación estocástica del calor ha sido ya demostrada desde la década de los ochentas en el caso en que la condición inicial $u_0$ es una función acotada y la función $\sigma$ es Lipschitz continua (ver, por ejemplo, \cite{Walsh_J.B_Introduction_to_SPDEs}). 
 
-Del capítulo 1 tenemos garantizada la existencia y unicidad de la solución en el sentido mild, $u(t,x)$, a la ecuación anterior en el caso en que $\sigma$ es una función Lipschitz tal que $\sigma(1)\neq0$, y que $u_0$ es la función idénticamente 1. Con dicha solución al alcance, la cual es de naturaleza estocástica, nos interesamos ahora por en el comportamiento asintótico de un nuevo objeto construido a partir de la misma: los promedios espaciales. Estos objetos, en nuestro contexto, se definen a continuación. 
+Del capítulo 1 tenemos garantizada la existencia y unicidad de la solución en el sentido mild, $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ al problema anterior. Concretamente, podemos extraer el siguiente teorema, el cual es enunciado en concordancia con \cite[proposición 2.1]{KUZGUN202268}.
 
-\begin{dfn} 
- Sea $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ la solución mild a la ecuación \eqref{shedefinitiva}, con condición inicial $u_0\equiv 1$ y $\sigma:\R\to \R$ una función Lipschitz tal que $\sigma(1)\neq 0$. Para $R>0$ fijo, definimos los promedios espaciales centrados y normalizados de $u$ como 
+\begin{teo}\label{solucionmild}
+ Consideremos el problema de calor \eqref{shedefinitiva}. Entonces existe un único campo aleatorio $u=\{u(t,x): (t,x)\in [0,\infty)\times \R\}$ medible y adaptado, tal que para cualquier $T>0$ y $p\geq2$, 
+ \begin{equation}\label{cotasolucionmild}
+   \sup_{(t,x)\in [0,T]\times\R}\E\left[\abs{u(t,x)}^p\right]=C_{T,p},
+ \end{equation}
+ 
+ y para cualquier $t\geq0$ y $x\in \R$, $u$ satisface
+ \begin{equation}\label{eqsolucionmild}
+   u(t,x)=1+\int_{[0,t]\times \R}^{}p_{t-s}(x-y)\sigma(u(s,y))W(ds,dy).
+ \end{equation}
+ \end{teo}
+ \begin{proof} 
+    pendiente
+  \end{proof}
+Tal y como mencionamos en el capítulo 1, diremos que $u$ es la \textit{solución mild} al problema \eqref{shedefinitiva}. Con dicha solución al alcance, la cual es de naturaleza estocástica, nos interesamos ahora por en el comportamiento asintótico de un nuevo objeto construido a partir de la misma: los promedios espaciales. Estos objetos, en nuestro contexto, se definen a continuación. 
+
+\begin{dfn}\label{defpromediosespaciales}
+ Sea $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ la solución mild al problema \eqref{shedefinitiva}. Para $R>0$ fijo, definimos los promedios espaciales centrados y normalizados de $u$ como 
  \begin{equation*}
-   F_{R,t}:=\frac{1}{\sigma_{R,t}}\left(\int_{-R}^{R}u(t,x)dx -2R\right), \qquad \text{donde} \ \ \sigma^2_{R,t}=\text{Var}\left(\int_{-R}^{R}u(t,x)dx\right).
+   F_{R,t}:=\frac{1}{\sigma_{R,t}}\left(\int_{[-R,R]}u(t,x)dx -2R\right), \qquad \text{donde} \ \ \sigma^2_{R,t}:=\text{Var}\left(\int_{[-R,R]}u(t,x)dx\right).
 \end{equation*}
  \end{dfn}
-Nos referiremos a las variables $F_{R,t}$ simplemente como los promedios espaciales de la solución $u$, entendiéndolos siempre en el sentido de la definición anterior. Tal y como se mencionó al inicio, en \cite{HUANG20207170}, Huang, Nualart y Viitasaari estudian el comportamiento límite de las variables $F_{R,t}$ conforme $R$ tiende a infinito, siendo capaces de probar resultados tipo teorema central del límite para $F_{R,t}$. Más aún, en dicha publicación, utilizando método de Stein junto con cálculo de Malliavin, se obtuvieron cotas superiores para la tasa de convergencia de $F_{R,t}$ a la distribución normal estándar en distancia de variación total. De manera precisa, obtuvieron el siguiente resultado
-\begin{equation}
-   d_{\text{TV}}(F_{R,t},N)\leq \frac{C_t}{\sqrt{R}}, \qquad \text{para }t>0 \ \text{ y } \ R\geq1.  
-\end{equation}
+Nos referiremos a las variables $F_{R,t}$ simplemente como los promedios espaciales de la solución $u$, entendiéndolos siempre en el sentido de la definición anterior. Tal y como se mencionó al inicio, en \cite{HUANG20207170}, para un $t>0$ fijo, Huang, Nualart y Viitasaari estudian el comportamiento límite de las variables $F_{R,t}$ conforme $R$ tiende a infinito, siendo capaces de probar resultados tipo teorema central del límite para los promedios espaciales. Más aún, en dicha publicación, utilizando método de Stein junto con cálculo de Malliavin, se obtuvieron cotas superiores para la tasa de convergencia de $F_{R,t}$ a la distribución normal estándar en distancia de variación total. De manera precisa, obtuvieron el siguiente resultado
 
-Con este trabajo como antecedente, el propósito final del capítulo es obtener cotas superiores para la tasa de convergencia de la distancia uniforme entre las densidades de los promedios espaciales y la densidad de una variable aleatoria normal estándar. Concretamente, se busca probar el siguiente resultado.
+\begin{teo} 
+ Sean $u$ la solución mild al problema \eqref{shedefinitiva} y $Z\sim$ Normal(0,1). Supongamos que $\sigma_{R,t}>0$. Entonces existe una constante $C>0$ que depende solamente de $t$ tal que 
+ \begin{equation}
+    d_{\text{TV}}(F_{R,t},N)\leq \frac{C}{\sqrt{R}}, \qquad \text{para }t>0 \ \text{ y } \ R\geq1.  
+ \end{equation}
+ \end{teo}
+En particular, los autores de \cite{HUANG20207170} resaltan que la condición $\sigma(1)\neq 0$ que aparece en el problema \eqref{shedefinitiva} implica que $\sigma_{R,t}>0$.
+
+Con este trabajo como antecedente, el propósito final del capítulo es obtener cotas superiores pero ahora para la tasa de convergencia de la distancia uniforme entre las densidades de los promedios espaciales y la densidad de una variable aleatoria normal estándar. Concretamente, el resultado principal que se busca probar en este capítulo es el siguiente.
 \begin{teo}\label{teoremaprincipal}
-Sea $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ la solución mild de la ecuación estocástica del calor dada antes, con condición inicial $u_0(x)\equiv 1$. Supongamos que $\sigma:\R\to\R$ es una función Lipschitz tal que $\sigma(1)\neq 0$ y además cumple que
+Sea $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ la solución mild al problema \eqref{shedefinitiva}. Supongamos que $\sigma:\R\to\R$, además de las hipótesis propias del problema del calor, cumple las siguientes tres condiciones.
 \begin{itemize}
    \item $\sigma\in C^2(\R)$.
    \item $\sigma'$ es acotada.
@@ -1786,54 +1819,331 @@ Supongamos también que, para algún $q>10$, se cumple que
 \[
 \E\left[\abs{\sigma(u(t,0))}^{-q}\right]<\infty.    
 \]
-Entonces para $t>0$ fijo, se cumple que para cualquier $R>0$, los promedios espaciales $F_{R,t}$ poseen una densidad continua y acotada $f_{F_{R,t}}$, y la distancia entre las densidades de los promedios espaciales y la densidad de la distribución normal cumplen que  
+Entonces para $t>0$ fijo, se tiene que para cualquier $R>0$, los promedios espaciales $F_{R,t}$ poseen una densidad continua y acotada $f_{F_{R,t}}$, y la distancia entre las densidades de los promedios espaciales y la densidad de la distribución normal satisface la siguiente cota.  
 \[
 \sup_{x\in \R} \abs{f_{F_{R,t}}(x)-\Phi(x)}\leq \frac{C_t}{\sqrt{R}},   
 \]
 donde $\Phi$ es la densidad de una variable aleatoria normal estándar y $C_t>0$ es una constante dependiente de $t$.
 \end{teo}
 
-Siendo este capítulo dedicado a la prueba de este teorema, lo estructuramos de la siguiente forma. Dedicamos primero una sección a mostrar dos resultados clave en la misma. El primero de ellos tiene que ver con una expresión para la segunda derivada de Malliavin de la solución a la ecuación del calor $\eqref{shedefinitiva}$, mientras que el segundo tiene que ver con la existencia de los momentos negativos.
-
-La segunda sección consiste en el cuerpo de la prueba como tal. Justo como se mencionó en la segunda sección del capítulo tres, la cota \eqref{cotafundamental} es la columna vertebral de la prueba, y por lo tanto esta sección comienza verificando que se cumplen las hipótesis de dicho teorema. Posterior a esto, se muestra que de los dos sumandos de la cota \eqref{cotafundamental}, uno de ellos es acotado relativamente fácil por la cantidad buscada, usando para ello parte de la prueba del teorema 1.1 de \cite{HUANG20207170}, mientras que el segundo de ellos, correspondiente a la norma de la segunda derivada de la solución mild $u$, es el que abarca el grueso de la prueba.
-
-
+Este capítulo, dedicado a la prueba de este último teorema, consiste en dos secciones. La primera la dedicamos a mostrar dos resultados clave para la prueba. El primero de ellos tiene que ver con una expresión para la segunda derivada de Malliavin de la solución al problema del calor $\eqref{shedefinitiva}$, mientras que el segundo tiene que ver con la existencia de los momentos negativos. La segunda sección consiste en el cuerpo de la prueba como tal, y al inicio de aquella sección se describe como está estructurada la misma.
 
 \section{Cotas para la primera y segunda derivada de la solución mild y existencia de momentos negativos}
 
-Tal y como se mencionó, estudiamos primero el comportamiento de la segunda derivada de la solución mild $u$ a la ecuación del calor \eqref{shedefinitiva}. Cabe mencionar que para lograrlo, debemos mencionar un resultado análogo para la primera derivada de la solución. Esto debido a que precisamente es a partir de dicho resultado que se llega al que es de nuestro principal interés, además de ser necesario para la prueba del resultado principal. Dicho resultado lo enunciamos a continuación, y se puede consultar en \cite[proposición 2.4.4]{nualart2006malliavin}.
+Tal y como se mencionó, estudiamos primero el comportamiento de la segunda derivada de la solución mild $u$ a la ecuación del calor \eqref{shedefinitiva}. Cabe mencionar que para lograrlo, debemos basarnos en un resultado análogo para la primera derivada de la solución. Esto debido a que a partir éste resultado es que se llega a aquél, además de ser necesario para la prueba del primero. El resultado para la primera derivada lo enunciamos a continuación, tal y como viene en \cite[proposición 5.1]{Nualart2007}, aunque adaptado a la notación de este texto, y directamente suponiendo que el término de deriva $b$ en \cite{Nualart2007} es cero.
 
-\begin{teo}\label{cotaderivada1} 
- S
+\begin{teo}\label{teocota1eraderivada}
+   Sea $u$ la solución al problema \eqref{shedefinitiva}. Supongamos además que $\sigma:\R\to\R$ es de clase $C^1(\R,\R)$, y su derivada es una función Lipschitz y acotada. Entonces para cualquier $(t,x)\in [0,T]\times\R$, $u(t,x)\in\bigcap_{p\geq1}\D^{1,p}$ y además, la derivada de Malliavin cumple que 
+   \begin{equation}\label{formula1eraderivada}
+      D_{s,y}u(t,x)=p_{t-s}(x-y)\sigma(u(s,y))+ \int_{[s,t]\times\R} p_{t-\tau}(x-\xi)\sigma'(u(\tau,\xi))D_{s,y}u(\tau,\xi)W(d\tau,d\xi),
+   \end{equation}
+   
+   para casi cualquier $s\in [0,t]$ y $y\in \R$. Más aún, se cumple que 
+   \begin{equation}\label{cota1eraderivada} 
+      \norm{D_{s,y}u(t,x)}_{p}\leq C_{T,p \ }p_{t-s}(x-y),
+   \end{equation}
+   para cualquier $0\leq s<t\leq T$, y para $x,y\in \R$.
  \end{teo}
-De acuerdo con \cite{KUZGUN202268}, el siguiente resultado correspondiente a la cota de la segunda derivada de la solución mild resuelve un problema abierto en el cálculo de Malliavin y tiene su interés en sí. Enunciamos dicho resultado a continuación.
- \begin{teo}\label{cotaderivada2}
-   Sea $u$ la solución a la ecuación estocástica del calor con condición inicial $u_0=1$. Supongamos que las hipótesis del resultado principal. Fijando $(t,x)\in [0,\infty)\times \R$. Entonces $u(t,x)\in \bigcap_{p\geq2}\D^{2,p}$ y para casi todo $0<r<s<t$, $y,z\in \R$, la segunda derivada de $u$, a saber, $D_{r,z}D_{s,y}
-   u(t,x)$ satisface la siguiente ecuación diferencial estocástica lineal:
-   
-   \begin{align*}
-      D_{r,z}D_{s,y}u(t,x)&=p_{t-s}(x-y)\sigma'(u(s,y))D_{r,z}u(s,y)\\
-      &+\int_{[s,t]\times \R}p_{t-\tau}(x-\xi)\sigma''(u(\tau,\xi))D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\\
-      &+\int_{[s,t]\times \R}p_{t-\tau}(x-\xi)\sigma'(u(\tau,\xi))D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\\
-   \end{align*}
+Con el resultado anterior a la mano, procedemos a enunciar lo respectivo para la segunda derivada de $u$, tal y como se enuncia en \cite{KUZGUN202268}. Es destacable que, de acuerdo con los autores del artículo, la cota de la segunda derivada de la solución mild resuelve un problema abierto en el cálculo de Malliavin y tiene su interés en sí.
+ \begin{teo}\label{teocota2daderivada}
+   Sea $u$ la solución al problema \eqref{shedefinitiva}. Supongamos que $\sigma$ cumple las hipótesis del teorema \ref{teoremaprincipal}. Fijando $(t,x)\in [0,\infty)\times \R$, tenemos que $u(t,x)\in \bigcap_{p\geq2}\D^{2,p}$ y para casi todo $0<r<s<t$, $y,z\in \R$, la segunda derivada de $u$, que denotamos como $D_{r,z}D_{s,y}u(t,x)$, satisface la siguiente ecuación diferencial estocástica lineal:
+   \begin{align}
+      D_{r,z}D_{s,y}u(t,x)&=p_{t-s}(x-y)\sigma'(u(s,y))D_{r,z}u(s,y)\notag\\
+      &+\int_{[s,t]\times \R}p_{t-\tau}(x-\xi)\sigma''(u(\tau,\xi))D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\notag\\
+      &+\int_{[s,t]\times \R}p_{t-\tau}(x-\xi)\sigma'(u(\tau,\xi))D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\label{formula2daderivada}
+   \end{align}
    Más aún, para cualesquiera $0\leq r<s<t\leq T$  y $x,y,z\in \R$, tenemos que 
-   \[
-   \|D_{r,z}D_{s,y}u(t,x)\|_p\leq C_{T,p}\Phi_{r,z,s,y}(t,x),
-   \]
-   donde $C_{T,p}$ es una constante que depende de $T,p$ y $\sigma$, y 
-   
+   \begin{equation}\label{cota2daderivada}
+         \|D_{r,z}D_{s,y}u(t,x)\|_p\leq C_{T,p \ }\Phi_{r,z,s,y}(t,x),
+   \end{equation}
+   donde $C_{T,p}$ es una constante que depende de $T,p$ y $\sigma$, mientras que
       \begin{align*}
-          \Phi_{r,z,s,y}(t,x):=&p_{t-s}(x-y)\cdot \left(p_{s-r}(y-z)+\frac{p_{t-r}(z-y)+p_{t-r}(z-x)+\1_{\abs{y-x}>\abs{z-y}}}{(s-r)^{1/4}}\right).
+          \Phi_{r,z,s,y}(t,x):=&p_{t-s}(x-y)\left(p_{s-r}(y-z)+\frac{p_{t-r}(z-y)+p_{t-r}(z-x)+\1_{\{\abs{y-x}>\abs{z-y}\}}}{(s-r)^{1/4}}\right).
       \end{align*} 
    \end{teo}
-Tornamos nuestra atención a la existencia de los momentos negativos de la derivada de la solución a la SHE. Este es el contenido del siguiente resultado.
-\begin{teo} 
-   Sea $u$ la solución mild a la ecuación estocástica del calor. Supongamos que $\sigma$ es Lipschitz. Sea $p\geq2$ fijo, $t>0$ y supongamos que existe un $q>5p$ tal que $\E\left[\abs{\sigma(u(t,0))}^{-2q}\right]<\infty$. entonces, existe una constante $R_0>0$ tal que 
-   \[
-   \sup_{R\geq R_0}\E\left[\abs{D_{v_{R,t}}F_{R,t}}^{-p}\right]<\infty.
-   \]
+   Por ser de carácter fundamentalmente técnico, la demostración de este resultado se omite en esta tesis. No obstante, mencionamos que la idea de su prueba consiste en iteraciones de Picard, la desigualdad de Burkholder-Davis-Gundy, y lemas técnicos que se encuentran en \cite[lema A.1]{HUANG20207170} y \cite[lema A.1, lema A.2]{KUZGUN202268}. Es de destacar que las hipótesis del teorema anterior implican las hipótesis del teorema \ref{teocota1eraderivada}.
+
+   Tornamos nuestra atención a la existencia de los momentos negativos de la derivada de la solución $u$ al problema del calor \eqref{shedefinitiva}.
+\begin{teo}\label{teocotamomentosinversos}
+   Sea $u$ la solución mild a la ecuación estocástica del calor. Supongamos que $\sigma$ es Lipschitz. Sea $p\geq2$ fijo, $t>0$ y supongamos que existe un $q>5p$ tal que $\E\left[\abs{\sigma(u(t,0))}^{-2q}\right]<\infty$. Entonces existe una constante $R_0>0$ tal que 
+   \begin{equation}\label{cotamomentosinversos}
+      \sup_{R\geq R_0}\E\left[\abs{D_{v_{R,t}}F_{R,t}}^{-p}\right]<\infty.
+   \end{equation}
+   
    \end{teo}
-   La prueba de este resultado se omite en este texto, por lo que se refiere a $\cite{KUZGUN202268}$ para su consulta.
+   La prueba de este resultado se omite en este texto, por lo que se remite a $\cite{KUZGUN202268}$ para su consulta. En la prueba del mismo se utilizan distintos lemas presentes en el apéndice del artículo citado.
+
+   Culminada la revisión de estos resultados necesarios para la prueba del resultado principal, pasamos a realizar la misma.
+\section{Prueba del resultado principal}
+Con intención de desmenuzar con suficiente claridad la prueba, describimos brevemente su estructura.
+
+La prueba parte de la cota \eqref{cotafundamental} aplicada a los promedios espaciales $F_{R,t}$. Es por lo tanto necesario verificar que dichas variables cumplen las hipótesis del teorema \ref{teocotafundamental}. Asimismo, serán usadas constantemente las desigualdades \eqref{cota1eraderivada}, \eqref{cota2daderivada} y \eqref{cotamomentosinversos}, por lo que debemos verificar que las hipótesis de los teoremas \ref{teocota1eraderivada}, \ref{teocota2daderivada} y \ref{teocotamomentosinversos} se satisfacen. Habilitados para usar dichos resultados, de la cota \eqref{cotafundamental} nos surgen dos sumandos. El primero de ellos se puede acotar con relativa rapidez apoyándonos de las cotas anteriores y usando la prueba de \cite[teorema 1.1]{HUANG20207170}, por lo que el grueso de la prueba consiste en acotar la norma de la segunda derivada de los promedios espaciales. Allí se descompondrá dicha derivada de segundo orden en dos términos integrales y se procede a acotar cada término por separado utilizando las propiedades de la integral de Itô-Walsh, las cotas mencionadas antes y algunos resultados técnicos. 
+
+Por lo anterior, la prueba está dividida en tres partes. La primera de ellas dedicada a verificar la validez de las hipótesis de los resultados a usar, la segunda de ellas está dirigida a acotar el primero de los sumandos y la última parte se dedica a acotar la norma de la segunda derivada de los promedios espaciales. Dicho todo lo anterior, comenzamos la prueba del resultado principal.
+\begin{proof}[Demostración (del teorema \ref{teoremaprincipal})]
+
+\begin{proofpart}[Validez de las hipótesis para las cotas]
+Sean $R$ y $t>0$ fijos. Consideremos a los promedios espaciales $F_{R,t}$ de la solución mild $u$ al problema \eqref{shedefinitiva}. Buscamos primero ver que $F_{R,t}$ satisface las hipótesis del teorema \ref{teocotafundamental}. Para ello, debemos ver que dicha variable puede verse como la divergencia de algún elemento $v\in \D^{1,6}(\mathfrak{H})$. Obsérvese que, de la definición de los promedios espaciales y de la relación en el teorema \ref{solucionmild}, tenemos las siguientes igualdades.
+\begin{align}
+   F_{R,t}&=\frac{1}{\sigma_{R,t}}\left(\int_{[-R,R]}u(t,x)dx-2R\right)\notag\\
+   &=\frac{1}{\sigma_{R,t}}\left(\int_{[-R,R]}\left(1+\int_{[0,t]\times \R}p_{t-s}(x-y)\sigma(u(s,y))W(ds,dy)\right)dx-2R\right)\notag\\
+   &=\frac{1}{\sigma_{R,t}}\left(\int_{[-R,R]}\int_{[0,t]\times \R}p_{t-s}(x-y)\sigma(u(s,y))W(ds,dy)\right)dx\notag\\
+   &=\int_{[0,t]\times \R}\frac{1}{\sigma_{R,t}}\left(\int_{[-R,R]}p_{t-s}(x-y)\sigma(u(s,y))dx\right)W(ds,dy)\notag\\
+   &=\int_{[0,\infty)\times \R}\1_{[0,t]}(s)\frac{1}{\sigma_{R,t}}\left(\int_{[-R,R]}p_{t-s}(x-y)\sigma(u(s,y))dx\right)W(ds,dy)\label{promespacdiv1},
+\end{align}
+en donde en la penúltima igualdad hemos hecho uso del teorema de Fubini. Por otro lado, sabemos que la integral de Itô-Walsh coincide con el operador de divergencia $\delta$ en dos dimensiones, así que definiendo $v_{R,t}$ como 
+
+\begin{equation}\label{vectordireccion}
+      v_{R,t}:=\1_{[0,t]}(s)\frac{1}{\sigma_{R,t}}\int_{[-R,R]}p_{t-s}(x-y)\sigma(u(s,y))dx,
+\end{equation}
+ la relación \eqref{promespacdiv1} se convierte en
+\begin{equation}\label{promespacialdiv2}
+F_{R,t}=\int_{[0,\infty)\times \R}\1_{[0,t]}(s)\frac{1}{\sigma_{R,t}}\left(\int_{[-R,R]}p_{t-s}(x-y)\sigma(u(s,y))dx\right)W(ds,dy)=\delta(v_{R,t}).
+\end{equation}
+Por lo tanto, los promedios espaciales se pueden ver como el operador divergencia aplicado a $v_{R,t}$. Observamos ahora que de las tres hipótesis sobre $\sigma$ que tenemos, estamos en condiciones de aplicar el teorema $\ref{cota2daderivada}$, por lo que para $(t,x)\in [0,\infty)\times\R$ fijo, $u(t,x)\in \bigcap_{p\geq2} \D^{2,p}$. Además, para cualquier $T>0$ y $p\geq2$, se tiene que 
+\[
+   \sup_{(t,x)\in [0,\infty)\times\R}\norm{u(t,x)}_{2,p}<\infty.
+\]
+Esto nos dice que para un $t>0$ fijo, $F_{R,t}\in \D^{2,6}$ y $v_{R,t}\in \D^{1,2}(\mathfrak{H})$. 
+
+Por otro lado, por hipótesis existe algún $q>10$ tal que $\E\left[\abs{\sigma(u(t,0))}^{-q}\right]<\infty$, de tal forma que eligiendo $p=4$ en el teorema \ref{teocotamomentosinversos}, tenemos que para $q':=2q>2(10)=5(4)=5p$, al ser el caso que $2q'>q$ y ser $\Omega$ un espacio de medida finita, 
+\[
+\E\left[\abs{\sigma(u(t,0))}^{-2q'}\right]=\E\left[\abs{\frac{1}{\sigma(u(t,0))}}^{2q'}\right]\leq \E\left[\abs{\frac{1}{\sigma(u(t,0))}}^{q}\right]=\E\left[\abs{\sigma(u(t,0))}^{-q}\right]<\infty,
+\]
+por lo que las hipótesis del teorema $\ref{teocotamomentosinversos}$ se satisfacen para $p=4$ y por lo tanto, para $t>0$ fijo, existe una constante $R_0$ tal que la cota de los momentos inversos \eqref{cotamomentosinversos} es válida. En particular, para $t>0$ fijo y $R>R_0$ se sigue que $D_{v_R,t}F_{R,t}\in L^{4}(\Omega)$. Finalmente, por definición estamos tomando los promedios espaciales como variables centradas y con varianza 1. 
+
+Hemos mostrado que para $R>R_0$ y $t>0$, las hipótesis del teorema \ref{teocotafundamental} se cumplen y por lo tanto, la variable $F_{R,t}/D_{v_R,t}F_{R,t}\in \text{Dom}(\delta)$, los promedios espaciales tienen una densidad continua y acotada, que denotamos como $f_{F_{R,t}}$, y la misma cumple  $\eqref{cotafundamental}$. Con precisión, sustituyendo en dicha cota obtenemos que 
+\begin{align}\label{cotapromespacfundamental}
+   \sup_{x\in \R} \abs{f_{F_{R,t}}(x)-\Phi(x)}&\leq \left(\|F_{R,t}\|_4\|\left(D_{v_{R,t}}F_{R,t}\right)^{-1}\|_4+2\right)\|1-D_{v_{R,t}}F_{R,t}\|_2\notag\\
+   &\ \ \ +\|\left(D_{v_{R,t}}F_{R,t}\right)^{-1}\|^{2}_4\|D_{v_{R,t}} \left(D_{v_{R,t}}F_{R,t}\right)\|_2,
+\end{align}
+Observamos dos sumandos en la desigualdad anterior. Mostramos a continuación que cada uno de estos sumandos está acotada por una cantidad proporcional a $1/\sqrt{R}$.
+\end{proofpart}
+\begin{proofpart}[Cota del primer sumando]
+Notemos primero que, de la relación \eqref{cotapromespacfundamental}, al ser $F_{R,t}\in \D^{2,6}$, y darse las contenciones $\D^{2,6}\subseteq \D^{2,4}\subseteq{L^{4}}(\Omega)$, se sigue que $\norm{F_{R,t}}_4<\infty$. Por otro lado, para $t>0$ y $R>R_0$ fijos, de \eqref{cotamomentosinversos} se sigue que 
+\begin{equation}\label{cotapromespacmomentosinversos}
+   \norm{(D_{v_{R,t}}F_{R,t})^{-1}}_4=\E\left[\abs{\left(D_{v_{R,t}}F_{R,t}\right)^{-1}}^{4}\right]^{1/4}=\E\left[\abs{D_{v_{R,t}}F_{R,t}}^{-4}\right]^{1/4}<\infty.
+\end{equation}
+
+Definiendo $C_{t}^{(1)}:=\left(\|F_{R,t}\|_4\|\left(D_{v_{R,t}}F_{R,t}\right)^{-1}\|_4+2\right)$, de lo anterior tenemos que $0<C_{t}^{(1)}<\infty$, y dicha constante depende solamente de $t>0$ fijo, para $R>R_0$. Resta estudiar el término $\norm{1-D_{v_{R,t}F_{R,t}}}_2$. Esta parte de la prueba está basada en la prueba de \cite[teorema 1.1]{HUANG20207170}. Dado que $F_{R,t}$ es una variable centrada y de varianza 1, se sigue que 
+\begin{align*}
+   \norm{1-D_{v_{R,t}}F_{R,t}}_2&=\E\left[(\E\left[F_{R,t}^2\right]-D_{v_{R,t}}F_{R,t})^2\right]^{1/2}\\
+   &=\E\left[(\E\left[F_{R,t}\delta(v_{R,t})\right]-D_{v_{R,t}}F_{R,t})^2\right]^{1/2}\\
+   &=\E\left[(\E\left[D_{v_{R,t}}F_{R,t}\right]-D_{v_{R,t}}F_{R,t})^2\right]^{1/2}\\
+   &=\sqrt{\text{Var}\left(D_{v_{R,t}}F_{R,t}\right)},
+\end{align*}
+donde hemos hecho uso de la definición de $\delta$. Llegados a este punto, remitimos a la prueba del teorema 1.1 en el artículo \cite{HUANG20207170}, en donde el grueso de la prueba consiste en acotar $\sqrt{\text{Var}\left(D_{v_{R,t}}F_{R,t}\right)}$ por $C/\sqrt{R}$, donde $C$ es una constante que depende de $t>0$ y de $p$, que en nuestro caso está fijado en $p=4$. Por lo tanto, definiendo $C_{t}^{(2)}:=C_{t}^{(1)}\cdot C$, para $t>0$ y $R\geq R_0$,
+\begin{equation}\label{cotaprimersumando}
+   \left(\|F_{R,t}\|_4\|\left(D_{v_{R,t}}F_{R,t}\right)^{-1}\|_4+2\right)\|1-D_{v_{R,t}}F_{R,t}\|_2\leq \frac{C_{t}^{(2)}}{\sqrt{R}},
+\end{equation}
+donde $C_{t}^{(2)}$ depende solamente de $t>0$.
+\end{proofpart}
+\begin{proofpart}[Cota del segundo sumando]
+Directamente notamos que el término $\norm{(D_{v_{R,t}}F_{R,t})^{-1}}^2_4$ del segundo sumando está acotado, según vimos en \eqref{cotapromespacmomentosinversos}, por lo que nos enfocamos en acotar el término $\norm{D_{v_{R,t}}(D_{v_{R,t}}F_{R,t})}_2$. 
+Para tal efecto, establecemos la siguiente notación que nos será útil. Definimos, para $t>0$ y $R>0$, 
+\[
+Q_R:=[-R,R], \qquad \Sigma_{t,x}:=\sigma(u(t,x)), \qquad \Sigma_{t,x}^{(1)}:=\sigma'(u(t,x)) \qquad \text{ y } \qquad \Sigma_{t,x}^{(2)}:=\sigma''(u(t,x)),
+\]
+y además, para $0<s<t$, y $y\in \R$, definimos  
+\begin{equation}\label{defnotacionphi}
+   \phi_{R,t}(s,y):=\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-s}(x-y)dx.
+\end{equation}
+
+Armados con la notación anterior, directamente de la definición de los promedios espaciales tenemos que la derivada de Malliavin de los mismos está dada por 
+
+\[
+   D_{r,z}F_{R,t}=D_{r,z}\left(\frac{1}{\sigma_{R,t}}\int_{-[R,R]}u(t,x)dx-2R\right)=\frac{1}{\sigma_{R,t}}\int_{Q_R}D_{r,z}u(t,x)dx,
+\]
+por lo que tomando la derivada en dirección de $v_{R,t}$ definido en \eqref{vectordireccion} y sustituyendo, obtenemos 
+\begin{align*}
+   D_{v_{R,t}}&F_{R,t}=\langle D_{r,z}F_{R,t},v_{R,t}\rangle_{L^{2}([0,\infty)\times\R)}\\
+   &=\int_{[0,\infty)}\int_\R v_{R,t}D_{r,z}F_{R,t}dzdr\\
+   &=\int_{[0,\infty)}\int_\R\left(\1_{[0,t]}(r)\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)\sigma(u(r,z))dx_1\right)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}D_{r,z}u(t,x_2)dx_2\right) dzdr\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)dx_1\right)\sigma(u(r,z))D_{r,z}u(t,x_2) dx_2dzdr\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(r,z)\sigma(u(r,z))D_{r,z}u(t,x_2) dx_2dzdr\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma(u(s,y))D_{s,y}u(t,x) dxdyds,
+\end{align*}
+   en donde en la última igualdad sólo hemos hecho un cambio de variables. Tomamos nuevamente la derivada de Malliavin de la expresión anterior para obtener 
+\begin{align*}
+   D_{r,z}(D_{v_{R,t}}F_{R,t})&=\frac{1}{\sigma_{R,t}}D_{r,z}\left(\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma(u(s,y))D_{s,y}u(t,x) dxdyds\right)\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)D_{r,z}\left(\sigma(u(s,y))D_{s,y}u(t,x)\right) dxdyds\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma'(u(s,y))D_{r,z}u(s,y)D_{s,y}u(t,x)dxdyds\\
+   & \ \ \ +\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma(u(s,y))D_{r,z}D_{s,y}u(t,x)dxdyds
+\end{align*}
+Sacando nuevamente la derivada direccional, la expresión anterior nos lleva a las siguientes igualdades.
+\begin{align}
+   D_{v_{R,t}}&(D_{v_{R,t}}F_{R,t})=\langle D_{r,z}\left(D_{v_{R,t}F_{R,t}}\right),v_{R,t}\rangle_{L^{2}([0,\infty)\times\R)}\notag\\
+   &=\int_{[0,\infty)}\int_\R \left(\1_{[0,t]}(r)\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)\sigma(u(r,z))dx_1\right)\notag\\
+   &\ \ \ \ \cdot \left(\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma'(u(s,y))D_{r,z}u(s,y)D_{s,y}u(t,x)dxdyds\right)dzdr\notag\\
+   &\ \ \ +\int_{[0,\infty)}\int_\R \left(\1_{[0,t]}(r)\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)\sigma(u(r,z))dx_1\right)\notag\\
+   &\ \ \ \ \cdot\left(\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma(u(s,y))D_{r,z}D_{s,y}u(t,x)dxdyds\right)dzdr\notag\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)dx_1\right)\notag\\
+   &\ \ \ \ \cdot \left(\Sigma_{r,z}\phi_{R,t}(s,y)\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)D_{s,y}u(t,x)\right) dxdydzdsdr\notag\\
+   &\ \ \ +\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R} \left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)dx_1\right)\notag\\
+   &\ \ \ \ \cdot\left(\Sigma_{r,z}\phi_{R,t}(s,y)\Sigma_{s,y}D_{r,z}D_{s,y}u(t,x)\right)dxdydzdsdr\notag\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)D_{s,y}u(t,x)dxdydzdsdr\label{pruebasumando1}\\ 
+   &\ \ \ +\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}D_{r,z}D_{s,y}u(t,x)dxdydzdsdr,\label{pruebasumando2}
+\end{align}
+   donde hemos hecho uso múltiples veces del teorema de Fubini y de la notación previamente establecida. A continuación, utilizamos las fórmulas \eqref{formula1eraderivada} y \eqref{formula2daderivada} en los dos sumandos de la última igualdad anterior. Así, para el sumando \eqref{pruebasumando1}, sustitiuyendo la derivada $D_{s,y}u(t,x)$ se tiene la expresión
+   \begin{align}
+      \frac{1}{\sigma_{R,t}}&\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)D_{s,y}u(t,x)dxdydzdsdr\notag\\
+      &=\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
+      & \ \ \ \ \cdot\left(p_{t-s}(x-y)\Sigma_{s,y}+ \int_{[s,t]\times\R} p_{t-\tau}(x-\xi)\Sigma^{(1)}_{\tau,\xi}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dxdydzdsdr\notag\\
+      &=\int_{[0,t]^2}\int_{\R^2}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-s}(x-y)dx\right)\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dydzdsdr\notag\\
+      & \ \ \ + \int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
+      &\ \ \ \ \cdot\left(\int_{[s,t]\times\R} p_{t-\tau}(x-\xi)\Sigma^{(1)}_{\tau,\xi}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dxdydzdsdr\notag\\
+      &=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dydzdsdr\notag\\
+      & \ \ \ + \int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
+      &\ \ \ \ \cdot\left(\int_{[s,t]\times\R} \left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-\tau}(x-\xi)dx\right)\Sigma^{(1)}_{\tau,\xi}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dydzdsdr\notag\\
+      &=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dydzdsdr\label{pruebasumando3}\\
+      &\ \ \ + \int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
+      &\ \ \ \ \cdot\left(\int_{[s,t]\times\R} \phi_{R,t}(\tau,\xi)\Sigma^{(1)}_{\tau,\xi}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dydzdsdr\label{pruebasumando4}.
+   \end{align}
+Haciendo lo respectivo para el sumando \eqref{pruebasumando2}, obtenemos las siguientes expresiones.
+\begin{align}
+   &\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}D_{r,z}D_{s,y}u(t,x)dxdydzdsdr\notag\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\left( p_{t-s}(x-y)\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
+   &\ \ \ +\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\left(\int_{[s,t]\times \R} p_{t-\tau}(x-\xi)\Sigma^{(2)}_{\tau,\xi}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)\notag\\
+   &\ \ \ +\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y} \left(\int_{[s,t]\times \R}p_{t-\tau}(x-\xi)\Sigma^{(1)}_{\tau,\xi}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dxdydzdsdr\notag\\
+   &=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R} p_{t-s}(x-y)dx\right)\notag\\
+   &\ \ \ +\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
+   & \ \ \ \ \cdot\left(\int_{[s,t]\times \R} \left(\frac{1}{\sigma_{R,t}}\int_{Q_R} p_{t-\tau}(x-\xi)dx\right)\Sigma^{(2)}_{\tau,\xi}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)\notag\\
+   &\ \ \ +\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
+   &\ \ \ \ \cdot \left(\int_{[s,t]\times \R}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R} p_{t-\tau}(x-\xi)dx\right)\Sigma^{(1)}_{\tau,\xi}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dydzdsdr\notag\\
+   &=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dydzdsdr\label{pruebasumando5}\\
+   &\ \ \ +\int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
+   &\ \ \ \ \cdot\left(\int_{[s,t]\times \R} \phi_{R,t}(\tau,\xi)\Sigma^{(2)}_{\tau,\xi}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dydzdsdr\label{pruebasumando6}\\
+   &\ \ \ +\int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
+   &\ \ \ \ \cdot\left(\int_{[s,t]\times \R}\phi_{R,t}(\tau,\xi)\Sigma^{(1)}_{\tau,\xi}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dydzdsdr.\label{pruebasumando7}
+\end{align}
+Observamos que los términos \eqref{pruebasumando3} y \eqref{pruebasumando5} coinciden, mientras que el término $\phi_{R,t}(r,z)\phi_{R,t}(s,y)$ es común dentro de las integrales en las expresiones \eqref{pruebasumando4}, \eqref{pruebasumando6} y \eqref{pruebasumando7}. Luego, definiendo 
+\begin{align*}
+   Z_{r,z,s,y}(\tau,\xi)&:=\Sigma_{r,z}\Sigma_{s,y}^{(1)}\Sigma_{\tau,\xi}^{(1)}D_{r,z}u(s,y)D_{s,y}u(\tau,\xi)\\
+   &\ \ \ +\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(2)}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)\\
+   &\ \ \ +\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(1)}D_{r,z}D_{s,y}u(\tau,\xi),
+\end{align*}
+y combinando las expresiones \eqref{pruebasumando3} a \eqref{pruebasumando7}, hallamos que la segunda derivada direccional de $F_{R,t}$ está dada por
+\begin{align}
+   &D_{v_{R,t}}(D_{v_{R,t}}F_{R,t})=2\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dydzdsdr\notag\\
+   &\ \ \ \ + \int _{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}^{(1)}D_{r,z}u(s,y)\right)\notag\\
+   & \ \ \ \ \cdot \left(\int_{[s,t]\times\R}\phi_{R,t}(\tau,\xi)\Sigma_{\tau,\xi}^{(1)}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dydzdsdr\notag\\
+   &\ \ \ +\int _{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
+   &\ \ \ \ \cdot \left(\int_{[s,t]\times\R}\phi_{R,t}(\tau,\xi)\Sigma_{\tau,\xi}^{(2)}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dydzdsdr\notag\\
+   &\ \ \ +\int _{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
+   &\ \ \ \ \cdot \left(\int_{[s,t]\times\R}\phi_{R,t}(\tau,\xi)\Sigma_{\tau,\xi}^{(21)}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dydzdsdr\notag\\
+   &=\mathcal{Y}_{R,t}^{(1)}+\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\notag\\
+   & \ \ \ \ \cdot \left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\left[\Sigma_{r,z}\Sigma_{s,y}^{(1)}\Sigma_{\tau,\xi}^{(1)}D_{r,z}u(s,y)D_{s,y}u(\tau,\xi)\right]dydzdsdr\right) W(d\tau,d\xi)\notag\\
+   &\ \ \ +\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\notag\\
+   &\ \ \ \ \cdot\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\left[\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(2)}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)\right]dydzdsdr\right) W(d\tau,d\xi)\notag\\
+   &\ \ \ +\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\notag\\
+   &\ \ \ \ \cdot\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\left[\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(1)}D_{r,z}D_{s,y}u(\tau,\xi)\right]dydzdsdr\right) W(d\tau,d\xi)\notag\\
+   &=\mathcal{Y}_{R,t}^{(1)}+\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dydzdsdr\right)W(d\tau,d\xi)\notag\\
+   &=2\mathcal{Y}_{R,t}^{(1)}+\mathcal{Y}_{R,t}^{(2)},\label{pruebasumando8}
+\end{align}
+en donde 
+\begin{align*}
+   &\mathcal{Y}_{R,t}^{(1)}:=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dydzdsdr\\
+   &\mathcal{Y}_{R,t}^{(2)}:=\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dydzdsdr\right)W(d\tau,d\xi),
+\end{align*}
+y donde se ha usado múltiples veces del teorema de Fubini y la notación previamente establecida. Una vez que llegamos a este punto, buscamos acotar cada uno de los sumandos de \eqref{pruebasumando8}. 
+
+Comenzamos con el término $\mathcal{Y}_{R,t}^{(1)}$. Primero hallamos una cota para la norma $L^2(\Omega)$ de la expresión $\Sigma_{r,z}\Sigma_{s,y}\Sigma_{s,y}^{(1)}D_{r,z}u(s,y)$. Usando la desigualdad de Cauchy-Schwarz, 
+\[
+   \norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma_{s,y}^{(1)}D_{r,z}u(s,y)}_2\leq \norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma_{s,y}^{(1)}}_4\norm{D_{r,z}u(s,y)}_4, 
+\]
+y usando ahora la desigualdad \eqref{cota1eraderivada}, para $0\leq r<s\leq T$, \ $y,z\in \R$ y $p=4$, hallamos que 
+\begin{equation}\label{pruebacotasigma1}
+      \norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma_{s,y}^{(1)}}_4\norm{D_{r,z}u(s,y)}_4\leq \norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma_{s,y}^{(1)}}_4C_{T}^{(3)}p_{s-r}(y-z),   
+\end{equation}
+donde $C_{T}^{(3)}$ es una constante que solo depende de $T$. Por otro lado, por hipótesis $\sigma'$ es una función acotada, digamos, por una constante $K_1>0$, de forma que 
+\begin{equation}\label{pruebacotasigma2}
+   \norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma_{s,y}^{(1)}}_4\leq K_1\norm{\Sigma_{r,z}\Sigma_{s,y}}_4\leq K_1\norm{\Sigma_{r,z}}_8\norm{\Sigma_{s,y}}_{8}.
+\end{equation}
+   
+Ahora bien, como la condición inicial en el problema del calor que estamos tratando es $u_0(w)=u(0,w)=1$, para cualquier $w\in \R$, y dado que $\sigma$ es Lipschitz,  se tienen las siguientes relaciones para $\Sigma_{r,z}$:
+\begin{align}
+      \norm{\Sigma_{r,z}}_8&\leq\norm{\sigma(u(r,z))-\sigma(u(0,z))}_8+\norm{\sigma(u(0,z))}_8\notag\\
+      &\leq K_2\norm{u(r,z)-u(0,z)}+\norm{\sigma(1)}_8\notag\\
+      &\leq K_2(\norm{u(r,z)}_8+\norm{1}_8)+|\sigma(1)|\notag\\
+      &\leq K_2(C_{T}^{(4)}+1)+|\sigma(1)|\label{pruebacotasigma3},
+\end{align}
+en donde $K_2>0$ es la constante de Lipschitz de $\sigma$, y en la cuarta desigualdad hemos hecho uso de la igualdad \eqref{cotasolucionmild} con $T>0$ y $p=8$. Obsérvese que la cota obtenida antes depende solamente de $\sigma$ y de $T>0$. De manera análoga se puede acotar el término $\norm{\Sigma_{s,y}}_8$. Por lo tanto, combinando \eqref{pruebacotasigma1}, \eqref{pruebacotasigma2}, \eqref{pruebacotasigma3} y la cota \eqref{pruebacotasigma3} análoga para $\Sigma_{s,y}$, hallamos que 
+\begin{equation}\label{pruebacotasigma4}
+   \norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma_{s,y}^{(1)}D_{r,z}u(s,y)}_2\leq C_{T}^{(5)}p_{s-r}(y-z),
+\end{equation} 
+en donde $C^{(5)}_T>0$ es una constante que solo depende de $T>0$ y $\sigma$. Obtenida esta cota, procedemos a extraer la norma $L^{2}(\Omega)$ de $\mathcal{Y}_{R,t}^{(1)}$. Obtenemos así las siguientes relaciones.
+ \begin{align*}
+   &\norm{\mathcal{Y}_{R,t}^{(1)}}_2=\left(\int_\Omega \left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dydzdsdr\right)^2d\P\right)^{1/2}\\
+   &=\Bigg(\int_\Omega\int_{[0,t]^2}\int_{\R^2}\int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\\
+   &\ \ \ \ \cdot \left(\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\Sigma_{r',z'}\Sigma_{s',y'}\Sigma^{(1)}_{s',y'}D_{r',z'}u(s',y')\right)dydzdsdrdy'dz'ds'dr'd\P\Bigg)^{1/2}\\
+   &=\Bigg(\int_{[0,t]^2}\int_{\R^2}\int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\right)\\
+   &\ \ \ \ \cdot \left(\int_\Omega\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\Sigma_{r',z'}\Sigma_{s',y'}\Sigma^{(1)}_{s',y'}D_{r',z'}u(s',y')\right) dydzdsdrdy'dz'ds'dr'd\P\Bigg)^{1/2}\\
+   &\leq \Bigg(\int_{[0,t]^2}\int_{\R^2}\int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\right)\\
+   &\ \ \ \ \cdot \left(\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2\norm{\Sigma_{r',z'}\Sigma_{s',y'}\Sigma^{(1)}_{s',y'}D_{r',z'}u(s',y')}_2\right) dydzdsdrdy'dz'ds'dr'\Bigg)^{1/2}\\
+   &=\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dydzdsdr\right)^{1/2}\\
+   & \ \ \ \ \ \cdot \left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\norm{\Sigma_{r',z'}\Sigma_{s',y'}\Sigma^{(1)}_{s',y'}D_{r',z'}u(s',y')}_2dy'dz'ds'dr'\right)^{1/2}\\
+   &=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dydzdsdr.
+ \end{align*}
+ Usamos ahora \eqref{pruebacotasigma4} en la última desigualdad anterior para obtener que
+ \begin{align*}
+   \norm{\mathcal{Y}_{R,t}^{(1)}}_2&\leq\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dydzdsdr\\
+   &\leq C^{(5)}_T\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)p_{s-r}(y-z)dydzdsdr.
+\end{align*}
+En esta última expresión integramos sobre $z$ y expandimos el término $\phi_{R,t}(r,z)$ para hallar que 
+\begin{align*}
+   \norm{\mathcal{Y}_{R,t}^{(1)}}_2&\leq C^{(5)}_T\int_{[0,t]^2}\int_{\R}\phi_{R,t}^2(s,y)\left(\int_\R\phi_{R,t}(r,z)p_{s-r}(z-y)dz\right)dydsdr\\
+   &=C^{(5)}_T\int_{[0,t]^2}\int_{\R}\phi_{R,t}^2(s,y)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}\int_\R p_{t-r}(x-z)p_{s-r}(z-y)dzdx\right)dydsdr\\
+   &=C^{(5)}_T\int_{[0,t]^2}\int_{\R}\phi_{R,t}^2(s,y)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t+s-2r}(x-y)dx\right)dydsdr,
+\end{align*}
+donde hemos hecho uso de la propiedad de semigrupo del núcleo del calor $(p_t)_{t\geq0}$ en la última igualdad. Claramente se tiene que 
+\[
+   \frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t+s-2r}(x-y)dx\leq \frac{1}{\sigma_{R,t}}\int_{\R}p_{t+s-2r}(x-y)dx\leq \frac{1}{\sigma_{R,t}},
+\]
+por lo que insertando esta última desigualdad en la anterior, llegamos a que 
+\[
+\norm{\mathcal{Y}_{R,t}^{(1)}}_2\leq \frac{C_T^{(5)}}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R}\phi_{R,t}^2(s,y).
+\]
+Utilizando el lema \ref{LemaA.4a}, obtenemos que existe un $R_0\geq1$ dependiente de $t>0$ tal que para cualquier $R\geq R_0$,
+\[
+   \frac{C_T^{(5)}}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R}\phi_{R,t}^2(s,y)\leq \frac{C_T^{(5)}}{\sigma_{R,t}}\int_{[0,t]^2}C_tdsdr\leq \frac{C_t^{(6)}}{\sigma_{R,t}},
+\]
+por lo que tenemos la siguiente cota
+\[
+\norm{\mathcal{Y}_{R,t}^{(1)}}_2\leq \frac{C_t^{(6)}}{\sigma_{R,t}}.
+\]
+Finalmente, utilizamos el lema \ref{lemaA.3a}, para argumentar que, como $\tfrac{\sigma^2_{R,t}}{R} \xrightarrow[n\to\infty]{}2\int_{0}^{t}\xi(s)ds$, donde $\xi(s)=\E\left[\sigma^2(u(s,y))\right]$, y esta última función no depende de $y\in \R$ (ver el enunciado del lema mencionado) entonces existe un $R_1>0$ tal que para cualquier $R>R_1$,
+\begin{equation}\label{cotafinal1}
+      \norm{\mathcal{Y}_{R,t}^{(1)}}_2\leq \frac{C_t^{(6)}}{\sigma_{R,t}}=\frac{C_t^{(6)}}{\sqrt{\frac{\sigma_{R,t}^2}{R}}\sqrt{R}}\leq \frac{C_t^{(7)}}{\sqrt{R}},  
+\end{equation}
+en donde $C_t^{(7)}$ es una constante que depende de $C_t^{(6)}$ y de la integral en $[0,t]$ de $\xi$, función que es independiente de $y$, y por ende tanto la integral como la constante $C_t^{(7)}$ sólo dependen de $t$.
+
+Procedemos ahora a estimar el término $\mathcal{Y}_{R,t}^{(2)}$. Extrayendo el cuadrado de la norma $L^{2}(\Omega)$ de dicho término, y utilizando la isometría de Itô-Walsh, tenemos las siguientes igualdades.
+\begin{align*}
+   &\norm{\mathcal{Y}_{R,t}^{(2)}}_2^{2}=\norm{\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dydzdsdr\right)W(d\tau,d\xi)}_2^2\\
+   &=\E\left[\left(\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dydzdsdr\right)W(d\tau,d\xi)\right)^2\right]\\
+   &=\E\left[\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dydzdsdr\right)^2d\xi d\tau\right]\\
+   &=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\E\left[\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dydzdsdr\right)^2\right]d\xi d\tau.
+\end{align*}
+Reescribiendo el cuadrado de la integral anterior, tenemos que 
+\begin{align*}
+   &\norm{\mathcal{Y}_{R,t}^{(2)}}_2^{2}=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\E\left[\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dydzdsdr\right)^2\right]d\xi d\tau\\
+   &=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\E\Bigg[\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r_1,z_1)\phi_{R,t}(s_1,y_1)Z_{r_1,z_1,s_1,y_1}(\tau,\xi)dy_1dz_1ds_1dr_1\right)\\
+   &\ \ \ \ \cdot \left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r_2,z_2)\phi_{R,t}(s_2,y_2)Z_{r_2,z_2,s_2,y_2}(\tau,\xi)dy_2dz_2ds_2dr_2\right)\Bigg]d\xi d\tau\\
+   &=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\int_{0\leq r_1\leq s_1\leq \tau}\int_{0\leq r_2\leq s_2\leq \tau}\int_{\R^4}\phi_{R,t}(r_1,z_1)\phi_{R,t}(s_1,y_1)\phi_{R,t}(r_2,z_2)\phi_{R,t}(s_2,y_2)\\
+   &\ \ \ \ \cdot \E\left[Z_{r_1,z_1,s_1,y_1}(\tau,\xi)Z_{r_2,z_2,s_2,y_2}(\tau,\xi)\right]dy_1dz_1ds_1dr_1dy_2dz_2ds_2dr_2d\xi d\tau,
+\end{align*}
+en donde $Z_{r_1,z_1,s_1,y_1}(\xi,\tau)$ y $Z_{r_2,z_2,s_2,y_2}(\xi,\tau)$ son copias i.i.d. de $Z_{r,z,s,y}(\xi,\tau)$. A continuación, utilizamos la desigualdad de Cauchy-Schwarz justo en estos términos para obtener que 
+\begin{align*}
+   \norm{\mathcal{Y}_{R,t}^{(2)}}_2^{2}&\leq \int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\int_{0\leq r_1\leq s_1\leq \tau}\int_{0\leq r_2\leq s_2\leq \tau}\int_{\R^4}\phi_{R,t}(r_1,z_1)\phi_{R,t}(s_1,y_1)\phi_{R,t}(r_2,z_2)\phi_{R,t}(s_2,y_2)\\
+   &\ \ \ \ \cdot \norm{Z_{r_1,z_1,s_1,y_1}(\tau,\xi)}_2 \norm{Z_{r_2,z_2,s_2,y_2}(\tau,\xi)}_2 dy_1dz_1ds_1dr_1dy_2dz_2ds_2dr_2d\xi d\tau\\
+   &=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\int_{0\leq r_1\leq s_1\leq \tau}\int_{0\leq r_2\leq s_2\leq \tau}\int_{\R^4}\prod_{i=1,2}\phi_{R,t}(r_i,z_i)\phi_{R,t}(s_i,y_i)\\
+   &\ \ \ \ \cdot \norm{Z_{r_i,z_i,s_i,y_i}(\tau,\xi)}_2  dy_1dz_1ds_1dr_1dy_2dz_2ds_2dr_2d\xi d\tau
+\end{align*}
+En este punto, nos interesamos por 
+\end{proofpart}
+\qedhere
+\end{proof}
+
 
 
 % % % primero se demuestra una cota superior elemental para la distancia uniforme entre la densidad de una variable aleatoria $F$ que está dada coom un funcional de un proceso Gaussiano isonormal, y la densidad de una variable aleatoria normal estándar.
@@ -1848,7 +2158,7 @@ Tornamos nuestra atención a la existencia de los momentos negativos de la deriv
 % % % \[
 % % % f_F(x)=\E\left[\1_{\{F>x\}}\delta \left(\frac{v}{D_vF}\right)\right]   
 % % % \]
-% % % \end{teo}
+% % % \end{teo}$
 
 % % % El resultado anterior es válido para cualquier espacio de Hilbert $\mathfrak{H}$. Aplicando el resultado anterior al contexto de una variable aleatoria adecuada, se tiene lo siguiente:
 
@@ -1938,9 +2248,7 @@ Tornamos nuestra atención a la existencia de los momentos negativos de la deriv
 % % % Y para la prueba del resultado principal, es esencial el uso de dos resultados distintos: uno de ellos consiste en una cotas de momentos para la segunda derivada de Malliavin de la solución, y los momentos negativos de la proyección $DF_{R,t}$ en $v_{R,t}$, donde $F_{R,t}=\delta(v_{R,t})$. El primero de ellos se encuentra en el siguiente resultado:
 
 
-\section{Prueba del resultado principal}
-\subsection{Validez de las hipótesis}
-\subsection{Cota de la segunda derivada de los promedios espaciales}
+
 
 
 
@@ -1954,7 +2262,28 @@ Tornamos nuestra atención a la existencia de los momentos negativos de la deriv
 %\section{Aproximación uniforme de las densidades} %La sección integradora de los conceptos
 
 \chapter{Conclusiones y trabajo futuro}
+dfasdf
+\appendix
+\chapter{Resultados técnicos}
+En este apéndice colocamos los tres resultados técnicos utilizados en la tercera parte de la prueba del resultado principal \ref{teoremaprincipal} de este texto.  Específicamente, los lemas A.1, A.2 y A.3 de este apéndice corresponden respectivamente a los lemas A.2, A.3 parte (a) y A.4 parte (a), del apéndice presente en el artículo de Sefika Kuzgun y David Nualart \cite{KUZGUN202268}. Las pruebas del lema A.1 y A.3 se pueden encontrar en el artículo antes mencionado, mientras que la prueba del lema A.2 se puede encontrar en \cite[proposición 3.1]{HUANG20207170}.
 
+\begin{lema}\label{lemaA.2}
+ Sea $\phi_{r,z,s,y}(t,x)$ de acuerdo al enunciado del teorema \ref{teocota2daderivada} y sea $(t,x)\in [0,\infty)\times\R$. Entonces para $0<r<s<t$,
+ \end{lema}
+ \begin{lema}\label{lemaA.3a} 
+  Sea $\sigma_{R,t}$ según la definición \ref{defpromediosespaciales}. Entonces se cumple que 
+  \[
+      \lim_{R\to\infty}\frac{\sigma_{R,t}^2}{R}=2\int_{0}^{t}\xi(s)ds,
+  \] 
+  en donde $\xi(s)=\E\left[\sigma^2(u(s,y))\right]$, donde tal y como la notación indica, la función $\xi$ es independiente del punto $y\in \R$ y además es acotada en intervalos compactos.
+  \end{lema}
+  \begin{lema}\label{LemaA.4a}
+   Sean $t>0$ y $\phi_{R,t}$ según se define en \eqref{defnotacionphi}. Entonces existe un $R_0\geq1$, dependiente de $t$, tal que para cualesquiera $0<s<t$ y $R\geq R_0$,
+   \[
+      c_t\leq \int_\R\phi_{R,t}^2(s,y)dy\leq C_t,
+   \]
+   en donde la cota inferior es válida siempre que $t/2<s<t$.
+  \end{lema}
 \backmatter
 
 \bibliographystyle{amsplain}

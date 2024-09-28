@@ -41,9 +41,10 @@ Ivan Nourdin and Giovanni Peccati, \emph{Normal approximations with malliavin
   calculus: From stein’s method to universality}, Cambridge Tracts in
   Mathematics, Cambridge University Press, 2012.
 
-\bibitem{nualart2006malliavin}
-David Nualart, \emph{The malliavin calculus and related topics}, Probability
-  and Its Applications, Springer Berlin Heidelberg, 2006.
+\bibitem{Nualart2007}
+David Nualart and Llu{\'i}s Quer-Sardanyons, \emph{Existence and smoothness of
+  the density for spatially homogeneous spdes}, Potential Analysis \textbf{27}
+  (2007), no.~3, 281--299.
 
 \bibitem{Walsh_J.B_Introduction_to_SPDEs}
 John~B. Walsh, \emph{An introduction to stochastic partial differential

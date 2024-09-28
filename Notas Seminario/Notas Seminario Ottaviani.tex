@@ -1,0 +1,206 @@
+\documentclass[letterpaper]{article} 
+\usepackage[left = 0.5in, right = 0.5in, top = 0.9in, bottom = 0.9in]{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+\usepackage[bbgreekl]{mathbbol}
+\usepackage{dsfont}
+\usepackage{parskip}
+
+\newcommand{\op}{\operatorname}
+\newcommand{\Op}{^{\op{op}}}
+\newcommand{\scc}{\mathscr C}
+\newcommand{\scd}{\mathscr D}
+\newcommand{\sce}{\mathscr E}
+\newcommand{\sci}{\mathscr I}
+\newcommand{\scj}{\mathscr J}
+\newcommand{\scx}{\mathscr X}
+\newcommand{\var}{\mathrm{Var}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\inv}{^{-1}}
+\renewcommand{\to}{\rightarrow}
+\newcommand{\ent}{\Longrightarrow}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\1}{\mathds{1}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\theoremstyle{definition}
+\newtheorem{dfn}{Definición}
+\theoremstyle{definition}
+\newtheorem{teo}{Teorema}
+\theoremstyle{definition}
+\newtheorem{cor}{Corolario}
+\theoremstyle{definition}
+\newtheorem{prop}{Proposición}
+\theoremstyle{definition}
+\newtheorem{obs}{Observación}
+
+
+\title{\textbf{Convergencia de polinomios y Probabilidad Libre}}
+\author{Iván Irving Rosas Domínguez}
+\date{\today}
+
+\DeclareSymbolFontAlphabet{\mathbbm}{bbold}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+\DeclareMathSymbol\bbDelta  \mathord{bbold}{"01}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Basado en <<S-transform for finite free probability>>. Trabajo con Fujie, Perales, ?.
+ArXiv 2408.09337
+\end{abstract}
+Trabajo que continúa la tesis de licenciatura de Daniel Perales. Gustó el artículo pero no vieron qué onda hasta recientemente. Conecta dos áreas. Geometría de Polinomios y Matrices aleatorias y probabilidad libre.
+
+El resultado mas importante, y son de esas cosas que cuando uno piensa que unos resultados mágicamente aparecen cuando hace otras cosas, este es un ejemplo. Cosas de matrices aleatorias e ideas de combinatoria se aplican a un problema muy natural que es entender convergencia de polinomios o de su distribución espectral.
+
+El problema que nos interesa es el siguiente.
+
+\begin{enumerate}
+    \item[\textbf{1.}] \textbf{Problema}
+\end{enumerate}
+Sea $(P_n)_{n\geq1}$ sucesión de polinomios de grado $n$, polinomios con raíces reales.
+Definimos $P_n(x):=(x-\lambda_1),...,(x-\lambda_n)$. Consideremos la distribución empírica o distribución de raíces $\mu_n:=\sum_{i=1}^n\delta_{\lambda_i}$. Los lambda no necesariamente son distintos (aunque se pueden suponer distintos entre sí)
+
+Nos interesa dar condiciones en los coeficientes para asegurar que $\mu_n\xrightarrow[n\to \infty]{\mathcal{D}}\mu$ y describir de alguna forma la medida $\mu$. 
+
+\textbf{Ejemplos.}
+$\cdot$ Polinomios de Hermite. $h_n(x)=\sum_{k=1}^{n}(-1)^k {2n\choose2k} \frac{(2k)!}{k!}\frac{x^{2n-2k}}{(2n)^k}$
+
+Resulta ser que $\mu_{h_n}\to S$, donde se da que Hermite=$\E\left[X_{GUE}\right]$, donde GUE son las matrices Gaussianas Unitarias, y $S$ es la distibución de Wigner.
+
+$\cdot$ Polinomios de Laguerre. $L_n(x)=\sum_{k=0}^{\infty}(x)(-1)^k {n\choose} k\frac{(n)_k}{n^k}X^{n-1}$.
+
+Se tiene que $\mu_{L_n}\to Mp$, donde $Mp$ es la Marchenko-Pasteur y se tiene que $L_n=\E\left[X_{Wishart}\right]$, donde $GG^{T}$, $G=GUE$. (Preguntar a Esaul, en su tesis de maestría estudió este tipo de objetos.)
+
+El problema es determinar a partir de los coeficientes de los polinomios, saber a dónde van. Es decir, ¿qué significa en términos de los polinomios la convergencia de la distribución empírica de las raíces?
+
+$\cdot$ Polinomios de Chebyshev. $Ch(x)=\sum(-1)^{k}\frac{2k!}{k!}\frac{(2n-k-1)!}{2^{2k}}x^{2k}$. 
+
+En este caso $M_{Ch^n}\to arcoseno$. Coincide con $X_{A_G}$, y $A_G$ es un ciclo.
+
+El resultado principal es el siguiente 
+\begin{teo}[AFPO]
+    Sea $(p_n)_{n\geq1}$ una sucesión de polinomios con raíces simétricas 
+    \[
+    p_n(x)=x^n-a_1x^{n-1}+a_2x^{n-2}+...
+    \] 
+    Entonces son equivalentes
+    \begin{itemize}
+        \item El coeficiente $\frac{{n\choose k-1}a_{k-1}}{{n\choose k}a_k}\to f(t)$ siempre que $\frac{k}{n}\to t$, para cualquier $t$. $k$ depende de $n$, por ejemplo podemos tomar $k=\lfloor nt\rfloor$, para cualquier $t\in [0,1]$.
+        \item $\mu[P_n]\xrightarrow[n\to \infty]{\mathcal{D}}\mu$.
+    \end{itemize}
+    Observamos que como función los $P_n$ no convergen, esa es la dificultad. Nos ponemos a estudiar las medidas empíricas. Mimbela pregunta. ¿Pero y qué pasa con polinomios que sí convergen? Por ejemplo, los polinomios de Bernstein. ¿Da algo de intuición? ¿Se aplica este resultado para esos polinomios?
+ \end{teo}
+
+ En el ejemplo de los polinomios de Laguerre, resulta que 
+ \[
+ \frac{(n)_k}{n^{k}}/\frac{(n)_{k+1}}{n^{k+1}}=\frac{n}{n-k+1}.
+ \]
+ Por lo tanto, si $k\approx tn$, entonces lo anterior converge a $\frac{1}{1-t}=f(t)$. Y esta madre es creciente.
+
+ Lo mismo se puede hacer en Cheby o en otros. Ahora bien, en el caso de Laguerre, la $f$ resultó ser relativamente sencilla. En el problema general ¿quién es la $f$?
+
+ \begin{enumerate}
+    \item[\textbf{2.}] \textbf{Elementos de Proba Libre.}
+ \end{enumerate}
+ Recordemos que la transformada de Cauchy es
+ \[
+ G_\mu(z)=\int_{-\infty}^\infty\frac{1}{2-t}d\mu
+ \]
+con $z\in \C$, y además uno puede recuperar la densidad de la medida como 
+\[
+\lim_{y\to 0^+}Im(G_\mu (x+iy))=\pi d\mu.
+\]
+Ahora, nótese que 
+\[
+\psi_{\mu}(z)=\int_{0}^{\infty}\frac{tz}{1-tz}d\mu(t)=\frac{1}{z}G_\mu(\frac{1}{z})-1
+\]
+y definimos la transformada $S$ como 
+\[
+S_\mu(z)=\frac{1+z}{z}\psi^{-1}_\mu(z)
+\]
+Nos preguntamos ¿cuáles son las propiedades de la transformada $S$? 
+
+\textbf{Propiedades de la transformada $S$}.
+\begin{itemize}
+    \item $S_\mu:(-1,0)\to\R^{+}$, con $\lim_{t\to-1}S_\mu(t)=a$, con $a=\int x^{-1}d\mu$ y también  $\lim_{t\to 0}S_\mu(t)=b^{-1}$ donde $b=\int x d\mu$.
+    \item $S_\mu$ es estrictamente creciente.
+    \item $S_{\mu\otimes\nu}=S_\mu S_\nu$.
+\end{itemize}
+¿Cuál fue el resultado entonces? Resulta ser que, por ejemplo, la transformada $S_\mu$ de la Marchenko Pasteur resulta ser $f(t)=\frac{1}{1-t}$. Entonces dada la equivalencia que se tiene mostrada en el teorema principal, podemos calcular el límite de la primera condición (si existe el límite, existe la transformada $S$ de la medida empírica). Luego, calculamos transformadas $S$ de distribuciones, analizamos a donde converge la medida empírica, le sacamos la transformada $S$ a la medida límite y tratamos de cuadrar. Vamos, que en resumen, el teorema que se probó se puede reescribir como 
+
+\begin{teo}[AFPO]
+    Sea $(p_n)_{n\geq1}$ una sucesión de polinomios con raíces simétricas 
+    \[
+    p_n(x)=x^n-a_1x^{n-1}+a_2x^{n-2}+...
+    \] 
+    Entonces son equivalentes
+    \begin{itemize}
+        \item El coeficiente $\frac{{n\choose k-1}a_{k-1}}{{n\choose k}a_k}\to S_\mu(-t)$. 
+        \item $\mu[P_n]\xrightarrow[n\to \infty]{\mathcal{D}}\mu$.
+    \end{itemize}
+ \end{teo}
+ Lo anterior bajo algunas hipótesis.
+\begin{enumerate}
+    \item[\textbf{3.}] \textbf{Polinomios} 
+\end{enumerate}
+Nótese que 
+\[
+P_n(x)=(x-\lambda_1)...(x_{\lambda_n})=x^n-e_1x^{n-1}+...
+\]
+donde $e_i=\sum_{1\leq i_1,...,i_k\leq n}\lambda_{i_1}...\lambda_{i_k}$.
+y donde $\tilde{e}_i:=e_k/{n\choose k}$. Además estos últimos satisfacen propiedades de convexidad:
+\[
+\tilde{e}_{k+1}\tilde{e}_{k-1}\geq\tilde{e}_{k}^2.
+\]
+y se satisface que 
+\[
+\tilde{e}_n/\tilde{e}_{n-1}\leq \tilde{e}_{k}/\tilde{e}_{k+1}\leq\tilde{e}_{k-1}/\tilde{e}_{k}\leq...\leq\tilde{e}_0/\tilde{e}e_{1}.
+\]
+Y entonces 
+\[
+\frac{\lambda_1\cdot...\cdot\lambda_n}{\lambda_1\cdot...\cdot\lambda_{n-1}+...}=\frac{1}{1/\lambda_1+...+1/\lambda_{n}}
+\]
+A Daniel Perales se le ocurrió que lo anterior fuera la transformada $S$ para polinomios. Se comporta exactamente de la misma manera que la transformada $S$.
+
+\begin{teo}[Hoskens-Kabluchko, Ar. Perales-Garza]
+ $\mu_{P_n}\to \mu$ y si $k\sim tn$, entonces $\mu_{P_n}^(k)\to D_t\mu^{\boxplus 1/t}=\mu_t$.
+ Y se tiene que 
+ \[
+ S_{\mu_t}(tz)=S_\mu(z).
+ \]
+ \end{teo}
+Veamos. Si tenemos el polinomio, ¿cómo son los coeficientes de las derivadas? 
+\[
+\partial_x P_n(x)=nx^{n-1}-(n-1e_1x^{n-2}).
+\]
+Lo vuelvo mónico, y nos damos cuenta del lema siguiente
+\begin{teo}[Lema]
+    \[
+        \tilde{e}_k(P)/\tilde{e}_{k-1}(P)=\tilde{e}(\partial_xP)/\tilde{e}_{k-1}(P)\cdot...\cdot\tilde{e}_k(\partial^lP)/\tilde{e}_{k-1}(P).
+    \]
+    Observamos que tomando convergencias, se tienen las siguientes relaciones:
+
+    \[
+        \tilde{e}(\partial_xP)/\tilde{e}_{k-1}(P)\cdot...\cdot\tilde{e}_k(\partial^lP)/\tilde{e}_{k-1}(P)\to \int x^{-1}\partial^k(P_k)\to\int x^{-1}\mu_t=S_{\mu_t}(-1)=S_\mu(-t).
+    \]
+ \end{teo}
+ \end{document}

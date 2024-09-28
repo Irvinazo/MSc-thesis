@@ -1,0 +1,107 @@
+\documentclass[letterpaper]{article} 
+\usepackage[left = 0.5in, right = 0.5in, top = 0.9in, bottom = 0.9in]{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+\usepackage[bbgreekl]{mathbbol}
+\usepackage{dsfont}
+\usepackage{parskip}
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\B}{\mathcal{B}}
+\renewcommand{\S}{\mathcal{S}}
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\W}{\dot{W}}
+\newcommand{\1}{\mathds{1}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\inv}{^{-1}}
+\renewcommand{\to}{\rightarrow}
+\newcommand{\ent}{\Longrightarrow}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+
+\theoremstyle{definition}
+\newtheorem{dfn}{Definición}
+\theoremstyle{definition}
+\newtheorem{teo}{Teorema}
+\theoremstyle{remark}
+\newtheorem{proofpart}{Parte}
+\theoremstyle{definition}
+\newtheorem{cor}{Corolario}
+\theoremstyle{definition}
+\newtheorem{prop}{Proposición}
+\theoremstyle{definition}
+\newtheorem{obs}{Observación}
+\theoremstyle{definition}
+\newtheorem{ejem}{Ejemplo}
+\theoremstyle{definition}
+\newtheorem{lema}{Lema}
+
+
+\title{\textbf{Problemas}}
+\author{Iván Irving Rosas Domínguez}
+\date{\today}
+
+\DeclareSymbolFontAlphabet{\mathbbm}{bbold}
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+\DeclareMathSymbol\bbDelta  \mathord{bbold}{"01}
+
+\begin{document}
+\maketitle
+\textbf{Problema 1} 
+
+   En el paper de Maria Emilia se tiene el siguiente Lema como condiciones suficientes para la existencia y unicidad de la densidad continua y acotada para una variable $F$.
+   \begin{lema}[Lema 3 en Maria Emilia]
+    Sea $F$ una variable aleatoria en el espacio $\D^{1,1}$. Sea $u$ un proceso en $\text{Dom}(\delta)$ tal que cumple las siguientes propiedades, para algunos $p,p'>1$ tales que $1/p+1/p'=1$
+    \begin{enumerate}
+        \item $u\in L^{p}(\Omega;\mathfrak{H})$
+        \item $\delta(u)\in L^{p}(\Omega)$
+        \item $(D_uF)^{-1}\in \D^{1,p'}$.
+    \end{enumerate}
+    Entonces se cumplen las condiciones de la existencia de la densidad continua y acotada del paper de Maria Emilia.
+   \end{lema}
+   
+   Después, se argumenta que las hipótesis del Lema 3 se satisfacen si pedimos las condiciones del siguiente lema.
+   \begin{lema}[Lema 4 en Maria Emilia]
+    Sean $p,p'>1$ tales que $\frac{1}{p}+\frac{1}{p'}=1$, y sea $F\in \D^{2,1}$. Supongamos que $u\in \text{Dom}(\delta)$. Si se cumplen las siguientes condiciones 
+    \begin{enumerate}
+      \item $u\in L^{p}(\Omega;\mathfrak{H})$,
+      \item $\delta(u)\in L^{p}(\Omega)$,
+      \item $(D_uF)^{-1}\in L^{p'}(\Omega)$,
+      \item $(D_uF)^{-2}\left(\norm{D^2F}_{\mathfrak{H}^{\otimes 2}}\norm{u}_{\mathfrak{H}}+\norm{Du}_{\mathfrak{H}}\norm{DF}_{\mathfrak{H}}\right)\in L^{p'}(\Omega)$,
+    \end{enumerate}
+    entonces $\tfrac{u}{D_uF}\in \text{Dom}(\delta)$ y en particular, se cumple la ecuación de la densidad continua y acotada de Maria Emilia.
+    \end{lema}
+    Básicamente son las mismas hipótesis en ambos lemas, salvo que la condición 3. y 4. del Lema 2 deben implicar la condición 3. del Lema 1. ¿Por qué se da esa implicación?
+
+\textbf{Problema 2.} 
+
+¿Cómo argumentar la cota que aparece en la expresión para la primera derivada de Malliavin de la solución a la ecuación del calor?
+
+\begin{teo}
+    Sea $u$ la solución al problema \eqref{shedefinitiva}. Supongamos además que $\sigma:\R\to\R$ es de clase $C^1(\R,\R)$, y su derivada es una función Lipschitz y acotada. Entonces para cualquier $(t,x)\in [0,T]\times\R$, $u(t,x)\in\bigcap_{p\geq1}\D^{1,p}$ y además, la derivada de Malliavin cumple que 
+    \[
+    D_{s,t}u(t,x)=p_{t-s}(x-y)\sigma(u(s,y))+ \int_{[s,t]}\int_\R p_{t-\tau}(x-\xi)\sigma'(u(\tau,\xi))D_{s,y}u(\tau,\xi)W(d\tau,d\xi),
+    \]
+    para casi cualquier $s\in [0,t]$ y $y\in \R$. Más aún, se cumple que 
+    \begin{equation}
+       \norm{D_{s,y}u(t,x)}_{p}\leq C_{T,p \ }p_{t-s}(x-y),
+    \end{equation}
+    para cualquier $0\leq s<t\leq T$, y para $x,y\in \R$.
+  \end{teo}
+
+ \end{document}

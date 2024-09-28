@@ -21,7 +21,6 @@
 \contentsline {section}{\numberline {3.2}Existencia de densidades y estimación de la distancia uniforme}{50}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Propiedades espaciales de la Ecuación estocástica del calor}{55}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Cotas para la primera y segunda derivada de la solución mild y existencia de momentos negativos}{57}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Prueba del resultado principal}{58}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Validez de las hipótesis}{58}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Cota de la segunda derivada de los promedios espaciales}{58}{subsection.4.2.2}%
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{59}{chapter.5}%
+\contentsline {section}{\numberline {4.2}Prueba del resultado principal}{59}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{71}{chapter.5}%
+\contentsline {chapter}{\numberline {A}Resultados técnicos}{73}{appendix.Alph1}%
