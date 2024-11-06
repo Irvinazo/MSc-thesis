@@ -5,12 +5,21 @@
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{bühler2018functional}
+T.~B{\"u}hler and D.A. Salamon, \emph{Functional analysis}, Graduate Studies in
+  Mathematics, American Mathematical Society, 2018.
 
 \bibitem{Caballero1998-hz}
 Mar{\'\i}a~Emilia Caballero, Bego{\~n}a Fern{\'a}ndez, and David Nualart,
   \emph{Estimation of densities and applications}, Journal of Theoretical
   Probability \textbf{11} (1998), no.~3, 831--851.
+
+\bibitem{ChenDalang2014}
+Le~Chen and Robert Dalang, \emph{Moments, intermittency and growth indices for
+  the nonlinear fractional stochastic heat equation}, Stochastic Partial
+  Differential Equations: Analysis and Computations \textbf{3} (2014).
 
 \bibitem{HU2014814}
 Yaozhong Hu, Fei Lu, and David Nualart, \emph{Convergence of densities of some
@@ -40,6 +49,10 @@ Jean-François Le~Gall, \emph{Brownian motion, martingales, and stochastic
 Ivan Nourdin and Giovanni Peccati, \emph{Normal approximations with malliavin
   calculus: From stein’s method to universality}, Cambridge Tracts in
   Mathematics, Cambridge University Press, 2012.
+
+\bibitem{nualart2006malliavin}
+David Nualart, \emph{The malliavin calculus and related topics}, Probability
+  and Its Applications, Springer Berlin Heidelberg, 2006.
 
 \bibitem{Nualart2007}
 David Nualart and Llu{\'i}s Quer-Sardanyons, \emph{Existence and smoothness of
