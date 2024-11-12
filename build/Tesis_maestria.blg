@@ -1,51 +1,51 @@
 This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Tesis_maestria.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: amsplain.bst
-Reallocating 'name_of_file' (item size: 1) to 24 items.
 Database file #1: build/Referencias_tesis.bib
 Warning--missing pages in ChenDalang2014
 Warning--can't use both author and editor fields in Khoshnevisan2009
-You've used 12 entries,
+You've used 14 entries,
             2213 wiz_defined-function locations,
-            588 strings with 6148 characters,
-and the built_in function-call counts, 3678 in all, are:
-= -- 318
-> -- 151
+            599 strings with 6392 characters,
+and the built_in function-call counts, 4106 in all, are:
+= -- 350
+> -- 165
 < -- 0
-+ -- 63
-- -- 47
-* -- 299
-:= -- 596
-add.period$ -- 12
-call.type$ -- 12
-change.case$ -- 59
++ -- 69
+- -- 51
+* -- 323
+:= -- 670
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 67
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 155
-empty$ -- 334
-format.name$ -- 47
-if$ -- 776
+cite$ -- 16
+duplicate$ -- 179
+empty$ -- 382
+format.name$ -- 51
+if$ -- 868
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 29
-newline$ -- 46
-num.names$ -- 26
-pop$ -- 83
+int.to.str$ -- 14
+missing$ -- 35
+newline$ -- 52
+num.names$ -- 30
+pop$ -- 99
 preamble$ -- 1
-purify$ -- 47
+purify$ -- 53
 quote$ -- 0
-skip$ -- 91
+skip$ -- 103
 stack$ -- 0
-substring$ -- 227
-swap$ -- 26
+substring$ -- 237
+swap$ -- 28
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 38
+type$ -- 42
 warning$ -- 2
-while$ -- 37
-width$ -- 14
-write$ -- 116
+while$ -- 41
+width$ -- 16
+write$ -- 134
 (There were 2 warnings)

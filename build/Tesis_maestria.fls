@@ -38,6 +38,9 @@ INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics-def\pdftex
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
+INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
+INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\svgnam.def
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\svgnam.def
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\xcolor\svgnam.def
@@ -169,9 +172,6 @@ INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
-INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
-INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
-INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\graphics\dvipsnam.def
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
 INPUT C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
