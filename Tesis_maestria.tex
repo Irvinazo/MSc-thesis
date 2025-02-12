@@ -74,11 +74,11 @@
 
 \author{Ivan Irving Rosas Domínguez}
 \documentType{T E S I S}  
-\title{Sobre convergencia de densidades de promedios espaciales para la ecuación estocástica del calor}
+\title{Sobre convergencia de densidades de promedios espaciales para la ecuación del calor estocástica}
 \degree{Maestría en Ciencias con Orientación en Probabilidad y Estadística}
 \supervisor{Dr. Arturo Jaramillo Gil}
 %\supervisorSecond{} 
-\cityandyear{Guanajuato, Gto., ?? de ?? de 2024}
+\cityandyear{Guanajuato, Gto., 01 de marzo de 2025}
 
 
 \begin{document}
@@ -89,38 +89,10 @@
 % % Dedication
 \chapter*{}
 \begin{flushright}%
- \emph{Dedicatoria \dots}
+ \emph{En memoria de mi madre.}
   \thispagestyle{empty}
 \end{flushright}
 
-% % Abstract
-\chapter*{Introducción}
-\addcontentsline{toc}{chapter}{Introducción}
-
-Este trabajo está basado principalmente en el artículo de \c{S}efika Kuzgun y David Nualart \cite{KUZGUN202268} publicado en el año 2022. El objetivo principal es estudiar la convergencia de las densidades de los promedios espaciales de la solución de la ecuación estocástica del calor (SHE, por sus siglas en inglés), en distancia uniforme, a la densidad de una distribución normal estándar. 
-
-Trabajo previo se puede hallar desde el artículo de 1998 de Maria Emilia Caballero, Begoña Fernández Fernández y David Nualart \cite{Caballero1998-hz}, en donde se demuestra la existencia y unicidad de una densidad continua y acotada para una variable aleatoria $X$ que cumpla ciertas condiciones. Con la llegada del nuevo milenio, técnicas que mezclan al cálculo de Malliavin junto con el método de Stein son propuestas por Nourdin y Peccati en su monografía \cite{Nourdin_Peccati_2012}. La fusión de ambas disciplinas conlleva a una amalgama que resulta muy útil a la hora de establecer teoremas tipo límite central, así como dar tasas de convergencia explícitas para los mismos. 
-
-Dentro de esta explosión de resultados, podemos citar el trabajo de Yaozhong Hu, Fei Lu y David Nualart \cite{HU2014814}, en donde se estudia la convergencia de las densidades de algunos procesos gaussianos. Posteriormente, en 2020, Jingyu Huang, Lauri Viitasaari y David Nualart en \cite{HUANG20207170} logran demostrar un teorema central del límite para la solución a la ecuación estocástica del calor. Más aún, ellos son capaces de demostrar cotas explícitas para la velocidad de convergencia de las distribuciones de la solución a la ecuación estocástica del calor a la distribución normal, utilizando para ello la distancia en variación total. 
-
-\c{S}efika Kuzgun y David Nualart, \cite{KUZGUN202268} logran, a partir de estos resultados, exhibir la existencia y unicidad de las densidades de los promedios espaciales de la solución a la ecuación estocástica del calor, y mostrar la convergencia de estas densidades, en distancia uniforme, a la densidad de una variable aleatoria normal, otorgando una tasa de convergencia explícita para la misma.
-
-Para lograr este objetivo, es menester estudiar los conceptos utilizados en el trabajo de Kuzgun y Nualart. Es de destacar desde ahora que en este texto la intención no es, en lo más mínimo, dar un estudio amplio y completo de cada una de las disciplinas anteriores, sino cubrir de manera suficiente pero sucinta la herramienta técnica necesaria para abordar el problema. Así, en esta tesis se da un breve recorrido por las ideas que yacen en el núcleo de la teoría de ecuaciones diferenciales parciales estocásticas (SPDE, por sus siglas en inglés), del cálculo de Malliavin, del método de Stein, así como la amalgama que de estas últimas dos disciplinas surge con la intención de estudiar la existencia de densidades de variables aleatorias bajo ciertas hipótesis, y la deducción de teoremas límite. 
-
-De lo anterior se desprende la estructura del presente texto. En el primer capítulo se estudiarán los elementos esenciales de ecuaciones diferenciales parciales estocásticas. Específicamente, se enuncia brevemente la heurística que da origen a la formulación de las mismas. Se realiza la construcción de la integral de Itô-Walsh, y con dicha integral se formula la solución mild de una ecuación diferencial parcial estocástica. Posteriormente nos enfocamos en el contexto de la ecuación estocástica del calor, así como en su solución. Finalmente se enuncian algunos resultados necesarios para abordar el problema principal.
-
-El capítulo dos está dedicado al estudio de los elementos básicos del cálculo de Malliavin. Este capítulo se divide a su vez en dos partes. En la primera se hace un estudio del caso unidimensional, siendo siendo este caso estudiado con mediano detalle, aunque siempre manteniéndose al mínimo la teoría requerida para nuestro propósito. La segunda parte del mismo se compone del caso general. En esta segunda parte sólo se estudia en mediano detalle el aparato necesario para enunciar los resultados análogos al caso unidimensional, mientras que dichos resultados en múltiples ocasiones serán solo postulados, pero no demostrados. 
-
-La composición del capítulo tres es similar a la del capítulo anterior. La primera parte del mismo consiste en un estudio breve del método de Stein, mencionando tangencialmente las aplicaciones que esta disciplina puede otorgar. La segunda parte del capítulo consiste principalmente en estudiar un resultado que garantiza la existencia y unicidad de la densidad de una variable aleatoria, así como en estudiar la existencia de una cota para la distancia uniforme entre la densidad de una variable adecuada, y la densidad de una variable normal estándar. Este último resultado resulta ser la columna vertebral sobre la que se sostiene el resultado principal, y es demostrada con detalle, y además es en esta parte en donde se hace uso de la amalgama que el cálculo de Malliavin y el método de Stein conforman. El estudio de las herramientas necesarias para abortar el problema principal culmina en esta parte.
-
-El enunciado y prueba del resultado principal se encuentran hasta el capítulo cuarto. Es aquí en donde se hace rigurosa la formulación del problema que se plantea. Se enuncian dos lemas de carácter técnico que son esenciales en la prueba, y finalmente se estudia y concluye el problema principal. Se agrega un último capítulo en el cual se hace una breve reflexión sobre lo realizado, y se echa una mirada al panorama que este problema nos presenta.
-
-Los primeros tres capítulos comienzan con un muy breve resumen histórico de la disciplina a estudiar, así como de la relevancia de la misma en la actualidad. El cuarto capítulo repasa el trabajo previo que ha sido mencionado al inicio de esta introducción, pero con mayor rigurosidad. 
-
-Es importante mencionar que ninguno de los resultados enunciados y tampoco la gran mayoría de heurísticas sobre algún tema en particular, que están presentes en este trabajo, pertenecen al autor del mismo, por lo que siempre que se usen proposiciones o ideas ajenas, se procurará hacer la correspondiente mención de su origen. De esta forma, el aporte del autor está en explicar de la manera más simple que le ha sido posible los resultados, así como rellenar algunos detalles (y no todos) en las pruebas, o bien unificar algunas ideas sueltas de las fuentes consultadas. 
-
-
-\textbf{Palabras clave:} \textit{Integral de Itô-Walsh, Ecuación del calor estocástica, promedios espaciales, cálculo de Malliavin, método de Stein, existencia de densidades, convergencia uniforme, teoremas tipo límite, tasas de convergencia.}
 % % Acknowledgements
 \chapter*{Agradecimientos}
  \addcontentsline{toc}{chapter}{Agradecimientos}
@@ -134,6 +106,35 @@ A mis padres \ldots
 
 % Chapters
 
+% % Abstract
+\chapter*{Introducción}
+\addcontentsline{toc}{chapter}{Introducción}
+
+Este trabajo está basado principalmente en el artículo de \c{S}efika Kuzgun y David Nualart \cite{KUZGUN202268} publicado en el año 2022. El objetivo principal es estudiar la convergencia de las densidades de los promedios espaciales de la solución de la ecuación del calor estocástica (SHE, por sus siglas en inglés), en distancia uniforme, a la densidad de una distribución normal estándar. 
+
+La presente tesis aborda la temática que rodea a dicho problema con base en dos piezas fundamentales. La primera consiste en describir las densidades de variables aleatorias en términos de operadores fundamentales del Cálculo de Malliavin. Trabajo previo con respecto al estudio de existencia de densidades se puede hallar desde el artículo de 1998 de Maria Emilia Caballero, Begoña Fernández Fernández y David Nualart \cite{Caballero1998-hz}, en donde se demuestra la existencia y unicidad de una densidad continua y acotada para una variable aleatoria $X$ que cumpla ciertas condiciones. La segunda pieza consiste en  implementar el método de Malliavin-Stein para estudiar la cuantificación del error en aproximaciones gaussianas. En esta dirección, técnicas que mezclan al cálculo de Malliavin junto con el método de Stein son propuestas por Nourdin y Peccati en su monografía \cite{Nourdin_Peccati_2012} publicada en el año 2012. Dicha monografía muestra que el denominado método de Malliavin-Stein resulta muy útil a la hora de establecer teoremas tipo límite central y obtener tasas de convergencia explícitas para los mismos. 
+
+Entre los antecedentes del artículo de nuestro interés \cite{KUZGUN202268} podemos citar el trabajo de Yaozhong Hu, Fei Lu y David Nualart \cite{HU2014814}. Allí se estudia la convergencia de las densidades de algunos procesos gaussianos. Posteriormente, en 2020, Jingyu Huang, Lauri Viitasaari y David Nualart en \cite{HUANG20207170} logran demostrar un teorema central del límite para la solución a la ecuación del calor estocástica. Más aún, ellos demuestran cotas explícitas para la velocidad de convergencia de la ley de la solución a la ecuación del calor estocástica a la distribución normal, medida en términos de la distancia en variación total. 
+
+Con base en dichos antecedentes, \c{S}efika Kuzgun y David Nualart demuestran la existencia y unicidad de las densidades de los promedios espaciales de la solución a la ecuación del calor estocástica, y demuestran la convergencia de estas densidades, en distancia uniforme, a la densidad de una variable aleatoria normal, otorgando una tasa de convergencia explícita para la misma.
+
+Es de destacar que la intención de este texto no es la de dar un estudio exhaustivo de las teorías que forman parte de la herramienta para abordar el problema. Lo que se busca es cubrir de manera suficiente pero lo más sucinto posible estas herramientas técnicas con el objetivo de abordar el problema. Por lo tanto, en esta tesis se da un breve recorrido por las ideas que yacen en el núcleo de la teoría de ecuaciones diferenciales parciales estocásticas (SPDE, por sus siglas en inglés), del cálculo de Malliavin, del método de Stein, así como de la combinación que de estas últimas dos disciplinas surge con la intención de estudiar la existencia de densidades de variables aleatorias bajo ciertas hipótesis, y la deducción de teoremas límite. 
+
+Lo anterior motiva la estructura del presente texto. En el primer capítulo se estudiarán los elementos esenciales de ecuaciones diferenciales parciales estocásticas. Específicamente, se enuncia brevemente la heurística que da origen a la formulación de las mismas. Se realiza la construcción de la integral de Itô-Walsh, y con dicha integral se formula la solución mild de una ecuación diferencial parcial estocástica. Posteriormente nos enfocamos en el contexto de la ecuación del calor estocástica, así como en su solución. Finalmente se enuncian algunos resultados técnicos necesarios para abordar el problema principal, destacando las desigualdades de Burkholder-Davis-Gundy y una versión adecuada del teorema de Fubini.
+
+El capítulo dos está dedicado al estudio de los elementos básicos del cálculo de Malliavin. Este capítulo se divide a su vez en dos partes. En la primera se hace un estudio del caso unidimensional, siendo este caso estudiado con mediano detalle, aunque siempre manteniéndose al mínimo la teoría requerida para nuestro propósito. La segunda parte del capítulo se compone del caso general. Aquí nos limitamos principalmente a enunciar los resultados análogos al caso unidimensional. 
+
+La composición del capítulo tres es similar. La primera parte del mismo consiste en un estudio breve del método de Stein, mencionando tangencialmente algunas aplicaciones de esta disciplina. La segunda parte del capítulo consiste principalmente en estudiar un resultado que garantiza la existencia y unicidad de la densidad de una variable aleatoria, así como en estudiar la existencia de cotas para la distancia uniforme entre la densidad de una variable adecuada y la densidad de una variable normal estándar. Este último resultado es la columna sobre la que se sostiene el teorema principal, y es demostrado con detalle. Además es en esta parte en donde se hace uso de la combinación entre cálculo de Malliavin y el método de Stein. El estudio de las herramientas necesarias para abordar el problema principal culmina en esta parte.
+
+El enunciado y prueba del resultado principal se encuentran hasta el capítulo cuarto. Es aquí en donde se hace rigurosa la formulación del problema que se plantea. Se enuncian dos lemas de carácter técnico relacionados con momentos inversos y estimaciones de varianzas para las derivadas de Malliavin de los promedios espaciales para la ecuación del calor estocástica. Estos lemas son esenciales en la prueba. Finalmente se estudia y demuestra el resultado principal. Se agrega un último capítulo en el cual se hace una breve reflexión sobre lo realizado, y se echa una mirada al panorama en el cual este problema está inmerso, enunciando posibles direcciones para trabajo futuro.
+
+Los primeros tres capítulos comienzan con un muy breve resumen histórico de la disciplina a estudiar, así como de la relevancia de la misma en la actualidad. El cuarto capítulo repasa el trabajo previo que ha sido mencionado al inicio de esta introducción, pero con mayor rigurosidad. 
+
+La intención del autor principalmente radica en explicar de la manera más simple que le ha sido posible los resultados, así como rellenar algunos detalles en las pruebas, o bien unificar algunas ideas sueltas de las fuentes consultadas. 
+
+
+\textbf{Palabras clave:} \textit{Integral de Itô-Walsh, Ecuación del calor estocástica, promedios espaciales, cálculo de Malliavin, método de Stein, existencia de densidades, convergencia uniforme, teoremas límite, tasas de convergencia.}
+
 
 
 
@@ -142,31 +143,29 @@ A mis padres \ldots
 
 \chapter{Elementos de ecuaciones diferenciales parciales estocásticas}
 
-En este capítulo hablaremos acerca del concepto de ecuación diferencial parcial estocástica (SPDE, por sus siglas en inglés).
+En este capítulo hablaremos acerca de ecuaciones diferenciales parciales estocásticas o SPDEs.
 Dichos objetos comenzaron a ser estudiados a mediados del siglo pasado con la llegada de la integral de Itô.
-El trabajo de Itô y demás colegas para tratar ecuaciones diferenciales estocásticas inmediatamente sugirió el estudio de la posible generalización a ecuaciones diferenciales en varias variables.
+El trabajo de Itô y demás colegas para tratar ecuaciones diferenciales estocásticas sugirió el estudio de la posible generalización a ecuaciones diferenciales en varias variables.
 Durante las décadas de los 50, 60 y 70, varios artículos hacían alusión a estos objetos, aunque no fue sino hasta finales de la década de 1970 cuando estas ecuaciones comenzaron a ser estudiadas como objetos matemáticos en sí.
-Finalmente, en la década de 1980, varias monografías surgieron con el propósito de construir una teoría que cohesionara las ideas existentes en el área. Destaca en particular la monografía \cite{Walsh_J.B_Introduction_to_SPDEs}, escrita por Walsh  y publicada en 1986, en donde el autor aborda el estudio de estas ecuaciones, dando un significado preciso a lo que significa plantear y resolver una ecuación diferencial que involucre procesos estocásticos cuyas trayectorias generalmente no son diferenciables, y que tengan tanto una variable espacial como una temporal.
+Finalmente, en la década de 1980, varias monografías surgieron con el propósito de construir una teoría que cohesionara las ideas existentes en el área. Destaca en particular la monografía \cite{Walsh_J.B_Introduction_to_SPDEs}, escrita por Walsh  y publicada en 1986, en donde el autor aborda el estudio de estas ecuaciones, dando un significado preciso a lo que significa plantear y resolver una ecuación diferencial, que involucre procesos estocásticos, cuyas trayectorias generalmente no son diferenciables, y que tengan tanto una variable espacial como una temporal.
 
-Desde esta década múltiples trabajos en esta área han sido publicados. Esto, junto con el uso de herramientas como cálculo de Malliavin en el estudio de las mismas, han hecho de las Ecuaciones diferenciales parciales estocásticas una área bastante activa en la probabilidad moderna.
+Desde esta década, múltiples trabajos en esta área han sido publicados. Esto, junto con el uso de herramientas como cálculo de Malliavin en el estudio de las mismas, han hecho de las ecuaciones diferenciales parciales estocásticas un área bastante activa en la probabilidad moderna.
 
-En la primera parte de este capítulo, hacemos un recuento de las ideas de las soluciones débiles a una ecuación diferencial parcial clásica. Dichas ideas son clave para estudiar el caso estocástico. La idea de la integral de Itô-Walsh surge de manera natural en esta parte. Es importante destacar que esta primera sección introductoria, se presenta solo ideas y razonamientos formales, dejando la parte rigurosa y en el contexto que nos interesa para el final del capítulo. Dichas ideas están basadas en \cite{evans2010partial}, \cite{BonderEcuaciones} y \cite{Khoshnevisan2009}.
+En la primera parte de este capítulo, hacemos un resumen de las soluciones débiles, a una ecuación diferencial parcial clásica. Dichas ideas son clave para estudiar el caso estocástico. La idea de la integral de Itô-Walsh surge de manera natural en esta parte. Es importante destacar que esta primera sección introductoria se presenta solo ideas y razonamientos formales, dejando la parte rigurosa y en el contexto que nos interesa para el final del capítulo. Dichas ideas están basadas en \cite{evans2010partial}, \cite{BonderEcuaciones} y \cite{Khoshnevisan2009}.
 
 \section{Introducción a las SPDE}
 
 Comenzamos en este capítulo con la pregunta clave: ¿qué es una ecuación diferencial parcial estocástica? Para responder a esta pregunta, podemos repasar cada uno de los conceptos que nos llevan a esta idea. Partimos del mundo clásico en $\R^{N}:$ sean $x\in \R^{N}$, $t\in [0,\infty)$ y $u:\R^{N}\times[0,\infty)\to \R$ una función en las variables $x$ y $t$. Una ecuación diferencial parcial es una ecuación del tipo 
-
 \begin{equation}\label{ec_dif_parc}
     F(t,x,u,Du,D^2u,...)=0,    
 \end{equation}
-
 donde $x$ y $t$ se interpretan como las variables espacial y temporal respectivamente, y $F$ es una función arbitraria que depende tanto de las variables espaciales como de la temporal, así como de la misma función $u$ y de sus derivadas de orden $\alpha=(\alpha_1,...,\alpha_n)$, donde $\alpha_i$ representa la derivada parcial en la $i$-ésima coordenada.
 
-Si existe una función $u$ tal que $u\in C^{\alpha}\left(\R^{N}\times [0,\infty)\right)$ y además $u$ satisface la ecuación \eqref{ec_dif_parc}, donde $\alpha$ es el multi-índice más grande tal que el orden de todas las derivadas que aparecen en la ecuación son cubiertas por el mismo, entonces decimos que $u$ es una solución clásica a la ecuación diferencial parcial anterior. De esta manera, y en particular para la ecuación estocástica del calor homogénea clásica, la cual está dada por 
+Si existe una función $u$ tal que $u\in C^{\alpha}\left(\R^{N}\times [0,\infty)\right)$ y además $u$ satisface la ecuación \eqref{ec_dif_parc}, donde $\alpha$ es el multi-índice más grande tal que el orden de todas las derivadas que aparecen en la ecuación son cubiertas por el mismo, entonces decimos que $u$ es una \textit{solución clásica} a la ecuación diferencial parcial anterior. De esta manera, y en particular para la ecuación del calor estocástica homogénea clásica, la cual está dada por 
    \begin{equation*}
       \partial_tu(x,t)-\frac{1}{2}\Delta_x u(x,t)=0,
    \end{equation*}
-se entiende por solución clásica a una función $u:\R^{N}\times[0,\infty)\to \R$ tal que $u\in C^{2,1}\left(\R^{N}\times [0,\infty)\right)$, y que cumpla la ecuación anterior. En particular, la solución clásica cumple que al menos todas las segundas derivadas en las variables espaciales existen, son continuas, y al menos la derivada en la variable temporal existe y es continua.
+una solución clásica es una función $u:\R^{N}\times[0,\infty)\to \R$ tal que $u\in C^{2,1}\left(\R^{N}\times [0,\infty)\right)$ (una función dos veces continuamente derivable en las variables espaciales, y continuamente diferenciable en la variable tempral), que cumpla la ecuación anterior. En particular, la solución clásica cumple que al menos todas las segundas derivadas en las variables espaciales existen, son continuas, y al menos la derivada en la variable temporal existe y es continua.
 
 Cabe destacar que la noción de solución de un ecuación diferencial parcial en el sentido clásico coincide con lo esperable: una función $u$ será solución de una ecuación diferencial si al menos tiene tantas derivadas como aquellas involucradas en la igualdad \eqref{ec_dif_parc}.
 
@@ -185,7 +184,7 @@ Con motivo de resolver problemas como el planteado anteriormente, pero en los qu
 \end{equation}
 es claro que tenemos una inconsistencia al momento de colocar la condición inicial dada por el valor absoluto $\pi-|x|$ pues dicha función no es derivable en $x=0$. No obstante, desde un punto de vista intuitivo, claramente el problema tiene sentido: estamos modelando el comportamiento de una cuerda sujeta en sus extremos a los puntos $-\pi$ y $\pi$, la cual al soltarla tiene una posición inicial dada por $\pi-|x|$ y cuya velocidad inicial es cero en cualquier punto de la cuerda.
 
-La idea para hallar una solución al problema anterior, a grandes rasgos, consiste en reformular el problema de forma que se conserve la esencia del problema, y posteriormente obtener una solución a este problema reformulado. Una manera estándar es utilizar la teoría de distribuciones. En el caso particular de la ecuación de onda anterior, se procede formalmente de la siguiente manera:
+La idea para hallar una solución al problema anterior, a grandes rasgos, consiste en reformularlo de forma que se conserve la esencia del mismo, y posteriormente obtener una solución a este problema reformulado. Una manera estándar es utilizar la teoría de distribuciones. En el caso particular de la ecuación de onda anterior, se procede formalmente de la siguiente manera:
 
 Supongamos que $u$ es una solución al problema $\eqref{wave_eq_sobolev}$. En particular se debería cumplir que 
 \[
@@ -207,7 +206,7 @@ para cualquier función $\phi\in C^{\infty}([-\pi,\pi]\times [0,\infty))$ cuyas 
 
 Claramente toda solución clásica (o fuerte) es a su vez una solución débil, ya que precisamente la regularidad de dichas soluciones permiten hacer de manera rigurosa los cálculos formales anteriores. No obstante, la existencia de una solución débil en el sentido anterior no garantiza que dicha solución sea regular, por lo que en principio es más sencillo demostrar la existencia o unicidad de las soluciones débiles, a pesar de que estas gocen de menos propiedades que las soluciones fuertes o clásicas, las cuales no siempre existirán, como en el caso del problema $\eqref{wave_eq_sobolev}$.
 
-Llegados a este punto, reflexionamos ahora en dirección de la probabilidad. Supongamos nuevamente que tenemos la ecuación de onda unidimensional, pero considerando el caso no homogéneo. Tenemos entonces la siguiente ecuación
+Llegados a este punto, buscamos incluir ideas probabilistas. Supongamos nuevamente que tenemos la ecuación de onda unidimensional, pero considerando el caso no homogéneo. Tenemos entonces la siguiente ecuación
 \begin{equation}\label{wave_spde}
 \partial_{tt}u(x,t)=\kappa^2\partial_{xx}u(x,t)+F(x,t), \qquad (x,t)\in [-\pi,\pi]\times[0,\infty)
 \end{equation}
@@ -221,24 +220,26 @@ Más aún, ¿en qué sentido se debe interpretar una ecuación como \eqref{wave_
 \end{equation}
 en donde el término $F$ es aleatorio, ¿qué significa hablar de una solución a dicha ecuación?
 
-Obsérvese que, si bien la teoría de distribuciones nos permite lidiar con la parte de la no regularidad de las condiciones del problema, para replicar el mecanismo que fue utilizado para reformular\eqref{wave_eq_sobolev} en un sentido débil, nos encontramos con una dificultad pues $F(x,t)$ es ahora un proceso estocástico, y a no ser que dicho proceso sea de variación finita, no será posible realizar de manera rigurosa la transición al momento de integrar por partes.
+Obsérvese que, si bien la teoría de distribuciones nos permite lidiar con la parte de la no regularidad de las condiciones del problema, para replicar el mecanismo que fue utilizado para reformular el problema \eqref{wave_eq_sobolev} en un sentido débil, nos encontramos con una dificultad pues $F(x,t)$ es ahora un proceso estocástico, y a no ser que dicho proceso sea de variación finita, no será posible realizar de manera rigurosa la transición al momento de integrar por partes.
 
 \subsection{Heurística de la formulación mild}
 
-Un vistazo más a detalle de lo anterior puede arrojarnos luz sobre cómo replantear de manera rigurosa un \textit{problema del calor estocástico} como el anterior. Haciendo nuevamente cálculos formales, una manera de proceder sería la siguiente: supongamos que tenemos la siguiente ecuación diferencial del calor unidimensional no lineal,
+Apoyándonos en las ideas de las soluciones débiles, un momento de reflexión puede arrojarnos luz sobre cómo replantear de manera rigurosa un \textit{problema del calor estocástico} como el anterior. Haciendo nuevamente cálculos formales, una manera de proceder sería la siguiente: supongamos que tenemos la siguiente ecuación diferencial del calor unidimensional no lineal,
 \[
 \partial_tu(x,t)=\frac{1}{2}\partial_{xx}u(x,t)+f(u(x,t))W(x,t), \qquad (x,t)\in [0,L]\times [0,\infty) 
 \]
 donde $W(x,t)$ representa nuestra fuente de aleatoriedad (aunque bien puede pensarse como una función suficientemente suave en principio). Utilizando la técnica presentada en el ejemplo de la solución débil a la ecuación de onda, podríamos tomar una función $\phi \in C^{\infty}([0,L])$ cuya derivada se anule en la frontera, multiplicarla en ambos miembros de la ecuación anterior e integrar con respecto al espacio y al tiempo, y suponiendo que de alguna manera logramos integrar con respecto la fuente aleatoria $W(t,x)$, tendremos la siguiente ecuación formal, 
-\[
-\int_{0}^{L}u(x,t)\phi(x)dx-\int_{0}^{L}u(x,0)\phi(x)=\int_{0}^{L}\int_{0}^{t}\partial_{xx}u(x,s)\phi(x)dx ds+\int_{0}^{L}\int_{0}^{t}\partial_{xx}f(x,s)\phi(x)W(dx,ds).
-\]
+\begin{align*}
+   \int_{0}^{L}u(x,t)\phi(x)dx-\int_{0}^{L}u(x,0)\phi(x)&=\int_{0}^{L}\int_{0}^{t}\partial_{xx}u(x,s)\phi(x)dx ds\\
+   &\ \ \ \ +\int_{0}^{L}\int_{0}^{t}\partial_{xx}f(x,s)\phi(x)W(dx,ds).
+\end{align*}
+
 Es importante destacar que hasta ahora lo que significa integrar con respecto a la fuente aleatoria $W$ es desconocido, pero una vez que la integral anterior haya cobrado sentido, definir con rigor lo que significa un problema como el planteado anteriormente y lo que significa resolverlo es similar a la idea de las soluciones débiles, aunque por supuesto que con mayor complejidad debido a la naturaleza estocástica del problema. Dichas soluciones se conocen en probabilidad con el nombre de \textit{soluciones mild}.
 
 Echando mano de la intuición que la integral de Itô nos da al formalizar la idea de integrar una función con respecto a un movimiento browniano, nos resta estudiar una manera de dar rigor a la integral anterior, al menos suponiendo que la fuente de aleatoriedad $W$ de dos variables proviene de distribuciones gaussianas, las cuales son relativamente <<nobles>> en su manejo. 
 
 \section{Integral de Itô-Walsh}
-En esta sección presentamos la construcción de la integral de Itô-Walsh. Dicha integral nos permite construir procesos estocásticos que más adelante y en cierto sentido pueden verse como la solución de una ecuación diferencial parcial estocástica, y es la integral que resuelve el problema planteado anteriormente sobre cómo integrar con respecto a una fuente de aleatoriedad $W$. Para lograr dicho objetivo, presentamos primeramente la teoría necesaria para construir la integral.
+En esta sección presentamos la construcción de la integral de Itô-Walsh. Dicha integral nos permite construir procesos estocásticos que más adelante y en cierto sentido pueden verse como la solución de una ecuación diferencial parcial estocástica. Esta integral resuelve el problema planteado anteriormente sobre cómo integrar con respecto a una fuente de aleatoriedad $W$. Para lograr dicho objetivo, presentamos primeramente la teoría necesaria para construir la integral.
 
 \subsection{Variables gaussianas y Procesos gaussianos}
 Recordamos aquí las propiedades fundamentales de los procesos gaussianos. Salvo algunos casos especiales, la mayoría de las propiedades se enuncian sin demostración, por lo que nos referiremos a \cite{gall2016brownian} para revisar las pruebas de las mismas. Comenzamos definiendo la distribución gaussiana.
@@ -257,7 +258,7 @@ En tal caso, denotamos $X\sim$ Normal(0,1).
 
 Directamente de la definición, tenemos la caracterización de una variable gaussiana en términos de su transformada de Laplace y de su transformada de Fourier.
 \begin{prop}\label{definiciongaussiana}
- Sea $X$ una variable aleatoria con distribución normal estándar. Su transformada de Laplace en todo $\C$ está dada por 
+ Sea $X$ una variable aleatoria con distribución normal estándar. Su transformada de Laplace está dada por 
  \[
  \mathcal{L}_X(\lambda):=\E\left[e^{\lambda X}\right]=e^{\lambda^2/2}, \qquad \lambda\in \C,
  \]
@@ -268,7 +269,7 @@ mientras que su transformada de Fourier (o función característica) en $\R$ est
  \end{prop}
 Se puede ver usando alguna de las transformadas anteriores y usando un argumento inductivo que una variable normal estándar tiene momentos de cualquier orden, y que los mismos están dados por 
  \begin{itemize}
-   \item $\E\left[X^{2n}\right]=(n-1)!!=\frac{(2n)!}{2^nn!}=1\cdot3\cdot5\cdot_...\cdot (2n-1), \qquad n\geq0$.
+   \item $\E\left[X^{2n}\right]=(n-1)!!=\frac{(2n)!}{2^nn!}=1\cdot3\cdot5\cdot...\cdot (2n-1), \qquad n\geq0$.
    \item $\E\left[X^{2n+1}\right]=0, \qquad n\geq0$.
  \end{itemize}
  En particular, se cumple que $\E\left[X^{n+1}\right]=n\cdot \E\left[X^{n-1}\right]$, para $n\geq1$.
@@ -314,7 +315,7 @@ Se deduce de la proposición anterior la fórmula de la función característica
  \E\left[e^{i\langle u,X\rangle}\right]=e^{i \langle u,\mu_X\rangle-\frac{1}{2}q_X(u)}, \qquad u\in \R^d.
  \]
  \end{prop}
-Y en vista de las dos proposiciones anteriores, está la siguiente caracterización de variables aleatorias gaussianas independientes.
+En vista de las dos proposiciones anteriores, tenemos la siguiente caracterización de variables aleatorias gaussianas independientes.
 \begin{prop} 
  Sea $X$ un vector aleatorio gaussiano en $\R^{d}$, y sea $(e_j)_{j\geq1}$ una base ortonormal de $\R^{d}$. Entonces $X_1,...,X_d$ son variables aleatorias independientes si y solo sí la matriz de covarianzas $\Sigma=(\text{Cov}\left(X_i,X_j\right))_{1\leq i,j\leq d}$ es diagonal. Equivalentemente, $X_1,...,X_d$ son independientes si y solo si la forma cuadrática $q_X$ está en forma diagonal en la base $(e_j)_{j\geq1}$.
  \end{prop}
@@ -340,7 +341,7 @@ Enunciamos ahora un importante resultado con respecto a la independencia de dos 
     \item Las $\sigma$-álgebras $\sigma(G_1)$ y $\sigma(G_2)$ son independientes.
  \end{itemize}
  \end{prop}
- Es importante recordar que esta última propiedad es muy particular del contexto gaussiano. Ahora bien, dado un proceso gaussiano $G$, tenemos dos funciones asociadas al mismo.
+ Es importante recordar que esta última propiedad es muy particular del contexto gaussiano, pues en conjuntos de variables aleatorias que no sigan posean dicha ley, no necesariamente es equivalente la ortogonalidad entre los subespacios generados por las variables aleatorias, a la independencia de las $\sigma$-álgebras generadas por las mismas. Ahora bien, dado un proceso gaussiano $G$, tenemos dos funciones asociadas al mismo.
 \begin{dfn} 
  Sea $G=(G(t))_{t\in T}$ un proceso gaussiano. Definimos las funciones de medias y covarianzas del proceso $G$ respectivamente como sigue.
  \begin{enumerate}
@@ -351,9 +352,9 @@ Enunciamos ahora un importante resultado con respecto a la independencia de dos 
 Dichas funciones con valores en $\R$ determinan la colección de distribuciones finito-dimensionales del proceso. 
 De hecho, gracias a las proposiciones anteriores es claro que para cualesquiera subíndices $(t_1,...,t_k)\subseteq T$, la ley del vector gaussiano $X=(G(t_1),...,G(t_k))$ está determinada de manera única. 
 
-Lo anterior pues $\mu_X:=(\E\left[G(t_1)\right],...,\E\left[G(t_k)\right])=(\mu(t_1),...,\mu(t_k))$ y $q_X$ la forma cuadrática asociada que está determinada por la matriz de covarianzas de $X$, está en términos de la función $\Gamma$ definida antes, a saber, $\Sigma_X=\left(\text{Cov}\left(G(t_i),G(t_j)\right)\right)_{1\leq i,j\le k}=\left(\Gamma(t_i,t_j)\right)_{1\le i,j\le k }$.
+Lo anterior pues $\mu_X:=(\E\left[G(t_1)\right],...,\E\left[G(t_k)\right])=(\mu(t_1),...,\mu(t_k))$ y $q_X$ la forma cuadrática asociada que está determinada por la matriz de covarianzas de $X$, se expresa en términos de la función $\Gamma$ definida antes mediante la fórmula $\Sigma_X=\left(\text{Cov}\left(G(t_i),G(t_j)\right)\right)_{1\leq i,j\le k}=\left(\Gamma(t_i,t_j)\right)_{1\le i,j\le k }$.
 
-Es consecuencia de que la forma cuadrática $q_X$ para cualquier vector $X$ que componga una distribución finito-dimensional de $G$, sea no negativa definida y simétrica, el hecho de que la función de covarianzas $\Gamma$ sea no negativa definida. A saber, si $c:T\to \R$ es una función con soporte finito, entonces 
+El hecho de que la función de covarianzas $\Gamma$ sea no negativa definida es consecuencia de que la forma cuadrática $q_X$ para cualquier vector $X$ que componga una distribución finito-dimensional de $G$, es no negativa definida y simétrica. De manera más precisa, si $c:T\to \R$ es una función con soporte finito, entonces 
 \[  
     \sum_{T\times T}^{}c(s)c(t)\Gamma(s,t)\geq0
 \]
@@ -364,13 +365,12 @@ Lo valioso de conocer las funciones anteriores es que, al caracterizar completam
  \end{prop}
  La demostración de lo anterior es una consecuencia del Teorema de Consistencia (o extensión) de Kolmogorov (ver Teorema 6.3 en \cite{gall2016brownian} ). Para terminar esta sección, a continuación presentamos un par de ejemplos de procesos gaussianos construidos de esta forma.
 \begin{ejem}[\textbf{El movimiento Browniano}]
-Consideremos el caso en el que $T=[0,\infty)$, $\mu(t)=0$ para cualquier $t\geq0$ y $\Gamma(s,t)=s\wedge t=\min\{s,t\}$, para $s,t\geq0$. Claramente $\Gamma$ es simétrica, y además nótese que para cualesquiera $c:T\to\R$ función de soporte finito, se tiene que
+Consideremos el caso en el que $T=[0,\infty)$, $\mu(t)=0$ para cualquier $t\geq0$ y $\Gamma(s,t)=s\wedge t=\min\{s,t\}$, para $s,t\geq0$. Claramente $\Gamma$ es simétrica, y para $c:T\to\R$ de soporte finito, se tiene que
 \begin{align*}
 \sum_{T\times T}^{}c(s)c(t)\Gamma(s,t)&=\sum_{s\in T}^{}\sum_{t\in T}c(s)c(t)(s\wedge t)\\
 &=\sum_{s\in T}^{}\sum_{t\in T}c(s)c(t)\int_{0}^{\infty}\1_{[0,s]}(x)\1_{[0,t]}(x)dx\\
 &=\int_{0}^{\infty}\sum_{s\in T}\sum_{t\in T}\1_{[0,s]}(x)c(s)\1_{[0,t]}(x)c(t)dx\\
-&=\int_{0}^{\infty}\abs{\sum_{t\in T}\1_{[0,t]}(x)c(t)}^2dx\\
-&\geq0,
+&=\int_{0}^{\infty}\abs{\sum_{t\in T}\1_{[0,t]}(x)c(t)}^2dx \geq0,
 \end{align*}
 por lo que por la proposición \ref{caractprocgauss}, existe en un espacio de probabilidad adecuado un proceso gaussiano que denotaremos por $(B(t))_{t\geq0}$, con función de medias la constante 0 y función de covarianzas $\Gamma(s,t)=s\wedge t$. Dicho proceso es el \textit{movimiento Browniano estándar} en $\R$.
  \end{ejem}
@@ -379,36 +379,35 @@ El siguiente ejemplo es de suma importancia y es parte esencial en el resto del 
 \begin{ejem}[\textbf{El ruido blanco en $\R^{d}$}] 
 Sea $T=\B(\R^{d})$ el conjunto de los borelianos en $\R^d$.
 Dado que estamos hablando de subconjuntos de $\R^{d}$, cambiaremos la notación al indicar con letras mayúsculas a los elementos de $T$.
-Consideremos nuevamente la función de medias $\mu(A):=0$, para cualquier $A\in \B(\R^{d})$ y ahora consideremos la función $\Gamma(A,B):=\lambda^{d}(A\cap B)$, donde $\lambda^{d}:\B(\R^{d})\to [0,1]$ es la medida de Lebesgue en $\R^{d}$.
+Consideremos nuevamente la función de medias $\mu(A):=0$, para cualquier $A\in \B(\R^{d})$ y definimos $\Gamma(A,B):=\lambda^{d}(A\cap B)$, donde $\lambda^{d}:\B(\R^{d})\to [0,\infty)$ es la medida de Lebesgue en $\R^{d}$.
 
  Claramente $\Gamma$ es una función simétrica, y además, para $c:T\to\R$ función de soporte finito, se tiene que 
  \begin{align*}
     \sum_{T\times T}^{}c(A)c(B)\Gamma(A,B)&=\sum_{A\in T}^{}\sum_{B\in T}c(A)c(B)\lambda^{d}(A\cap B)\\
     &=\sum_{A\in T}^{}\sum_{B\in T}c(A)c(B)\int_{\R^d}\1_{A}(x)\1_{B}(x)\lambda^{d}(dx)\\
     &=\int_{\R^{d}}\sum_{A\in T}\sum_{B\in T}\1_{A}(x)c(A)\1_{B}(x)c(B)\lambda^{d}(dx)\\
-    &=\int_{\R^{d}}\abs{\sum_{A\in T}\1_{A}(x)c(A)}^2\lambda^{d}(dx)\\
-    &\geq0,
+    &=\int_{\R^{d}}\abs{\sum_{A\in T}\1_{A}(x)c(A)}^2\lambda^{d}(dx)\geq0,
     \end{align*}
 por lo que existe un proceso gaussiano que denotaremos por $(\dot{W}(A))_{A\in \B(\R^{d})}$ en un espacio de probabilidad adecuado, tal que su función de medias es $0$ y su función de covarianzas es $\Gamma(A,B)=\lambda^{d}(A\cap B)$. Dicho proceso estocástico es conocido como \textit{ruido blanco} en $\R^{d}$.
 
 Observemos que, si $A\cap B=\varnothing$, entonces $\Gamma(A,B)=\text{Cov}\left(\W(A),\W(B)\right)=0$, por lo que al ser variables gaussianas, éstas son independientes según lo visto antes.
 
-Se sigue que si $A,B\in \B(\R^d)$, entonces aprovechando que el proceso es gaussiano centrado, tenemos que
+Se sigue que si $A,B\in \B(\R^d)$, entonces aprovechando que el proceso es gaussiano centrado, denotando por $V=\text{Var}\left(\W(A\cup B)-\W(A)-\W(B)+\W(A\cap B)\right)$, y usando las propiedades de la covarianza, 
 \begin{align*}
-    &\text{Cov}\left(\W(A\cup B)-\W(A)-\W(B)+\W(A\cap B),\W(A\cup B)-\W(A)-\W(B)+\W(A\cap B)\right)\\
-    &=\text{Cov}\left(\W(A\cup B),\W(A\cup B)\right)+\text{Cov}\left(\W(A),\W(A)\right)+\text{Cov}\left(\W(B),\W(B)\right)\\
+    V &=\text{Cov}\left(\W(A\cup B),\W(A\cup B)\right)+\text{Cov}\left(\W(A),\W(A)\right)+\text{Cov}\left(\W(B),\W(B)\right)\\
     &\quad +\text{Cov}\left(\W(A\cap B),\W(A\cap B)\right)-2 \text{Cov}\left(\W(A\cup B),\W(A)\right)-2 \text{Cov}\left(\W(A\cup B), \W(B)\right)\\
     &\quad +2 \text{Cov}\left(\W(A\cup B), \W(A\cap B)\right)+2 \text{Cov}\left(\W(A),\W(B)\right)-2 \text{Cov}\left(\W(A),\W(A\cap B)\right)\\
-    &\quad -2 \text{Cov}\left(\W(B),\W(A\cap B)\right)\\
-    &=\lambda^{d}(A\cup B)+\lambda^{d}(A)+\lambda^{d}(B)+\lambda^{d}(A\cap B)-2\lambda^{d}((A\cup B)\cap A)-2\lambda^{d}((A\cup B)\cap B)\\
-    &\quad+2\lambda^{d}((A\cup B)\cap (A\cap B))+2\lambda^{d}(A\cap B)-2\lambda^{d}(A\cap (A\cap B))-2\lambda(B\cap(A\cap B))\\
-    &=\lambda^{d}(A\cup B)+\lambda^d(A)+\lambda^{d}(B)+\lambda^{d}(A\cap B)-2\lambda^{d}(A)-2\lambda^{d}(B)+2\lambda^{d}(A\cap B)\\
-    &\quad +2\lambda^{d}(A\cap B)-2\lambda^{d}(A\cap B)-2\lambda^{d}(A\cap B)\\
-    &=\lambda^{d}(A\cup B)-\lambda^d(A)-\lambda^{d}(B)+\lambda^{d}(A\cap B)\\
-    &=\lambda^{d}(A\cup B)-\lambda^{d}(A\cup B)\\
-    &=0.
+    &\quad -2 \text{Cov}\left(\W(B),\W(A\cap B)\right).
 \end{align*}
-por lo que la variable $\W(A\cup B)-(\W(A)+\W(B)-\W(A\cap B))$ tiene varianza cero. Luego,
+Usando ahora la definición de $\Gamma$, la expresión anterior nos dice que $V$ cumple que
+   \begin{align*}
+      V &= \lambda^{d}(A\cup B)+\lambda^{d}(A)+\lambda^{d}(B)+\lambda^{d}(A\cap B)-2\lambda^{d}((A\cup B)\cap A)-2\lambda^{d}((A\cup B)\cap B)\\
+       &\quad+2\lambda^{d}((A\cup B)\cap (A\cap B))+2\lambda^{d}(A\cap B)-2\lambda^{d}(A\cap (A\cap B))-2\lambda(B\cap(A\cap B))\\
+       &=\lambda^{d}(A\cup B)+\lambda^d(A)+\lambda^{d}(B)+\lambda^{d}(A\cap B)-2\lambda^{d}(A)-2\lambda^{d}(B)+2\lambda^{d}(A\cap B)\\
+       &\quad +2\lambda^{d}(A\cap B)-2\lambda^{d}(A\cap B)-2\lambda^{d}(A\cap B)\\
+       &=\lambda^{d}(A\cup B)-\lambda^d(A)-\lambda^{d}(B)+\lambda^{d}(A\cap B)
+   \end{align*}
+   De aquí se sigue que $V=0$. Por lo tanto, $\W(A\cup B)-(\W(A)+\W(B)-\W(A\cap B))$ tiene varianza cero. Luego,
 \begin{equation}\label{Wdotmeasure}    
     \W(A\cup B)=\W(A)+\W(B)-\W(A\cap B), \qquad \P-\text{casi seguramente}.
 \end{equation}
@@ -418,14 +417,17 @@ por lo que la variable $\W(A\cup B)-(\W(A)+\W(B)-\W(A\cap B))$ tiene varianza ce
 Lo anterior nos podría hacer pensar que el ruido blanco es una medida signada. Sin embargo, esto es falso (ver ejemplo 3.16 de \cite{Khoshnevisan2009}). No obstante, podemos utilizar dicho proceso como base para construir una integral.
 
 \begin{ejem}[\textbf{El proceso isonormal}]\label{ruidoprocesoiso}
-Dado un ruido blanco $\left(\W(A)\right)_{A\in \B(\R^d)}$, nos gustaría definir $\W(h)$ para alguna función $h$ adecuada. Es bien conocido en teoría de la medida un mecanismo estándar para definir nuevos objetos a partir de objetos más sencillos, y luego extender por aproximación. Siguiendo esta maquinaria estándar, para un conjunto $A\in \B(\R^d)$ definimos $\W(\1_A):=\W(A)$, y para cualesquiera $A_1,...,A_n\in \B(\R^{d})$ disjuntos, y constantes $c_1,...,c_n\in \R$, definimos
+Dado un ruido blanco $\left(\W(A)\right)_{A\in \B(\R^d)}$, nos gustaría definir $\W(h)$ para alguna función $h$ adecuada.  Utilizamos ahora la bien conocida heurística de teoría de la medida para definir nuevos objetos a partir de otros más sencillos, y luego extender por aproximación. Siguiendo esta maquinaria estándar, para un conjunto $A\in \B(\R^d)$ definimos $\W(\1_A):=\W(A)$, y para cualesquiera $A_1,...,A_n\in \B(\R^{d})$ disjuntos, y constantes $c_1,...,c_n\in \R$, definimos
 \[
 \W \left(\sum_{k=1}^{n}c_k\1_{A_k}\right):=\sum_{k=1}^{n}c_k\W(A_k).    
 \]
-Nótese que si existen dos representaciones distintas de una función simple, de acuerdo a \eqref{Wdotmeasure}, la variable de la definición anterior es consistente ya que habrá una igualdad $\P-$ casi seguramente. Por otro lado, dado que los conjuntos $A_1,...,A_n$ son disjuntos, las variables $\W(A_1),...,\W(A_n)$ son independientes entre sí. Luego, al ser centradas, observamos que
+Nótese que si existen dos representaciones distintas de una función simple, de acuerdo a \eqref{Wdotmeasure}, la variable de la definición anterior es consistente ya que habrá una igualdad $\P-$ casi seguramente. Por otro lado, dado que los conjuntos $A_1,...,A_n$ son disjuntos, las variables $\W(A_1),...,\W(A_n)$ son independientes entre sí. Luego, al ser centradas,
 \begin{align*}
     \norm{\W \left(\sum_{k=1}^{n}c_k\1_{A_k}\right)}_{L^{2}(\P)}^2&=\text{Var}\left(\sum_{k=1}^{n}c_k\W(A_k)\right)\\
-    &=\sum_{k=1}^{n}c_k^2 \E\left[\W^2(A_k)\right]\\
+    &=\sum_{k=1}^{n}c_k^2 \E\left[\W^2(A_k)\right],
+\end{align*}
+y usando nuevamente la definición de $\Gamma$, 
+\begin{align*}
     &=\sum_{k=1}^{n}c_k^2 \Gamma(A_k,A_k)\\
     &=\sum_{k=1}^{n}c_k^2\lambda^{d}(A_k)\\
     &=\int_{\R^d}\sum_{k=1}^{n}c_k^2\1_{A_k}(x)\lambda^d(dx)\\
@@ -433,23 +435,23 @@ Nótese que si existen dos representaciones distintas de una función simple, de
 \end{align*}
 donde en la última igualdad utilizamos que $A_i\cap A_j=\varnothing$ y por lo tanto $\1_{A_i}\1_{A_j}=0$ para $i\neq j$. De lo anterior deducimos que la aplicación $f\longmapsto \W(f)$, que envía funciones simples en variables gaussianas, preserva la norma de los respectivos espacios.
 
-Es también un resultado conocido en teoría de la medida que, si tenemos ahora una función $f\in L^{2}(\R^{d})$, existe una sucesión de variables aleatorias simples en $L^{2}(\R^d)$ tales que $f_n\to f$ en la norma de dicho espacio. Luego, la sucesión $(f_n)_{n\ge 1}$ forma una sucesión de Cauchy de funciones simples en $L^2(\R^{d})$. Dado que la norma se preserva para estas funciones entre los espacios $L^2$ según lo visto antes, la sucesión de variables $(\W(f_n))_{n\ge 1}$ es de Cauchy en $L^{2}(\P)$, por lo que al ser un espacio completo, existe una única variable en $L^{2}(\P)$, que denotaremos por $\W(f)$, tal que $\W(f_n)\longrightarrow \W(f)$ en norma $L^{2}(\P)$.
+Es también un resultado conocido en teoría de la medida que, si tenemos ahora una función $f\in L^{2}(\R^{d})$, existe una sucesión de variables aleatorias simples en $L^{2}(\R^d)$ tales que $f_n\to f$ en la norma de dicho espacio. Luego, la sucesión $(f_n)_{n\ge 1}$ forma una sucesión de Cauchy de funciones simples en $L^2(\R^{d})$. Dado que la norma se preserva para estas funciones, la sucesión de variables $(\W(f_n))_{n\ge 1}$ es de Cauchy en $L^{2}(\P)$, por lo que al ser un espacio completo, existe una única variable en $L^{2}(\P)$, que denotaremos por $\W(f)$, tal que $\W(f_n)\longrightarrow \W(f)$ en norma $L^{2}(\P)$.
 
-Consideramos así al espacio $L^{2}(\R^{d})$, y a la colección de variables aleatorias $(\W(f))_{f\in L^{2}(\R^{d})}$. A dicho proceso estocástico se le conoce como el \textit{proceso isonormal}. Una característica fundamental de dicho proceso es que la aplicación $A\mapsto\W(A)$ es una isometría, conocida como \textit{isometría de Wiener}. Al elemento $\W(f)$ para $f\in L^2(\R^{d})$ se le conoce como \textit{integral de Wiener de f}, y a menudo se denota como
+Consideramos así al espacio $L^{2}(\R^{d})$, y a la colección de variables aleatorias $(\W(f))_{f\in L^{2}(\R^{d})}$. A dicho proceso estocástico se le conoce como el \textit{proceso isonormal}. Una característica fundamental de dicho proceso es que la aplicación $f\mapsto\W(f)$ es una isometría, conocida como \textit{isometría de Wiener}. Al elemento $\W(f)$ para $f\in L^2(\R^{d})$ se le conoce como \textit{integral de Wiener de f}, y a menudo se denota como
 \[
-\W(f)=\int f \ W(dx).    
+\W(f)=\int_{\R^d} f(x) \ W(dx).    
 \] 
 El proceso isonormal se puede también obtener vía su función de medias y su función de covarianzas. En efecto, tomando $T=L^{2}(\R^{d})$, haciendo nuevamente $\mu(f)=0$ para cualquier $f\in L^2(\R)$, y definiendo la función de covarianzas $\Gamma$ como
 \[
-\Gamma(f,g)=\int_{\R^d}fg \ \lambda^d(dx)=\langle f,g\rangle_{L^{2}(\R^{d})}, \qquad f,g\in L^2(\R^{d}),
+\Gamma(f,g)=\int_{\R^d}f(x)g(x) \ \lambda^d(dx)=\langle f,g\rangle_{L^{2}(\R^{d})}, \qquad f,g\in L^2(\R^{d}),
 \]
-entonces el proceso gaussiano resultante, que denotamos por $(\W(f))_{f\in L^{2}(\R^{d})}$ es el proceso isonormal que construimos antes vía un ruido blanco. 
+entonces el proceso gaussiano resultante, que denotamos por $(\W(f))_{f\in L^{2}(\R^{d})}$ es el proceso isonormal que construimos previamente vía un ruido blanco. 
  \end{ejem}
 
  Como veremos más adelante, los procesos isonormales juegan un papel importante en el Cálculo de Malliavin.
 \subsection{Medidas martingala}
 
-En esta parte del texto, estudiamos el concepto de medidas martingala. Dichos procesos estocásticos son una pierda angular en la construcción de la integral de Itô-Walsh, como veremos a continuación.
+En esta parte del texto, estudiamos el concepto de medidas martingala. Dichos procesos estocásticos son una piedra angular en la construcción de la integral de Itô-Walsh, como veremos a continuación.
 
 Recordemos que si tenemos un ruido blanco $(W(A))_{A\in \B(R^{d})}$, entonces para cualesquiera $A,B \in \B(\R^{d})$, se tiene la siguiente igualdad
 \[
@@ -484,7 +486,7 @@ Sin embargo, como también se mencionó en la subsección pasada, a pesar de que
    ya que los compactos son acotados en $\R^{d}$.
  \end{proof}  
  \begin{obs}
-   Es importante distinguir el que el ruido blanco forme una medida con valores en $L^{2}(\P)$ a que forme una medida signada aleatoria en los borelianos de $\R^d$. Esto es, nótese que la segunda propiedad de la proposición posee el cuantificador fuera del conjunto de probabilidad 1. Más específicamente, la proposición anterior \textit{no} está asegurando que 
+   Es importante notar que el ruido blanco forma una medida con valores en $L^{2}(\P)$, pero esto es distinto a ser una medida signada aleatoria en los borelianos de $\R^d$. La diferencia es sutil, y radica la segunda propiedad de la proposición anterior, pues el cuantificador se encuentra fuera del conjunto de probabilidad 1. Más específicamente, la proposición anterior \textit{no} está asegurando que 
    \[
    \P\left(\left\{\forall \ (A_n)_{n\geq1}\subseteq\B(\R^{d}), \ \ \W \left(\bigcup_{k=1}^\infty A_k\right)=\sum_{k=1}^{\infty}\W(A_k)\right\}\right)=1.
    \]
@@ -557,19 +559,17 @@ Sea $(\F_t)_{t\geq0}$ una sucesión de $\sigma$-álgebras continuas por derecha.
 Por construcción, el proceso del ruido blanco es un primer ejemplo de medida martingala. El motivo para la introducción de este concepto es que estos objetos forman una clase adecuada de procesos que pueden fungir como integradores. No obstante, no cualquier medida martingala resulta ser un integrador adecuado. A partir de este punto de la sección, buscaremos establecer las propiedades que una medida martingala debe poseer para poder fungir como un integrador. 
 
 A continuación, definimos un concepto relacionado íntimamente con las medidas martingala, y que se puede interpretar como una generalización del proceso de covariación para dos martingalas en el caso unidimensional.
-
 \begin{dfn} 
- Sea $M$ una medida martingala. El funcional de covarianza de $M$ se define como
+ Sea $M$ una medida martingala. El funcional de covariación de $M$ se define como
  \[
- \overline{Q}_t(A,B):= \langle M_\cdot(A),M_\cdot (B)\rangle_t, \qquad t\geq 0, \ \ A, B \in \B(\R^{d}). 
+ \overline{Q}_t(A,B):= \langle M_\cdot(A),M_\cdot (B)\rangle_t, \qquad t\geq 0, \ \ A, B \in \B(\R^{d}), 
  \]
  \end{dfn}
- Dado que para $M$ una medida martingala, si $A$ y $B \in \B(\R^{d})$ se tiene que $(M_t(A))_{t\geq0}$ y $(M_t(B))_{t\geq0}$ son martingalas, entonces el proceso de covariación de ambas martingalas evaluado en $t\geq0$ coincide con el funcional de covarianza evaluado en los borelianos $A$ y $B$, y en $t\geq0$.
+ en donde se usa la notación de bracket usada para el proceso de covariación cuadrática entre dos procesos.
 
- Gracias a lo anterior, se deducen directamente de las propiedades de la covariación entre dos martingalas las siguientes propiedades del funcional de covarianza de una medida martingala.
-
+ Gracias a que el funcional de covariación de una medida martingala está en términos de procesos de covariación, se deducen directamente de las propiedades de la covariación entre dos martingalas las siguientes propiedades del funcional de covariación.
  \begin{teo} 
-  Sea $M$ una medida martingala y denotemos por $\overline{Q}$ a su funcional de covarianza. Entonces $\overline{Q}$ cumple que
+  Sea $M$ una medida martingala y denotemos por $\overline{Q}$ a su funcional de covariación. Entonces $\overline{Q}$ cumple que
   \begin{itemize}
    \item $\overline{Q}_t(A,B)=\overline{Q}_t(B,A)$, \ $\P$- casi seguramente.
    \item Si $B\cap C=\varnothing$, entonces $\overline{Q}_t(A,B\cup C)=\overline{Q}_t(A,B)+\overline{Q}_t(A,C)$, \ $\P$- casi seguramente.
@@ -578,12 +578,12 @@ A continuación, definimos un concepto relacionado íntimamente con las medidas 
   \end{itemize}
   \end{teo}
 
-Con el concepto de funcional de covarianza, podemos definir una función aleatoria de conjuntos, que denotaremos $Q$, como sigue:
+Con el concepto de funcional de covariación, podemos definir una función aleatoria de conjuntos, que denotaremos $Q$, como sigue:
 \[
    Q(A\times B\times(s,t]):=\overline{Q}_t(A,B)-\overline{Q}_s(A,B), \qquad A,B\in \B(\R^{d}), \ \ t\geq s\geq 0.
    \]
 Extendemos dicha función a uniones ajenas de elementos (rectángulos)
-$(A_i\times B_i\times(s_i,t_i])$ donde $A_i,B_i\in \B(\R^{d})$, $(s_i,t_i]\subseteq \R$  y $1\leq i \leq m$, como 
+$A_i\times B_i\times(s_i,t_i]$ donde $A_i,B_i\in \B(\R^{d})$, $(s_i,t_i]\subseteq \R$  y $1\leq i \leq m$, como 
 \[
 Q \left(\bigcup_{i=1}^{n}(A_i\times B_i\times(s_i,t_i])\right):=\sum_{i=1}^{n}Q(A_i\times B_i\times (s_i,t_i]).
 \]
@@ -597,12 +597,12 @@ Para ello, primero definimos lo que significa que una medida signada sea positiv
 \begin{dfn} 
  Sea $K$ una medida signada definida en la $\sigma$-álgebra $\B(\R^{d})\times\B(\R^{d})\times\B([0,\infty))$. Decimos que $K$ es positiva definida si para cualquier función $f$ integrable y acotada, se tiene que 
  \[
- \int_{\R^{d}\times\R^{d}\times [0,\infty)} f(x,s)f(y,s)K(dx, dy, dz) \geq 0.
+ \int_{\R^{d}\times\R^{d}\times [0,\infty)} f(x,s)f(y,s)K(dx, dy, ds) \geq 0.
  \]
  \end{dfn}
  Introducimos ahora el concepto de \textit{worthiness} de una medida martingala.
 \begin{dfn} 
-Sea $M$ una medida martingala. Decimos que $M$ es \textit{worthy} (traducido literalmente al español como \textit{digna}) si existe una medida $\sigma$-finita $K:\B(\R^{d})\times \B(\R^{d})\times \B([0,\infty))\times \Omega \to [0,1]$ tal que para cualesquiera $A,B\in \B(\R^{d})$, $C\in \B([0,\infty))$ y $\omega \in \Omega$, 
+Sea $M$ una medida martingala. Decimos que $M$ es \textit{worthy} (traducido literalmente al español como \textit{digna}) si existe una medida $\sigma$-finita $K:\B(\R^{d})\times \B(\R^{d})\times \B([0,\infty))\times \Omega \to [0, \infty)$ tal que para cualesquiera $A,B\in \B(\R^{d})$, $C\in \B([0,\infty))$ y $\omega \in \Omega$, 
 \begin{itemize}
    \item La aplicación $A\times B\mapsto K(A\times B \times C,\omega)$ es positiva definida y simétrica, para $C$ y $\omega$ fijos.
    \item $\{K(A\times B \times (0,t])\}_{t\geq0}$ es un proceso predecible, para $A$ y $B$ fijos.
@@ -643,7 +643,6 @@ Sea $f$ una función elemental como en \eqref{funcionelemental} y $M$ una medida
 \begin{align*}
       (f\cdot M)_t\left(\bigcup_{k\geq1}B_k\right)&=X \left[M_{t\wedge b}\left(A\cap \bigcup_{k\geq1}B_k\right)-M_{t\wedge a}\left(A\cap \bigcup_{k\geq1}B_k\right)\right]\\
       &=X \left[\sum_{k\geq1}M_{t\wedge b}(A\cap B_k)-\sum_{k\geq1}M_{t\wedge a}(A\cap B_k)\right]\\
-      &=\sum_{k\geq1}X \left[M_{t\wedge b}(A\cap B_k)-M_{t\wedge a}(A\cap B_k)\right]\\
       &=\sum_{k\geq1}(f\cdot M)_t(B_k),     
    \end{align*}
 en donde hemos hecho uso nuevamente de que para $t>0$ fijo, $M$ se comporta como una medida signada. La $\sigma$-finitud de la integral se deduce de manera similar, y claramente se trata de una medida $L^2(\P)$-valuada.
@@ -653,7 +652,6 @@ Por último, fijando un conjunto $B\in \B(\R^{d})$, tenemos que para $t\in (a,b]
    \E\left[(f\cdot M)_{t+s}(B)|\F_{t}\right]&=\E\left[X\left[M_{(t+s)\wedge b}(A\cap B)-M_{(t+s)\wedge a}(A\cap B)\right]|\F_t\right]\\
    &=X\E\left[M_{(t+s)\wedge b}(A\cap B)-M_ a (A\cap B)|\F_t\right]\\
    &=X\left(\E\left[M_{(t+s)\wedge b}(A\cap B)|\F_t\right]-M_a(A\cap B)\right)\\
-   &=X\left(M_t-M_a\right)\\
    &=X\left(M_{t\wedge b}-M_{t\wedge a}\right)\\
    &=(f\cdot M)_t(B),
 \end{align*}
@@ -697,7 +695,7 @@ Sea $f\in \mathscr{S}$ y supongamos que $M$ es una medida martingala digna. Sea 
       &=\E\left[X^2M_{t\wedge b}^2(A\cap B)\right]-2 \E\left[X^2M_{t\wedge b}(A\cap B)M_{t\wedge a}(A\cap B)\right]\\
       &\ \ \ +\E\left[X^2M^2_{t\wedge a}(A\cap B)\right].
    \end{align*}
-   Ahora bien, como $M$ es medida martingala, es una martingala para $A\cap B$. Por lo tanto, por definición del proceso de variación cuadrática, $M^2_t(A\cap B)-\langle M(A\cap B),M(A\cap B)\rangle_t$ es una martingala. Se sigue que 
+   Ahora bien, como $M$ es medida martingala, es una martingala para $A\cap B$. Por lo tanto, por definición del proceso covariación, $M^2_t(A\cap B)-\langle M(A\cap B),M(A\cap B)\rangle_t$ es una martingala. Se sigue que 
    \[
    \E\left[M_{t\wedge b}^2(A\cap B)-\langle M(A\cap B),M(A\cap B)\rangle_{t\wedge b}\right]=\E\left[M_{t\wedge a}^2(A\cap B)-\langle M(A\cap B),M(A\cap B)\rangle_{t\wedge a}\right],
    \]
@@ -722,7 +720,7 @@ Ya hemos visto que la integral de Itô-Walsh es una medida martingala para funci
 
 \begin{teo}\label{propiedadesintegralwalsh}
 Sea $M$ una medida martingala digna y $f$ una función simple. Entonces $(f\cdot M)$ es una medida martingala digna. 
-Mas aún, si $Q_M$ y $K_M$ representan al funcional de covarianza y a la medida dominante de la medida martingala digna $M$, entonces 
+Mas aún, si $Q_M$ y $K_M$ representan al funcional de covariación y a la medida dominante de la medida martingala digna $M$, entonces 
 \begin{align*}
    &Q_{f\cdot M}(dx,  dy,  dz)=f(x,t)f(y,t)Q_M(dx,  dy,  dt)\\
    &K_{f\cdot M}(dx, dy,  dt)=\abs{f(x,t)f(y,t)}K_M(dx,  dy,  dt). 
@@ -823,7 +821,7 @@ y dicho objeto no depende de la sucesión $(f_n)_{n\geq1}$ que aproxima a $f\in 
 \section{Formulación mild de una SPDE. Existencia y unicidad de las soluciones}
 Como vimos en la introducción del capítulo, la heurística para reformular un problema de ecuaciones diferenciales parciales estocásticas de tal forma que se logre <<evadir>> el uso de las derivadas convencionales, pero que sea equivalente al problema original, sigue de cerca las ideas de las soluciones débiles en ecuaciones diferenciales parciales clásicas. Concretamente, el uso de integración por partes para lograr el objetivo es clave. 
 
-Para ejemplificar lo anterior, presentamos un ejemplo de reformulación a una ecuación diferencial parcial estocástica conocida: la ecuación estocástica del calor en $[0,L]\times[0,\infty)$. Este ejemplo se puede consultar con más detalle en \cite[pp. 23 - 32]{Khoshnevisan2009}. Consideremos el siguiente problema del calor,
+Para ejemplificar lo anterior, presentamos un ejemplo de reformulación a una ecuación diferencial parcial estocástica conocida: la ecuación del calor estocástica en $[0,L]\times[0,\infty)$. Este ejemplo se puede consultar con más detalle en \cite[pp. 23 - 32]{Khoshnevisan2009}. Consideremos el siguiente problema del calor,
 \begin{equation}\label{calorejemplo}
    \begin{cases}
       \partial_tu(x,t)=\partial_{xx}u(x,t)+f(u(x,t))\W(x,t), & \text{ si } t>0, x\in [0,L]\\
@@ -855,7 +853,7 @@ Decimos que $u$ es una solución \textit{mild} del problema inicial anterior, si
 \end{align*}
 \end{dfn}
 
-Es conocida teoría que resuelve el problema \eqref{calorejemplo}. Presentamos aquí el teorema correspondiente.
+Se conoce en la literatura la solución del problema \eqref{calorejemplo}. Presentamos aquí el teorema correspondiente.
 
 \begin{teo} 
 El problema del calor \eqref{calorejemplo}, con las condiciones especificadas anteriormente sobre $\dot W$, $f$ y $u_0$, tiene una única solución $\P$- casi seguramente, que satisface lo siguiente para cualquier $T>0$.
@@ -948,7 +946,7 @@ En este capítulo se revisa material esencial de cálculo de Malliavin. Esta dis
 
 En palabras de Nourdin y Peccati (ver prefacio de \cite{Nourdin_Peccati_2012}), el cálculo de Malliavin se puede entender como un cálculo diferencial en infinitas dimensiones, cuyos operadores actúan sobre funcionales de procesos gaussianos generales, y que en conjunto con el método de Stein, forman una amalgama poderosa para deducir teoremas tipo límite central, así como tasas de convergencia explícitas para los mismos. 
 
-Tres operadores son esenciales en esta área: la derivada de Malliavin $D$, el operador de divergencia $\delta$ (o integral de Skorokhod) y el generador infinitesimal. El propósito de este capítulo es estudiar el material nuclear correspondiente a estos operadores.
+Tres operadores son esenciales en esta área: la derivada de Malliavin $D$, el operador de divergencia $\delta$ (o integral de Skorokhod) y el generador infinitesimal del proceso de Ornstein-Uhlenbeck. El propósito de este capítulo es estudiar el material nuclear correspondiente a estos operadores.
 \section{Cálculo de Malliavin en el caso unidimensional}
 Siguiendo de cerca la exposición hecha por \cite{Nourdin_Peccati_2012}, comenzamos el estudio del tópico por el caso unidimensional. Aquí es más sencillo observar propiedades de estos objetos, los cuales se generalizan a dimensiones infinitas en la siguiente sección.
 
@@ -956,17 +954,17 @@ Siguiendo de cerca la exposición hecha por \cite{Nourdin_Peccati_2012}, comenza
 
 El operador con el que comenzamos nuestro estudio es la derivada de Malliavin. La idea es definir la derivada de variables aleatorias del tipo $f(N)$, donde $f$ es una función determinista, y $N$ es una variable aleatoria con distribución normal estándar.
 
-En el contexto unidimensional, la definición de este operador se realiza utilizando ideas similares a aquellas que nos llevan a la definición de derivada débil en los espacios de Sobolev. Dichas ideas consisten, a grandes rasgos, en generalizar la noción de derivada a objetos más generales que las funciones diferenciables en el sentido usual. Para ello primero buscamos una clase de funciones diferenciables con propiedades nobles pero que a su vez sea suficientemente rica, y posteriormente extendemos el operador en algún sentido.
+En el contexto unidimensional, la definición de este operador se realiza utilizando ideas similares a aquellas que nos llevan a la definición de derivada débil en los espacios de Sobolev. Dichas ideas consisten, a grandes rasgos, en llevar la noción de derivada a objetos más generales que las funciones diferenciables en el sentido usual. Para ello primero buscamos una clase de funciones diferenciables con propiedades nobles pero que a su vez sea suficientemente rica, y posteriormente extendemos el operador en algún sentido.
 
 Dado que buscamos definir la derivada de funciones de variables normales estándar, es natural definir el operador derivada en un subconjunto de los espacios $L^q(\R,\B(\R))$ con $q\in [1,\infty)$, pero dotados de la medida gaussiana estándar. 
 
 Dicho lo anterior, denotemos por $\gamma:\B(\R)\to [0,1]$ a la medida mencionada, a saber, 
 \[
-\gamma(A)=\int_A\frac{1}{2\pi}e^{-\frac{x^2}{2}}dx.    
+\gamma(A)=\int_A\frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}dx.    
 \]
 Consideremos el espacio $L^{q}(\R,\B(\R),\gamma(dx))$, con $q\in [1,\infty)$, que durante esta subsección denotaremos simplemente como $L^{q}(\gamma)$. En este espacio, se valen algunas propiedades que resultan de gran utilidad. Tal es el caso del siguiente lema.
 
-\begin{lema}\label{lema1}
+\begin{lema}\textbf{(Identidad de Stein)}\label{lema1}
 Sea $f:\R\to\R$ una función absolutamente continua con respecto a la medida de Lebesgue y tal que $f'\in L^{1}(\gamma)$. Entonces la función $h:\R\to\R$ dada por $h(x)=xf(x)$ está en $L^1(\gamma)$ y se cumple que 
 \[
 \int_\R xf(x)d\gamma(x)=\int_\R f'(x)d\gamma(x).
@@ -976,14 +974,13 @@ Sea $f:\R\to\R$ una función absolutamente continua con respecto a la medida de 
   Supongamos primero que $f(0)=0$. Probamos que $h\in L^{1}(\gamma)$. En efecto,  
   \begin{align*}
    \int_{-\infty}^{\infty}|x||f(x)|d\gamma(x)&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty\abs{\int_0^{x}f'(y)dy}|x|e^{-\frac{x^2}{2}}dx\\
-   &\leq \frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left(\int_0^{x}\abs{f'(y)}dy\right) \ |x|e^{-\frac{x^2}{2}}dx\\
-   &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^0 \left(\int_x^{0}\abs{f'(y)}dy\right) \ (-x)e^{-\frac{x^2}{2}}dx\\
+   &\leq\frac{1}{\sqrt{2\pi}}\int_{-\infty}^0 \left(\int_x^{0}\abs{f'(y)}dy\right) \ (-x)e^{-\frac{x^2}{2}}dx\\
    & \ \ \  +\frac{1}{\sqrt{2\pi}}\int_{0}^\infty \left(\int_0^{x}\abs{f'(y)}dy\right) \ xe^{-\frac{x^2}{2}}dx\\
    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^0 \int_{-\infty}^{y}\abs{f'(y)}(-x)e^{-\frac{x^2}{2}}dx \ dy+\frac{1}{\sqrt{2\pi}} \int_{0}^{\infty}\int_{y}^\infty \abs{f'(y)}xe^{-\frac{x^2}{2}}dx \ dy\\
    &=\int_{-\infty}^0 \abs{f'(y)}\frac{1}{\sqrt{2\pi}}\left(e^{-\frac{x^2}{2}}\Big|_{-\infty}^{y}\right) dy + \int_{0}^{\infty}\abs{f'(y)}\frac{1}{\sqrt{2\pi}}\left(-e^{-\frac{x^2}{2}}\Big|_{y}^{\infty}\right)dy\\
    &=\int_{-\infty}^{\infty}|f'(y)|d\gamma(y)<\infty,
   \end{align*}
-  en donde hemos hecho uso del teorema de Fubini en la tercera igualdad. Por lo tanto, la función $h(x)=xf(x)$ en efecto está en $L^1(\gamma)$. Realizando cuentas similares, obtenemos que 
+  en donde hemos hecho uso del teorema de Fubini en la tercera igualdad. Por lo tanto, la función $h(x)=xf(x)$ en efecto está en $L^1(\gamma)$. Realizando cálculos similares, obtenemos que 
   \begin{align*}
    \int_{-\infty}^{\infty}xf(x)d\gamma(x)&=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty \left(\int_0^{x}f'(y)dy\right) xe^{-\frac{x^2}{2}}dx\\
    &=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^0 \left(\int_x^{0}f'(y)dy\right) \ (-x)e^{-\frac{x^2}{2}}dx\\
@@ -994,17 +991,17 @@ Sea $f:\R\to\R$ una función absolutamente continua con respecto a la medida de 
   \end{align*}
   como queríamos. Para el caso en el que $f(0)\neq 0$, utilizamos la función $g(x)=f(x)-f(0)$ y repetimos las cuentas.
 \end{proof}
-En la búsqueda de la generalización de la derivada a funciones más generales, definimos a la clase de Schwarz $\mathcal{S}$ como el conjunto de funciones en $C^{\infty}(\R,\R)$ tales que ella y sus derivadas tienen crecimiento a lo más polinomial, es decir,
+En la búsqueda de definir la derivada para funciones más generales, definimos a la clase de Schwarz $\mathcal{S}$ como el conjunto de funciones en $C^{\infty}(\R,\R)$ con derivadas de crecimiento a lo más polinomial, es decir,
 \[
-\mathcal{S}:=\left\{f\in C^{\infty}(\R) : \forall p\in \{0,1,2,...\} \ \exists n\geq1 \text{ tal que }\lim_{x\to\pm\infty}\frac{|f^{(p)}(x)|}{1+|x|^{n}}<\infty \right\}.    
+\mathcal{S}:=\left\{f\in C^{\infty}(\R) : \forall p\in \{0,1,2,...\}, \ \forall n\geq1,  \ \text{ se satisface } \ \sup_{x\in\R}(1+|x|^{n})|f^{(p)}(x)|<\infty \right\}.    
 \]
-Observamos que este conjunto dotado de la restricción correspondiente de la norma $L^q(\gamma)$ forma subespacio lineal de $L^{q}(\gamma)$, puesto que las combinaciones lineales de elementos infinitamente derivables vuelven a ser infinitamente derivables, y las combinaciones lineales también son compatibles con los límites. Es de destacar que este espacio es suficientemente amplio como para poseer a los polinomios. Más aún, este último conjunto es denso en $L^{q}(\gamma)$ para cualquier $q\in [1,\infty)$. Esto es consecuencia del siguiente lema.
+Observamos que este conjunto, dotado de la restricción correspondiente de la norma $L^q(\gamma)$, forma subespacio lineal de $L^{q}(\gamma)$, puesto que las combinaciones lineales de elementos infinitamente derivables vuelven a ser infinitamente derivables, y las combinaciones lineales también son compatibles con los supremos. Es de destacar que este espacio es suficientemente amplio como para poseer a los polinomios. Más aún, este último conjunto es denso en $L^{q}(\gamma)$ para cualquier $q\in [1,\infty)$. Esto es consecuencia del siguiente lema.
 
 \begin{lema} 
 Para cualquier $q\in [1,\infty)$, el conjunto de los monomios de la forma $\{x^n: n\geq0\}$ genera un subespacio denso del espacio $L^{q}(\gamma)$. En particular, la clase de Schwarz $\S$ forma un subconjunto denso de $L^q(\gamma)$.
 \end{lema}
 \begin{proof} 
-   Un corolario del teorema de Hann-Banach caracteriza la propiedad de ser un subespacio lineal denso de un espacio $L^{q}$. En nuestro caso basta con probar que para cualquier elemento $g \in L^{p}(\gamma)$, 
+   Un corolario del teorema de Hann-Banach caracteriza la propiedad de ser un subespacio lineal denso de un espacio $L^{q}$ (ver, por ejemplo, \cite[corolario 2.3.25]{bühler2018functional}). En nuestro caso, basta con probar que para cualquier elemento $g \in L^{p}(\gamma)$, 
    \[
    \int_\R g(x)x^{n} \ d\gamma(x)=0, \ \ \forall n\geq0  \quad \ent \quad g=0 \ \ \gamma- \text{casi en todas partes},
    \]
@@ -1034,9 +1031,9 @@ Para cualquier $q\in [1,\infty)$, el conjunto de los monomios de la forma $\{x^n
    \]
    donde hemos hecho uso de la hipótesis del enunciado en la última igualdad. Hemos hallado que la transformada de Fourier de $g(x)e^{-\frac{x^2}{2}}$ es idénticamente la función 0. Al ser la transformada de Fourier inyectiva en $L^{1}(\R,\B(\R),dx)$, se sigue que $g(x)e^{-\frac{x^2}{2}}$ es la función idénticamente 0 salvo conjuntos de medida de Lebesgue 0. En particular, $g$ es la función idénticamente 0, $\gamma \ -$ casi en todas partes.  
 
-   Concluimos la prueba notando que los monomios son un subconjunto de la clase de Schwarz $\S$.
+   Concluimos la prueba notando que los monomios son un subconjunto de la clase de Schwarz.
  \end{proof}
-Sabiendo que $\mathcal{S}$ es un subespacio lineal denso de $L^{q}(\gamma)$, podemos generalizar la derivada de las funciones en el espacio de Schwarz a funciones más generales que pertenecen a $L^{q}(\gamma)$. Para ello denotemos por ahora como $\frac{d^p}{dx^p}f$ a la derivada de orden $p$ de una función $f\in \S$, para $p\in \{0,1,2,...\}$. Dicha derivada siempre está definida para tales funciones. Si pensamos en la derivación de orden $p$ como aplicar un operador a un elemento del espacio de Schwarz, resulta que dicho operador es lineal. Dado que buscamos extender la derivada a funciones más generales, es natural pensar en la posibilidad de extender el operador $\frac{d^p}{dx^{p}}:\S\to L^{q}(\gamma)$ a un operador que sea cerrado en un dominio más grande que $\S$. Este es el contenido del siguiente teorema.
+Sabiendo que $\mathcal{S}$ es un subespacio lineal denso de $L^{q}(\gamma)$, tenemos un marco teórico por medio del cual generalizar la derivada de las funciones en el espacio de Schwarz a funciones cualesquiera de $L^{q}(\gamma)$. Para ello denotemos por ahora como $\frac{d^p}{dx^p}f$ a la derivada de orden $p$ de una función $f\in \S$, para $p\in \{0,1,2,...\}$. Dicha derivada siempre está definida para tales funciones. Si pensamos en la derivación de orden $p$ como aplicar un operador a un elemento del espacio de Schwarz, resulta que dicho operador es lineal. Buscando extender la derivada a funciones más generales, es natural pensar en la posibilidad de extender el operador $\frac{d^p}{dx^{p}}:\S\to L^{q}(\gamma)$ a un operador que sea cerrado en un dominio más grande que $\S$. Esta idea se formaliza con el concepto de \textit{operador cerrable} (ver, por ejemplo, \cite[pp. 62]{bühler2018functional}). En nuestro caso, la derivada de orden $p$ en efecto es un operador cerrable. Este es el contenido del siguiente teorema.
 \begin{teo} 
 Sea $\frac{d^{p}}{dx^p}:\mathcal{S}\longrightarrow L^{q}(\gamma)$ el operador derivada de orden $p$. Dicho operador es cerrable para todo $q\in [1,\infty)$ y todo entero $p\geq1$
 \end{teo}
@@ -1079,7 +1076,7 @@ Sea $\frac{d^{p}}{dx^p}:\mathcal{S}\longrightarrow L^{q}(\gamma)$ el operador de
 Hemos demostrado que el operador derivada de orden $p$ es cerrable en $\S$. Por lo tanto, por definición existe un operador cerrado, que vamos a denotar por $D^{p}$, con dominio $\text{Dom}(D^{p})$ un subespacio lineal de $L^{q}(\gamma)$ tal que $\S\subseteq \text{Dom}(D^{p})$ y $D^{p}f=\frac{d^{p}}{dx^{p}}f$ para cualquier $f\in \S$. Estos elementos nos permiten definir la derivada de Malliavin.
 
 \begin{dfn}
-   Sea $p\geq1$ un entero positivo. Definimos la \textit{derivada de Malliavin} como el operador $D^{p}$ que extiende a la derivada $\frac{d^{p}}{dx^{p}}$ vista como operador de $\S$ a $L^{q}(\gamma)$, para $q\in [1,\infty)$.
+   Sea $p\geq1$ un entero positivo. Definimos la \textit{derivada de Malliavin} como el operador $D^{p}$ que extiende a la derivada $\frac{d^{p}}{dx^{p}}$ vista como operador de $\S$ a $L^{q}(\gamma)$, para $q\in [1,\infty)$. {\color{red} Referenciar a la norma definida abajo. En el peor de los casos repito el outcome del teorema de funcional}
 \end{dfn}
 
 Denotaremos al dominio de $D^{p}$ como $\D^{p,q}:=\text{Dom}(D^{p})$. A dichos espacios también se les conoce como espacios de Watanabe-Sobolev. 
@@ -1119,7 +1116,7 @@ además de que por convención, $\D^{0,q}=L^{q}(\Omega)$ y $\norm{\cdot}_{0,q}=\
 \D^{\infty,q}:=\bigcap_{p\geq0} \D^{p,q}.
 \]
 
-Más aún, la derivada $D^{p}$ es compatible en la intersección $\D^{p,q}\cap \D^{p,q'}$.
+Más aún, la derivada $D^{p}$ es compatible en la intersección $\D^{p,q}\cap \D^{p,q'}$, es decir, para una función $f$ en la intersección $\D^{p,q}\cap \D^{p,q'}$ la derivada de orden $p$ como operador con dominio $\D^{p,q}$ aplicado a de $f$, es el mismo objeto que la derivada de orden $p$ como operador con dominio $\D^{p,q'}$ aplicado a $f$. {\color{blue}Poner en palabras}
 \end{teo}
 La prueba de este teorema se puede encontrar en \cite[p. 27]{nualart2006malliavin}. En particular el resultado nos dice que, al ser $\D^{p,q}$ subconjuntos de los espacios $L^{q}(\Omega)$, y ser este último un espacio de medid finita, entonces la contención $L^{q'}$ para $q'>q$ se sigue preservando en los espacios de Watanabe-Sobolev. La contención en la variable $p$ nos dice simplemente que si una variable es derivable $n+1$ veces, claramente será $n$ veces derivable.
 
@@ -1158,14 +1155,14 @@ En términos de integrales, se tiene que para cualquier $g\in \text{Dom}(\delta^
 Con los elementos anteriores, podemos definir el operador de divergencia.
 
 \begin{dfn}
-   Sea $p\geq1$ un entero positivo. Denotamos $$\text{Dom}(\delta^p):=\left\{g\in L^2(\gamma) \ : \ \abs{\langle D^{p}f,g\rangle_{L^2(\gamma)}}\leq c\|f\|_{L^2(\gamma)}, \qquad \forall f\in \D^{2,p}\right\},$$ 
+   Sea $p\geq1$ un entero positivo. Denotamos $$\text{Dom}(\delta^p):=\left\{g\in L^2(\gamma) \ : \ \abs{\langle D^{p}f,g\rangle_{L^2(\gamma)}}\leq c_g\|f\|_{L^2(\gamma)}, \qquad \forall f\in \D^{2,p}\right\},$$ 
 
-   y definimos el operador de divergencia $p$-ésimo como la aplicación $\delta^p:\text{Dom}(\delta^{p})\longrightarrow L^2(\gamma)$ tal que asigna a cada $g\in \text{Dom}(\delta^{p})$ al único elemento $\delta^{p} g\in L^2(\gamma)$ que, gracias al teorema de representación de Riesz, cumple la igualdad
+   y definimos el operador de divergencia de orden $p$ como la aplicación $\delta^p:\text{Dom}(\delta^{p})\longrightarrow L^2(\gamma)$ tal que asigna a cada $g\in \text{Dom}(\delta^{p})$ al único elemento $\delta^{p} g\in L^2(\gamma)$ que, gracias al teorema de representación de Riesz, cumple la igualdad
        \[
        \int_\R D^{p}f(x)g(x) \ d\gamma(x)=\int_\R f(x)\delta^{p}g(x) \ d\gamma(x), \qquad \forall f\in L^2(\gamma).
       \]
 \end{dfn}
-En el caso en que $p=1$, directamente escribimos $\delta^1=\delta$. Observamos que el operador $\delta^p$ es directamente el operador adjunto de $D^{p}$, y como tal, es un operador cerrado.
+En el caso en que $p=1$, directamente escribimos $\delta^1=\delta$. Observamos que el operador $\delta^p$ es directamente el operador adjunto del operador no acotado  $D^{p}$, y como tal, es un operador cerrado.
 
 Es de interés encontrar una forma de calcular el operador $\delta$ aplicado a alguna función en $\text{Dom}(\delta)$. En este sentido, existe una fórmula para calcular $\delta g$ para $g\in \D^{1,2}$. Este es el contenido del siguiente lema.
 
@@ -1190,7 +1187,7 @@ Es de interés encontrar una forma de calcular el operador $\delta$ aplicado a a
    \[
    \int_\R Df(x)g(x)d\gamma(x)=\int_\R xf(x)g(x)d\gamma(x)-\int_\R f(x)Dg(x)d\gamma(x),
    \]
-   y por definición de $\delta g$, se tiene que 
+   y por definición de $\delta g$ como adjunto de $D$, se tiene que {\color{blue}escribir que utilicé la propiedad de adjunto en g y la mandé del lado izquierdo}
    \[
    \int_\R f(x)\delta g(x)d\gamma(x)=\int_\R xf(x)g(x)d\gamma(x)-\int_\R f(x)Dg(x)d\gamma(x).   
    \]
@@ -1212,14 +1209,14 @@ De manera inmediata se observa que esta es una familia de operadores lineales. T
 
 \begin{teo}
    Sea $f\in \mathcal{S}$ y $q\in [1,\infty)$. Entonces se cumplen las siguientes proposiciones:
-   \begin{itemize}
+   \begin{enumerate}
        \item $P_0f(x)=f(x)$.
        \item $P_\infty f(x):=\displaystyle\lim_{t\to\infty}P_tf(x)=\int_\R f(y)d\gamma(y)$.
        \item $\displaystyle\int_\R \abs{P_tf(x)}^qd\gamma(x)\leq \int_\R\abs{f(x)}^qd\gamma(x)$.
-   \end{itemize}
+   \end{enumerate}
 \end{teo}
 \begin{proof} 
-  \begin{itemize}
+  \begin{enumerate}
    \item  Calculamos el semigrupo en $t=0$. Dado que $\gamma(\R)=1$, se tiene que 
     \[
     P_0f(x)=\int_\R f\left(e^{0}x+\sqrt{1-e^{0}}y\right)d\gamma(y)=\int_\R f(x)d\gamma(y)=f(x).
@@ -1244,27 +1241,25 @@ De manera inmediata se observa que esta es una familia de operadores lineales. T
     \end{align*}
     donde hemos hecho uso de la desigualdad de Jensen, y $X,Y$ son variables aleatorias normales estándar independientes. Pero notemos que, denotando $Z:= e^{-t}X+\sqrt{1-e^{-2t}}Y$, la función característica de $Z$ es
     \begin{align*}
-      \phi_Z(z)&=\E\left[e^{ize^{-t}X+iz\sqrt{1-e^{-2t}}Y}\right]\\
-      &=\E\left[e^{ize^{-t}X}\right]\E\left[e^{iz\sqrt{1-e^{-2t}}Y}\right]\\
-      &=e^{-\frac{z^2e^{-2t}}{2}}e^{-\frac{z^2(1-e^{-2t})}{2}}\\
-      &=e^{-\frac{z^2}{2}},
+      \phi_Z(z)&=\E\left[e^{ize^{-t}X+iz\sqrt{1-e^{-2t}}Y}\right]=\E\left[e^{ize^{-t}X}\right]\E\left[e^{iz\sqrt{1-e^{-2t}}Y}\right]\\
+      &=e^{-\frac{z^2e^{-2t}}{2}}e^{-\frac{z^2(1-e^{-2t})}{2}}=e^{-\frac{z^2}{2}},
     \end{align*}  
     por lo que $Z$ tiene un distribución normal estándar. Se sigue que 
     \[
        \int_\R |P_tf(x)|^q d\gamma(x)=\E\left[f\left(\abs{e^{-t}X+\sqrt{1-e^{-2t}}Y}^q\right)\right]\leq\E\left[\abs{f(Z)}^q\right]=\int_\R \abs{f(x)}^qd\gamma(x).
     \]
-  \end{itemize}
+  \end{enumerate}
 \end{proof}
 Del último ítem de la proposición anterior se deduce que para cualquier $f\in \S$ y cualquier $t\geq0$, $P_tf\in L^q(\gamma)$. Más aún, la familia de operadores $(P_t)_{t\geq0}$ que van del espacio $(\S,\norm{\cdot}_{L^q(\gamma)})$ a $L^q(\gamma)$ son uniformemente acotados por la constante $1$.
 
-Al ser $\S$ un subconjunto denso de $L^q(\gamma)$ y ser este último un espacio completo, por el conocido teorema BLT de análisis funcional, los operadores de $(P_t)_{t\geq0}$ se pueden extender de manera única a una familia de operadores, que también denotaremos por $(P_t)_{t\geq0}$, con dominio todo el espacio $L^q(\gamma)$, y cuyas normas siguen siendo acotadas por la constante 1. Esto último hace a $(P_t)_{t\geq0}$ una familia de operadores lineales contractivos.
+Ya que $\S$ un subconjunto denso de $L^q(\gamma)$ y este último espacio es completo, los operadores de $(P_t)_{t\geq0}$ se pueden extender de manera única a una familia de operadores, que también denotaremos por $(P_t)_{t\geq0}$, con dominio todo el espacio $L^q(\gamma)$, y cuyas normas siguen siendo acotadas por la constante 1. Esto último hace a $(P_t)_{t\geq0}$ una familia de operadores lineales contractivos.
 
 Probamos ahora que $(P_t)_{t\geq0}$ en efecto forma un semigrupo.
 \begin{teo} 
 Sean $s,t\geq0$. Se tiene que $P_tP_s=P_{t+s}$ en $L^q(\gamma)$, para $q\in [1,\infty)$.
 \end{teo}
 \begin{proof} 
-  Dado que la medida del espacio es finita, basta con probar el resultado para $L^1(\gamma)$. Sea $f\in L^1(\gamma)$. Tenemos las siguientes igualdades para $x\in \R$:
+  Dado que bajo $\gamma$, el espacio tiene medida finita, basta con probar el resultado para $L^1(\gamma)$. Sea $f\in L^1(\gamma)$. Tenemos las siguientes igualdades para $x\in \R$:
 \begin{align*}
    P_{t}(P_sf)(x)&=\int_\R P_sf\left(e^{-t}x+\sqrt{1-e^{-2t}}y\right)d\gamma(x)\\
    &=\int_\R \int_\R f\left(e^{-s}(e^{-t}x+\sqrt{1-e^{-2t}}y)+\sqrt{1-e^{-2s}}z\right)d\gamma(z)d\gamma(y)\\
@@ -1276,15 +1271,12 @@ donde $Y$ y $Z$ denotan variables aleatorias normales estándar e independientes
 \begin{align*}
    \phi_W(w)&=\E\left[\exp \left\{iw(e^{-s}\sqrt{1-e^{-2t}}Y+\sqrt{1-e^{-2s}}Z)\right\}\right]\\
    &=\E\left[\exp \left\{iwe^{-s}\sqrt{1-e^{-2t}}Y\right\}\right]\E\left[\exp \left\{iw\sqrt{1-e^{-2s}}Z\right\}\right]\\
-   &=\exp \left\{\frac{-w^2e^{-2s}(1-e^{-2t})}{2}\right\}\exp \left\{\frac{-w^2(1-e^{-2s})}{2}\right\}\\
-   &=\exp \left\{\frac{-w^2(e^{-2s}-e^{-2(t+s)}+1-e^{-2s})}{2}\right\}\\
    &=\exp \left\{\frac{-w^2(1-e^{-2(t+s)})}{2}\right\},
 \end{align*}
 la cual corresponde con la función característica de una variable $V:=\sqrt{1-e^{-2(t+s)}}N$, donde $N$ es gaussiana estándar. Se sigue que 
 \begin{align*}
    P_{t}(P_sf)(x)&=\E\left[f \left(e^{-(t+s)}x+e^{-s}\sqrt{1-e^{-2t}}Y+\sqrt{1-e^{-2s}}Z\right)\right]\\
    &=\E\left[f \left(e^{-(t+s)}+\sqrt{1-e^{-2(t+s)}}V\right)\right]\\
-   &=\int_\R f \left(e^{-(t+s)}+\sqrt{1-e^{-2(t+s)}}v\right)d\gamma(v)\\
    &=P_{t+s}f(x).
 \end{align*}
  \end{proof}
@@ -1301,7 +1293,7 @@ Finalmente, la siguiente proposición nos dice que tanto $P_t$ como $D$, vistos 
    \end{align*}
    para cualquier $x\in \R$. Esto prueba la propiedad en $\S\subseteq \D^{1,2}$. Para $f$ en dicho espacio general, usamos que $\S$ es denso en $\D^{1,2}$.
   \end{proof}
-  Antes de continuar con la siguiente sección, mostramos la conexión de esta familia de operadores con el semigrupo de Ornstein-Uhlenbeck:
+  Antes de continuar con la siguiente sección, mostramos la conexión de la familia de operadores $(P_t)_{t\geq0}$ con el semigrupo de Ornstein-Uhlenbeck:
   \begin{teo} 
    Sea $B$ un movimiento browniano estándar. Consideramos la ecuación diferencial estocástica dada por 
    \[
@@ -1311,8 +1303,10 @@ Finalmente, la siguiente proposición nos dice que tanto $P_t$ como $D$, vistos 
    \[
    X_t^x=e^{-t}x+\sqrt{2}\int_0^te^{-(t-s)}dB_s, \qquad t\geq0,
    \]
-   el cual es un proceso de Markov. Más aún, el semigrupo asociado a dicho proceso es justamente $(P_t)_{t\geq0}$. Tal proceso es justamente el proceso de Ornstein-Uhlenbeck.
-  \end{teo}
+   el cual es un proceso de Markov. Más aún, el semigrupo asociado a dicho proceso es justamente $(P_t)_{t\geq0}$.
+\end{teo}
+   
+   Al proceso $X_t^x$ que resuelve la ecuación anterior se le conoce como \textit{el proceso de Ornstein-Uhlenbeck}.
    \begin{proof} 
      Comenzamos notando que en efecto el proceso anteriormente definido cumple que $X_0^x=x$. Pero esto es claro ya que 
      \[
@@ -1366,8 +1360,7 @@ Finalmente, la siguiente proposición nos dice que tanto $P_t$ como $D$, vistos 
      \]
      De lo anterior, es muy sencillo ver que para $f$ medible y acotada, 
      \begin{align*}
-      P_tf(x)&=\E\left[f(X_{t+s}^{x})|\F_s\right]\\
-      &=\E_x\left[f(e^{-(t+s)}x-e^{-(t+s)}B_{e^{2(t+s)}-1})|\F_s\right]\\
+      P_tf(x)&=\E\left[f(X_{t+s}^{x})|\F_s\right]=\E_x\left[f(e^{-(t+s)}x-e^{-(t+s)}B_{e^{2(t+s)}-1})|\F_s\right]\\
       &=\int_\R f \left(e^{-t}x-\sqrt{1-e^{-2t}}y\right)d\gamma(y),
      \end{align*}
      
@@ -1385,9 +1378,9 @@ Lf:=\lim_{h\to 0}\frac{P_hf-f}{h}.
 \]
 Ya que el límite anterior recrea la definición de derivada en funciones reales, denotaremos
 \[
-   \frac{d}{dt}P_tf:=\lim_{h\to0}\frac{P_{t+h}f-P_tf}{h}, \qquad \text{ y en particular } \qquad  Lf:=\frac{d}{dt}P_tf\bigg|_{t=0},
+   \frac{d}{dt}P_tf:=\lim_{h\to0}\frac{P_{t+h}f-P_tf}{h}, \qquad \text{ y en particular } \qquad  Lf:=\frac{d}{dt}P_tf\bigg|_{t=0}.
 \]
-omitiendo en ocasiones la función $f$ cuando estemos hablando de una función en un conjunto particular. Ahora bien, en el espacio $\S$, para cualquier $t\geq0$ se tiene el siguiente resultado:
+Cuando estemos hablando del generador infinitesimal aplicado a funciones pertenecientes a un conjunto particular, omitiremos escribir la función $f$ en el generador. Ahora bien, en el espacio $\S$, para cualquier $t\geq0$ se tiene el siguiente resultado:
 \[
 \frac{d}{dt}P_t=\lim_{h\to0}\frac{P_{t+h}-P_t}{h}=\lim_{h\to0}P_t\frac{P_h-Id}{h}=P_t\lim_{h\to0}\frac{P_h-Id}{h}=P_t\frac{d}{dh}\bigg|_{h=0}P_h=P_tL.
 \]
@@ -1411,14 +1404,12 @@ Lf(x)=-xf'(x)+f''(x).
    Sea $f\in \S$ y $t>0$. Notamos que, utilizando una función dominante, que existe gracias al hecho de que $f$ es suave, intercambiamos derivada con integral, por lo que
    \begin{align*}
     \frac{d}{dt}P_tf(x)&=\frac{d}{dt}\int_\R f(e^{-t}x+\sqrt{1-e^{-2t}}y)d\gamma(y)\\
-    &=\int_\R f'(e^{-t}x+\sqrt{1-e^{-2t}}y)\left(-e^{-t}x+\frac{-y(-2e^{-2t})}{2\sqrt{1-e^{-2t}}}\right)d\gamma(y)\\
     &=\int_\R f'(e^{-t}x+\sqrt{1-e^{-2t}}y)\left(-e^{-t}x+\frac{ye^{-2t}}{\sqrt{1-e^{-2t}}}\right)d\gamma(y)\\
     &=-x\int_\R f'(e^{-t}x+\sqrt{1-e^{-2t}}y)e^{-t}d\gamma(y)+\frac{e^{-2t}}{\sqrt{1-e^{-2t}}}\int_\R yf'(e^{-t}x+\sqrt{1-e^{-2t}}y)d\gamma(y).
    \end{align*}
    Reconocemos en el primer integrando la derivada con respecto a $x$ de $P_tf$, mientras que en el segundo término reconocemos la integral de una función de la forma $yg(y)$, donde $g(y)=f'(e^{-t}x+\sqrt{1-e^{-2t}}y)$, función que está en $L^1(\gamma)$. Por lo tanto, por el Lema \ref{lema1}, 
     \begin{align*}
-        &-x\int_\R f'(e^{-t}x+\sqrt{1-e^{-2t}}y)e^{-t}d\gamma(y)+\frac{e^{-2t}}{\sqrt{1-e^{-2t}}}\int_\R yf'(e^{-t}x+\sqrt{1-e^{-2t}}y)d\gamma(y)\\
-        &=-x\int_\R \frac{d}{dx}f(e^{-t}x+\sqrt{1-e^{-2t}}y)d\gamma(y)+\frac{e^{-2t}}{\sqrt{1-e^{-2t}}}\int_\R \frac{d}{dy}f'(e^{-t}x+\sqrt{1-e^{-2t}}y)d\gamma(y)\\
+        &\frac{d}{dt}P_tf(x)=-x\int_\R \frac{d}{dx}f(e^{-t}x+\sqrt{1-e^{-2t}}y)d\gamma(y)+\frac{e^{-2t}}{\sqrt{1-e^{-2t}}}\int_\R \frac{d}{dy}f'(e^{-t}x+\sqrt{1-e^{-2t}}y)d\gamma(y)\\
         &=-x\frac{d}{dx}\int_\R f(e^{-t}x+\sqrt{1-e^{-2t}}y)d\gamma(y)+\frac{e^{-2t}}{\sqrt{1-e^{-2t}}}\sqrt{1-e^{-2t}}\int_\R f''(e^{-t}x+\sqrt{1-e^{-2t}}y)d\gamma(y)\\
         &=-x(P_tf(x))'+e^{-2t}P_tf''(x).
     \end{align*}
@@ -1434,7 +1425,11 @@ Lf(x)=-xf'(x)+f''(x).
 Como ejemplo de la potencia de la proposición anterior, se demuestra a continuación la desigualdad de Poincaré en el contexto de los espacios de Watanabe-Sobolev.
 Para tener una idea de la comparación entre ambos contextos, presentamos tanto la desigualdad de Poincaré en el contexto de espacios de Sobolev clásicos en $\R$ como la desigualdad de Poincaré en $\D^{2,p}$.
 
-Recordemos que $W^{k,p}(U)=\left\{f\in L^{p}(U,\B(U),dx): D^jf\in L^p(U,\B(U),dx), j\in \{1,2,...,k\}\right\}$ es el espacio de Sobolev que consiste en el conjunto de aquellas funciones en $L^p(U)$ ($U\subseteq \R$ subconjunto abierto) tales que todas sus derivadas hasta la $k$-ésima en el sentido distribucional también pertenecen a $L^p(U,\B(U),dx)$.
+Recordemos que 
+\[
+W^{k,p}(U)=\left\{f\in L^{p}(U,\B(U),dx): D^jf\in L^p(U,\B(U),dx), j\in \{1,2,...,k\}\right\}
+\]
+es el espacio de Sobolev que consiste en el conjunto de aquellas funciones en $L^p(U)$ ($U\subseteq \R$ subconjunto abierto) tales que todas sus derivadas hasta la $k$-ésima en el sentido distribucional también pertenecen a $L^p(U,\B(U),dx)$.
 
 \begin{teo}\textbf{(Desigualdad de Poincaré clásica)}
    Sean $p\in [1,\infty)$ y $W_0^{1,p}(U)=\overline{C^{\infty}_c(U)}$ la cerradura del espacio de las funciones test, con respecto a la norma $\|.\|_{W^{1,p}(U)}$ definida como
@@ -1452,7 +1447,7 @@ Recordemos que $W^{k,p}(U)=\left\{f\in L^{p}(U,\B(U),dx): D^jf\in L^p(U,\B(U),dx
    Más aún, gracias a la definición de $\|.\|_{W^{1,p}(U)}$, la cota anterior nos dice que si tenemos un subconjunto $U\subseteq \R$ abierto y acotado, en $W_0^{1,p}(U)$ las normas $\|\cdot\|_{W_{1,p}(U)}$ y $\|D\cdot\|_{L^p(U)}$ son equivalentes. Pasamos ahora a la versión de Cálculo de Malliavin de la desigualdad.
    \begin{teo} \textbf{(Desigualdad de Poincaré unidimensional)} Sea $N\sim Normal(0,1)$ y sea $f\in \D^{1,2}$. Entonces
        \[
-       \text{Var}\left(f(N)\right)=\E\left[(Df(N))^2\right]    
+       \text{Var}\left(f(N)\right)\leq\E\left[(Df(N))^2\right]    
        \]     
     \end{teo}
     \begin{proof} 
@@ -1473,7 +1468,7 @@ Nótese que esta desigualdad en términos de la norma $L^2(\gamma)$ se escribe c
 \[
 \|f\|^2_{L^2(\gamma)}\leq \E^2\left[f(N)\right]+\|Df\|^2_{L^2(\gamma)}, \qquad \forall f\in \D^{1,2},
 \]
-de manera que, si $\E\left[f(N)\right]=0$, directamente recuperamos la desigualdad de Poincaré clásica, aunque en distinto contexto. Y como tal, esta desigualdad nos permite controlar el crecimiento de las funciones $f\in \D^{1,2}$ utilizando la norma de su derivada de Malliavin.
+de manera que, si $\E\left[f(N)\right]=0$, directamente recuperamos la desigualdad de Poincaré clásica, aunque en distinto contexto. Como tal, esta desigualdad nos permite controlar el crecimiento de las funciones $f\in \D^{1,2}$ utilizando la norma de su derivada de Malliavin.
 
 Concluimos esta sección con la denominada \textit{relación de conmutatividad de Heisenberg}.
 \begin{teo} 
@@ -1493,16 +1488,15 @@ Concluimos esta sección con la denominada \textit{relación de conmutatividad d
    &=D \delta f(x) - (xDf(x)-D^2f(x))\\
    &=D \left(\delta f(x)+Df(x)\right) -xDf(x)\\
    &=D \left(xf(x)\right)-xDf(x)\\
-   &=f(x)+xDf(x)-xDf(x)\\
-   &=f(x),
+   &=f(x)+xDf(x)-xDf(x)=f(x),
 \end{align*}
 en donde en la segunda y cuarta igualdad hemos usado la fórmula del lema \ref{formuladelta}.
  \end{proof}
 \section{Cálculo de Malliavin en el caso general.}
 
-En esta sección se presentan los operadores de Malliavin generales, que serán utilizados en lo subsecuente. Seguimos de cerca los requerimientos de \cite[sección 2.1]{KUZGUN202268}. Dado que el caso unidimensional fue tratado con relativo detalle, y nuevamente teniendo en cuenta que un estudio exhaustivo de la disciplina no es el objetivo de este texto, las pruebas de los resultados que aparecen en el resto del capítulo serán omitidas, por lo que remitimos a \cite[capítulo 2]{Nourdin_Peccati_2012} para su consulta.
+En esta sección se presentan los operadores de Malliavin generales, que serán utilizados en lo subsecuente. Seguimos de cerca los requisitos de \cite[sección 2.1]{KUZGUN202268}. Dado que el caso unidimensional fue tratado con relativo detalle, y nuevamente teniendo en cuenta que un estudio exhaustivo de la disciplina no es el objetivo de este texto, las pruebas de los resultados que aparecen en el resto del capítulo serán omitidas, por lo que remitimos a \cite[capítulo 2]{Nourdin_Peccati_2012} para su consulta.
 
-Para poder hablar del Cálculo de Malliavin en dimensiones infinitas, necesitamos un contexto adecuado. Parte de ese contexto es el concepto de \textit{proceso gaussiano isonormal}. En el ejemplo \ref{ruidoprocesoiso} del capítulo 1 hablamos del proceso gaussiano isonormal inducido por un ruido blanco. Sin embargo, este concepto puede extenderse mucho más allá. A continuación presentamos la definición de un proceso gaussiano isonormal en un contexto más general.
+Para poder hablar del cálculo de Malliavin en dimensiones infinitas, necesitamos un contexto adecuado. Parte de ese contexto es el concepto de \textit{proceso gaussiano isonormal}. En el ejemplo \ref{ruidoprocesoiso} del capítulo 1 hablamos del proceso gaussiano isonormal inducido por un ruido blanco. A continuación presentamos la definición de un proceso gaussiano isonormal en un contexto general.
 
 \begin{dfn} 
  Sean $(\mathfrak{H},\langle\cdot,\cdot\rangle_{\mathfrak{H}})$ un espacio de Hilbert separable sobre $\R$, y $(\Omega,\F,\P)$ un espacio de probabilidad. Un \textit{proceso gaussiano isonormal} sobre $\mathfrak{H}$ es un proceso gaussiano centrado $X=\{X(h):h\in \mathfrak{H}\}$ definido en $\Omega$, tal que para cualesquiera $g, h\in \mathfrak{H}$, 
@@ -1510,9 +1504,9 @@ Para poder hablar del Cálculo de Malliavin en dimensiones infinitas, necesitamo
  \E\left[X(g)X(h)\right]=\langle g,h\rangle_{\mathfrak{H}}.
  \]
  \end{dfn}
-Dado un proceso gaussiano isonormal $X$, al ser sus elementos variables gaussianas centradas con densidad conjunta, la función de covarianzas (y por lo tanto todo el proceso) se codifica por medio del producto interno del espacio de Hilbert $\mathfrak{H}$. Es por lo tanto una manera de relacionar íntimamente dos estructuras distintas. De manera más precisa, consideremos un sistema ortonormal $(Z_n)_{n\geq1}$ en el espacio de Hilbert $\mathfrak{H}$. Sea $G=\{X(Z_n):n\geq1\}$ una familia de variables gaussianas independientes centradas en un espacio de probabilidad adecuado. Consideremos a $L^2(G)$ el subespacio lineal cerrado del $L^2(\P)$ generado por dichas variables. Entonces el mapeo $h\to X(h)$ resulta ser una isometría lineal del espacio $H$ en $L^2(G)$. En particular, dos procesos gaussianos isonormales definidos sobre el mismo espacio de Hilbert tendrán la misma ley.
+Dado un proceso gaussiano isonormal $X$, al ser sus elementos variables conjuntamente gaussianas y centradas, el proceso está definido completamente por su función de covarianzas, y esta se codifica por medio del producto interno del espacio de Hilbert $\mathfrak{H}$. Es por lo tanto una manera de relacionar íntimamente dos estructuras distintas. De manera más precisa, consideremos un sistema ortonormal $(Z_n)_{n\geq1}$ en el espacio de Hilbert $\mathfrak{H}$. Sea $G=\{X(Z_n):n\geq1\}$ una familia de variables gaussianas independientes centradas en un espacio de probabilidad adecuado. Consideremos a $L^2(G)$ el subespacio lineal cerrado del $L^2(\P)$ generado por dichas variables. Entonces el mapeo $h\to X(h)$ resulta ser una isometría lineal del espacio $H$ en $L^2(G)$. En particular, dos procesos gaussianos isonormales definidos sobre el mismo espacio de Hilbert tendrán la misma ley.
 
-Las ideas anteriormente expuestas son esencialmente la prueba de la existencia de un proceso isonormal dado un espacio de Hilbert $\mathfrak{H}$. Esto se establece en el siguiente resultado.
+Las ideas anteriormente expuestas, en conjunto con el teorema de consistencia de Kolmogorov, son esencialmente la prueba de la existencia de un proceso isonormal dado un espacio de Hilbert $\mathfrak{H}$. Esto se establece en el siguiente resultado.
 
 \begin{teo} 
 Sea $(\mathfrak{H},\langle\cdot,\cdot\rangle_{\mathfrak{H}})$ un espacio de Hilbert real y separable. Entonces existe un proceso gaussiano isonormal sobre $\mathfrak{H}$.
@@ -1540,7 +1534,7 @@ Llegados a este punto, estamos listos para definir la derivada de Malliavin en e
  \[
  D^pF:=\sum_{i_1,...,i_p=1}^{n}\frac{\partial^pf}{\partial x_{i_1}...\partial x_{i_p}}(X(h_1),...,X(h_n))h_{i_1}\otimes...\otimes h_{i_p},
  \] 
- en donde $\mathfrak{H}^{\odot p}$ representa el \textit{producto tensorial} de orden $p$ del espacio de Hilbert $\mathfrak{H}$ consigo mismo (el cual nuevamente es un espacio de Hilbert). En el caso en que $p=1$ hablaremos simplemente de la \textit{derivada de Malliavin} de $F$ y la dentamos por $DF$.
+ en donde $\mathfrak{H}^{\odot p}$ representa el \textit{producto tensorial simetrizado} de orden $p$ del espacio de Hilbert $\mathfrak{H}$ consigo mismo (el cual nuevamente es un espacio de Hilbert). En el caso en que $p=1$ hablaremos simplemente de la \textit{derivada de Malliavin} de $F$ y la dentamos por $DF$.
  \end{dfn}
  \begin{obs}
    Nótese que para $F\in \S$ y $h\in \mathfrak{H}$ arbitrarios, al ser $DF\in L^2(\Omega;\mathfrak{H})$ una variable aleatoria con valores en $\mathfrak{H}$, 
@@ -1561,15 +1555,15 @@ Llegados a este punto, estamos listos para definir la derivada de Malliavin en e
   es cerrable.
   \end{teo}
 
-En consecuencia, podemos replicar los pasos hechos para el caso unidimensional y obtener un espacio adecuado en donde dicho operador sea cerrado: para $q\in [1,\infty)$ y $p\geq1$ un entero, definimos la norma $\norm{\cdot}_{\D^{p,q}}:\S\to [0,\infty)$ dada por 
+En consecuencia, podemos replicar los pasos hechos para el caso unidimensional y obtener un espacio adecuado en donde dicho operador sea cerrado: para $q\in [1,\infty)$ y $p\geq1$ un entero, definimos la norma $\norm{\cdot}_{\D^{p,q}}:\S\to [0,\infty)$,
 \[
 \norm{F}_{\D^{p,q}}:= \left(\E\left[\abs{F}^{q}\right]+\E\left[\norm{DF}^{q}_{\mathfrak{H}}\right]+...+\E\left[\norm{D^pF}_{\mathfrak{H}^{\otimes p}}^q\right]\right)^{1/q}.
 \]
-y denotamos por $\D^{p,q}$ a la cerradura del espacio $\S$ con respecto a la norma anterior. 
+y denotamos por $\D^{p,q}$ a la cerradura del espacio $\S$ con respecto a dicha norma. 
 
-Tal y como en el caso unidimensional, en el caso general se tiene un teorema análogo al teorema \ref{teocontencionessobolev}. Omitimos su enunciado y su prueba. También se tiene que para cualquier $p\geq1$, el espacio $\D^{p,2}$ es un espacio de Hilbert con producto interno análogo al del caso unidimensional.
+Como en el caso unidimensional, en el caso general se tiene un teorema análogo al teorema \ref{teocontencionessobolev}. Omitimos su enunciado y su prueba. También se tiene que para cualquier $p\geq1$, el espacio $\D^{p,2}$ es un espacio de Hilbert con producto interno análogo al del caso unidimensional.
 
-Un resultado importante y que será usado en la posteridad es la \textit{regla de la cadena} para la derivada de Malliavin. Éste se encuentra en el siguiente teorema.
+Un resultado importante y que será usado posteriormente es la \textit{regla de la cadena} para la derivada de Malliavin. Éste se encuentra en el siguiente teorema.
 
 \begin{teo}[\textbf{Regla de la cadena}]\label{reglacadena} 
  Sea $\phi:\R^{m}\to \R$ una función $C^1$ con derivadas parciales acotadas. Supongamos que $F=(F_1,...,F_n)$ es un vector aleatorio cuyas componentes son elementos de $\D^{1,q}$ para algún $q\geq1$. Entonces $\phi(F)\in \D^{1,q}$ y 
@@ -1577,7 +1571,7 @@ Un resultado importante y que será usado en la posteridad es la \textit{regla d
 D\phi(F)=\sum_{i=1}^n \frac{\partial \phi}{\partial x_i}(F)DF_i.
  \]
  \end{teo}
-Pasamos ahora a estudiar el operador de divergencia. Fijamos $q=2$. Dado un entero $p\geq1$, definimos el operador de divergencia de orden $p$ como el operador adjunto del operador derivada $D^{p}:\D^{p,2}\to L^{2}(\Omega,\mathfrak{H}^{\odot p})$.
+Pasamos ahora a estudiar el operador de divergencia. Fijamos $q=2$. Dado un entero $p\geq1$, definimos el operador de divergencia de orden $p$ como el operador adjunto del operador derivada $D^{p}:\left(\D^{p,2}, \norm{\cdot}_{\D^{p,q}}\right)\to \left(L^{2}(\Omega,\mathfrak{H}^{\otimes p}), \norm{\cdot}_{2,\mathfrak{H}^{\otimes p}}\right)$.
 
 \begin{dfn} 
  Sea $p\geq1$ un entero. Denotamos por $\text{Dom}(\delta^p)$ al subconjunto de $L^2(\Omega;\mathfrak{H}^{\odot p})$ compuesto de aquellos elementos $u$ tales que existe una constante $C>0$ que satisface 
@@ -1630,15 +1624,15 @@ Cabe destacar que estaremos interesados en el caso en que el proceso gaussiano i
  \end{teo}
  
  \chapter{Aplicaciones a Teoremas Límite y estudio de densidades}
-En este capítulo se visita la aplicación de los conceptos del cálculo de Malliavin al estudio de Teoremas límite y al estudio de densidades. 
+En este capítulo se visita la aplicación de los conceptos del cálculo de Malliavin al estudio de teoremas límite y al estudio de densidades. 
 Una herramienta clave en esta tarea es el conocido como \textit{método de Stein}. 
 Dicho método, desarrollado por Charles Stein en la década de 1970, es una herramienta bastante popular para evaluar la distancia entre las leyes de dos leyes de probabilidad. Lo anterior es posible lograrlo estudiando operadores diferenciales involucrados con las leyes de probabilidad en cuestión. La exposición de este capítulo está basado principalmente en \cite[capitulo 4]{Nourdin_Peccati_2012}. 
 
 \section{Método de Stein}
 
-Dentro del mundo de la probabilidad, la distribución normal juega un papel importante debido a la gran cantidad de propiedades que la misma presenta. Entre ellas, está la propiedad de ser una ley que está determinada por sus momentos. Esta propiedad, la cual está codificada en el conocido como \textit{lema de Stein}, forma parte importante de este texto. 
+Dentro del mundo de la probabilidad, la distribución normal juega un papel importante debido a la gran cantidad de propiedades que la misma presenta. Entre ellas, está la propiedad de ser una ley determinada por sus momentos. Esta propiedad, la cual está codificada en el conocido como \textit{lema de Stein}, forma parte importante de este texto. 
 
-Comenzamos dando una prueba de que la ley de una variable gaussiana estándar está caracterizada por sus momentos. Recordemos que, dada una medida $\nu$ en $\R$, el momento de orden $n$ de la misma, cuando existe, está dado por 
+Recordemos que, dada una medida $\nu$ en $\R$, el momento de orden $n$ de la misma, cuando existe, está dado por 
 \[
    m_n(\nu):=\int_{\R}x^{n}d\nu(x), \qquad n\geq0.
 \]
@@ -1656,9 +1650,12 @@ Comenzamos dando una prueba de que la ley de una variable gaussiana estándar es
     Utilizando la forma de Lagrange del residuo en el teorema de Taylor y la desigualdad de Cauchy-Schwarz, tenemos para cualquier $n\geq1$ que
     \begin{align*}
       \abs{\int_{\R}e^{itx}d\nu(x)-\int_\R e^{itx}d\gamma(x)}&\leq \int_\R \abs{e^{itx}-\sum_{k=0}^{n}\frac{(itx)^k}{k!}}d\nu(x)+\int_\R \abs{e^{itx}-\sum_{k=0}^{n}\frac{(itx)^k}{k!}}d\gamma(x)\\
-      &=\int_\R \abs{\frac{(it)^{n+1}e^{it\xi_L}x^{n+1}}{(n+1)!}}d\nu(x)+\int_\R \abs{\frac{(it)^{n+1}e^{it\eta_L}x^{n+1}}{(n+1)!}}d\gamma(x)\\
-      &\leq\int_\R \frac{\abs{tx}^{n+1}}{(n+1)!}d\nu(x)+\int_\R \frac{\abs{tx}^{n+1}}{(n+1)!}d\gamma(x)\\
-      &\leq \left(\int_{\R}\frac{\abs{tx}^{2n+2}}{(n+1)!^2}d\nu(x)\right)^{1/2}+\left(\int_{\R}\frac{\abs{tx}^{2n+2}}{(n+1)!^2}d\gamma(x)\right)^{1/2}\\
+      &=\int_\R \abs{\frac{(it)^{n+1}e^{it\xi_L}x^{n+1}}{(n+1)!}}d\nu(x)+\int_\R \abs{\frac{(it)^{n+1}e^{it\eta_L}x^{n+1}}{(n+1)!}}d\gamma(x),
+   \end{align*}
+   en donde $\xi$ y $\eta$ son los puntos intermedios del residuo de Lagrange.
+   Usando monotonía de la integral, la última expresión anterior es igual a 
+      \begin{align*}
+      \int_\R \frac{\abs{tx}^{n+1}}{(n+1)!}d\nu(x)+\int_\R \frac{\abs{tx}^{n+1}}{(n+1)!}d\gamma(x)&\leq \left(\int_{\R}\frac{\abs{tx}^{2n+2}}{(n+1)!^2}d\nu(x)\right)^{1/2}+\left(\int_{\R}\frac{\abs{tx}^{2n+2}}{(n+1)!^2}d\gamma(x)\right)^{1/2}\\
       &=\left(\frac{\abs{t}^{2n+2}}{(n+1)!^2}m_{2n+2}(\nu)\right)^{1/2}+\left(\frac{\abs{t}^{2n+2}}{(n+1)!^2}m_{2n+2}(\gamma)\right)^{1/2}\\
       &=2\left(\frac{\abs{t}^{2n+2}}{(n+1)!^2}m_{2n+2}(\gamma)\right)^{1/2}.
     \end{align*}
@@ -1688,9 +1685,9 @@ Ahora enunciamos y demostramos el conocido como \textit{lema de Stein}.
   \] 
   de tal forma que los momentos de la variable $X$ coinciden con los de una variable normal estándar. Dado que la distribución normal está caracterizada por sus momentos según vimos en el resultado previo, se sigue que $X\sim$ Normal$(0,1)$.
  \end{proof}
-El resultado anterior es interesante por varios motivos. Uno de ellos es que nos permite caracterizar plenamente la distribución normal a partir de funciones y sus derivadas aplicadas a una variable aleatoria que siga dicha distribución. Por otro lado, un instante de reflexión nos puede llevar a la siguiente pregunta.
+El resultado anterior es interesante por varios motivos. Uno de ellos es que nos permite caracterizar plenamente la distribución normal a partir de funciones y sus derivadas aplicadas a una variable aleatoria gaussiana. Por otro lado, un instante de reflexión nos puede llevar a la siguiente pregunta.
 
-Supongamos que ahora $X$ es una variable aleatoria y que para una cierta clase suficientemente rica de funciones suaves, se cumple que 
+Supongamos que ahora $X$ es una variable aleatoria y para una cierta clase suficientemente rica de funciones suaves, se cumple que 
 \[
 \E\left[Xf(X)-f'(X)\right]\approx0.    
 \]
@@ -1698,10 +1695,10 @@ En virtud del lema de Stein, ¿es posible decir que la distribución de $X$ est�
 
 La pregunta anterior se conoce como la \textit{heurística de Stein}, y la respuesta es afirmativa en algunos casos. Para llegar a una formulación explícita de dicha respuesta, debemos introducir la idea de \textit{distancia entre dos medidas de probabilidad} y también la famosa \textit{ecuación de Stein} asociada a alguna función $h\in L^1(\gamma)$. 
 
-Comenzamos definiendo la noción de distancia entre dos variables aleatorias. La definición de distancia se otorga para variables que tomen valores en $\R^d$. Recordamos la noción de \textit{clase separante de funciones}.
+Comenzamos definiendo una noción de distancia entre variables aleatorias.Recordamos el concepto de \textit{clase separante de funciones}.
 
 \begin{dfn} 
- En un espacio de probabilidad $(\Omega, \F, \P)$, sea $\mathscr{H}$ un conjunto de funciones borelianas complejas con valores en $\R^d$, para algún $d\geq1$. Decimos que $\mathscr{H}$ es una familia de \textit{funciones separantes} si para cualesquiera dos variables aleatorias $F$ y $G$ con valores en $\R^{d}$ tales que $h(F)$ y $h(G)$ son elementos de $L^1(\Omega)$ y $\E\left[h(F)\right]=\E\left[h(G)\right]$, para cualquier elemento $h\in \mathscr{H}$ implica que $F$ y $G$ tienen la misma ley.
+ En un espacio de probabilidad $(\Omega, \F, \P)$, sea $\mathscr{H}$ un conjunto de funciones borelianas complejas con valores en $\R^d$, para algún $d\geq1$. Decimos que $\mathscr{H}$ es una familia de \textit{funciones separantes} si para cualesquiera dos variables aleatorias $F$ y $G$ con valores en $\R^{d}$ tales que $h(F)$ y $h(G)$ son elementos de $L^1(\Omega)$ y $\E\left[h(F)\right]=\E\left[h(G)\right]$, para cualquier elemento $h\in \mathscr{H}$ se tiene que $F$ y $G$ tienen la misma ley.
  \end{dfn}
 Ejemplos clásicos de familias $\mathscr{H}$ separantes son el conjunto de funciones borelianas continuas y acotadas, el conjunto de funciones indicadoras de los borelianos de $\R^{d}$, o el conjunto de funciones exponenciales de la forma $\mathscr{H}=\left\{e^{i \langle v,\cdot\rangle}: v\in \R^{d} \right\}$, donde el producto interno anterior es el producto interno usual de $\R^{d}$.
 
@@ -1729,10 +1726,10 @@ Es sencillo demostrar que para una clase de funciones separantes $\mathscr{H}$, 
    \item \textbf{La distancia de Wasserstein.} Usando la clase de funciones separantes \[\mathscr{H}=\left\{h:\R^{d}\to \R \ :\ \norm{h}_{\text{Lip}}\leq 1\right\},\] donde claramente $\norm{\cdot}_{Lip}$ denota la norma Lipschitz en $\R^{d}$. Esta distancia se denota como $d_{\text{W}}(F,G)$.
 \end{itemize}
 
-Armados con la noción de distancia entre dos leyes de probabilidad, pasamos ahora a estudiar brevemente las ecuaciones de Stein. Dichas ecuaciones nos permiten codificar la distancia entre la ley de una variable $F$ y una variable aleatoria normal $N$, en virtud del lema de Stein \ref{LemaStein}. De manera rigurosa, tenemos la siguiente definición.
+Armados con la noción de distancia entre dos leyes de probabilidad, pasamos ahora a estudiar brevemente las ecuaciones de Stein. Dichas ecuaciones nos permiten codificar la distancia entre la ley de una variable $F$ y una variable aleatoria normal $N$. De manera rigurosa, tenemos la siguiente definición.
 
 \begin{dfn} 
- Sea $N$ una variable gaussiana estándar y sea $h:\R\to\R$ una función boreliana tal que $\E\left[h(N)\right]<\infty$. La \textit{ecuación de Stein} asociada con $h$ es la ecuación diferencial ordinaria 
+ Sea $N$ una variable gaussiana estándar y sea $h:\R\to\R$ una función boreliana tal que $\E\left[\abs{h(N)}\right]<\infty$. La \textit{ecuación de Stein} asociada con $h$ es la ecuación diferencial ordinaria 
  \begin{equation}\label{eqstein}
    f'(x)-xf(x)=h(x)-\E\left[h(N)\right].
  \end{equation}
@@ -1768,7 +1765,11 @@ Armados con la noción de distancia entre dos leyes de probabilidad, pasamos aho
     \begin{equation*}
       f(x)=ce^{x^2/2}+e^{x^2/2}\int_{-\infty}^{x}(h(y)-\E\left[h(N)\right])e^{-y^2/2}dy, \qquad \forall x\in \R.
     \end{equation*}
-   Para el comportamiento en $\pm\infty$ de las solución $f_h$, usando la función $g(x)=\abs{h(y)-\E\left[h(N)\right]}e^{-y^2/2}$, la cual es integrable e independiente de $x\in \R$, por el teorema de convergencia dominada, tenemos para el límite en $+\infty$ que
+   Para el comportamiento en $\pm\infty$ de las solución $f_h$, usando la función 
+   \[
+   g(x)=\abs{h(y)-\E\left[h(N)\right]}e^{-y^2/2},
+   \]
+   la cual es integrable e independiente de $x\in \R$, por el teorema de convergencia dominada, tenemos que
    \begin{align*}
       \lim_{x\to \infty}\int_{-\infty}^x \left(h(y)-\E\left[h(N)\right]\right)e^{-y^2/2}dy&=\int_\R\lim_{x\to\infty}\left(h(y)-\E\left[h(N)\right]\right)e^{-y^2/2}\1_{(-\infty,x]}(y)dy\\
       &=\int_\R h(y)e^{-y^2/2}dy-\E\left[h(N)\right]\int_\R e^{-y^2/2}dy\\
@@ -1779,7 +1780,7 @@ Armados con la noción de distancia entre dos leyes de probabilidad, pasamos aho
       \[
          \lim_{x\to -\infty}\int_{-\infty}^x \left(h(y)-\E\left[h(N)\right]\right)e^{-y^2/2}dy=\int_\R\lim_{x\to-\infty}\left(h(y)-\E\left[h(N)\right]\right)e^{-y^2/2}\1_{(-\infty,x]}(y)dy=0.
       \]
-      Se sigue entonces que si $f$ es una solución como las anteriormente mencionadas, entonces $e^{-x^2/2}f(x)\xrightarrow[x\to\pm\infty]{}0$ si y solo si $c=0$.
+      Se sigue entonces que si $f$ es una solución como las anteriormente mencionadas, entonces $e^{-x^2/2}f(x)\xrightarrow[|x|\to\infty]{}0$ si y solo si $c=0$.
    \end{proof}
 
  Contando ahora con estas herramientas, podemos evaluar de manera rigurosa la distancia que hay entre la ley de una variable $X$ y una variable normal estándar $N$. Para ello, consideremos una función $h:\R\to\R$ que cumple que $\E\left[\abs{h(X)}\right]<\infty$ y $\E\left[\abs{h(N)}\right]<\infty$. Sea $f_h$ la solución única del teorema \ref{soleqstein}. Tomando esperanza a ambos lados de la ecuación de Stein, tenemos que $f_h$ cumple que 
@@ -1795,20 +1796,24 @@ Armados con la noción de distancia entre dos leyes de probabilidad, pasamos aho
  
  En nuestro caso, nos vamos a enfocar en dos familias de funciones distintas. La primera de ellas es la familia $\mathscr{H}$ que origina la distancia de Kolmogorov, mientras que en el segundo caso consideramos una familia específica que nos será de utilidad en el capítulo 4.
  
-En cuanto a la distancia de Kolmogorov, tenemos el siguiente teorema que nos da una cota universal explícita de las normas de las soluciones a la ecuación de Stein asociada a la familia $\mathscr{H}= \left\{h:\R\to \R \ :\ h(x)=\1_{(-\infty,z]}(x),\ \  z\in \R\right\}$.
+En cuanto a la distancia de Kolmogorov, tenemos el siguiente teorema que nos da una cota universal explícita de las normas de las soluciones a la ecuación de Stein asociada a la familia 
+\[
+\mathscr{H}= \left\{h:\R\to \R \ :\ h(x)=\1_{(-\infty,z]}(x),\ \  z\in \R\right\}.
+\]
   
  \begin{teo}\label{cotakolmogorovstein}
-   Sea $z\in \R$ y consideremos a la función $h=\1_{(-\infty,z]}\in \mathscr{H}$ asociada. Denotemos por $f_z$ a la única solución de la ecuación de Stein asociada a la función $h$ anterior. Se tiene la siguiente cota.
+   Sea $z\in \R$ y consideremos a la función $h=\1_{(-\infty,z]}$ asociada. Denotemos por $f_z$ a la única solución de la ecuación de Stein asociada a la función $h$ anterior. Se tiene la siguiente cota:
   \[
       \norm{f_z}_{\infty}\leq \frac{\sqrt{2\pi}}{4} \qquad \text{y} \qquad \norm{f'_z}_\infty\leq 1.
   \]
 En particular, para $N$ una variable aleatoria normal estándar, y para cualquier variable integrable $X$, se tiene que 
-\[
-   d_{\text{Kol}}(X,N)\leq \sup_{f\in \F_{Kol}}\abs{\E\left[f'(X)\right]-\E\left[Xf(X)\right]},
-\]
+
+\begin{equation}\label{dkolmogorov}
+      d_{\text{Kol}}(X,N)\leq \sup_{f\in \F_{Kol}}\abs{\E\left[f'(X)\right]-\E\left[Xf(X)\right]},
+\end{equation}
 en donde 
-\[\F_{\text{Kol}}:=\left\{f:\R\to\R \text{ abs. cont.}: f \text{ derivable salvo un conjunto finito}, \norm{f}_\infty\leq \frac{\sqrt{2\pi}}{4}, \ \norm{f'}_\infty\leq 1\right\},\]
-y donde el supremo anterior se entiende como la cantidad 
+\[\F_{\text{Kol}}:=\left\{f \in \text{AC}(\R): f \text{ es derivable salvo un conjunto finito}, \  \norm{f}_\infty\leq \frac{\sqrt{2\pi}}{4}, \ \norm{f'}_\infty\leq 1\right\},\]
+donde AC$(\R)$ es el conjunto de funciones absolutamente continuas sobre $\R$, y donde el supremo en \eqref{dkolmogorov} se entiende como la cantidad 
 \[
 \sup \abs{\E\left[g(X)\right]-\E\left[Xf(X)\right]},
 \]
@@ -1818,7 +1823,11 @@ donde el supremo se toma sobre todos los pares de funciones borelianas $(f,g)$, 
 Una guía para la demostración de este resultado se puede encontrar en la sección 3.4 de \cite{Nourdin_Peccati_2012}. Concluimos esta sección con el siguiente resultado, el cual nos da cotas explícitas para una familia de funciones específicas.
 
 \begin{teo}\label{metodosteinfamespecial}
- Consideremos la familia de funciones $\mathscr{H}=\left\{h:\R\to\R : h(z)=\1_{\{z>x\}}z, \ x\in \R\right\}$. Entonces la solución $f_h$ a la ecuación de Stein \eqref{eqstein} satisface 
+ Consideremos la familia de funciones 
+ \[
+ \mathscr{H}=\left\{h:\R\to\R : h(z)=\1_{\{z>x\}}z, \ x\in \R\right\}.
+ \] 
+ Entonces la solución $f_h$ a la ecuación de Stein \eqref{eqstein} satisface 
  \[
  |f'_h(x)|\leq C(\abs{x}+1), \qquad \forall x\in \R,
  \]
@@ -1826,7 +1835,7 @@ Una guía para la demostración de este resultado se puede encontrar en la secci
  \end{teo}
 Nuevamente este resultado se enuncia sin demostración. Una versión general del mismo, así como su demostración, se encuentran en el apéndice A de \cite{HU2014814}.
 
-Los dos resultados anteriores se encuentran en el núcleo de las técnicas que se conocen en su conjunto como \textit{método de Stein.}, y que son ampliamente usadas para deducir resultados similares al teorema central del límite, además de deducir tasas de convergencia para los mismos. Ejemplo de lo anterior es el célebre teorema de Berry-Essen, el cual cuantifica la velocidad de convergencia de una sucesión i.i.d de variables con media cero, varianza 1 y tercer momento absoluto finito, a la distribución normal estándar. Es decir, es una versión cuantificable del clásico teorema del límite central.
+Los dos resultados anteriores se encuentran en el núcleo de las técnicas que se conocen en su conjunto como \textit{método de Stein.}, y que son ampliamente usadas para deducir resultados similares al teorema central del límite, además de deducir tasas de convergencia para los mismos. Ejemplo de lo anterior es el célebre teorema de Berry-Essen, el cual cuantifica la velocidad de convergencia de una sucesión de variables independientes e idénticamente distribuidas con media cero, varianza uno y tercer momento absoluto finito, a la distribución normal estándar. Es decir, es una versión cuantificable del clásico teorema del límite central.
 
 Es posible otorgar una demostración del mismo utilizando el método de Stein, y más específicamente el teorema \ref{cotakolmogorovstein}. Para el enunciado y demostración del mismo, remitimos a \cite[sección 3.7]{Nourdin_Peccati_2012}.
 
@@ -1883,7 +1892,7 @@ donde $\Phi(x)$ es la función de densidad de una variable normal estándar.
    \]
    lo cual es una contradicción ya que $(D_uF)^{-1}\in L^{4}(\Omega)$, que es subconjunto de $L^{1}(\Omega)$.
 
-   Satisfechas las hipótesis del teorema \ref{existdensidad}, tenemos garantizada la existencia de una densidad continua y acotada para la variable $F=\delta(v)$, la cual está dada por la fórmula \eqref{formuladensidad}. Ahora buscamos una cota uniforme sobre $x\in \R$ para las siguientes cantidades
+   Satisfechas las hipótesis del teorema \ref{existdensidad}, tenemos garantizada la existencia de una densidad continua y acotada para la variable $F=\delta(v)$, la cual está dada por la fórmula \eqref{formuladensidad}. Ahora buscamos una cota uniforme sobre $x\in \R$ para
    \begin{equation}\label{eqdiferencia1}
    \abs{f_F(x)-\phi(x)}=\abs{\E\left[\1_{\{F>x\}}\delta\left(\frac{u}{D_uF}\right)\right]-\E\left[\1_{\{N>x\}}N\right]}, 
    \end{equation}
@@ -1895,11 +1904,11 @@ donde $\Phi(x)$ es la función de densidad de una variable normal estándar.
    &=\E\left[\1_{\{F>x\}}\frac{F}{D_{u}F}\right]+\E\left[\1_{\{F>x\}}\left(\frac{1}{\left(D_{u}F\right)^2}\right)D_{u}D_{u}F\right],
       \end{align*}
       donde hemos hecho uso de que $F=\delta(u)$ y de la regla de la cadena en la segunda igualdad.
-  Incrustando esta última igualdad en la fórmula \eqref{eqdiferencia1}, y subsecuentemente sumando y restando el término $\E\left[\1_{\{F>x\}}F\right]$,
+  Sustituyendo esta última igualdad en la fórmula \eqref{eqdiferencia1}, y subsecuentemente sumando y restando el término $\E\left[\1_{\{F>x\}}F\right]$, obtenemos
   
 \begin{align}\label{eqdiferencia2}
    \abs{f_F(x)-\Phi(x)}&=\abs{\E\left[\1_{\{F>x\}}\frac{F}{D_{u}F}\right]+\E\left[\1_{\{F>x\}}\frac{D_uD_uF}{\left(D_{u}F\right)^2}\right]-\E\left[\1_{\{N>x\}}N\right]}\notag\\
-   &=+\Bigg|\E\left[\1_{\{F>x\}}\frac{F}{D_{u}F}\right]-\E\left[\1_{\{F>x\}}F\right]+\E\left[\1_{\{F>x\}}\frac{D_uD_uF}{\left(D_{u}F\right)^2}\right]\notag\\
+   &=\Bigg|\E\left[\1_{\{F>x\}}\frac{F}{D_{u}F}\right]-\E\left[\1_{\{F>x\}}F\right]+\E\left[\1_{\{F>x\}}\frac{D_uD_uF}{\left(D_{u}F\right)^2}\right]\notag\\
    &\ \ \ +\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]\Bigg|\notag\\
    &\leq \abs{\E\left[\1_{\{F>x\}}\left(\frac{F}{D_uF}-F\frac{D_uF}{D_uF}\right)\right]}+\abs{\E\left[\1_{\{F>x\}}\frac{D_uD_uF}{\left(D_{u}F\right)^2}\right]}\notag\\
    &\ \ \ +\abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}\notag\\
@@ -1907,7 +1916,7 @@ donde $\Phi(x)$ es la función de densidad de una variable normal estándar.
 \end{align}
 Ahora, en la desigualdad \eqref{eqdiferencia2} usamos sucesivamente la desigualdad de Hölder en el primer y segundo términos, de manera que
 \begin{equation}\label{eqdiferencia3}
-   \E\left[\abs{\frac{F(1-D_uF)}{D_uF}}\right]\leq \norm{F(D_uF)}_2\norm{1-D_uF}_2\leq \norm{F}_4\norm{(D_vF)^{-1}}_4\norm{1-D_uF}_2,
+   \E\left[\abs{\frac{F(1-D_uF)}{D_uF}}\right]\leq \norm{F(D_uF)^{-1}}_2\norm{1-D_uF}_2\leq \norm{F}_4\norm{(D_vF)^{-1}}_4\norm{1-D_uF}_2,
 \end{equation}
 y también
 \begin{equation}\label{eqdiferencia4}
@@ -1933,17 +1942,17 @@ Usamos nuevamente la desigualdad de Hölder en el último termino de la ecuació
 \begin{equation}\label{eqdiferencia6}
    \abs{\E\left[f_h'(F)(1-D_vF)\right]}\leq \norm{f_h'(F)}_2\norm{1-D_vF}_2.
 \end{equation}
-Finalmente, usamos el teorema \ref{metodosteinfamespecial}, en \ref{eqdiferencia6}, por lo que 
+Finalmente, usamos el teorema \ref{metodosteinfamespecial}, en \eqref{eqdiferencia6}, por lo que 
 \begin{equation}\label{eqdiferencia7}
-      \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}\leq C(\abs{F}+1)\norm{1-D_vF}_2
+      \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}\leq \norm{C(\abs{F}+1)}_2\norm{1-D_vF}_2
 \end{equation}
-Finalmente, tenemos que $|F|\leq 1$ y $C\leq 1$, por lo que \eqref{eqdiferencia7} se convierte en 
+Finalmente, tenemos que $\norm{F}_2^2 = \E\left[F^2\right] = 1$ y $C\leq 1$, por lo que \eqref{eqdiferencia7} se convierte en 
 \begin{equation}\label{eqdiferencia8}
-   \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}\leq2\norm{1-D_vF}.
+   \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}\leq2\norm{1-D_vF}_2.
 \end{equation}
 Combinando las desigualdades \eqref{eqdiferencia3}, \eqref{eqdiferencia4} y \eqref{eqdiferencia7}, tenemos para $x\in \R$,
 \begin{align*}
-   \abs{f_F(x)-\Phi(x)}&\leq \norm{F}_4\norm{(D_vF)^{-1}}_4\norm{1-D_uF}_2+\norm{D_uD_uF}_2\norm{(D_uF)^{-1}}_4^{2}+2\norm{1-D_vF}\\
+   \abs{f_F(x)-\Phi(x)}&\leq \norm{F}_4\norm{(D_vF)^{-1}}_4\norm{1-D_uF}_2+\norm{D_uD_uF}_2\norm{(D_uF)^{-1}}_4^{2}+2\norm{1-D_vF}_2\\
    &=\left(\|F\|_4\|\left(D_vF\right)^{-1}\|_4+2\right)\|1-D_vF\|_2+\|\left(D_vF\right)^{-1}\|_4^{2}\|D_v \left(D_vF\right)\|_2.   
 \end{align*}
 
@@ -1954,13 +1963,11 @@ Tal y como se comentó al inicio de la sección, el resultado anterior resulta s
 
 Hasta aquí llega nuestro estudio del método de Stein y de la existencia de la densidad de una variable aleatoria bajo ciertas condiciones de la misma. Es de destacar que el estudio realizado es solamente una pequeñísima parte de la vanguardia de ambos temas. Por un lado las ecuaciones de Stein unidimensionales han sido ampliamente estudiadas, mientras que el estudio de existencia de densidades también se encuentra profundizado hoy en día, de acuerdo con \cite{Nourdin_Peccati_2012}. 
 
-En lo que a este texto respecta, la herramienta necesaria para abordar el problema planteado al inicio ha sido cubierta en su totalidad, por lo que en lo que resta, nos enfocaremos en el mismo.
+En lo que a este texto respecta, la herramienta necesaria para abordar el problema planteado al inicio ha sido cubierta en su totalidad, por lo que en lo que resta, nos enfocaremos en estudiar dicho problema.
 
 
 \chapter{Propiedades espaciales de la Ecuación estocástica del calor}
-En este capítulo presentamos en su plenitud el problema planteado al inicio de este texto, el cual consiste en estudiar la convergencia de las densidades de los promedios espaciales de la solución a la ecuación estocástica del calor, bajo ciertas condiciones, a la densidad de una variable aleatoria normal estándar $\Phi$, usando la distancia uniforme entre funciones en $\R$.
-
-Ahora que contamos con las herramientas necesarias para abordar nuestro problema, procedemos a enunciarlo de manera rigurosa. Este capítulo está completamente basado en \cite[pp. 68-71, 75-86]{KUZGUN202268}. Consideremos nuevamente el problema del calor \eqref{shedefinitiva},
+En este capítulo presentamos en su plenitud el problema planteado al inicio de este texto. Ahora que contamos con las herramientas necesarias para abordar nuestro problema, procedemos a enunciarlo de manera rigurosa. Este capítulo está completamente basado en \cite[pp. 68-71, 75-86]{KUZGUN202268}. Consideremos nuevamente el problema del calor \eqref{shedefinitiva},
 \begin{equation*}
    \begin{cases}
       \partial_t u=\frac{1}{2}\partial_{xx}u+\sigma(u)\dot{W}, & \qquad \forall x\in \R, \ \forall t>0,\\
@@ -1969,15 +1976,15 @@ Ahora que contamos con las herramientas necesarias para abordar nuestro problema
 \end{equation*}
 donde $\dot{W}$ es un ruido blanco en $[0,\infty)\times\R$, y $\sigma$ es una función Lipschitz tal que $\sigma(1)\neq 0$.
 
-Nos referiremos a este como nuestro problema principal, y siempre que hagamos referencia a él, entenderemos que las hipótesis sobre $u_0$ y $\sigma$ anteriormente mencionadas se satisfacen. También a lo largo de este capítulo escribiremos a la densidad de una variable gaussiana de varianza $t>0$ como
+Nos referiremos a este como nuestro problema principal, y siempre que hagamos referencia a él, entenderemos que las hipótesis sobre $u_0$ y $\sigma$ anteriormente mencionadas se satisfacen. También, a lo largo de este capítulo, escribiremos a la densidad de una variable gaussiana centrada y de varianza $t>0$ como
 \[
 p_t(x):=\frac{1}{\sqrt{2\pi t}}e^{-x^2/2t}, \qquad \forall x\in \R.
 \]
-% Tal y como hemos mencionado, la existencia y la unicidad de la solución mild a la ecuación estocástica del calor ha sido ya demostrada desde la década de los ochentas en el caso en que la condición inicial $u_0$ es una función acotada y la función $\sigma$ es Lipschitz continua (ver, por ejemplo, \cite{Walsh_J.B_Introduction_to_SPDEs}). 
+% Tal y como hemos mencionado, la existencia y la unicidad de la solución mild a la ecuación del calor estocástica ha sido ya demostrada desde la década de los ochentas en el caso en que la condición inicial $u_0$ es una función acotada y la función $\sigma$ es Lipschitz continua (ver, por ejemplo, \cite{Walsh_J.B_Introduction_to_SPDEs}). 
 
 Del capítulo 1 tenemos garantizada la existencia y unicidad de un campo aleatorio  $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ que funge como solución al problema anterior. 
 
-Como mencionamos en dicho capítulo, diremos que $u$ es la \textit{solución mild} al problema \eqref{shedefinitiva}. Con dicha solución al alcance, la cual es de naturaleza estocástica, nos interesamos ahora por en el comportamiento asintótico de un nuevo objeto construido a partir de la misma: los \textit{promedios espaciales}. Estos objetos, en nuestro contexto, se definen a continuación. 
+Como mencionamos en dicho capítulo, diremos que $u$ es la \textit{solución mild} al problema \eqref{shedefinitiva}. Con dicha solución al alcance, la cual es de naturaleza estocástica, nos interesamos ahora por el comportamiento asintótico de un nuevo objeto construido a partir de la misma: los \textit{promedios espaciales}. Estos objetos, en nuestro contexto, se definen de la siguiente manera:
 
 \begin{dfn}\label{defpromediosespaciales}
  Sea $u=\left\{u(t,x):(t,x)\in [0,\infty)\times\R\right\}$ la solución mild al problema \eqref{shedefinitiva}. Para $R>0$ fijo, definimos los promedios espaciales centrados y normalizados de $u$ como 
@@ -1985,13 +1992,16 @@ Como mencionamos en dicho capítulo, diremos que $u$ es la \textit{solución mil
    F_{R,t}:=\frac{1}{\sigma_{R,t}}\left(\int_{[-R,R]}u(t,x)dx -2R\right), \qquad \text{donde} \ \ \sigma^2_{R,t}:=\text{Var}\left(\int_{[-R,R]}u(t,x)dx\right).
 \end{equation*}
  \end{dfn}
-Nos referiremos a las variables $F_{R,t}$ simplemente como los promedios espaciales de la solución $u$, entendiéndolos siempre en el sentido de la definición anterior. Tal y como se mencionó al inicio, en \cite{HUANG20207170}, para un $t>0$ fijo, Huang, Nualart y Viitasaari estudian el comportamiento límite de las variables $F_{R,t}$ conforme $R$ tiende a infinito, siendo capaces de probar resultados tipo teorema central del límite para los promedios espaciales. Más aún, en dicha publicación, utilizando método de Stein junto con cálculo de Malliavin, se obtuvieron cotas superiores para la tasa de convergencia de $F_{R,t}$ a la distribución normal estándar en distancia de variación total. De manera precisa, los autores obtuvieron el siguiente resultado.
+Nos referiremos a las variables $F_{R,t}$ simplemente como los promedios espaciales de la solución $u$, entendiéndolos siempre en el sentido de la definición anterior.
+
+Tal y como se mencionó al inicio, en \cite{HUANG20207170}, para un $t>0$ fijo, Huang, Nualart y Viitasaari estudian el comportamiento límite de las variables $F_{R,t}$ conforme $R$ tiende a infinito, logrando probar resultados tipo teorema central del límite. Más aún, en dicha publicación, utilizando método de Stein y cálculo de Malliavin, se obtuvieron cotas superiores para la tasa de convergencia de $F_{R,t}$ a la distribución normal estándar en distancia de variación total. De manera precisa, los autores obtuvieron el siguiente resultado.
 
 \begin{teo} 
  Sean $u$ la solución mild al problema \eqref{shedefinitiva} y $Z\sim$ Normal(0,1). Supongamos que $\sigma_{R,t}>0$. Entonces existe una constante $C>0$ que depende solamente de $t$ tal que 
- \begin{equation}
-    d_{\text{TV}}(F_{R,t},N)\leq \frac{C}{\sqrt{R}}, \qquad \text{para }t>0 \ \text{ y } \ R\geq1.  
+ \begin{equation}\label{teohuang}
+    d_{\text{TV}}(F_{R,t},N)\leq \frac{C}{\sqrt{R}}, \qquad \text{para }t>0 \ \text{ y } \ R\geq1,  
  \end{equation}
+ para alguna $C>0$, independiente de $R$.
  \end{teo}
 En particular, los autores de \cite{HUANG20207170} resaltan que la condición $\sigma(1)\neq 0$ que aparece en el problema \eqref{shedefinitiva} implica que $\sigma_{R,t}>0$.
 
@@ -2007,18 +2017,18 @@ Supongamos también que, para algún $q>10$, se cumple que
 \[
 \E\left[\abs{\sigma(u(t,0))}^{-q}\right]<\infty.    
 \]
-Entonces para $t>0$ fijo, se tiene que para cualquier $R>0$, los promedios espaciales $F_{R,t}$ poseen una densidad continua y acotada $f_{F_{R,t}}$, y la distancia entre las densidades de los promedios espaciales y la densidad de la distribución normal satisface la siguiente cota.  
+Entonces para $t>0$ fijo, se tiene que para cualquier $R>0$, los promedios espaciales $F_{R,t}$ poseen una densidad continua y acotada $f_{F_{R,t}}$, y la distancia uniforme entre las densidades de los promedios espaciales y la densidad de la distribución normal satisface la siguiente cota.  
 \[
 \sup_{x\in \R} \abs{f_{F_{R,t}}(x)-\Phi(x)}\leq \frac{C_t}{\sqrt{R}},   
 \]
-donde $\Phi$ es la densidad de una variable aleatoria normal estándar y $C_t>0$ es una constante dependiente de $t$ y de $\sigma$.
+donde $\Phi$ es la densidad de una variable aleatoria normal estándar y $C_t>0$ es una constante dependiente de $t$ y de $\sigma$, pero independiente de $R$.
 \end{teo}
 
 Este capítulo, dedicado a la prueba de este último teorema, consiste en dos secciones. La primera la dedicamos a mostrar dos resultados clave para la prueba. El primero de ellos tiene que ver con una expresión para la segunda derivada de Malliavin de la solución al problema del calor $\eqref{shedefinitiva}$, mientras que el segundo tiene que ver con la existencia de los momentos inversos de la derivada de la misma. La segunda sección consiste en el cuerpo de la prueba como tal, y al inicio de ésta se describe como está estructurada.
 
 \section{Cotas para la primera y segunda derivada de la solución mild y existencia de momentos inversos}
 
-Tal y como se mencionó, estudiamos primero el comportamiento de la segunda derivada de la solución mild $u$ a la ecuación del calor \eqref{shedefinitiva}. Cabe mencionar que para lograrlo debemos basarnos en un resultado análogo para la primera derivada de $u$. Esto debido a que a partir del resultado para la primera derivada es que se llega al de la segunda derivada, además de ser necesario para la prueba del resultado principal. La proposición correspondiente a la primera derivada la enunciamos a continuación, y es adaptada de \cite[proposición 5.1]{Nualart2007}, y de \cite[sección 4.1]{KUZGUN202268} aunque con la notación de este texto, y directamente suponiendo que el término de deriva $b$ en \cite{Nualart2007} es cero.
+Estudiamos primero el comportamiento de la segunda derivada de la solución mild $u$ a la ecuación del calor \eqref{shedefinitiva}. Cabe mencionar que para lograrlo debemos basarnos en un resultado análogo para la primera derivada de $u$. Esto debido a que a partir del resultado para la primera derivada es que se llega al de la segunda derivada, además de ser necesario para la prueba del resultado principal. La proposición correspondiente a la primera derivada la enunciamos a continuación, y es adaptada de \cite[proposición 5.1]{Nualart2007}, y de \cite[sección 4.1]{KUZGUN202268} aunque con la notación de este texto, y directamente suponiendo que el término de deriva $b$ en \cite{Nualart2007} es cero.
 
 \begin{teo}\label{teocota1eraderivada}
    Sea $u$ la solución al problema \eqref{shedefinitiva}. Supongamos además que $\sigma:\R\to\R$ es de clase $C^1(\R,\R)$, y su derivada es una función Lipschitz y acotada. Entonces para cualquier $(t,x)\in [0,T]\times\R$, $u(t,x)\in\bigcap_{p\geq1}\D^{1,p}$ y además, la derivada de Malliavin cumple que 
@@ -2053,7 +2063,7 @@ Con el resultado anterior a la mano, procedemos a enunciar lo respectivo para la
 
    Tornamos nuestra atención a la existencia de los momentos inversos de la derivada de la solución $u$ al problema del calor \eqref{shedefinitiva}.
 \begin{teo}\label{teocotamomentosinversos}
-   Sea $u$ la solución mild a la ecuación estocástica del calor. Supongamos que $\sigma$ es Lipschitz. Sea $p\geq2$ fijo, $t>0$ y supongamos que existe un $q>5p$ tal que $\E\left[\abs{\sigma(u(t,0))}^{-2q}\right]<\infty$. Entonces existe una constante $R_0>0$ tal que 
+   Sea $u$ la solución mild a la ecuación del calor estocástica. Supongamos que $\sigma$ es Lipschitz. Sea $p\geq2$ fijo, $t>0$ y supongamos que existe un $q>5p$ tal que $\E\left[\abs{\sigma(u(t,0))}^{-2q}\right]<\infty$. Entonces existe una constante $R_0>0$ tal que 
    \begin{equation}\label{cotamomentosinversos}
       \sup_{R\geq R_0}\E\left[\abs{D_{v_{R,t}}F_{R,t}}^{-p}\right]<\infty.
    \end{equation}
@@ -2109,7 +2119,7 @@ Hemos mostrado que para $R>R_0$ y $t>0$, las hipótesis del teorema \ref{teocota
 Observamos dos sumandos en la desigualdad anterior. Mostramos a continuación que cada uno de estos sumandos está acotada por una cantidad proporcional a $1/\sqrt{R}$.
 \end{proofpart}
 \begin{proofpart}[Cota del primer sumando]
-Notemos primero que, de la relación \eqref{cotapromespacfundamental}, al ser $F_{R,t}\in \D^{2,6}$, y darse las contenciones $\D^{2,6}\subseteq \D^{2,4}\subseteq{L^{4}}(\Omega)$, se sigue que $\norm{F_{R,t}}_4<\infty$. Más aún, dicha cota es uniforme en $R$ gracias a \label{cotaunif}. Por otro lado, para $t>0$ y $R>R_0$ fijos, de \eqref{cotamomentosinversos} se sigue que 
+Notemos primero que, de la relación \eqref{cotapromespacfundamental}, al ser $F_{R,t}\in \D^{2,6}$, y darse las contenciones $\D^{2,6}\subseteq \D^{2,4}\subseteq{L^{4}}(\Omega)$, se sigue que $\norm{F_{R,t}}_4<\infty$. Más aún, dicha cota es uniforme en $R$ gracias a \ref{cotaunif}. Por otro lado, para $t>0$ y $R>R_0$ fijos, de \eqref{cotamomentosinversos} se sigue que 
 \begin{equation}\label{cotapromespacmomentosinversos}
    \norm{(D_{v_{R,t}}F_{R,t})^{-1}}_4=\E\left[\abs{\left(D_{v_{R,t}}F_{R,t}\right)^{-1}}^{4}\right]^{1/4}=\E\left[\abs{D_{v_{R,t}}F_{R,t}}^{-4}\right]^{1/4}<\infty,
 \end{equation}
@@ -2150,7 +2160,7 @@ por lo que tomando la derivada en dirección de $v_{R,t}$ definido en \eqref{vec
    &=\int_{[0,\infty)}\int_\R v_{R,t}D_{r,z}F_{R,t}dz dr\\
    &=\int_{[0,\infty)}\int_\R\left(\1_{[0,t]}(r)\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)\sigma(u(r,z))dx_1\right)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}D_{r,z}u(t,x_2)dx_2\right) dz dr\\
    &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)dx_1\right)\sigma(u(r,z))D_{r,z}u(t,x_2) dx_2dz dr\\
-   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(r,z)\sigma(u(r,z))D_{r,z}u(t,x_2) dx_2dz dr\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(r,z)\sigma(u(r,z))D_{r,z}u(t,x_2) dx_2dz dr.
 \end{align*}
 Haciendo un cambio de variables en esta última igualdad para simplificar notación, llegamos a que
 \begin{align*}
@@ -2160,64 +2170,64 @@ D_{v_{R,t}}F_{R,t}&=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,
 \begin{align*}
    D_{r,z}(D_{v_{R,t}}F_{R,t})&=\frac{1}{\sigma_{R,t}}D_{r,z}\left(\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma(u(s,y))D_{s,y}u(t,x) dx dy ds\right)\\
    &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)D_{r,z}\left(\sigma(u(s,y))D_{s,y}u(t,x)\right) dx dy ds\\
-   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma'(u(s,y))D_{r,z}u(s,y)D_{s,y}u(t,x)dx dy ds\\
-   & \ \ \ +\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma(u(s,y))D_{r,z}D_{s,y}u(t,x)dx dy ds
+   &=\frac{1}{\sigma_{R,t}}\int_{[r,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma'(u(s,y))D_{r,z}u(s,y)D_{s,y}u(t,x)dx dy ds\\
+   & \ \ \ +\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma(u(s,y))D_{r,z}D_{s,y}u(t,x)dx dy ds,
 \end{align*}
 Sacando nuevamente la derivada direccional, la expresión anterior nos lleva a las siguientes igualdades.
 \begin{align}
    D_{v_{R,t}}&(D_{v_{R,t}}F_{R,t})=\langle D_{r,z}\left(D_{v_{R,t}F_{R,t}}\right),v_{R,t}\rangle_{L^{2}([0,\infty)\times\R)}\notag\\
    &=\int_{[0,\infty)}\int_\R \left(\1_{[0,t]}(r)\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)\sigma(u(r,z))dx_1\right)\notag\\
-   &\ \ \ \ \cdot \left(\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma'(u(s,y))D_{r,z}u(s,y)D_{s,y}u(t,x)dx dy ds\right)dz dr\notag\\
+   &\ \ \ \ \cdot \left(\frac{1}{\sigma_{R,t}}\int_{[r,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma'(u(s,y))D_{r,z}u(s,y)D_{s,y}u(t,x)dx dy ds\right)dz dr\notag\\
    &\ \ \ +\int_{[0,\infty)}\int_\R \left(\1_{[0,t]}(r)\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)\sigma(u(r,z))dx_1\right)\notag\\
    &\ \ \ \ \cdot\left(\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_\R \int_{Q_R}\phi_{R,t}(s,y)\sigma(u(s,y))D_{r,z}D_{s,y}u(t,x)dx dy ds\right)dz dr\notag\\
-   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)dx_1\right)\notag\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{Q_R}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)dx_1\right)\notag\\
    &\ \ \ \ \cdot \left(\Sigma_{r,z}\phi_{R,t}(s,y)\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)D_{s,y}u(t,x)\right) dx dy dz ds dr\notag\\
-   &\ \ \ +\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R} \left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)dx_1\right)\notag\\
-   &\ \ \ \ \cdot\left(\Sigma_{r,z}\phi_{R,t}(s,y)\Sigma_{s,y}D_{r,z}D_{s,y}u(t,x)\right)dx dy dz ds dr\notag
+   &\ \ \ +\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{Q_R} \left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-r}(x_1-z)dx_1\right)\notag\\
+   &\ \ \ \ \cdot\left(\Sigma_{r,z}\phi_{R,t}(s,y)\Sigma_{s,y}D_{r,z}D_{s,y}u(t,x)\right)dx dy dz ds dr,\notag
    \end{align}
    y reconociendo las respectivas funciones $\phi_{R,t}$, llegamos a que 
    \begin{align}
-      D_{v_{R,t}}&(D_{v_{R,t}}F_{R,t})\notag\\
-      &=\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)D_{s,y}u(t,x)dx dy dz ds dr\label{pruebasumando1}\\ 
-   &\ \ \ +\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}D_{r,z}D_{s,y}u(t,x)dx dy dz ds dr,\label{pruebasumando2}
+      &D_{v_{R,t}}(D_{v_{R,t}}F_{R,t})\notag\\
+      &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)D_{s,y}u(t,x)dx dy dz ds dr\label{pruebasumando1}\\ 
+   &\ \ \ +\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}D_{r,z}D_{s,y}u(t,x)dx dy dz ds dr,\label{pruebasumando2}
 \end{align}
    donde hemos hecho uso múltiples veces del teorema de Fubini y de la notación previamente establecida. A continuación, utilizamos las fórmulas \eqref{formula1eraderivada} y \eqref{formula2daderivada} en los dos sumandos de la última igualdad anterior. Así, para el sumando \eqref{pruebasumando1}, sustituyendo la derivada $D_{s,y}u(t,x)$ se tiene la expresión
    \begin{align*}
-      \frac{1}{\sigma_{R,t}}&\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)D_{s,y}u(t,x)dx dy dz ds dr\\
-      &=\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\\
-      & \ \ \ \ \cdot\left(p_{t-s}(x-y)\Sigma_{s,y}+ \int_{[s,t]\times\R} p_{t-\tau}(x-\xi)\Sigma^{(1)}_{\tau,\xi}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dx dy dz ds dr\\
+      \frac{1}{\sigma_{R,t}}&\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)D_{s,y}u(t,x)dx dy dz ds dr\\
+      &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{Q_R}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\\
+      & \ \ \ \ \cdot\left(p_{t-s}(x-y)\Sigma_{s,y}+ \int_{[s,t]\times\R} p_{t-\tau}(x-\xi)\Sigma^{(1)}_{\tau,\xi}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dx dy dz ds dr,\\
    \end{align*}
    Distribuimos la suma anterior en la integral, por lo que 
    \begin{align}
-      \frac{1}{\sigma_{R,t}}&\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)D_{s,y}u(t,x)dx dy dz ds dr\notag\\
-      &=\int_{[0,t]^2}\int_{\R^2}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-s}(x-y)dx\right)\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\notag\\
-      & \ \ \ + \int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
+      \frac{1}{\sigma_{R,t}}&\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)D_{s,y}u(t,x)dx dy dz ds dr\notag\\
+      &=\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-s}(x-y)dx\right)\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\notag\\
+      & \ \ \ + \int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
       &\ \ \ \ \cdot\left(\int_{[s,t]\times\R} p_{t-\tau}(x-\xi)\Sigma^{(1)}_{\tau,\xi}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dx dy dz ds dr\notag\\
-      &=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\notag\\
-      & \ \ \ + \int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
+      &=\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\notag\\
+      & \ \ \ + \int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
       &\ \ \ \ \cdot\left(\int_{[s,t]\times\R} \left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t-\tau}(x-\xi)dx\right)\Sigma^{(1)}_{\tau,\xi}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dy dz ds dr\notag\\
-      &=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\label{pruebasumando3}\\
-      &\ \ \ + \int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
+      &=\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\label{pruebasumando3}\\
+      &\ \ \ + \int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
       &\ \ \ \ \cdot\left(\int_{[s,t]\times\R} \phi_{R,t}(\tau,\xi)\Sigma^{(1)}_{\tau,\xi}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dy dz ds dr\label{pruebasumando4}.
    \end{align}
 Haciendo lo respectivo para el sumando \eqref{pruebasumando2}, obtenemos las siguientes expresiones.
 \begin{align}
-   &\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}D_{r,z}D_{s,y}u(t,x)dx dy dz ds dr\notag\\
-   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\left( p_{t-s}(x-y)\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
+   &\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}D_{r,z}D_{s,y}u(t,x)dx dy dz ds dr\notag\\
+   &=\frac{1}{\sigma_{R,t}}\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{Q_R}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\left( p_{t-s}(x-y)\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\notag\\
    &\ \ \ +\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\left(\int_{[s,t]\times \R} p_{t-\tau}(x-\xi)\Sigma^{(2)}_{\tau,\xi}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)\notag\\
    &\ \ \ +\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y} \left(\int_{[s,t]\times \R}p_{t-\tau}(x-\xi)\Sigma^{(1)}_{\tau,\xi}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dx dy dz ds dr\notag\\
-   &=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R} p_{t-s}(x-y)dx\right)\notag\\
+   &=\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R} p_{t-s}(x-y)dx\right)\notag\\
    &\ \ \ +\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
    & \ \ \ \ \cdot\left(\int_{[s,t]\times \R} \left(\frac{1}{\sigma_{R,t}}\int_{Q_R} p_{t-\tau}(x-\xi)dx\right)\Sigma^{(2)}_{\tau,\xi}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)\notag\\
    &\ \ \ +\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
-   &\ \ \ \ \cdot \left(\int_{[s,t]\times \R}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R} p_{t-\tau}(x-\xi)dx\right)\Sigma^{(1)}_{\tau,\xi}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dy dz ds dr\notag
+   &\ \ \ \ \cdot \left(\int_{[s,t]\times \R}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R} p_{t-\tau}(x-\xi)dx\right)\Sigma^{(1)}_{\tau,\xi}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dy dz ds dr,\notag
 \end{align}
 Y nuevamente reconociendo los términos $\phi_{R,t}$, la expresión anterior es igual a
 \begin{align}
-   &\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\label{pruebasumando5}\\
-   &\ \ \ +\int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
+   &\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\label{pruebasumando5}\\
+   &\ \ \ +\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
    &\ \ \ \ \cdot\left(\int_{[s,t]\times \R} \phi_{R,t}(\tau,\xi)\Sigma^{(2)}_{\tau,\xi}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dy dz ds dr\label{pruebasumando6}\\
-   &\ \ \ +\int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
+   &\ \ \ +\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
    &\ \ \ \ \cdot\left(\int_{[s,t]\times \R}\phi_{R,t}(\tau,\xi)\Sigma^{(1)}_{\tau,\xi}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dy dz ds dr.\label{pruebasumando7}
 \end{align}
 Observamos que los términos \eqref{pruebasumando3} y \eqref{pruebasumando5} coinciden, mientras que el término $\phi_{R,t}(r,z)\phi_{R,t}(s,y)$ es común dentro de las integrales en las expresiones \eqref{pruebasumando4}, \eqref{pruebasumando6} y \eqref{pruebasumando7}. Luego, definiendo 
@@ -2228,30 +2238,30 @@ Observamos que los términos \eqref{pruebasumando3} y \eqref{pruebasumando5} coi
 \end{align*}
 y combinando las expresiones \eqref{pruebasumando3} a \eqref{pruebasumando7}, hallamos que la segunda derivada direccional de $F_{R,t}$ cumple
 \begin{align}
-   &D_{v_{R,t}}(D_{v_{R,t}}F_{R,t})=2\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\notag\\
-   &\ \ \ \ + \int _{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}^{(1)}D_{r,z}u(s,y)\right)\notag\\
+   &D_{v_{R,t}}(D_{v_{R,t}}F_{R,t})=2\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\notag\\
+   &\ \ \ \ + \int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}^{(1)}D_{r,z}u(s,y)\right)\notag\\
    & \ \ \ \ \cdot \left(\int_{[s,t]\times\R}\phi_{R,t}(\tau,\xi)\Sigma_{\tau,\xi}^{(1)}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dy dz ds dr\notag\\
-   &\ \ \ +\int _{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
+   &\ \ \ +\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
    &\ \ \ \ \cdot \left(\int_{[s,t]\times\R}\phi_{R,t}(\tau,\xi)\Sigma_{\tau,\xi}^{(2)}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dy dz ds dr\notag\\
-   &\ \ \ +\int _{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
+   &\ \ \ +\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
    &\ \ \ \ \cdot \left(\int_{[s,t]\times\R}\phi_{R,t}(\tau,\xi)\Sigma_{\tau,\xi}^{(21)}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dy dz ds dr,\notag
 \end{align}
 y denotando por comodidad la primera integral de la suma anterior como $\mathcal{Y}_{R,t}^{(1)}$,
 \begin{align}
    &D_{v_{R,t}}(D_{v_{R,t}}F_{R,t})\notag\\
    &=\mathcal{Y}_{R,t}^{(1)}+\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\notag\\
-   & \ \ \ \ \cdot \left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\left[\Sigma_{r,z}\Sigma_{s,y}^{(1)}\Sigma_{\tau,\xi}^{(1)}D_{r,z}u(s,y)D_{s,y}u(\tau,\xi)\right]dy dz ds dr\right) W(d\tau,d\xi)\notag\\
+   & \ \ \ \ \cdot \left(\int_{[0,\tau]}\int_{[r,\tau]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\left[\Sigma_{r,z}\Sigma_{s,y}^{(1)}\Sigma_{\tau,\xi}^{(1)}D_{r,z}u(s,y)D_{s,y}u(\tau,\xi)\right]dy dz ds dr\right) W(d\tau,d\xi)\notag\\
    &\ \ \ +\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\notag\\
-   &\ \ \ \ \cdot\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\left[\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(2)}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)\right]dy dz ds dr\right) W(d\tau,d\xi)\notag\\
+   &\ \ \ \ \cdot\left(\int_{[0,\tau]}\int_{[r,\tau]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\left[\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(2)}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)\right]dy dz ds dr\right) W(d\tau,d\xi)\notag\\
    &\ \ \ +\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\notag\\
-   &\ \ \ \ \cdot\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\left[\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(1)}D_{r,z}D_{s,y}u(\tau,\xi)\right]dy dz ds dr\right) W(d\tau,d\xi)\notag\\
-   &=\mathcal{Y}_{R,t}^{(1)}+\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)W(d\tau,d\xi)\notag\\
+   &\ \ \ \ \cdot\left(\int_{[0,\tau]}\int_{[r,\tau]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)\left[\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(1)}D_{r,z}D_{s,y}u(\tau,\xi)\right]dy dz ds dr\right) W(d\tau,d\xi)\notag\\
+   &=\mathcal{Y}_{R,t}^{(1)}+\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,\tau]}\int_{[r,\tau]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)W(d\tau,d\xi)\notag\\
    &=2\mathcal{Y}_{R,t}^{(1)}+\mathcal{Y}_{R,t}^{(2)},\label{pruebasumando8}
 \end{align}
 en donde convenimos que
 \begin{align*}
-   &\mathcal{Y}_{R,t}^{(1)}:=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\\
-   &\mathcal{Y}_{R,t}^{(2)}:=\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)W(d\tau,d\xi),
+   &\mathcal{Y}_{R,t}^{(1)}:=\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\\
+   &\mathcal{Y}_{R,t}^{(2)}:=\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,\tau]}\int_{[r,\tau]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)W(d\tau,d\xi),
 \end{align*}
 y donde nuevamente se ha usado múltiples veces del teorema de Fubini y la notación previamente establecida. Una vez que llegamos a este punto, buscamos acotar cada uno de los sumandos de \eqref{pruebasumando8}. 
 
@@ -2285,30 +2295,30 @@ en donde $C^{(5)}_T>0$ es una constante que solo depende de $T>0$ y $\sigma$. In
 \end{equation}
  donde $C_T^{(6)}:=C_T^{(5)}\cdot C_T^{(3)}$. Obtenida esta cota, procedemos a extraer la norma $L^{2}(\Omega)$ de $\mathcal{Y}_{R,t}^{(1)}$. Obtenemos así las siguientes relaciones.
  \begin{align*}
-   &\norm{\mathcal{Y}_{R,t}^{(1)}}_2=\left(\int_\Omega \left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\right)^2d\P\right)^{1/2}\\
-   &=\Bigg(\int_\Omega\int_{[0,t]^2}\int_{\R^2}\int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\\
+   &\norm{\mathcal{Y}_{R,t}^{(1)}}_2=\left(\int_\Omega \left(\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\right)^2d\P\right)^{1/2}\\
+   &=\Bigg(\int_\Omega\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{[0,t]}\int_{[r',t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\right)\\
    &\ \ \ \ \cdot \left(\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\Sigma_{r',z'}\Sigma_{s',y'}\Sigma^{(1)}_{s',y'}D_{r',z'}u(s',y')\right)dy dz ds dr dy' dz'ds'dr'd\P\Bigg)^{1/2}\\
-   &=\Bigg(\int_{[0,t]^2}\int_{\R^2}\int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\right)\\
+   &=\Bigg(\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{[0,t]}\int_{[r',t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\right)\\
    &\ \ \ \ \cdot \left(\int_\Omega\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)\Sigma_{r',z'}\Sigma_{s',y'}\Sigma^{(1)}_{s',y'}D_{r',z'}u(s',y')\right) dy dz ds dr dy'dz'ds'dr'd\P\Bigg)^{1/2}.
  \end{align*}
  Usando ahora la desigualdad de Cauchy-Schwarz, 
  \begin{align*}
-   \norm{\mathcal{Y}_{R,t}^{(1)}}_2&\leq \Bigg(\int_{[0,t]^2}\int_{\R^2}\int_{[0,t]^2}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\right)\\
+   \norm{\mathcal{Y}_{R,t}^{(1)}}_2&\leq \Bigg(\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\int_{[0,t]}\int_{[r',t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\right)\\
    &\ \ \ \ \cdot \left(\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2\norm{\Sigma_{r',z'}\Sigma_{s',y'}\Sigma^{(1)}_{s',y'}D_{r',z'}u(s',y')}_2\right) dy dz ds dr dy' dz' ds' dr'\Bigg)^{1/2}\\
-   &=\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dy dz ds dr\right)^{1/2}\\
-   & \ \ \ \ \ \cdot \left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\norm{\Sigma_{r',z'}\Sigma_{s',y'}\Sigma^{(1)}_{s',y'}D_{r',z'}u(s',y')}_2dy'dz'ds'dr'\right)^{1/2}\\
-   &=\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dy dz ds dr.
+   &=\left(\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dy dz ds dr\right)^{1/2}\\
+   & \ \ \ \ \ \cdot \left(\int_{[0,t]}\int_{[r',t]}\int_{\R^2}\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\norm{\Sigma_{r',z'}\Sigma_{s',y'}\Sigma^{(1)}_{s',y'}D_{r',z'}u(s',y')}_2dy'dz'ds'dr'\right)^{1/2}\\
+   &=\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dy dz ds dr.
  \end{align*}
  Usamos ahora \eqref{pruebacotasigma4} en la última desigualdad anterior para obtener que
  \begin{align*}
-   \norm{\mathcal{Y}_{R,t}^{(1)}}_2&\leq\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dy dz ds dr\\
-   &\leq C^{(6)}_T\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)p_{s-r}(y-z)dy dz ds dr.
+   \norm{\mathcal{Y}_{R,t}^{(1)}}_2&\leq\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dy dz ds dr\\
+   &\leq C^{(6)}_T\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)p_{s-r}(y-z)dy dz ds dr.
 \end{align*}
 En esta última expresión integramos sobre $z$ y expandimos el término $\phi_{R,t}(r,z)$ para hallar que 
 \begin{align*}
-   \norm{\mathcal{Y}_{R,t}^{(1)}}_2&\leq C^{(6)}_T\int_{[0,t]^2}\int_{\R}\phi_{R,t}^2(s,y)\left(\int_\R\phi_{R,t}(r,z)p_{s-r}(z-y)dz\right)dy ds dr\\
-   &=C^{(6)}_T\int_{[0,t]^2}\int_{\R}\phi_{R,t}^2(s,y)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}\int_\R p_{t-r}(x-z)p_{s-r}(z-y)dz dx\right)dy ds dr\\
-   &=C^{(6)}_T\int_{[0,t]^2}\int_{\R}\phi_{R,t}^2(s,y)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t+s-2r}(x-y)dx\right)dy ds dr,
+   \norm{\mathcal{Y}_{R,t}^{(1)}}_2&\leq C^{(6)}_T\int_{[0,t]}\int_{[r,t]}\int_{\R}\phi_{R,t}^2(s,y)\left(\int_\R\phi_{R,t}(r,z)p_{s-r}(z-y)dz\right)dy ds dr\\
+   &=C^{(6)}_T\int_{[0,t]}\int_{[r,t]}\int_{\R}\phi_{R,t}^2(s,y)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}\int_\R p_{t-r}(x-z)p_{s-r}(z-y)dz dx\right)dy ds dr\\
+   &=C^{(6)}_T\int_{[0,t]}\int_{[r,t]}\int_{\R}\phi_{R,t}^2(s,y)\left(\frac{1}{\sigma_{R,t}}\int_{Q_R}p_{t+s-2r}(x-y)dx\right)dy ds dr,
 \end{align*}
 donde hemos hecho uso de la propiedad de semigrupo del núcleo del calor $(p_t)_{t\geq0}$ en la última igualdad. Claramente se tiene que 
 \[
@@ -2316,11 +2326,11 @@ donde hemos hecho uso de la propiedad de semigrupo del núcleo del calor $(p_t)_
 \]
 por lo que insertando esta última desigualdad en la anterior, llegamos a que 
 \[
-\norm{\mathcal{Y}_{R,t}^{(1)}}_2\leq \frac{C_T^{(6)}}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R}\phi_{R,t}^2(s,y).
+\norm{\mathcal{Y}_{R,t}^{(1)}}_2\leq \frac{C_T^{(6)}}{\sigma_{R,t}}\int_{[0,t]}\int_{[r,t]}\int_{\R}\phi_{R,t}^2(s,y).
 \]
 Utilizando el lema \ref{LemaA.4a}, obtenemos que existe un $R_0\geq1$ dependiente de $t>0$ tal que para cualquier $R\geq R_0$,
 \[
-   \frac{C_T^{(6)}}{\sigma_{R,t}}\int_{[0,t]^2}\int_{\R}\phi_{R,t}^2(s,y)\leq \frac{C_T^{(6)}}{\sigma_{R,t}}\int_{[0,t]^2}C_t ds dr\leq \frac{C_t^{(7)}}{\sigma_{R,t}},
+   \frac{C_T^{(6)}}{\sigma_{R,t}}\int_{[0,t]}\int_{[r,t]}\int_{\R}\phi_{R,t}^2(s,y)\leq \frac{C_T^{(6)}}{\sigma_{R,t}}\int_{[0,t]}\int_{[r,t]}C_t ds dr\leq \frac{C_t^{(7)}}{\sigma_{R,t}},
 \]
 por lo que tenemos la siguiente cota que es uniforme en $R$,
 \[
@@ -2330,20 +2340,20 @@ Finalmente, utilizamos el lema \ref{lemaA.3a}, para argumentar que, como $\tfrac
 \begin{equation}\label{cotafinal1}
       \norm{\mathcal{Y}_{R,t}^{(1)}}_2\leq \frac{C_t^{(7)}}{\sigma_{R,t}}=\frac{C_t^{(7)}}{\sqrt{\frac{\sigma_{R,t}^2}{R}}\sqrt{R}}\leq \frac{C_t^{(8)}}{\sqrt{R}},  
 \end{equation}
-en donde $C_t^{(8)}$ es una constante que depende de $C_t^{(7)}$ y de la integral en $[0,t]$ de $\xi$, función que es independiente de $y$, y por ende tanto la integral como la constante $C_t^{(8)}$ sólo dependen de $t$.
+en donde $C_t^{(8)}$ es una constante que depende de $C_t^{(7)}$ y de la integral en $[0,t]$ de $\xi$, función que es independiente de $y$, y por ende tanto la integral como la constante $C_t^{(8)}$ sólo dependen de $t$. Es menester comentar que para el uso del lema \ref{lemaA.3a} y garantizar la validez de la cota anterior, la función $\sigma$ debe ser cumplir que la esperanza de la misma evaluada en $u$ sea distinta de cero. Dicha condición bien puede ser exigida como parte de las hipótesis del teorema.  
 
-Procedemos ahora a estimar el término $\mathcal{Y}_{R,t}^{(2)}$. Extrayendo el cuadrado de la norma $L^{2}(\Omega)$ de dicho término, y utilizando la isometría de Itô-Walsh, tenemos las siguientes igualdades.
+Procedemos ahora a estimar el término $\mathcal{Y}_{R,t}^{(2)}$. Extrayendo el cuadrado de la norma $L^{2}(\Omega)$ de dicho término, y utilizando la isometría de Itô-Walsh (análoga a la isometría de Itô en cálculo estocástico usual), tenemos las siguientes igualdades.
 \begin{align*}
-   &\norm{\mathcal{Y}_{R,t}^{(2)}}_2^{2}=\norm{\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)W(d\tau,d\xi)}_2^2\\
-   &=\E\left[\left(\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)W(d\tau,d\xi)\right)^2\right]\\
-   &=\E\left[\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)^2d\xi d\tau\right]\\
-   &=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\E\left[\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)^2\right]d\xi d\tau.
+   &\norm{\mathcal{Y}_{R,t}^{(2)}}_2^{2}=\norm{\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,\tau]}\int_{[r,\tau]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)W(d\tau,d\xi)}_2^2\\
+   &=\E\left[\left(\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\left(\int_{[0,\tau]}\int_{[r,\tau]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)W(d\tau,d\xi)\right)^2\right]\\
+   &=\E\left[\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\left(\int_{[0,\tau]}\int_{[r,\tau]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)^2d\xi d\tau\right]\\
+   &=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\E\left[\left(\int_{[0,\tau]}\int_{[r,\tau]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)^2\right]d\xi d\tau.
 \end{align*}
 Reescribiendo el cuadrado de la integral anterior, tenemos que 
 \begin{align*}
-   &\norm{\mathcal{Y}_{R,t}^{(2)}}_2^{2}=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\E\left[\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)^2\right]d\xi d\tau\\
-   &=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\E\Bigg[\left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r_1,z_1)\phi_{R,t}(s_1,y_1)Z_{r_1,z_1,s_1,y_1}(\tau,\xi)dy_1dz_1ds_1dr_1\right)\\
-   &\ \ \ \ \cdot \left(\int_{[0,t]^2}\int_{\R^2}\phi_{R,t}(r_2,z_2)\phi_{R,t}(s_2,y_2)Z_{r_2,z_2,s_2,y_2}(\tau,\xi)dy_2dz_2ds_2dr_2\right)\Bigg]d\xi d\tau\\
+   &\norm{\mathcal{Y}_{R,t}^{(2)}}_2^{2}=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\E\left[\left(\int_{[0,\tau]}\int_{[r,\tau]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}(s,y)Z_{r,z,s,y}(\tau,\xi)dy dz ds dr\right)^2\right]d\xi d\tau\\
+   &=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\E\Bigg[\left(\int_{[0,\tau]}\int_{[r_1,\tau]}\int_{\R^2}\phi_{R,t}(r_1,z_1)\phi_{R,t}(s_1,y_1)Z_{r_1,z_1,s_1,y_1}(\tau,\xi)dy_1dz_1ds_1dr_1\right)\\
+   &\ \ \ \ \cdot \left(\int_{[0,\tau]}\int_{[r_2,\tau]}\int_{\R^2}\phi_{R,t}(r_2,z_2)\phi_{R,t}(s_2,y_2)Z_{r_2,z_2,s_2,y_2}(\tau,\xi)dy_2dz_2ds_2dr_2\right)\Bigg]d\xi d\tau\\
    &=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\int_{0\leq r_1\leq s_1\leq \tau}\int_{0\leq r_2\leq s_2\leq \tau}\int_{\R^4}\phi_{R,t}(r_1,z_1)\phi_{R,t}(s_1,y_1)\phi_{R,t}(r_2,z_2)\phi_{R,t}(s_2,y_2)\\
    &\ \ \ \ \cdot \E\left[Z_{r_1,z_1,s_1,y_1}(\tau,\xi)Z_{r_2,z_2,s_2,y_2}(\tau,\xi)\right]dy_1dz_1ds_1dr_1dy_2dz_2ds_2dr_2d\xi d\tau,
 \end{align*}
@@ -2470,7 +2480,7 @@ donde $C_t$ es una constante positiva que depende solo de $t>0$ y de $\sigma$, c
 
 % % % \end{teo}
 % % % \begin{proof} 
-% % %   Vamos a denotar por $F_R$ a los promedios espaciales de la ecuación estocástica del calor, y directamente por $\sigma$ a la varianza de los promedios espaciales.
+% % %   Vamos a denotar por $F_R$ a los promedios espaciales de la ecuación del calor estocástica, y directamente por $\sigma$ a la varianza de los promedios espaciales.
 
 % % %   Buscamos hallar una cota uniforme para $x\in \R$ para las siguientes cantidades
 % % %   \[
@@ -2561,7 +2571,41 @@ donde $C_t$ es una constante positiva que depende solo de $t>0$ y de $\sigma$, c
 %\section{Aproximación uniforme de las densidades} %La sección integradora de los conceptos
 
 \chapter{Conclusiones y trabajo futuro}
-dfasdf
+El trabajo presente tuvo como objetivo estudiar brevemente los tópicos correspondientes a ecuaciones diferenciales parciales estocásticas, cálculo de Malliavin, método de Stein y existencia de densidades. Todo esto con la finalidad de presentar y demostrar el teorema \ref{teoremaprincipal}. 
+
+Como fue mencionado al inicio, siempre que fue posible las fuentes de las ideas se citaron al inicio de cada capítulo, sección o resultado. La contribución hecha reside principalmente en la búsqueda de una exposición amigable de estos tópicos. Destaca también el intento de <<desmenuzar>> la prueba del teorema principal para hacerlo más accesible, tratando de reunir el material necesario para el entendimiento y la realización de la prueba de dicho teorema.
+
+Lo anterior se materializó en realizar con más detalle las justificaciones a algunas relaciones o cálculos que involucran a las integrales estocásticas y de Lebesgue, así como a los argumentos de algunos teoremas. Como ejemplos particulares de lo anterior hallamos la prueba del teorema \ref{teocotafundamental}, la cual fue realizada con bastante detalle, o bien el uso del lema \ref{lemaA.3a} en la prueba del teorema principal, en el cual se debe destacar la importancia de que $\sigma$ sea una función tal que su esperanza sea distinta de cero $\P$ casi seguramente para garantizar que el límite esté bien definido y por lo tanto estar seguros de la validez de la cota \eqref{cotafinal1}.
+
+A pesar de lo anterior, y como fue dicho a lo largo del texto en múltiples ocasiones, un estudio exhaustivo de cada uno de los tópicos involucrados en este trabajo estuvo siempre fuera del objetivo del mismo por motivos tanto temporales como de la naturaleza propia de esta tesis, por lo que aspectos particulares como la prueba de los lemas del apéndice o de los lemas de la sección 3.2, la prueba de la existencia de los momentos inversos \eqref{cotamomentosinversos}, o la cota \eqref{cota2daderivada} han quedado fuera.
+
+Concluimos este último capítulo, y el cuerpo principal de este texto reuniendo algunas ideas en cuanto a lo que respecta a trabajo en otras direcciones, así como trabajo futuro del tópico tratado. Dado que existen múltiples posibilidades, a continuación mencionamos algunas de ellas.
+
+\begin{itemize}
+   \item \textbf{Superconvergencia.} Una vez que ha sido establecida la convergencia uniforme de las densidades de los promedios espaciales $f_{F_{R,t}}$ a la densidad de una normal $\Phi$, podemos preguntarnos ¿qué sucede con la convergencia de sus derivadas? ¿Se puede decir algo sobre la regularidad de las densidades? Esta es una pregunta que ha sido planteada en otros tópicos partiendo del fenómeno de \textit{superconvergencia}, visto por primera vez en el teorema central del límite para probabilidad libre en 1995.
+   
+   Usando las herramientas provistas por el cálculo de Malliavin, este problema bien podría ser abordado a partir del trabajo hecho en este texto, por lo que a propósito es ubicado como primer posible trabajo a futuro.
+   \item \textbf{Expansiones de Edgeworth.} Entrados en el estudio de la regularidad de las densidades $f_{F_{R,t}}$, podemos preguntarnos por la posibilidad de realizar una expansión de Edgeworth de la distribución normal, de tal forma que la conclusión del teorema principal, a saber, la cota 
+   \[
+   \sup_{x\in \R} \abs{f_{F_{R,t}}(x)-\Phi(x)}\leq \frac{C_t}{\sqrt{R}},
+   \]
+   pueda ser refinada en términos de $R$, añadiendo \textit{términos correctivos} en la distancia uniforme de las densidades. Normalmente bajo hipótesis de regularidad de las densidades es que es posible añadir dichos términos correctivos.
+
+   \item \textbf{La ecuación estocástica de onda.} Porsupuesto que, entre las ecuaciones diferenciales parciales famosas, se encuentra la ecuación de onda. Es natural preguntarse por lo que sucede en este escenario. Es de destacar que, por mucho que las ecuaciones <<se parezcan>>, el comportamiento de las soluciones clásicas a ambas ecuaciones es bastnte distinto, por lo que se podría esperar algo similar en el caso estocástico. Existe trabajo en esta dirección, tal y como se puede ver en \cite{tudor2024spatialaveragesolutionsspdes}, donde los autores lograron establecer una tasa de convergencia de los promedios espaciales de la solución a la ecuación de onda estocástica perturbada con un ruido blanco, a la distribución normal, utilizando la distancia de Wasserstein.
+   
+   Restaría estudiar qué sucede con la existencia de las densidades de los promedios espaciales, y su comportamiento asintótico.
+
+   \item \textbf{Otras versiones de la ecuación.} Si bien la ecuación de onda estocástica es la primera ecuación a la cual tornamos nuestra atención al intentar trasladar los resultados de este texto, otras ecuaciones o bien otras condiciones resultan interesantes de explorar.
+    
+   Tal es el caso del modelo \textit{Parabolic Anderson} con condición inicial $u_0(x)=\delta_0(x)$, de la ecuación del calor con laplaciano faccionario o de la ecuación del calor estocástica en un dominio distinto y que obligue a imponer condiciones de frontera que bien podrían alterar la dinámica estocástica de los promedios espaciales a largo plazo (por ejemplo, la ecuación del calor en $[0,\infty)\times [0,\infty)$), entre otros. En la dirección del modelo Parabolic Anderson, el mismo artículo de Kuzgun y Nualart \cite{KUZGUN202268} lo trabaja. En cuanto a la ecuación del calor con laplaciano fraccionario se puede encontrar en \cite{zhang2023convergence} trabajo en el cual los autores, basándose precisamente en el artículo de Kuzgun y Nualart mencionado, logran establecer resultados análogos al teorema principal en tres casos distintos. 
+
+   \item \textbf{Ley de grandes números y grandes desviaciones.} Otra dirección en la cual se puede reflexionar, es el estudio de los otros conjuntos de resultados clásicos de probabilidad: la ley de grandes números y grandes desviaciones, pero adaptado al contexto de los promedios espaciales de la ecuación del calor estocástica. En este sentido, el trabajo hecho en \cite{ebina2024largedeviationsspatialaverage} muestra que las distribuciones de los promedios espaciales de las soluciones a la ecuación del calor estocástica del calor y de onda cumplen el principio de grandes desviaciones conforme el intervalo donde se promedia tiende a infinito.
+   \item \textbf{Otros ruidos, procesos gaussianos más generales.} En el texto presente tratamos una ecuación del calor que esutvo perturbada por un ruido blanco. Sin embargo, podríamos pensar en un ruido coloreado como es el caso del artículo de Kuzgun y Nualart \cite{doi:10.1080/17442508.2023.2238954}, el cual de hecho trata la convergencia de las densidades de los promedios espaciales en el caso del modelo Parabolic Anderson. La posibilidad de perturbar ahora la ecuación del calor pero con otros procesos Gaussianos, tales como un movimiento browniano fraccionario, una sábana browniana, o incluso pensar en la posibilidad de perturbar la ecuación con procesos con saltos, procesos de Levy, y otros. Dada la naturaleza de estos últimos procesos, las técnicas del cálculo de Malliavin para distribuciones Poisson serían fundamentales para llevar a cabo el estudio.
+   \item \textbf{Versiones funcionales.} Ya en \cite{HUANG20207170}, se puede vislumbrar una versión funcional del teorema que da origen a la cota \eqref{teohuang}. En \cite{Chen2023}, se presentan más resultados del tipo teoremas central del límite cuantitativos para los promedios espacialies de la solución a la ecuación del calor estocástica. En particular, se establecen versiones funcionales de dichos teoremas centrales del límite, además de un teorema central del límite para la solución \textit{Hopf-Cole} de la ecuación \textit{KPZ}. Por lo tanto, una dirección en la cual reflexionar sobre trabajo futuro sería llevar la convergencia de las densidades a una versión funcional.
+   \item \textbf{Otros objetos que resuman información de la solución.}
+   Se ha trabajado en este texto, y en todas las referencias dadas arriba, con los promedios espaciales de la solución a una SPDE. Aunque ciertamente los promedios espaciales resultan ser en cierta forma similares a una suma i.i.d. de variables independientes, y por lo tanto es esperable un comportamiento similar al teorema central de límite usual, otros objetos podrían comportarse de manera similar. 
+\end{itemize}
+Como es de notar, el uso de las técnicas del cálculo de Malliavin junto con el método de Stein para deducir teoremas límite en el contexto de ecuaciones diferenciales parciales estocásticas es esencial, manteniéndose como una área bastante activa en la actualidad en el mundo de la probabilidad.
 \appendix
 \chapter{Resultados técnicos}
 En este apéndice colocamos los tres resultados técnicos utilizados en la tercera parte de la prueba del resultado principal \ref{teoremaprincipal} de este texto.  Específicamente, los lemas A.1, A.2 y A.3 de este apéndice corresponden respectivamente a los lemas A.2 parte (a), A.3 parte (a) y A.4 parte (a), del apéndice presente en el artículo de \c{S}efika Kuzgun y David Nualart \cite{KUZGUN202268}. Las pruebas del lema A.1 y A.3 se pueden encontrar en el artículo antes mencionado, mientras que la prueba del lema A.2 se puede encontrar en \cite[proposición 3.1]{HUANG20207170}.

@@ -7,45 +7,46 @@ The style file: amsplain.bst
 Database file #1: build/Referencias_tesis.bib
 Warning--missing pages in ChenDalang2014
 Warning--can't use both author and editor fields in Khoshnevisan2009
-You've used 14 entries,
+Warning--missing pages in zhang2023convergence
+You've used 19 entries,
             2213 wiz_defined-function locations,
-            599 strings with 6392 characters,
-and the built_in function-call counts, 4106 in all, are:
-= -- 350
-> -- 165
+            624 strings with 7305 characters,
+and the built_in function-call counts, 5498 in all, are:
+= -- 469
+> -- 232
 < -- 0
-+ -- 69
-- -- 51
-* -- 323
-:= -- 670
-add.period$ -- 14
-call.type$ -- 14
-change.case$ -- 67
++ -- 97
+- -- 73
+* -- 438
+:= -- 891
+add.period$ -- 19
+call.type$ -- 19
+change.case$ -- 94
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 179
-empty$ -- 382
-format.name$ -- 51
-if$ -- 868
+cite$ -- 22
+duplicate$ -- 234
+empty$ -- 506
+format.name$ -- 73
+if$ -- 1156
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 35
-newline$ -- 52
-num.names$ -- 30
-pop$ -- 99
+int.to.str$ -- 19
+missing$ -- 43
+newline$ -- 67
+num.names$ -- 39
+pop$ -- 142
 preamble$ -- 1
-purify$ -- 53
+purify$ -- 75
 quote$ -- 0
-skip$ -- 103
+skip$ -- 134
 stack$ -- 0
-substring$ -- 237
-swap$ -- 28
+substring$ -- 309
+swap$ -- 34
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 42
-warning$ -- 2
-while$ -- 41
-width$ -- 16
-write$ -- 134
-(There were 2 warnings)
+type$ -- 62
+warning$ -- 3
+while$ -- 53
+width$ -- 21
+write$ -- 173
+(There were 3 warnings)

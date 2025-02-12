@@ -21,6 +21,16 @@ Le~Chen and Robert Dalang, \emph{Moments, intermittency and growth indices for
   the nonlinear fractional stochastic heat equation}, Stochastic Partial
   Differential Equations: Analysis and Computations \textbf{3} (2014).
 
+\bibitem{Chen2023}
+Le~Chen, Davar Khoshnevisan, David Nualart, and Fei Pu, \emph{Central limit
+  theorems for spatial averages of the stochastic heat equation via
+  malliavin--stein's method}, Stochastics and Partial Differential Equations:
+  Analysis and Computations \textbf{11} (2023), no.~1, 122--176.
+
+\bibitem{ebina2024largedeviationsspatialaverage}
+Masahisa Ebina, \emph{Large deviations for a spatial average of stochastic heat
+  and wave equations}, 2024.
+
 \bibitem{evans2010partial}
 L.C. Evans, \emph{Partial differential equations}, Graduate Studies in
   Mathematics, American Mathematical Society, 2010.
@@ -49,6 +59,11 @@ Sefika Kuzgun and David Nualart, \emph{Convergence of densities of spatial
   averages of stochastic heat equation}, Stochastic Processes and their
   Applications \textbf{151} (2022), 68--100.
 
+\bibitem{doi:10.1080/17442508.2023.2238954}
+\bysame, \emph{Convergence of densities of spatial averages of the parabolic
+  anderson model driven by colored noise}, Stochastics \textbf{96} (2024),
+  no.~2, 968--984.
+
 \bibitem{gall2016brownian}
 Jean-François Le~Gall, \emph{Brownian motion, martingales, and stochastic
   calculus}, Graduate Texts in Mathematics, Springer International Publishing,
@@ -68,10 +83,19 @@ David Nualart and Llu{\'i}s Quer-Sardanyons, \emph{Existence and smoothness of
   the density for spatially homogeneous spdes}, Potential Analysis \textbf{27}
   (2007), no.~3, 281--299.
 
+\bibitem{tudor2024spatialaveragesolutionsspdes}
+Ciprian~A Tudor and Jérémy Zurcher, \emph{The spatial average of solutions to
+  spdes is asymptotically independent of the solution}, 2024.
+
 \bibitem{Walsh_J.B_Introduction_to_SPDEs}
 John~B. Walsh, \emph{An introduction to stochastic partial differential
   equations}, {\'E}cole d'{\'E}t{\'e} de Probabilit{\'e}s de Saint Flour XIV -
   1984 (Berlin, Heidelberg) (P.~L. Hennequin, ed.), Springer Berlin Heidelberg,
   1986, pp.~265--439.
+
+\bibitem{zhang2023convergence}
+Wanying Zhang, Yong Zhang, and Jingyu Li, \emph{Convergence of densities of
+  spatial averages of the linear stochastic heat equation}, arXiv preprint
+  arXiv:2308.03641 (2023).
 
 \end{thebibliography}

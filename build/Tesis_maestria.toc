@@ -1,6 +1,6 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Introducción}{\es@scroman {iii}}{chapter*.2}%
-\contentsline {chapter}{Agradecimientos}{\es@scroman {vii}}{chapter*.3}%
+\contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{chapter*.2}%
+\contentsline {chapter}{Introducción}{\es@scroman {vii}}{chapter*.4}%
 \contentsline {chapter}{\numberline {1}Elementos de ecuaciones diferenciales parciales estocásticas}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introducción a las SPDE}{2}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Soluciones débiles de una EDP}{2}{subsection.1.1.1}%
@@ -24,4 +24,4 @@
 \contentsline {section}{\numberline {4.1}Cotas para la primera y segunda derivada de la solución mild y existencia de momentos inversos}{65}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Prueba del resultado principal}{66}{section.4.2}%
 \contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{83}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Resultados técnicos}{85}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {A}Resultados técnicos}{87}{appendix.Alph1}%
