@@ -834,7 +834,7 @@ donde $\W$ es un ruido blanco con respecto a alguna filtración $(\F_t)_{t\geq0}
 
 Si formalmente multiplicamos la ecuación diferencial por una función $\phi \in C^{\infty}(\R)$ tal que $\phi'(0)=\phi'(L)=0$ e integramos con respecto al tiempo y posteriormente con respecto al espacio, obtendremos que el problema anterior se puede reformular como 
 \begin{align*}
-   \int_{0}^{L}u(x,t)\phi(x)dx-\int_{0}^{L}u_0(x)\phi(x)dx&=\int_0^{t}\int_0^{L}\partial_{xx}u(x,s)\phi(x)dxds\\
+   \int_{0}^{L}u(x,t)\phi(x)dx-\int_{0}^{L}u_0(x)\phi(x)dx&=\int_0^{t}\int_0^{L}\partial_{xx}u(x,s)\phi(x)dx ds\\
    &+\int_{0}^{t}\int_{0}^{L}f(u(x,s))\phi(x)W(dx, ds).    
    \end{align*}
 Es destacable que ahora tenemos una ecuación integral estocástica en donde la integral con respecto al ruido blanco cobra total sentido. No obstante, lo anterior aún no puede ser tratado de manera rigurosa, ya que al ser $u$ un objeto aleatorio no necesariamente será derivable. Por lo tanto, si de manera formal utilizamos integración por partes, al ser $\phi$ una función cuya derivada se anula en las fronteras, la integral de la parcial de $u$ multiplicado por $\phi$ se transforma en
