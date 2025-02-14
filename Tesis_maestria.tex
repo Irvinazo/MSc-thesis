@@ -711,7 +711,7 @@ Sea $f\in \mathscr{S}$ y supongamos que $M$ es una medida martingala digna. Sea 
    \end{align*}
    Combinando estas expresiones, y recordando la definición de $Q_M$, obtenemos el resultado. La extensión al caso en que $f$ es simple es rutinaria.
  \end{proof}
-La reelevancia del resultado anterior se debe nuevamente a la analogía que existe con el cálculo estocástico convencional. En tal contexto, la isometría de Itô nos dice que la esperanza del cuadrado de la integral estocástica equivale a la esperanza de la integral, con respecto al proceso de covariación, del cuadrado del proceso en cuestión. En nuestro contexto, integrar con respecto al proceso de covariación del proceso tiene su análogo en integrar con respecto a la función de conjuntos $Q$, la cual vimos que forma una medida cuando la medida martingala $M$ es digna, y está construida con base en los incrementos de los procesos de covariación cruzada de las martingalas formadas a partir de $M$.
+La relevancia del resultado anterior se debe nuevamente a la analogía que existe con el cálculo estocástico convencional. En tal contexto, la isometría de Itô nos dice que la esperanza del cuadrado de la integral estocástica equivale a la esperanza de la integral, con respecto al proceso de covariación, del cuadrado del proceso en cuestión. En nuestro contexto, integrar con respecto al proceso de covariación del proceso tiene su análogo en integrar con respecto a la función de conjuntos $Q$, la cual vimos que forma una medida cuando la medida martingala $M$ es digna, y está construida con base en los incrementos de los procesos de covariación cruzada de las martingalas formadas a partir de $M$.
 \begin{ejem} 
 Sea $\W$ un ruido blanco en $\R^{d}\times[0,\infty)$ y consideremos al proceso de ruido blanco asociado al mismo. Entonces dicho proceso forma una medida martingala digna con medida dominante $K(A\times B \times C):=\lambda^{d}(A\cap B)\lambda(C)$.
 \end{ejem}
@@ -1076,7 +1076,7 @@ Sea $\frac{d^{p}}{dx^p}:\mathcal{S}\longrightarrow L^{q}(\gamma)$ el operador de
 Hemos demostrado que el operador derivada de orden $p$ es cerrable en $\S$. Por lo tanto, por definición existe un operador cerrado, que vamos a denotar por $D^{p}$, con dominio $\text{Dom}(D^{p})$ un subespacio lineal de $L^{q}(\gamma)$ tal que $\S\subseteq \text{Dom}(D^{p})$ y $D^{p}f=\frac{d^{p}}{dx^{p}}f$ para cualquier $f\in \S$. Estos elementos nos permiten definir la derivada de Malliavin.
 
 \begin{dfn}
-   Sea $p\geq1$ un entero positivo. Definimos la \textit{derivada de Malliavin} como el operador $D^{p}$ que extiende a la derivada $\frac{d^{p}}{dx^{p}}$ vista como operador de $\S$ a $L^{q}(\gamma)$, para $q\in [1,\infty)$. {\color{red} Referenciar a la norma definida abajo. En el peor de los casos repito el outcome del teorema de funcional}
+   Sea $p\geq1$ un entero positivo. Definimos la \textit{derivada de Malliavin} como el operador $D^{p}$ que extiende a la derivada $\frac{d^{p}}{dx^{p}}$ vista como operador de $\S$ a $L^{q}(\gamma)$, para $q\in [1,\infty)$, en donde la extensión se hace con respecto a la norma que se definirá unos párrafos abajo. 
 \end{dfn}
 
 Denotaremos al dominio de $D^{p}$ como $\D^{p,q}:=\text{Dom}(D^{p})$. A dichos espacios también se les conoce como espacios de Watanabe-Sobolev. 
@@ -1116,7 +1116,7 @@ además de que por convención, $\D^{0,q}=L^{q}(\Omega)$ y $\norm{\cdot}_{0,q}=\
 \D^{\infty,q}:=\bigcap_{p\geq0} \D^{p,q}.
 \]
 
-Más aún, la derivada $D^{p}$ es compatible en la intersección $\D^{p,q}\cap \D^{p,q'}$, es decir, para una función $f$ en la intersección $\D^{p,q}\cap \D^{p,q'}$ la derivada de orden $p$ como operador con dominio $\D^{p,q}$ aplicado a de $f$, es el mismo objeto que la derivada de orden $p$ como operador con dominio $\D^{p,q'}$ aplicado a $f$. {\color{blue}Poner en palabras}
+Más aún, la derivada $D^{p}$ es compatible en la intersección $\D^{p,q}\cap \D^{p,q'}$, es decir, para una función $f$ en la intersección $\D^{p,q}\cap \D^{p,q'}$ la derivada de orden $p$ como operador con dominio $\D^{p,q}$ aplicado a de $f$, es el mismo objeto que la derivada de orden $p$ como operador con dominio $\D^{p,q'}$ aplicado a $f$.
 \end{teo}
 La prueba de este teorema se puede encontrar en \cite[p. 27]{nualart2006malliavin}. En particular el resultado nos dice que, al ser $\D^{p,q}$ subconjuntos de los espacios $L^{q}(\Omega)$, y ser este último un espacio de medid finita, entonces la contención $L^{q'}$ para $q'>q$ se sigue preservando en los espacios de Watanabe-Sobolev. La contención en la variable $p$ nos dice simplemente que si una variable es derivable $n+1$ veces, claramente será $n$ veces derivable.
 
@@ -1187,7 +1187,7 @@ Es de interés encontrar una forma de calcular el operador $\delta$ aplicado a a
    \[
    \int_\R Df(x)g(x)d\gamma(x)=\int_\R xf(x)g(x)d\gamma(x)-\int_\R f(x)Dg(x)d\gamma(x),
    \]
-   y por definición de $\delta g$ como adjunto de $D$, se tiene que {\color{blue}escribir que utilicé la propiedad de adjunto en g y la mandé del lado izquierdo}
+   y por definición de $\delta g$ como adjunto de $D$, se tiene que
    \[
    \int_\R f(x)\delta g(x)d\gamma(x)=\int_\R xf(x)g(x)d\gamma(x)-\int_\R f(x)Dg(x)d\gamma(x).   
    \]
@@ -1354,7 +1354,7 @@ Finalmente, la siguiente proposición nos dice que tanto $P_t$ como $D$, vistos 
      \[
      \E\left[\left(e^{-t}B_{e^{2t}-1}\right) \left(e^{-s}B_{e^{2s}-1}\right)\right]=e^{-(t+s)}(\min(e^{2t},e^{2s})-1)=e^{-(t+s)}(e^{2s\wedge t}-1)=e^{-|t-s|}-e^{-(t+s)}.
      \]
-     Concluimos que el proceso de Ornstein-Uhlenbeck $(X_t^{x})_{t\geq0}$ como solución a la ecuación diferencial estocástica dada antes, puede verse como 
+     Notemos que el proceso anterior es un proceso gaussiano. Por lo tanto, mediante una comparación de funciones de media y covarianza, concluimos que el proceso de Ornstein-Uhlenbeck $(X_t^{x})_{t\geq0}$ como solución a la ecuación diferencial estocástica dada antes, puede verse como 
      \[
         X_t^{x}=e^{-t}x-e^{-t}B_{e^{2t}-1}, \qquad t\geq0.
      \]
@@ -1504,7 +1504,7 @@ Para poder hablar del cálculo de Malliavin en dimensiones infinitas, necesitamo
  \E\left[X(g)X(h)\right]=\langle g,h\rangle_{\mathfrak{H}}.
  \]
  \end{dfn}
-Dado un proceso gaussiano isonormal $X$, al ser sus elementos variables conjuntamente gaussianas y centradas, el proceso está definido completamente por su función de covarianzas, y esta se codifica por medio del producto interno del espacio de Hilbert $\mathfrak{H}$. Es por lo tanto una manera de relacionar íntimamente dos estructuras distintas. De manera más precisa, consideremos un sistema ortonormal $(Z_n)_{n\geq1}$ en el espacio de Hilbert $\mathfrak{H}$. Sea $G=\{X(Z_n):n\geq1\}$ una familia de variables gaussianas independientes centradas en un espacio de probabilidad adecuado. Consideremos a $L^2(G)$ el subespacio lineal cerrado del $L^2(\P)$ generado por dichas variables. Entonces el mapeo $h\to X(h)$ resulta ser una isometría lineal del espacio $H$ en $L^2(G)$. En particular, dos procesos gaussianos isonormales definidos sobre el mismo espacio de Hilbert tendrán la misma ley.
+Dado un proceso gaussiano isonormal $X$, al ser sus elementos variables centradas, el proceso está definido completamente por su función de covarianzas, y esta se codifica por medio del producto interno del espacio de Hilbert $\mathfrak{H}$. Es por lo tanto una manera de relacionar íntimamente dos estructuras distintas. De manera más precisa, consideremos un sistema ortonormal $(Z_n)_{n\geq1}$ en el espacio de Hilbert $\mathfrak{H}$. Sea $G=\{X(Z_n):n\geq1\}$ una familia de variables gaussianas independientes centradas en un espacio de probabilidad adecuado. Consideremos a $L^2(G)$ el subespacio lineal cerrado del $L^2(\P)$ generado por dichas variables. Entonces el mapeo $h\to X(h)$ resulta ser una isometría lineal del espacio $H$ en $L^2(G)$. En particular, dos procesos gaussianos isonormales definidos sobre el mismo espacio de Hilbert tendrán la misma ley.
 
 Las ideas anteriormente expuestas, en conjunto con el teorema de consistencia de Kolmogorov, son esencialmente la prueba de la existencia de un proceso isonormal dado un espacio de Hilbert $\mathfrak{H}$. Esto se establece en el siguiente resultado.
 
@@ -1530,14 +1530,14 @@ Presentamos a continuación una familia de espacios particular.
 
 Llegados a este punto, estamos listos para definir la derivada de Malliavin en el caso general.
 \begin{dfn} 
- Sea $F\in \S$ una función suave, y sea $p\geq1$ un entero. La derivada de Malliavin de orden $p$ de $F$ (con respecto al proceso isonormal $X$) es el elemento de $L^2(\Omega;\mathfrak{H}^{\odot})$ definido por 
+ Sea $F\in \S$ una función suave, y sea $p\geq1$ un entero. La derivada de Malliavin de orden $p$ de $F=f(X(h_1),...,X(h_n))$ (con respecto al proceso isonormal $X$) es el elemento de $L^2(\Omega;\mathfrak{H}^{\odot})$ definido por 
  \[
  D^pF:=\sum_{i_1,...,i_p=1}^{n}\frac{\partial^pf}{\partial x_{i_1}...\partial x_{i_p}}(X(h_1),...,X(h_n))h_{i_1}\otimes...\otimes h_{i_p},
  \] 
  en donde $\mathfrak{H}^{\odot p}$ representa el \textit{producto tensorial simetrizado} de orden $p$ del espacio de Hilbert $\mathfrak{H}$ consigo mismo (el cual nuevamente es un espacio de Hilbert). En el caso en que $p=1$ hablaremos simplemente de la \textit{derivada de Malliavin} de $F$ y la dentamos por $DF$.
  \end{dfn}
  \begin{obs}
-   Nótese que para $F\in \S$ y $h\in \mathfrak{H}$ arbitrarios, al ser $DF\in L^2(\Omega;\mathfrak{H})$ una variable aleatoria con valores en $\mathfrak{H}$, 
+   Nótese que para $F = f(X(h_1),...,X(h_n))$ función suave, y para $h\in \mathfrak{H}$, al ser $DF\in L^2(\Omega;\mathfrak{H})$ una variable aleatoria con valores en $\mathfrak{H}$, 
    \[
    \langle DF,h\rangle_{\mathfrak{H}}=\lim_{\varepsilon\to 0} \frac{1}{\varepsilon}\left(f(X(h_1)+\varepsilon \langle h_1,h\rangle,...,X(h_n)+\varepsilon \langle h_n,h\rangle)-F\right),
    \]
@@ -1571,7 +1571,7 @@ Un resultado importante y que será usado posteriormente es la \textit{regla de 
 D\phi(F)=\sum_{i=1}^n \frac{\partial \phi}{\partial x_i}(F)DF_i.
  \]
  \end{teo}
-Pasamos ahora a estudiar el operador de divergencia. Fijamos $q=2$. Dado un entero $p\geq1$, definimos el operador de divergencia de orden $p$ como el operador adjunto del operador derivada $D^{p}:\left(\D^{p,2}, \norm{\cdot}_{\D^{p,q}}\right)\to \left(L^{2}(\Omega,\mathfrak{H}^{\otimes p}), \norm{\cdot}_{2,\mathfrak{H}^{\otimes p}}\right)$.
+Pasamos ahora a estudiar el operador de divergencia. Fijamos $q=2$. Dado un entero $p\geq1$, definimos el operador de divergencia de orden $p$ como el operador adjunto del operador derivada $D^{p}:\left(\D^{p,2}, \norm{\cdot}_{2}\right)\to \left(L^{2}(\Omega,\mathfrak{H}^{\otimes p}), \norm{\cdot}_{L^{2}(\Omega,\mathfrak{H}^{\otimes p})}\right)$.
 
 \begin{dfn} 
  Sea $p\geq1$ un entero. Denotamos por $\text{Dom}(\delta^p)$ al subconjunto de $L^2(\Omega;\mathfrak{H}^{\odot p})$ compuesto de aquellos elementos $u$ tales que existe una constante $C>0$ que satisface 
@@ -1614,7 +1614,7 @@ D\delta(u)-\delta(Du)=u.
 
 Múltiples propiedades con respecto al operador derivada y el operador de divergencia se pueden obtener, generalizando las propiedades del caso unidimensional. En particular, las versiones adecuadas del semigrupo de Ornstein-Uhlenbeck, y de su generador infinitesimal asociado, pueden ser enunciadas. No obstante, dado que para nuestros propósitos la teoría desarrollada hasta aquí es suficiente, remitimos \cite[capítulo 2]{Nourdin_Peccati_2012} para continuar el estudio de estos objetos. 
 
-Cabe destacar que estaremos interesados en el caso en que el proceso gaussiano isonormal subyacente es aquél inducido por un proceso de ruido blanco gaussiano $(W_t(A))_{t\in [0\infty), \ A\in \B(\R)}$, el cual se puede construir a partir del espacio de Hilbert $\mathfrak{H}=L^{2}([0,\infty)\times \R)$. Este será nuestro contexto para el capítulo 4. Concluimos nuestro breve estudio de la disciplina con una propiedad muy interesante e importante del operador de divergencia: precisamente cuando estamos en el caso en que $\mathfrak{H}=L^2([0,\infty)\times\R)$, y el proceso isonormal subyacente es un proceso de ruido blanco gaussiano, el operador $\delta$ \textit{coincide} con la integral de Itô-Walsh en $[0,\infty)\times\R$.
+Cabe destacar que estaremos interesados en el caso en que el proceso gaussiano isonormal subyacente es aquél inducido por un proceso de ruido blanco gaussiano $(W_t(A))_{t\in [0\infty), \ A\in \B(\R)}$, el cual se puede construir a partir del espacio de Hilbert $\mathfrak{H}=L^{2}([0,\infty)\times \R)$. Este será nuestro contexto para el capítulo 4. Concluimos nuestro breve estudio de la disciplina con una propiedad muy interesante e importante del operador de divergencia: precisamente cuando estamos en el caso en que $\mathfrak{H}=L^2([0,\infty)\times\R)$, y el proceso isonormal subyacente es un proceso de ruido blanco gaussiano, el operador $\delta$ \textit{coincide} con la integral de Itô-Walsh en $[0,\infty)\times\R$. El resultado lo presentamos sin demostración.
 
 \begin{teo} 
  Sea $u$ un proceso adaptado y cuadrado-integrable. Entonces $u\in \text{Dom}(\delta)$ y se cumple que 
@@ -1622,6 +1622,7 @@ Cabe destacar que estaremos interesados en el caso en que el proceso gaussiano i
  \delta(u)=\int_{[0,\infty)\times \R}^{}u(s,y)W(ds,dy).
  \]
  \end{teo}
+ 
  
  \chapter{Aplicaciones a Teoremas Límite y estudio de densidades}
 En este capítulo se visita la aplicación de los conceptos del cálculo de Malliavin al estudio de teoremas límite y al estudio de densidades. 
@@ -1712,10 +1713,10 @@ A continuación, hacemos rigurosa la idea de distancia entre las leyes de dos va
 Es sencillo demostrar que para una clase de funciones separantes $\mathscr{H}$, el mapeo $d_\mathscr{H}$ definido anteriormente en efecto define una métrica en cierto subconjunto de las medidas de probabilidad sobre $\R^{d}$. Es pertinente hacer hincapié en que la distancia inducida entre las leyes de variables depende de la clase $\mathscr{H}$. Ello resulta en una amplia variedad de opciones con las cuales considerar la distancia entre dos distribuciones de probabilidad. Algunas de las más usadas se encuentran a continuación.
 
 \begin{itemize}
-   \item \textbf{La distancia de Kolmogorov.} Esta distancia entre dos variables $F$ y $G$, denotada por $d_{\text{Kol}}(F,G)$, se obtiene utilizando a la familia \[\mathscr{H}= \left\{h:\R^d\to \R \ :\ h(x_1,...,x_d)=\1_{(-\infty,z_1]}(x_d)\cdot ... \cdot \1_{(-\infty,z_d]}(x_d), \ \  z_1,...,z_d\in \R\right\},\]
+   \item \textbf{La distancia de Kolmogorov.} Esta distancia entre dos variables $F$ y $G$, denotada por $d_{\text{Kol}}(F,G)$, se obtiene utilizando a la familia \[\mathscr{H}= \left\{h:\R^d\to \R \ :\ h(x_1,...,x_d)=\1_{(-\infty,z_1]}(x_d)\times \cdots \times \1_{(-\infty,z_d]}(x_d), \ \  z_1,...,z_d\in \R\right\},\]
    de manera que dicha distancia está dada por la expresión
    \[
-   d_{\text{Kol}}(F,G)=\sup_{z_1,...,z_d\in \R}\abs{\P(F\in (-\infty,z_1]\times...\times(-\infty,z_d])-\P(G\in (-\infty,z_1]\times...\times(-\infty,z_d])}.
+   d_{\text{Kol}}(F,G)=\sup_{z_1,...,z_d\in \R}\abs{\P(F\in (-\infty,z_1]\times\cdots\times(-\infty,z_d])-\P(G\in (-\infty,z_1]\times\cdots\times(-\infty,z_d])}.
    \]
    \item \textbf{La distancia de variación total.} Dicha distancia entre las leyes de las variables $F$ y $G$ se define utilizando la clase \[\mathscr{H}=\left\{h:\R^d\to \R \ :\ h(x_1,...,x_d)=\1_B(x_1,...,x_d), \ \ B\in \B(\R^{d})\right\},\] 
    y dicha distancia se denota por $d_{\text{TV}}(F,G).$ Su expresión explícita es 
@@ -1944,7 +1945,7 @@ Usamos nuevamente la desigualdad de Hölder en el último termino de la ecuació
 \end{equation}
 Finalmente, usamos el teorema \ref{metodosteinfamespecial}, en \eqref{eqdiferencia6}, por lo que 
 \begin{equation}\label{eqdiferencia7}
-      \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}\leq \norm{C(\abs{F}+1)}_2\norm{1-D_vF}_2
+      \abs{\E\left[\1_{\{F>x\}}F\right]-\E\left[\1_{\{N>x\}}N\right]}\leq C\norm{\abs{F}+1}_2\norm{1-D_vF}_2
 \end{equation}
 Finalmente, tenemos que $\norm{F}_2^2 = \E\left[F^2\right] = 1$ y $C\leq 1$, por lo que \eqref{eqdiferencia7} se convierte en 
 \begin{equation}\label{eqdiferencia8}
@@ -2024,14 +2025,14 @@ Entonces para $t>0$ fijo, se tiene que para cualquier $R>0$, los promedios espac
 donde $\Phi$ es la densidad de una variable aleatoria normal estándar y $C_t>0$ es una constante dependiente de $t$ y de $\sigma$, pero independiente de $R$.
 \end{teo}
 
-Este capítulo, dedicado a la prueba de este último teorema, consiste en dos secciones. La primera la dedicamos a mostrar dos resultados clave para la prueba. El primero de ellos tiene que ver con una expresión para la segunda derivada de Malliavin de la solución al problema del calor $\eqref{shedefinitiva}$, mientras que el segundo tiene que ver con la existencia de los momentos inversos de la derivada de la misma. La segunda sección consiste en el cuerpo de la prueba como tal, y al inicio de ésta se describe como está estructurada.
+Este capítulo, dedicado a la prueba de este último teorema, consiste en dos secciones. La primera la dedicamos a mostrar dos resultados clave para la demostración. El primero de ellos tiene que ver con una expresión para la segunda derivada de Malliavin de la solución al problema del calor $\eqref{shedefinitiva}$, mientras que el segundo tiene que ver con la existencia de los momentos inversos de la derivada de la misma. La segunda sección consiste en el cuerpo de la prueba como tal, y al inicio de ésta se describe como está estructurada.
 
 \section{Cotas para la primera y segunda derivada de la solución mild y existencia de momentos inversos}
 
-Estudiamos primero el comportamiento de la segunda derivada de la solución mild $u$ a la ecuación del calor \eqref{shedefinitiva}. Cabe mencionar que para lograrlo debemos basarnos en un resultado análogo para la primera derivada de $u$. Esto debido a que a partir del resultado para la primera derivada es que se llega al de la segunda derivada, además de ser necesario para la prueba del resultado principal. La proposición correspondiente a la primera derivada la enunciamos a continuación, y es adaptada de \cite[proposición 5.1]{Nualart2007}, y de \cite[sección 4.1]{KUZGUN202268} aunque con la notación de este texto, y directamente suponiendo que el término de deriva $b$ en \cite{Nualart2007} es cero.
+Estudiamos primero el comportamiento de la segunda derivada de la solución mild $u$ a la ecuación del calor \eqref{shedefinitiva}. Cabe mencionar que para lograrlo debemos basarnos en un resultado análogo para la primera derivada de $u$. La proposición correspondiente a la primera derivada la enunciamos a continuación, y es adaptada de \cite[proposición 5.1]{Nualart2007}, y de \cite[sección 4.1]{KUZGUN202268} aunque con la notación de este texto, y directamente suponiendo que el término de deriva $b$ en \cite{Nualart2007} es cero.
 
 \begin{teo}\label{teocota1eraderivada}
-   Sea $u$ la solución al problema \eqref{shedefinitiva}. Supongamos además que $\sigma:\R\to\R$ es de clase $C^1(\R,\R)$, y su derivada es una función Lipschitz y acotada. Entonces para cualquier $(t,x)\in [0,T]\times\R$, $u(t,x)\in\bigcap_{p\geq1}\D^{1,p}$ y además, la derivada de Malliavin cumple que 
+   Sea $u$ la solución al problema \eqref{shedefinitiva}. Supongamos además que $\sigma:\R\to\R$ es de clase $C^1(\R,\R)$, y su derivada es una función Lipschitz y acotada. Entonces para cualquier $(t,x)\in [0,T]\times\R$, se tiene que $u(t,x)\in\bigcap_{p\geq1}\D^{1,p}$ y además, la derivada de Malliavin cumple que 
    \begin{equation}\label{formula1eraderivada}
       D_{s,y}u(t,x)=p_{t-s}(x-y)\sigma(u(s,y))+ \int_{[s,t]\times\R} p_{t-\tau}(x-\xi)\sigma'(u(\tau,\xi))D_{s,y}u(\tau,\xi)W(d\tau,d\xi),
    \end{equation}
@@ -2042,7 +2043,7 @@ Estudiamos primero el comportamiento de la segunda derivada de la solución mild
    \end{equation}
    para cualquier $0\leq s<t\leq T$, y para $x,y\in \R$.
  \end{teo}
-Con el resultado anterior a la mano, procedemos a enunciar lo respectivo para la segunda derivada de $u$, tal y como se enuncia en \cite{KUZGUN202268}. Es preciso destacar que, de acuerdo con los autores del artículo, la cota de la segunda derivada de la solución mild resuelve un problema abierto en el cálculo de Malliavin y por lo tanto este resultado tiene su interés en sí mismo.
+Con el resultado anterior a la mano, procedemos a enunciar lo respectivo para la segunda derivada de $u$, tal y como se enuncia en \cite{KUZGUN202268}.
  \begin{teo}\label{teocota2daderivada}
    Sea $u$ la solución al problema \eqref{shedefinitiva}. Supongamos que $\sigma$ cumple las hipótesis del teorema \ref{teoremaprincipal}. Fijando $(t,x)\in [0,\infty)\times \R$, tenemos que $u(t,x)\in \bigcap_{p\geq2}\D^{2,p}$ y para casi todo $0<r<s<t$, $y,z\in \R$, la segunda derivada de $u$, que denotamos como $D_{r,z}D_{s,y}u(t,x)$, satisface la siguiente ecuación diferencial estocástica lineal:
    \begin{align}
@@ -2059,7 +2060,7 @@ Con el resultado anterior a la mano, procedemos a enunciar lo respectivo para la
           \Phi_{r,z,s,y}(t,x):= & \ p_{t-s}(x-y)\left(p_{s-r}(y-z)+\frac{p_{t-r}(z-y)+p_{t-r}(z-x)+\1_{\{\abs{y-x}>\abs{z-y}\}}}{(s-r)^{1/4}}\right).
       \end{align*} 
    \end{teo}
-   Por ser de carácter fundamentalmente técnico, la demostración de este resultado se omite en esta tesis. No obstante, mencionamos que la idea de su prueba consiste en la técnica de las iteraciones de Picard, la desigualdad de Burkholder-Davis-Gundy, y lemas técnicos que se encuentran en \cite[lema A.1]{HUANG20207170} y \cite[lema A.1, lema A.2]{KUZGUN202268}. Es de destacar que las hipótesis del teorema anterior implican las hipótesis del teorema \ref{teocota1eraderivada}.
+   Por ser de carácter fundamentalmente técnico, la demostración de este resultado se omite en esta tesis. No obstante, mencionamos que la idea de su prueba consiste en una combinación de la técnica de iteraciones de Picard, la desigualdad de Burkholder-Davis-Gundy, y lemas técnicos que se encuentran en \cite[lema A.1]{HUANG20207170} y \cite[lema A.1, lema A.2]{KUZGUN202268}. Es de destacar que las hipótesis del teorema anterior implican las hipótesis del teorema \ref{teocota1eraderivada}.
 
    Tornamos nuestra atención a la existencia de los momentos inversos de la derivada de la solución $u$ al problema del calor \eqref{shedefinitiva}.
 \begin{teo}\label{teocotamomentosinversos}
@@ -2069,14 +2070,14 @@ Con el resultado anterior a la mano, procedemos a enunciar lo respectivo para la
    \end{equation}
    
    \end{teo}
-   La prueba de este resultado se omite en este texto, por lo que se remite a \cite[proposición 4.2]{KUZGUN202268} para su consulta. En la prueba del mismo se utilizan nuevamente la desigualdad de Burkholder-Davis-Gundy, propiedades de la solución mild $u$ y distintos lemas presentes en el apéndice del artículo citado.
+   La demostración de este resultado se omite en este texto, por lo que se remite a \cite[proposición 4.2]{KUZGUN202268} para su consulta. En la prueba del mismo se utilizan nuevamente la desigualdad de Burkholder-Davis-Gundy, propiedades de la solución mild $u$ y distintos lemas presentes en el apéndice del artículo citado.
 
 \section{Prueba del resultado principal}
-Con intención de desmenuzar con suficiente claridad la prueba, describimos brevemente su estructura.
+Con intención de presentar la demostración de manera clara, primero describimos brevemente su estructura.
 
-La prueba parte de la cota \eqref{cotafundamental} aplicada a los promedios espaciales $F_{R,t}$. Es por lo tanto necesario verificar que dichas variables cumplen las hipótesis del teorema \ref{teocotafundamental}. Asimismo, serán usadas constantemente las desigualdades \eqref{cota1eraderivada}, \eqref{cota2daderivada} y \eqref{cotamomentosinversos}, por lo que debemos verificar que las hipótesis de los teoremas \ref{teocota1eraderivada}, \ref{teocota2daderivada} y \ref{teocotamomentosinversos} se satisfacen. Habilitados para usar dichos resultados, de la cota \eqref{cotafundamental} nos surgen dos sumandos. El primero de ellos se puede acotar con relativa rapidez apoyándonos de las cotas anteriores y usando la prueba de \cite[teorema 1.1]{HUANG20207170}, por lo que el grueso de la prueba consiste en acotar el segundo sumando, correspondiente a la norma de la segunda derivada de los promedios espaciales. Allí se descompondrá dicha derivada de segundo orden en dos términos integrales y se procede a acotar cada término por separado utilizando las propiedades de la integral de Itô-Walsh, las cotas mencionadas antes y algunos resultados técnicos presentes en el apéndice de este texto.
+La prueba parte de la cota \eqref{cotafundamental} aplicada a los promedios espaciales $F_{R,t}$. Es por lo tanto necesario verificar que $F_{R,t}$ cumplen las hipótesis del teorema \ref{teocotafundamental}. Asimismo, serán usadas constantemente las desigualdades \eqref{cota1eraderivada}, \eqref{cota2daderivada} y \eqref{cotamomentosinversos}, por lo que debemos verificar que las hipótesis de los teoremas \ref{teocota1eraderivada}, \ref{teocota2daderivada} y \ref{teocotamomentosinversos} se satisfacen. Habilitados para usar dichos resultados, de la cota \eqref{cotafundamental} nos surgen dos sumandos. El primero de ellos se puede acotar con relativa rapidez apoyándonos de la prueba de \cite[teorema 1.1]{HUANG20207170}, por lo que el grueso de la demostración consiste en acotar el segundo sumando, correspondiente a la norma de la segunda derivada de los promedios espaciales. Para ello descompondremos dicha derivada de segundo orden en dos términos integrales los cuales acotaremos por separado utilizando las propiedades de la integral de Itô-Walsh, las cotas mencionadas antes y algunos resultados técnicos presentes en el apéndice de este texto.
 
-Por lo anterior, la prueba está dividida en tres partes. La primera de ellas dedicada a verificar la validez de las hipótesis de los resultados a usar, la segunda de ellas está dirigida a acotar el primero de los sumandos y la última parte se dedica a acotar la norma de la segunda derivada de los promedios espaciales. Dicho todo lo anterior, comenzamos la prueba del resultado principal.
+ {\color{red}  Revisar redacción de conclusiones.}
 \begin{proof}[Demostración (del teorema \ref{teoremaprincipal})]
 
 \begin{proofpart}[Validez de las hipótesis para las cotas]
@@ -2105,13 +2106,13 @@ Por lo tanto, los promedios espaciales se pueden ver como el operador divergenci
 
 Esto nos dice que para un $t>0$ fijo, $F_{R,t}\in \D^{2,6}$ y $v_{R,t}\in \D^{1,2}(\mathfrak{H})$. 
 
-Por otro lado, por hipótesis existe algún $q>10$ tal que $\E\left[\abs{\sigma(u(t,0))}^{-q}\right]<\infty$, de tal forma que eligiendo $p=4$ en el teorema \ref{teocotamomentosinversos}, tenemos que para $q':=2q>2(10)=5(4)=5p$, al ser el caso que $2q'>q$ y ser $\Omega$ un espacio de medida finita, 
+Por otro lado, por hipótesis existe algún $q>10$ tal que $\E\left[\abs{\sigma(u(t,0))}^{-q}\right]<\infty$, de tal forma que eligiendo $p=4$ en el teorema \ref{teocotamomentosinversos}, tenemos que para $q':=2q>2(10)=5(4)=5p$, al ser el caso que $2q'>q$ y ser $\Omega$ un espacio de medida finita bajo $\P$, 
 \[
 \E\left[\abs{\sigma(u(t,0))}^{-2q'}\right]=\E\left[\abs{\frac{1}{\sigma(u(t,0))}}^{2q'}\right]\leq \E\left[\abs{\frac{1}{\sigma(u(t,0))}}^{q}\right]=\E\left[\abs{\sigma(u(t,0))}^{-q}\right]<\infty,
 \]
 por lo que las hipótesis del teorema $\ref{teocotamomentosinversos}$ se satisfacen para $p=4$ y por lo tanto, para $t>0$ fijo, existe una constante $R_0$ tal que la cota de los momentos inversos \eqref{cotamomentosinversos} es válida. En particular, para $t>0$ fijo y $R>R_0$ se sigue que $D_{v_R,t}F_{R,t}\in L^{4}(\Omega)$. Finalmente, por definición estamos tomando los promedios espaciales como variables centradas y con varianza 1. 
 
-Hemos mostrado que para $R>R_0$ y $t>0$, las hipótesis del teorema \ref{teocotafundamental} se cumplen y por lo tanto, la variable $F_{R,t}/D_{v_R,t}F_{R,t}\in \text{Dom}(\delta)$, los promedios espaciales tienen una densidad continua y acotada, que denotamos como $f_{F_{R,t}}$, y la misma cumple  $\eqref{cotafundamental}$. Con precisión, sustituyendo en dicha cota obtenemos que 
+Hemos mostrado que para $R>R_0$ y $t>0$, las hipótesis del teorema \ref{teocotafundamental} se cumplen y por lo tanto, la variable $F_{R,t}/D_{v_R,t}F_{R,t}\in \text{Dom}(\delta)$, los promedios espaciales tienen una densidad continua y acotada, que denotamos como $f_{F_{R,t}}$, y la misma cumple  $\eqref{cotafundamental}$. Con precisión, dicha cota aplicada a $F_{R,t}$ nos dice que 
 \begin{align}\label{cotapromespacfundamental}
    \sup_{x\in \R} \abs{f_{F_{R,t}}(x)-\Phi(x)}&\leq \left(\|F_{R,t}\|_4\|\left(D_{v_{R,t}}F_{R,t}\right)^{-1}\|_4+2\right)\|1-D_{v_{R,t}}F_{R,t}\|_2\notag\\
    &\ \ \ +\|\left(D_{v_{R,t}}F_{R,t}\right)^{-1}\|^{2}_4\|D_{v_{R,t}} \left(D_{v_{R,t}}F_{R,t}\right)\|_2,
@@ -2119,20 +2120,20 @@ Hemos mostrado que para $R>R_0$ y $t>0$, las hipótesis del teorema \ref{teocota
 Observamos dos sumandos en la desigualdad anterior. Mostramos a continuación que cada uno de estos sumandos está acotada por una cantidad proporcional a $1/\sqrt{R}$.
 \end{proofpart}
 \begin{proofpart}[Cota del primer sumando]
-Notemos primero que, de la relación \eqref{cotapromespacfundamental}, al ser $F_{R,t}\in \D^{2,6}$, y darse las contenciones $\D^{2,6}\subseteq \D^{2,4}\subseteq{L^{4}}(\Omega)$, se sigue que $\norm{F_{R,t}}_4<\infty$. Más aún, dicha cota es uniforme en $R$ gracias a \ref{cotaunif}. Por otro lado, para $t>0$ y $R>R_0$ fijos, de \eqref{cotamomentosinversos} se sigue que 
+Notemos primero que, de la relación \eqref{cotapromespacfundamental}, al ser $F_{R,t}\in \D^{2,6}$, y darse las contenciones $\D^{2,6}\subseteq \D^{2,4}\subseteq{L^{4}}(\Omega)$, se sigue que $\norm{F_{R,t}}_4<\infty$. Más aún, dicha cota es uniforme en $R$ gracias a \eqref{cotaunif}. Por otro lado, para $t>0$ y $R>R_0$ fijos, de \eqref{cotamomentosinversos} se sigue que 
 \begin{equation}\label{cotapromespacmomentosinversos}
    \norm{(D_{v_{R,t}}F_{R,t})^{-1}}_4=\E\left[\abs{\left(D_{v_{R,t}}F_{R,t}\right)^{-1}}^{4}\right]^{1/4}=\E\left[\abs{D_{v_{R,t}}F_{R,t}}^{-4}\right]^{1/4}<\infty,
 \end{equation}
-y nuevamente gracias a \ref{cotamomentosinversos}, dicha cota se puede hacer uniforme en $R$. 
+y nuevamente gracias a \eqref{cotamomentosinversos}, dicha cota se puede hacer uniforme en $R$. 
 
-Definiendo $C_{t}^{(1)}:=\left(\|F_{R,t}\|_4\|\left(D_{v_{R,t}}F_{R,t}\right)^{-1}\|_4+2\right)$, de lo anterior tenemos que $0<C_{t}^{(1)}<\infty$, y dicha constante depende solamente de $t>0$ fijo. Resta estudiar el término $\norm{1-D_{v_{R,t}F_{R,t}}}_2$. Esta parte de la prueba está basada en la prueba de \cite[teorema 1.1]{HUANG20207170}. Dado que $F_{R,t}$ es una variable centrada y de varianza 1, se sigue que 
+Definiendo $C_{t}^{(1)}:=\left(\|F_{R,t}\|_4\|\left(D_{v_{R,t}}F_{R,t}\right)^{-1}\|_4+2\right)$, de lo anterior tenemos que $0<C_{t}^{(1)}<\infty$, y dicha constante depende solamente de $t>0$ fijo. Resta estudiar el término $\norm{1-D_{v_{R,t}F_{R,t}}}_2$. Esta parte de la prueba está basada en la demostración de \cite[teorema 1.1]{HUANG20207170}. Dado que $F_{R,t}$ es una variable centrada y de varianza 1, se sigue que 
 \begin{align*}
    \norm{1-D_{v_{R,t}}F_{R,t}}_2&=\E\left[(\E\left[F_{R,t}^2\right]-D_{v_{R,t}}F_{R,t})^2\right]^{1/2}\\
    &=\E\left[(\E\left[F_{R,t}\delta(v_{R,t})\right]-D_{v_{R,t}}F_{R,t})^2\right]^{1/2}\\
    &=\E\left[(\E\left[D_{v_{R,t}}F_{R,t}\right]-D_{v_{R,t}}F_{R,t})^2\right]^{1/2}\\
    &=\sqrt{\text{Var}\left(D_{v_{R,t}}F_{R,t}\right)},
 \end{align*}
-donde hemos hecho uso de la definición de $\delta$. Llegados a este punto, remitimos a la prueba del teorema 1.1 en el artículo \cite{HUANG20207170}, en donde el grueso de la prueba consiste en acotar $\sqrt{\text{Var}\left(D_{v_{R,t}}F_{R,t}\right)}$ por $C/\sqrt{R}$, donde $C$ es una constante que depende de $t>0$ y de $p$, que en nuestro caso está fijado en $p=4$. Por lo tanto, definiendo $C_{t}^{(2)}:=C_{t}^{(1)}\cdot C$, para $t>0$,
+donde hemos hecho uso de la definición de $\delta$. Llegados a este punto, remitimos a la demostración del teorema 1.1 en el artículo \cite{HUANG20207170}, en donde el grueso de la prueba consiste en acotar $\sqrt{\text{Var}\left(D_{v_{R,t}}F_{R,t}\right)}$ por $C/\sqrt{R}$, donde $C$ es una constante que depende de $t>0$ y de $p$, que en nuestro caso está fijado en $p=4$. Por lo tanto, definiendo $C_{t}^{(2)}:=C_{t}^{(1)}\cdot C$, para $t>0$,
 \begin{equation}\label{cotaprimersumando}
    \left(\|F_{R,t}\|_4\|\left(D_{v_{R,t}}F_{R,t}\right)^{-1}\|_4+2\right)\|1-D_{v_{R,t}}F_{R,t}\|_2\leq \frac{C_{t}^{(2)}}{\sqrt{R}},
 \end{equation}
@@ -2222,7 +2223,7 @@ Haciendo lo respectivo para el sumando \eqref{pruebasumando2}, obtenemos las sig
    &\ \ \ +\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
    &\ \ \ \ \cdot \left(\int_{[s,t]\times \R}\left(\frac{1}{\sigma_{R,t}}\int_{Q_R} p_{t-\tau}(x-\xi)dx\right)\Sigma^{(1)}_{\tau,\xi}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dy dz ds dr,\notag
 \end{align}
-Y nuevamente reconociendo los términos $\phi_{R,t}$, la expresión anterior es igual a
+Y nuevamente reconociendo los términos $\phi_{R,t}$, la última expresión anterior es igual a
 \begin{align}
    &\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)dy dz ds dr\label{pruebasumando5}\\
    &\ \ \ +\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
@@ -2230,7 +2231,7 @@ Y nuevamente reconociendo los términos $\phi_{R,t}$, la expresión anterior es 
    &\ \ \ +\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
    &\ \ \ \ \cdot\left(\int_{[s,t]\times \R}\phi_{R,t}(\tau,\xi)\Sigma^{(1)}_{\tau,\xi}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right) dy dz ds dr.\label{pruebasumando7}
 \end{align}
-Observamos que los términos \eqref{pruebasumando3} y \eqref{pruebasumando5} coinciden, mientras que el término $\phi_{R,t}(r,z)\phi_{R,t}(s,y)$ es común dentro de las integrales en las expresiones \eqref{pruebasumando4}, \eqref{pruebasumando6} y \eqref{pruebasumando7}. Luego, definiendo 
+Observamos que las integrales \eqref{pruebasumando3} y \eqref{pruebasumando5} coinciden, mientras que el término $\phi_{R,t}(r,z)\phi_{R,t}(s,y)$ es común dentro de las integrales en las expresiones \eqref{pruebasumando4}, \eqref{pruebasumando6} y \eqref{pruebasumando7}. Luego, definiendo 
 \begin{align*}
    Z_{r,z,s,y}(\tau,\xi)&:=\Sigma_{r,z}\Sigma_{s,y}^{(1)}\Sigma_{\tau,\xi}^{(1)}D_{r,z}u(s,y)D_{s,y}u(\tau,\xi)\\
    &\ \ \ +\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(2)}D_{r,z}u(\tau,\xi)D_{s,y}u(\tau,\xi)\\
@@ -2246,7 +2247,7 @@ y combinando las expresiones \eqref{pruebasumando3} a \eqref{pruebasumando7}, ha
    &\ \ \ +\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\left(\phi_{R,t}(r,z)\phi_{R,t}(s,y)\Sigma_{r,z}\Sigma_{s,y}\right)\notag\\
    &\ \ \ \ \cdot \left(\int_{[s,t]\times\R}\phi_{R,t}(\tau,\xi)\Sigma_{\tau,\xi}^{(21)}D_{r,z}D_{s,y}u(\tau,\xi)W(d\tau,d\xi)\right)dy dz ds dr,\notag
 \end{align}
-y denotando por comodidad la primera integral de la suma anterior como $\mathcal{Y}_{R,t}^{(1)}$,
+y denotando por comodidad la primera integral de la suma anterior como $\mathcal{Y}_{R,t}^{(1)}$, hallamos que 
 \begin{align}
    &D_{v_{R,t}}(D_{v_{R,t}}F_{R,t})\notag\\
    &=\mathcal{Y}_{R,t}^{(1)}+\int_{[0,t]\times\R}\phi_{R,t}(\tau,\xi)\notag\\
@@ -2309,7 +2310,7 @@ en donde $C^{(5)}_T>0$ es una constante que solo depende de $T>0$ y $\sigma$. In
    & \ \ \ \ \ \cdot \left(\int_{[0,t]}\int_{[r',t]}\int_{\R^2}\phi_{R,t}(r',z')\phi_{R,t}^2(s',y')\norm{\Sigma_{r',z'}\Sigma_{s',y'}\Sigma^{(1)}_{s',y'}D_{r',z'}u(s',y')}_2dy'dz'ds'dr'\right)^{1/2}\\
    &=\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dy dz ds dr.
  \end{align*}
- Usamos ahora \eqref{pruebacotasigma4} en la última desigualdad anterior para obtener que
+ Usamos ahora \eqref{pruebacotasigma4} en la desigualdad anterior para obtener que
  \begin{align*}
    \norm{\mathcal{Y}_{R,t}^{(1)}}_2&\leq\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma^{(1)}_{s,y}D_{r,z}u(s,y)}_2dy dz ds dr\\
    &\leq C^{(6)}_T\int_{[0,t]}\int_{[r,t]}\int_{\R^2}\phi_{R,t}(r,z)\phi_{R,t}^2(s,y)p_{s-r}(y-z)dy dz ds dr.
@@ -2340,7 +2341,7 @@ Finalmente, utilizamos el lema \ref{lemaA.3a}, para argumentar que, como $\tfrac
 \begin{equation}\label{cotafinal1}
       \norm{\mathcal{Y}_{R,t}^{(1)}}_2\leq \frac{C_t^{(7)}}{\sigma_{R,t}}=\frac{C_t^{(7)}}{\sqrt{\frac{\sigma_{R,t}^2}{R}}\sqrt{R}}\leq \frac{C_t^{(8)}}{\sqrt{R}},  
 \end{equation}
-en donde $C_t^{(8)}$ es una constante que depende de $C_t^{(7)}$ y de la integral en $[0,t]$ de $\xi$, función que es independiente de $y$, y por ende tanto la integral como la constante $C_t^{(8)}$ sólo dependen de $t$. Es menester comentar que para el uso del lema \ref{lemaA.3a} y garantizar la validez de la cota anterior, la función $\sigma$ debe ser cumplir que la esperanza de la misma evaluada en $u$ sea distinta de cero. Dicha condición bien puede ser exigida como parte de las hipótesis del teorema.  
+en donde $C_t^{(8)}$ es una constante que depende de $C_t^{(7)}$ y de la integral en $[0,t]$ de $\xi$, función que es independiente de $y$, y por ende tanto la integral como la constante $C_t^{(8)}$ sólo dependen de $t$. Cabe destacar que para el uso del lema \ref{lemaA.3a} y garantizar la validez de la cota anterior, la función $\sigma$ debe ser cumplir que la esperanza de la misma evaluada en $u$ sea distinta de cero. Dicha condición bien puede ser exigida como parte de las hipótesis del teorema.  
 
 Procedemos ahora a estimar el término $\mathcal{Y}_{R,t}^{(2)}$. Extrayendo el cuadrado de la norma $L^{2}(\Omega)$ de dicho término, y utilizando la isometría de Itô-Walsh (análoga a la isometría de Itô en cálculo estocástico usual), tenemos las siguientes igualdades.
 \begin{align*}
@@ -2357,7 +2358,7 @@ Reescribiendo el cuadrado de la integral anterior, tenemos que
    &=\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\int_{0\leq r_1\leq s_1\leq \tau}\int_{0\leq r_2\leq s_2\leq \tau}\int_{\R^4}\phi_{R,t}(r_1,z_1)\phi_{R,t}(s_1,y_1)\phi_{R,t}(r_2,z_2)\phi_{R,t}(s_2,y_2)\\
    &\ \ \ \ \cdot \E\left[Z_{r_1,z_1,s_1,y_1}(\tau,\xi)Z_{r_2,z_2,s_2,y_2}(\tau,\xi)\right]dy_1dz_1ds_1dr_1dy_2dz_2ds_2dr_2d\xi d\tau,
 \end{align*}
-en donde $Z_{r_1,z_1,s_1,y_1}(\xi,\tau)$ y $Z_{r_2,z_2,s_2,y_2}(\xi,\tau)$ son copias i.i.d. de $Z_{r,z,s,y}(\xi,\tau)$. A continuación, utilizamos la desigualdad de Cauchy-Schwarz justo en estos términos para obtener que 
+en donde $Z_{r_1,z_1,s_1,y_1}(\xi,\tau)$ y $Z_{r_2,z_2,s_2,y_2}(\xi,\tau)$ son copias independientes y con la misma distribución que $Z_{r,z,s,y}(\xi,\tau)$. A continuación, utilizamos la desigualdad de Cauchy-Schwarz justo en dichas variables para obtener que 
 \begin{align}
    \norm{\mathcal{Y}_{R,t}^{(2)}}_2^{2}&\leq \int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\int_{0\leq r_1\leq s_1\leq \tau}\int_{0\leq r_2\leq s_2\leq \tau}\int_{\R^4}\phi_{R,t}(r_1,z_1)\phi_{R,t}(s_1,y_1)\phi_{R,t}(r_2,z_2)\phi_{R,t}(s_2,y_2)\notag\\
    &\ \ \ \ \cdot \norm{Z_{r_1,z_1,s_1,y_1}(\tau,\xi)}_2 \norm{Z_{r_2,z_2,s_2,y_2}(\tau,\xi)}_2 dy_1dz_1ds_1dr_1dy_2dz_2ds_2dr_2d\xi d\tau\notag\\
@@ -2377,7 +2378,7 @@ En esta última desigualdad utilizamos cuatro veces la relación \eqref{cota1era
    \norm{Z_{r,z,s,y,}(\xi,\tau)}_2&\leq C_{t}^{(9)} \Big(\norm{\Sigma_{r,z}\Sigma_{s,y}^{(1)}\Sigma_{\tau,\xi}^{(1)}}_4p_{s-r}(y-z)p_{\tau-s}(\xi-y)\\
    &\ \ \ +\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(2)}}_4p_{\tau-r}(\xi-z)p_{\tau-s}(\xi-y)+\norm{\Sigma_{r,z}\Sigma_{s,y}\Sigma_{\tau,\xi}^{(1)}}_4\phi_{r,z,s,y}(\tau,\xi)\Big),
 \end{align*}
-en donde $C_t^{(9)}$ es una constante que solo depende de $t>0$ y de $\sigma$. Ahora bien, por hipótesis, $|\sigma'|\leq K_1$ en concordancia con la notación de la desigualdad \eqref{pruebacotasigma2}. Por lo tanto si en la última cota usamos la desigualdad de Hölder, así como las desigualdades \eqref{pruebacotasigma3} y \eqref{pruebacotasigma4.5}, hallamos que 
+en donde $C_t^{(9)}$ es una constante que solo depende de $t>0$ y de $\sigma$. Ahora bien, por hipótesis, $|\sigma'|\leq K_1$ en concordancia con la notación de la desigualdad \eqref{pruebacotasigma2}. Por lo tanto si en la última cota para $Z_{r,z,s,y,}(\xi,\tau)$ usamos la desigualdad de Hölder, así como las desigualdades \eqref{pruebacotasigma3} y \eqref{pruebacotasigma4.5}, hallamos que 
 \begin{align*}
    \norm{Z_{r,z,s,y,}(\xi,\tau)}_2&\leq C_t^{(9)}\Big(C^{(10)}_tp_{s-r}(y-z)p_{\tau-s}(\xi-y)\\
    &\ \ \ +C_t^{(11)}\norm{\Sigma_{\tau,\xi}^{(2)}}_8p_{\tau-r}(\xi-z)p_{\tau-s}(\xi-y)+C_t^{(12)}\phi_{r,z,s,y}(\tau,\xi)\Big).
@@ -2397,7 +2398,7 @@ Ahora, si insertamos la cota \eqref{pruebacotazeta2} en \eqref{pruebacotazeta1} 
    &\ \ \ \ \cdot \Big(C^{(10)}_tp_{s_i-r_i}(y_i-z_i)p_{\tau-s_i}(\xi-y_i)+C_t^{(13)}p_{\tau-r_i}(\xi-z_i)p_{\tau-s_i}(\xi-y_i)\\
    &\ \ \ +C_t^{(12)}\phi_{r_i,z_i,s_i,y_i}(\tau,\xi)\Big)  dy_1dz_1ds_1dr_1dy_2dz_2ds_2dr_2d\xi d\tau.
 \end{align*}
-Utilizando nuevamente el lema \ref{LemaA.4a}, para $R>R_0\geq1$ y $0<s_i,r_i<t$,
+Utilizando nuevamente el lema \ref{LemaA.4a}, para $R>R_0\geq1$ y $0<s_i,r_i<t$, obtenemos la siguiente cota:
 \begin{align}
    &\norm{\mathcal{Y}_{R,t}^{(2)}}_2^{2}\notag\\
    &\leq \frac{C_t^{(14)}}{\sigma_{R,t}^2}\int_{[0,t]}\int_\R\phi_{R,t}^2(\tau,\xi)\int_{0\leq r_1\leq s_1\leq \tau}\int_{0\leq r_2\leq s_2\leq \tau}\int_{\R^4}\prod_{i=1,2}\Big(C^{(10)}_tp_{s_i-r_i}(y_i-z_i)p_{\tau-s_i}(\xi-y_i)\notag\\
@@ -2600,12 +2601,12 @@ Concluimos este último capítulo, y el cuerpo principal de este texto reuniendo
    Tal es el caso del modelo \textit{Parabolic Anderson} con condición inicial $u_0(x)=\delta_0(x)$, de la ecuación del calor con laplaciano faccionario o de la ecuación del calor estocástica en un dominio distinto y que obligue a imponer condiciones de frontera que bien podrían alterar la dinámica estocástica de los promedios espaciales a largo plazo (por ejemplo, la ecuación del calor en $[0,\infty)\times [0,\infty)$), entre otros. En la dirección del modelo Parabolic Anderson, el mismo artículo de Kuzgun y Nualart \cite{KUZGUN202268} lo trabaja. En cuanto a la ecuación del calor con laplaciano fraccionario se puede encontrar en \cite{zhang2023convergence} trabajo en el cual los autores, basándose precisamente en el artículo de Kuzgun y Nualart mencionado, logran establecer resultados análogos al teorema principal en tres casos distintos. 
 
    \item \textbf{Ley de grandes números y grandes desviaciones.} Otra dirección en la cual se puede reflexionar, es el estudio de los otros conjuntos de resultados clásicos de probabilidad: la ley de grandes números y grandes desviaciones, pero adaptado al contexto de los promedios espaciales de la ecuación del calor estocástica. En este sentido, el trabajo hecho en \cite{ebina2024largedeviationsspatialaverage} muestra que las distribuciones de los promedios espaciales de las soluciones a la ecuación del calor estocástica del calor y de onda cumplen el principio de grandes desviaciones conforme el intervalo donde se promedia tiende a infinito.
-   \item \textbf{Otros ruidos, procesos gaussianos más generales.} En el texto presente tratamos una ecuación del calor que esutvo perturbada por un ruido blanco. Sin embargo, podríamos pensar en un ruido coloreado como es el caso del artículo de Kuzgun y Nualart \cite{doi:10.1080/17442508.2023.2238954}, el cual de hecho trata la convergencia de las densidades de los promedios espaciales en el caso del modelo Parabolic Anderson. La posibilidad de perturbar ahora la ecuación del calor pero con otros procesos Gaussianos, tales como un movimiento browniano fraccionario, una sábana browniana, o incluso pensar en la posibilidad de perturbar la ecuación con procesos con saltos, procesos de Levy, y otros. Dada la naturaleza de estos últimos procesos, las técnicas del cálculo de Malliavin para distribuciones Poisson serían fundamentales para llevar a cabo el estudio.
+   \item \textbf{Otros ruidos, procesos gaussianos más generales.} En el texto presente tratamos una ecuación del calor que esutvo perturbada por un ruido blanco. Sin embargo, podríamos pensar en un ruido coloreado como es el caso del artículo de Kuzgun y Nualart \cite{doi:10.1080/17442508.2023.2238954}, el cual de hecho trata la convergencia de las densidades de los promedios espaciales en el caso del modelo Parabolic Anderson. La posibilidad de perturbar ahora la ecuación del calor pero con otros procesos Gaussianos, tales como un movimiento browniano fraccionario, una sábana browniana, o incluso pensar en la posibilidad de perturbar la ecuación con procesos con saltos, procesos de Levy, y otros, queda por ser explorada. Dada la naturaleza de estos últimos procesos, las técnicas del cálculo de Malliavin para distribuciones Poisson serían fundamentales para llevar a cabo el estudio.
    \item \textbf{Versiones funcionales.} Ya en \cite{HUANG20207170}, se puede vislumbrar una versión funcional del teorema que da origen a la cota \eqref{teohuang}. En \cite{Chen2023}, se presentan más resultados del tipo teoremas central del límite cuantitativos para los promedios espacialies de la solución a la ecuación del calor estocástica. En particular, se establecen versiones funcionales de dichos teoremas centrales del límite, además de un teorema central del límite para la solución \textit{Hopf-Cole} de la ecuación \textit{KPZ}. Por lo tanto, una dirección en la cual reflexionar sobre trabajo futuro sería llevar la convergencia de las densidades a una versión funcional.
    \item \textbf{Otros objetos que resuman información de la solución.}
-   Se ha trabajado en este texto, y en todas las referencias dadas arriba, con los promedios espaciales de la solución a una SPDE. Aunque ciertamente los promedios espaciales resultan ser en cierta forma similares a una suma i.i.d. de variables independientes, y por lo tanto es esperable un comportamiento similar al teorema central de límite usual, otros objetos podrían comportarse de manera similar. 
+   Se ha trabajado en este texto, y en todas las referencias dadas arriba, con los promedios espaciales de la solución a una SPDE. Aunque ciertamente los promedios espaciales resultan ser en cierta forma similares a una suma de variables independientes e idénticamente distribuídas, y por lo tanto es esperable un comportamiento similar al teorema central de límite usual, otros objetos podrían comportarse de manera similar. 
 \end{itemize}
-Como es de notar, el uso de las técnicas del cálculo de Malliavin junto con el método de Stein para deducir teoremas límite en el contexto de ecuaciones diferenciales parciales estocásticas es esencial, manteniéndose como una área bastante activa en la actualidad en el mundo de la probabilidad.
+Como es de notar, el uso de las técnicas del cálculo de Malliavin junto con el método de Stein para deducir teoremas límite en el contexto de ecuaciones diferenciales parciales estocásticas ha resultado en una combinación fructífera. Estas interconexiones entre dichas teorías las mantienen como áreas bastante activas en la probabilidad moderna.
 \appendix
 \chapter{Resultados técnicos}
 En este apéndice colocamos los tres resultados técnicos utilizados en la tercera parte de la prueba del resultado principal \ref{teoremaprincipal} de este texto.  Específicamente, los lemas A.1, A.2 y A.3 de este apéndice corresponden respectivamente a los lemas A.2 parte (a), A.3 parte (a) y A.4 parte (a), del apéndice presente en el artículo de \c{S}efika Kuzgun y David Nualart \cite{KUZGUN202268}. Las pruebas del lema A.1 y A.3 se pueden encontrar en el artículo antes mencionado, mientras que la prueba del lema A.2 se puede encontrar en \cite[proposición 3.1]{HUANG20207170}.

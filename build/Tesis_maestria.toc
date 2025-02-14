@@ -23,5 +23,5 @@
 \contentsline {chapter}{\numberline {4}Propiedades espaciales de la Ecuación estocástica del calor}{63}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Cotas para la primera y segunda derivada de la solución mild y existencia de momentos inversos}{65}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Prueba del resultado principal}{66}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{83}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Resultados técnicos}{87}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {5}Conclusiones y trabajo futuro}{81}{chapter.5}%
+\contentsline {chapter}{\numberline {A}Resultados técnicos}{85}{appendix.Alph1}%
