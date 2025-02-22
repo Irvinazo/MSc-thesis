@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.16)  20 FEB 2025 00:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.16)  22 FEB 2025 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/irvin/Documents/Maestría/Tesis/Proyecto Tesis/Tesis_maestria.tex"
-(c:/Users/irvin/Documents/Maestría/Tesis/Proyecto Tesis/Tesis_maestria.tex
+**c:/Users/irvin/Documents/Maestría/Tesis/Tesis/Tesis_maestria.tex
+(c:/Users/irvin/Documents/Maestría/Tesis/Tesis/Tesis_maestria.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
@@ -167,7 +167,7 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \everycr=\toks23
 \minrowclearance=\skip55
 \rownum=\count277
-) (c:\Users\irvin\Documents\Maestría\Tesis\Proyecto Tesis\build\CIMATpreamble.sty
+) (c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\CIMATpreamble.sty
 Package: CIMATpreamble 
  (C:\Users\irvin\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -627,7 +627,7 @@ Package: apptools 2012/11/28 v1.0 Tools for customizing appendices
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box113
-) (c:\Users\irvin\Documents\Maestría\Tesis\Proyecto Tesis\build\Tesis_maestria.aux
+) (c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -708,7 +708,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 84.
-(c:\Users\irvin\Documents\Maestría\Tesis\Proyecto Tesis\build\Tesis_maestria.out) (c:\Users\irvin\Documents\Maestría\Tesis\Proyecto Tesis\build\Tesis_maestria.out)
+(c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.out) (c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.out)
 \@outlinefile=\write4
 \openout4 = `Tesis_maestria.out'.
 
@@ -784,7 +784,7 @@ Package pdftex.def Info: img/banner_cimat_20200126_05.png  used on input line 86
 
 ] [3] [4] [5] [6
 
-] (c:\Users\irvin\Documents\Maestría\Tesis\Proyecto Tesis\build\Tesis_maestria.toc
+] (c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [7])
@@ -1480,11 +1480,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.1104pt}.
 
 [80]
-LaTeX Info: Redefining \. on input line 2594.
-LaTeX Info: Redefining \% on input line 2594.
+LaTeX Info: Redefining \. on input line 2477.
+LaTeX Info: Redefining \% on input line 2477.
  [81]
-LaTeX Info: Redefining \. on input line 2594.
-LaTeX Info: Redefining \% on input line 2594.
+LaTeX Info: Redefining \. on input line 2477.
+LaTeX Info: Redefining \% on input line 2477.
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1498,26 +1498,26 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 ]
 Cap\'{\i }tulo 5.
 [83]
-LaTeX Info: Redefining \. on input line 2621.
-LaTeX Info: Redefining \% on input line 2621.
+LaTeX Info: Redefining \. on input line 2504.
+LaTeX Info: Redefining \% on input line 2504.
  [84] [85]
-LaTeX Info: Redefining \. on input line 2627.
-LaTeX Info: Redefining \% on input line 2627.
+LaTeX Info: Redefining \. on input line 2510.
+LaTeX Info: Redefining \% on input line 2510.
  [86
 
 ]
 Ap\'{e}ndice A.
 [87]
-LaTeX Info: Redefining \. on input line 2651.
-LaTeX Info: Redefining \% on input line 2651.
+LaTeX Info: Redefining \. on input line 2534.
+LaTeX Info: Redefining \% on input line 2534.
  [88
 
-] (c:\Users\irvin\Documents\Maestría\Tesis\Proyecto Tesis\build\Tesis_maestria.bbl [89
+] (c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.bbl [89
 
 ])
-LaTeX Info: Redefining \. on input line 2655.
-LaTeX Info: Redefining \% on input line 2655.
- [90] (c:\Users\irvin\Documents\Maestría\Tesis\Proyecto Tesis\build\Tesis_maestria.aux
+LaTeX Info: Redefining \. on input line 2538.
+LaTeX Info: Redefining \% on input line 2538.
+ [90] (c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1530,14 +1530,14 @@ Package rerunfilecheck Info: File `Tesis_maestria.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  25034 strings out of 474542
- 470277 string characters out of 5744446
+ 470082 string characters out of 5744446
  1948978 words of memory out of 5000000
  46481 multiletter control sequences out of 15000+600000
  577529 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,16n,121p,1413b,1013s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,16n,121p,1402b,1013s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1200.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc2074.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on "c:\Users\irvin\Documents\Maestría\Tesis\Proyecto Tesis\build\Tesis_maestria.pdf" (104 pages, 809637 bytes).
+Output written on c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.pdf (104 pages, 809637 bytes).
 PDF statistics:
  1662 PDF objects out of 1728 (max. 8388607)
  324 named destinations out of 1000 (max. 500000)
