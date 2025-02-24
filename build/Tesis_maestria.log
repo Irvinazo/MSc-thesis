@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.16)  22 FEB 2025 18:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.16)  23 FEB 2025 20:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1480,11 +1480,11 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-14.1104pt}.
 
 [80]
-LaTeX Info: Redefining \. on input line 2477.
-LaTeX Info: Redefining \% on input line 2477.
+LaTeX Info: Redefining \. on input line 2478.
+LaTeX Info: Redefining \% on input line 2478.
  [81]
-LaTeX Info: Redefining \. on input line 2477.
-LaTeX Info: Redefining \% on input line 2477.
+LaTeX Info: Redefining \. on input line 2478.
+LaTeX Info: Redefining \% on input line 2478.
 
 
 Package fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -1498,25 +1498,25 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 ]
 Cap\'{\i }tulo 5.
 [83]
-LaTeX Info: Redefining \. on input line 2504.
-LaTeX Info: Redefining \% on input line 2504.
+LaTeX Info: Redefining \. on input line 2503.
+LaTeX Info: Redefining \% on input line 2503.
  [84] [85]
-LaTeX Info: Redefining \. on input line 2510.
-LaTeX Info: Redefining \% on input line 2510.
+LaTeX Info: Redefining \. on input line 2509.
+LaTeX Info: Redefining \% on input line 2509.
  [86
 
 ]
 Ap\'{e}ndice A.
 [87]
-LaTeX Info: Redefining \. on input line 2534.
-LaTeX Info: Redefining \% on input line 2534.
+LaTeX Info: Redefining \. on input line 2533.
+LaTeX Info: Redefining \% on input line 2533.
  [88
 
 ] (c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.bbl [89
 
 ])
-LaTeX Info: Redefining \. on input line 2538.
-LaTeX Info: Redefining \% on input line 2538.
+LaTeX Info: Redefining \. on input line 2537.
+LaTeX Info: Redefining \% on input line 2537.
  [90] (c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
@@ -1537,7 +1537,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  117i,16n,121p,1402b,1013s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1200.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc2074.pk> <C:\Users\irvin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom12.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irvin/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.pdf (104 pages, 809657 bytes).
+Output written on c:\Users\irvin\Documents\Maestría\Tesis\Tesis\build\Tesis_maestria.pdf (104 pages, 809448 bytes).
 PDF statistics:
  1662 PDF objects out of 1728 (max. 8388607)
  324 named destinations out of 1000 (max. 500000)
